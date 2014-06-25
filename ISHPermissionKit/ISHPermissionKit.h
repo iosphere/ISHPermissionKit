@@ -16,4 +16,7 @@ FOUNDATION_EXPORT const unsigned char ISHPermissionKitVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <ISHPermissionKit/PublicHeader.h>
 
+#import <ISHPermissionKit/ISHPermissionsViewController.h>
+#import <ISHPermissionKit/ISHPermissionCategory.h>
+#import <ISHPermissionKit/ISHPermissionRequest.h>
 

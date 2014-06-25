@@ -7,9 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC1A80A3195B21DC0069235F /* ISHPermissionsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = DC1A80A1195B21DC0069235F /* ISHPermissionsViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC1A80A4195B21DC0069235F /* ISHPermissionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A80A2195B21DC0069235F /* ISHPermissionsViewController.m */; };
+		DC1A80A5195B21ED0069235F /* ISHPermissionKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC1BFA5195B174200362559 /* ISHPermissionKit.framework */; };
+		DC1A80A9195B22A10069235F /* ISHPermissionCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = DC1A80A8195B22A10069235F /* ISHPermissionCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC1A80AC195B23640069235F /* ISHPermissionRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = DC1A80AA195B23640069235F /* ISHPermissionRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC1A80AD195B23640069235F /* ISHPermissionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A80AB195B23640069235F /* ISHPermissionRequest.m */; };
+		DC1A80B0195B2C960069235F /* ISHPermissionRequestViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = DC1A80AE195B2C960069235F /* ISHPermissionRequestViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC1A80B1195B2C960069235F /* ISHPermissionRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A80AF195B2C960069235F /* ISHPermissionRequestViewController.m */; };
+		DC799EB4195C0CF300A0CA36 /* ISHPermissionRequestViewController+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = DC799EB3195C0CF300A0CA36 /* ISHPermissionRequestViewController+Private.h */; };
+		DC799EB6195C113D00A0CA36 /* ISHPermissionRequestViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = DC799EB5195C113900A0CA36 /* ISHPermissionRequestViewControllerDelegate.h */; };
+		DC799EBF195C186100A0CA36 /* ISHPermissionRequestLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = DC799EBD195C186100A0CA36 /* ISHPermissionRequestLocation.h */; };
+		DC799EC0195C186100A0CA36 /* ISHPermissionRequestLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DC799EBE195C186100A0CA36 /* ISHPermissionRequestLocation.m */; };
+		DC799EC4195C19CD00A0CA36 /* ISHPermissionRequest+All.h in Headers */ = {isa = PBXBuildFile; fileRef = DC799EC2195C19CD00A0CA36 /* ISHPermissionRequest+All.h */; };
+		DC799EC5195C19CD00A0CA36 /* ISHPermissionRequest+All.m in Sources */ = {isa = PBXBuildFile; fileRef = DC799EC3195C19CD00A0CA36 /* ISHPermissionRequest+All.m */; };
 		DCC1BFAB195B174200362559 /* ISHPermissionKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC1BFAA195B174200362559 /* ISHPermissionKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DCC1BFB1195B174200362559 /* ISHPermissionKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC1BFA5195B174200362559 /* ISHPermissionKit.framework */; };
 		DCC1BFB8195B174200362559 /* ISHPermissionKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1BFB7195B174200362559 /* ISHPermissionKitTests.m */; };
+		DCC1BFCA195B176E00362559 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1BFC9195B176E00362559 /* main.m */; };
+		DCC1BFCD195B176E00362559 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1BFCC195B176E00362559 /* AppDelegate.m */; };
+		DCC1BFCF195B176E00362559 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCC1BFCE195B176E00362559 /* Images.xcassets */; };
+		DCF18617195C2B1B00CC155E /* LocationPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF18615195C2B1B00CC155E /* LocationPermissionViewController.m */; };
+		DCF18618195C2B1B00CC155E /* LocationPermissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCF18616195C2B1B00CC155E /* LocationPermissionViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +42,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC1A80A1195B21DC0069235F /* ISHPermissionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHPermissionsViewController.h; sourceTree = "<group>"; };
+		DC1A80A2195B21DC0069235F /* ISHPermissionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionsViewController.m; sourceTree = "<group>"; };
+		DC1A80A8195B22A10069235F /* ISHPermissionCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHPermissionCategory.h; sourceTree = "<group>"; };
+		DC1A80AA195B23640069235F /* ISHPermissionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHPermissionRequest.h; sourceTree = "<group>"; };
+		DC1A80AB195B23640069235F /* ISHPermissionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequest.m; sourceTree = "<group>"; };
+		DC1A80AE195B2C960069235F /* ISHPermissionRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHPermissionRequestViewController.h; sourceTree = "<group>"; };
+		DC1A80AF195B2C960069235F /* ISHPermissionRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestViewController.m; sourceTree = "<group>"; };
+		DC799EB3195C0CF300A0CA36 /* ISHPermissionRequestViewController+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ISHPermissionRequestViewController+Private.h"; sourceTree = "<group>"; };
+		DC799EB5195C113900A0CA36 /* ISHPermissionRequestViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISHPermissionRequestViewControllerDelegate.h; sourceTree = "<group>"; };
+		DC799EBD195C186100A0CA36 /* ISHPermissionRequestLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHPermissionRequestLocation.h; sourceTree = "<group>"; };
+		DC799EBE195C186100A0CA36 /* ISHPermissionRequestLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestLocation.m; sourceTree = "<group>"; };
+		DC799EC2195C19CD00A0CA36 /* ISHPermissionRequest+All.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ISHPermissionRequest+All.h"; sourceTree = "<group>"; };
+		DC799EC3195C19CD00A0CA36 /* ISHPermissionRequest+All.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ISHPermissionRequest+All.m"; sourceTree = "<group>"; };
 		DCC1BFA5195B174200362559 /* ISHPermissionKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ISHPermissionKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCC1BFA9195B174200362559 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCC1BFAA195B174200362559 /* ISHPermissionKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ISHPermissionKit.h; sourceTree = "<group>"; };
 		DCC1BFB0195B174200362559 /* ISHPermissionKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ISHPermissionKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCC1BFB6195B174200362559 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCC1BFB7195B174200362559 /* ISHPermissionKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionKitTests.m; sourceTree = "<group>"; };
+		DCC1BFC5195B176E00362559 /* PermissionsTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PermissionsTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCC1BFC8195B176E00362559 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCC1BFC9195B176E00362559 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DCC1BFCB195B176E00362559 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DCC1BFCC195B176E00362559 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DCC1BFCE195B176E00362559 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DCC1BFD9195B176E00362559 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCC1BFDA195B176E00362559 /* PermissionsTestAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PermissionsTestAppTests.m; sourceTree = "<group>"; };
+		DCF18614195C2B1B00CC155E /* LocationPermissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationPermissionViewController.h; sourceTree = "<group>"; };
+		DCF18615195C2B1B00CC155E /* LocationPermissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationPermissionViewController.m; sourceTree = "<group>"; };
+		DCF18616195C2B1B00CC155E /* LocationPermissionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationPermissionViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,14 +90,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DCC1BFC2195B176E00362559 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC1A80A5195B21ED0069235F /* ISHPermissionKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC799EC1195C187700A0CA36 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				DC799EC2195C19CD00A0CA36 /* ISHPermissionRequest+All.h */,
+				DC799EC3195C19CD00A0CA36 /* ISHPermissionRequest+All.m */,
+				DC1A80AA195B23640069235F /* ISHPermissionRequest.h */,
+				DC1A80AB195B23640069235F /* ISHPermissionRequest.m */,
+				DC799EBD195C186100A0CA36 /* ISHPermissionRequestLocation.h */,
+				DC799EBE195C186100A0CA36 /* ISHPermissionRequestLocation.m */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
 		DCC1BF9B195B174200362559 = {
 			isa = PBXGroup;
 			children = (
 				DCC1BFA7195B174200362559 /* ISHPermissionKit */,
 				DCC1BFB4195B174200362559 /* ISHPermissionKitTests */,
+				DCC1BFC6195B176E00362559 /* PermissionsTestApp */,
+				DCC1BFD7195B176E00362559 /* PermissionsTestAppTests */,
 				DCC1BFA6195B174200362559 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +130,7 @@
 			children = (
 				DCC1BFA5195B174200362559 /* ISHPermissionKit.framework */,
 				DCC1BFB0195B174200362559 /* ISHPermissionKitTests.xctest */,
+				DCC1BFC5195B176E00362559 /* PermissionsTestApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -71,7 +138,15 @@
 		DCC1BFA7195B174200362559 /* ISHPermissionKit */ = {
 			isa = PBXGroup;
 			children = (
+				DC1A80A8195B22A10069235F /* ISHPermissionCategory.h */,
 				DCC1BFAA195B174200362559 /* ISHPermissionKit.h */,
+				DC799EB3195C0CF300A0CA36 /* ISHPermissionRequestViewController+Private.h */,
+				DC1A80AE195B2C960069235F /* ISHPermissionRequestViewController.h */,
+				DC1A80AF195B2C960069235F /* ISHPermissionRequestViewController.m */,
+				DC799EB5195C113900A0CA36 /* ISHPermissionRequestViewControllerDelegate.h */,
+				DC1A80A1195B21DC0069235F /* ISHPermissionsViewController.h */,
+				DC1A80A2195B21DC0069235F /* ISHPermissionsViewController.m */,
+				DC799EC1195C187700A0CA36 /* Requests */,
 				DCC1BFA8195B174200362559 /* Supporting Files */,
 			);
 			path = ISHPermissionKit;
@@ -102,6 +177,46 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		DCC1BFC6195B176E00362559 /* PermissionsTestApp */ = {
+			isa = PBXGroup;
+			children = (
+				DCC1BFCB195B176E00362559 /* AppDelegate.h */,
+				DCC1BFCC195B176E00362559 /* AppDelegate.m */,
+				DCC1BFCE195B176E00362559 /* Images.xcassets */,
+				DCC1BFC7195B176E00362559 /* Supporting Files */,
+				DCF18614195C2B1B00CC155E /* LocationPermissionViewController.h */,
+				DCF18615195C2B1B00CC155E /* LocationPermissionViewController.m */,
+				DCF18616195C2B1B00CC155E /* LocationPermissionViewController.xib */,
+			);
+			path = PermissionsTestApp;
+			sourceTree = "<group>";
+		};
+		DCC1BFC7195B176E00362559 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DCC1BFC8195B176E00362559 /* Info.plist */,
+				DCC1BFC9195B176E00362559 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DCC1BFD7195B176E00362559 /* PermissionsTestAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				DCC1BFDA195B176E00362559 /* PermissionsTestAppTests.m */,
+				DCC1BFD8195B176E00362559 /* Supporting Files */,
+			);
+			path = PermissionsTestAppTests;
+			sourceTree = "<group>";
+		};
+		DCC1BFD8195B176E00362559 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DCC1BFD9195B176E00362559 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -109,7 +224,15 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC799EC4195C19CD00A0CA36 /* ISHPermissionRequest+All.h in Headers */,
 				DCC1BFAB195B174200362559 /* ISHPermissionKit.h in Headers */,
+				DC1A80A3195B21DC0069235F /* ISHPermissionsViewController.h in Headers */,
+				DC1A80B0195B2C960069235F /* ISHPermissionRequestViewController.h in Headers */,
+				DC799EBF195C186100A0CA36 /* ISHPermissionRequestLocation.h in Headers */,
+				DC799EB4195C0CF300A0CA36 /* ISHPermissionRequestViewController+Private.h in Headers */,
+				DC1A80AC195B23640069235F /* ISHPermissionRequest.h in Headers */,
+				DC1A80A9195B22A10069235F /* ISHPermissionCategory.h in Headers */,
+				DC799EB6195C113D00A0CA36 /* ISHPermissionRequestViewControllerDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +275,23 @@
 			productReference = DCC1BFB0195B174200362559 /* ISHPermissionKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		DCC1BFC4195B176E00362559 /* PermissionsTestApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCC1BFDC195B176E00362559 /* Build configuration list for PBXNativeTarget "PermissionsTestApp" */;
+			buildPhases = (
+				DCC1BFC1195B176E00362559 /* Sources */,
+				DCC1BFC2195B176E00362559 /* Frameworks */,
+				DCC1BFC3195B176E00362559 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PermissionsTestApp;
+			productName = PermissionsTestApp;
+			productReference = DCC1BFC5195B176E00362559 /* PermissionsTestApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -167,6 +307,9 @@
 					DCC1BFAF195B174200362559 = {
 						CreatedOnToolsVersion = 6.0;
 						TestTargetID = DCC1BFA4195B174200362559;
+					};
+					DCC1BFC4195B176E00362559 = {
+						CreatedOnToolsVersion = 6.0;
 					};
 				};
 			};
@@ -184,6 +327,7 @@
 			targets = (
 				DCC1BFA4195B174200362559 /* ISHPermissionKit */,
 				DCC1BFAF195B174200362559 /* ISHPermissionKitTests */,
+				DCC1BFC4195B176E00362559 /* PermissionsTestApp */,
 			);
 		};
 /* End PBXProject section */
@@ -203,6 +347,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DCC1BFC3195B176E00362559 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCF18618195C2B1B00CC155E /* LocationPermissionViewController.xib in Resources */,
+				DCC1BFCF195B176E00362559 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -210,6 +363,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC799EC5195C19CD00A0CA36 /* ISHPermissionRequest+All.m in Sources */,
+				DC799EC0195C186100A0CA36 /* ISHPermissionRequestLocation.m in Sources */,
+				DC1A80A4195B21DC0069235F /* ISHPermissionsViewController.m in Sources */,
+				DC1A80B1195B2C960069235F /* ISHPermissionRequestViewController.m in Sources */,
+				DC1A80AD195B23640069235F /* ISHPermissionRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +376,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCC1BFB8195B174200362559 /* ISHPermissionKitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCC1BFC1195B176E00362559 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCC1BFCD195B176E00362559 /* AppDelegate.m in Sources */,
+				DCF18617195C2B1B00CC155E /* LocationPermissionViewController.m in Sources */,
+				DCC1BFCA195B176E00362559 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +546,34 @@
 			};
 			name = Release;
 		};
+		DCC1BFDD195B176E00362559 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PermissionsTestApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DCC1BFDE195B176E00362559 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = PermissionsTestApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -397,6 +593,7 @@
 				DCC1BFBD195B174200362559 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DCC1BFBE195B174200362559 /* Build configuration list for PBXNativeTarget "ISHPermissionKitTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +602,16 @@
 				DCC1BFC0195B174200362559 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCC1BFDC195B176E00362559 /* Build configuration list for PBXNativeTarget "PermissionsTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCC1BFDD195B176E00362559 /* Debug */,
+				DCC1BFDE195B176E00362559 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
