@@ -8,6 +8,6 @@
 
 #import <ISHPermissionKit/ISHPermissionKit.h>
 
-@interface LocationPermissionViewController : ISHPermissionRequestViewController
+@interface SamplePermissionViewController : ISHPermissionRequestViewController
 
 @end

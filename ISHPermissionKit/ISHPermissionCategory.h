@@ -13,3 +13,18 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
     ISHPermissionCategoryLocationWhenInUse = 3200,
     ISHPermissionCategoryBluetooth = 4000,
 };
+
+static inline NSString *ISHStringFromPermissionCategory(ISHPermissionCategory category) {
+    switch (category) {
+        case ISHPermissionCategoryActivity:
+            return @"ISHPermissionCategoryActivity";
+        case ISHPermissionCategoryHealth:
+            return @"ISHPermissionCategoryHealth";
+        case ISHPermissionCategoryLocationAlways:
+            return @"ISHPermissionCategoryLocationAlways";
+        case ISHPermissionCategoryLocationWhenInUse:
+            return @"ISHPermissionCategoryLocationWhenInUse";
+        case ISHPermissionCategoryBluetooth:
+            return @"ISHPermissionCategoryBluetooth";
+    }
+}

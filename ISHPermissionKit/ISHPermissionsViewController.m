@@ -69,6 +69,7 @@
         ISHPermissionState state = [request permissionState];
         
         switch (state) {
+            case ISHPermissionStateUnknown:
             case ISHPermissionStateNeverAsked:
             case ISHPermissionStateAskAgain:
                 [requestable addObject:categoryObj];

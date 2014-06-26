@@ -8,6 +8,7 @@
 
 #import "ISHPermissionRequest+All.h"
 #import "ISHPermissionRequestLocation.h"
+#import "ISHPermissionRequestMotion.h"
 
 @implementation ISHPermissionRequest (All)
 
@@ -19,6 +20,8 @@
             [request setPermissionCategory:category];
             return request;
         }
+        case ISHPermissionCategoryActivity:
+            return [ISHPermissionRequestMotion new];
         default:
             break;
     }

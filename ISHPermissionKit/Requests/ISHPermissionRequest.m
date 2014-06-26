@@ -23,18 +23,13 @@
 - (ISHPermissionState)internalPermissionState {
     NSNumber *state = [[NSUserDefaults standardUserDefaults] objectForKey:[self persistentIdentifier]];
     if (!state) {
-        return ISHPermissionStateNeverAsked;
+        return ISHPermissionStateUnknown;
     }
     
     return [state integerValue];
 }
 
-- (void)setInternalPermissionState:(ISHPermissionState)state {
-    if (state == ISHPermissionStateGranted || state == ISHPermissionStateDenied) {
-        // these are not internal states
-        return;
-    }
-    
+- (void)setInternalPermissionState:(ISHPermissionState)state {    
     [[NSUserDefaults standardUserDefaults] setInteger:state forKey:[self persistentIdentifier]];
 }
 

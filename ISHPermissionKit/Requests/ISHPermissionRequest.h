@@ -10,9 +10,10 @@
 #import <ISHPermissionKit/ISHPermissionCategory.h>
 
 typedef NS_ENUM(NSUInteger, ISHPermissionState) {
-    ISHPermissionStateNeverAsked = 0,
-    ISHPermissionStateAskAgain = 10,
-    ISHPermissionStateDontAsk = 11,
+    ISHPermissionStateUnknown = 0,
+    ISHPermissionStateNeverAsked = 100,
+    ISHPermissionStateAskAgain = 101,
+    ISHPermissionStateDontAsk = 110,
     ISHPermissionStateDenied = 403,
     ISHPermissionStateGranted = 200,
 };
@@ -31,6 +32,8 @@ typedef void (^ISHPermissionRequestCompletionBlock)(ISHPermissionRequest *reques
 
 static inline NSString *ISHStringFromPermissionState(ISHPermissionState state) {
     switch (state) {
+        case ISHPermissionStateUnknown:
+            return @"ISHPermissionStateUnknown";
         case ISHPermissionStateNeverAsked:
             return @"ISHPermissionStateNeverAsked";
         case ISHPermissionStateAskAgain:

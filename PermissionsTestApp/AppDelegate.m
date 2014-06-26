@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "LocationPermissionViewController.h"
+#import "SamplePermissionViewController.h"
 #import <ISHPermissionKit/ISHPermissionKit.h>
 
 @interface AppDelegate () <ISHPermissionsViewControllerDatasource>
@@ -29,7 +29,7 @@
     
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        ISHPermissionsViewController *perm = [ISHPermissionsViewController permissionsViewControllerWithCategories:@[ @(ISHPermissionCategoryLocationWhenInUse) ]];
+        ISHPermissionsViewController *perm = [ISHPermissionsViewController permissionsViewControllerWithCategories:@[ @(ISHPermissionCategoryLocationWhenInUse), @(ISHPermissionCategoryActivity) ]];
         if (perm) {
             [perm setDataSource:self];
             [rootVC presentViewController:perm animated:NO completion:nil];
@@ -43,7 +43,7 @@
 #pragma mark ISHPermissionsViewControllerDatasource
 
 - (ISHPermissionRequestViewController *)permissionsViewController:(ISHPermissionsViewController *)vc requestViewControllerForCategory:(ISHPermissionCategory)category {
-    return [LocationPermissionViewController new];
+    return [SamplePermissionViewController new];
 }
 
 @end
