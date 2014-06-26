@@ -48,6 +48,10 @@ static inline NSString *ISHStringFromPermissionState(ISHPermissionState state) {
     }
 }
 
+static inline BOOL ISHPermissionStateAllowsUserPrompt(ISHPermissionState state) {
+    return (state != ISHPermissionStateDenied) && (state != ISHPermissionStateGranted) && (state != ISHPermissionStateDontAsk);
+}
+
 @interface ISHPermissionRequest (Subclasses)
 // these interfaces are available to subclasses, there should be no need to override these.
 - (ISHPermissionState)internalPermissionState;

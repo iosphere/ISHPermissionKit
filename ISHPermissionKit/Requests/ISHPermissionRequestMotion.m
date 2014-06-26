@@ -24,7 +24,7 @@
     NSAssert(completion, @"requestUserPermissionWithCompletionBlock requires a completion block");
     ISHPermissionState currentState = self.permissionState;
 
-    if ((currentState == ISHPermissionStateDenied) || (currentState == ISHPermissionStateGranted) || (currentState == ISHPermissionStateDontAsk)) {
+    if (ISHPermissionStateAllowsUserPrompt(currentState)) {
         completion(self, currentState, nil);
         return;
     }
