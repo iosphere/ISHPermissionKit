@@ -35,6 +35,8 @@ static inline NSString *ISHStringFromPermissionState(ISHPermissionState state) {
     switch (state) {
         case ISHPermissionStateUnknown:
             return @"ISHPermissionStateUnknown";
+        case ISHPermissionStateUnsupported:
+            return @"ISHPermissionStateUnsupported";
         case ISHPermissionStateNeverAsked:
             return @"ISHPermissionStateNeverAsked";
         case ISHPermissionStateAskAgain:
