@@ -11,10 +11,18 @@ things at the same time and out of context, you should continue to ask for
 permission only when the app needs it. However there might be occassions, where
 multiple permissions are required at the same time: e.g. when starting to record location and motion data.
 
+This framework also provides explicit ways to ask for the user's permission where the systems APIs only provide implicit methods of doing so. 
+
 Recommended reading: [The Right Way To Ask Users For iOS
 Permissions](http://techcrunch.com/2014/04/04/the-right-way-to-ask-users-for-
 ios-permissions/ "by Brenden Mulligan (@mulligan)")
 
+Supported permission categories:
+* CoreLocation: Always and WhenInUse
+* CoreMotion: Activity data (step counting, etc.)
+* Microphone
+* Photos: Camera Roll and Camera
+* LocalNotifications
 
 # Roadmap
 
@@ -34,7 +42,8 @@ Missing support for permissions to:
 3. Calender
 4. Social-Services
 5. Reminders
-6. ...
+6. Remote notifications
+7. ...
 
 Missing Support iOS7:
 
@@ -62,7 +71,7 @@ first and should return appropriate internal enum values from
 `ISHPermissionState`. If the system state is unavailable or is similar to
 `kCLAuthorizationStatusNotDetermined` then this method should return
 `internalPermissionState`. You should try to map system provided states to
-ISHPermissionState without resorting the internalPermissionState as much as
+`ISHPermissionState` without resorting the `internalPermissionState` as much as
 possible.
 
 
