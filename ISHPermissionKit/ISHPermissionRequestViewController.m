@@ -10,6 +10,7 @@
 #import "ISHPermissionsViewController.h"
 #import "ISHPermissionRequestViewControllerDelegate.h"
 #import "ISHPermissionRequest+All.h"
+#import "ISHPermissionRequest+Private.h"
 
 @interface ISHPermissionRequestViewController ()
 @property (weak, nonatomic) id <ISHPermissionRequestViewControllerDelegate> permissionDelegate;

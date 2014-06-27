@@ -13,6 +13,7 @@
 #import "ISHPermissionRequestPhotoLibrary.h"
 #import "ISHPermissionRequestPhotoCamera.h"
 #import "ISHPermissionRequestNotificationsLocal.h"
+#import "ISHPermissionRequest+Private.h"
 
 @implementation ISHPermissionRequest (All)
 

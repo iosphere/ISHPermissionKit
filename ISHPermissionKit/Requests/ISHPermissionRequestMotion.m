@@ -7,6 +7,8 @@
 //
 
 #import "ISHPermissionRequestMotion.h"
+#import "ISHPermissionRequest+Private.h"
+
 @import CoreMotion;
 
 @interface ISHPermissionRequestMotion ()

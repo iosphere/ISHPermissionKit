@@ -7,6 +7,8 @@
 //
 
 #import "ISHPermissionRequestPhotoCamera.h"
+#import "ISHPermissionRequest+Private.h"
+
 @import AVFoundation;
 
 @implementation ISHPermissionRequestPhotoCamera

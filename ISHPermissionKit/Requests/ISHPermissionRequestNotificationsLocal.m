@@ -7,6 +7,7 @@
 //
 
 #import "ISHPermissionRequestNotificationsLocal.h"
+#import "ISHPermissionRequest+Private.h"
 
 @interface ISHPermissionRequestNotificationsLocal ()
 @property (strong) ISHPermissionRequestCompletionBlock completionBlock;

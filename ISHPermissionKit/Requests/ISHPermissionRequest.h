@@ -23,11 +23,34 @@ typedef NS_ENUM(NSUInteger, ISHPermissionState) {
 
 typedef void (^ISHPermissionRequestCompletionBlock)(ISHPermissionRequest *request, ISHPermissionState state, NSError *error);
 
-
+/**
+ *  Permission request provide information about the current permission state of the associated category. 
+ *  It can also be used to request the user's permission via the system dialogue or to remember the user's
+ *  desire to not be asked again.
+ *
+ *  Instances should be created via the category class method:
+ *  @code
+ *  + (ISHPermissionRequest *)requestForCategory:(ISHPermissionCategory)category;
+ *  @endcode
+ */
 @interface ISHPermissionRequest : NSObject
-@property ISHPermissionCategory permissionCategory;
 
+/// The permission category associated with the request.
+@property (readonly) ISHPermissionCategory permissionCategory;
+
+/**
+ *  @return The current permission state.
+ *  @note Calling this method does not trigger any user interaction.
+ */
 - (ISHPermissionState)permissionState;
+
+/**
+ *  If possible this presents the user permissions dialogue. This might not be possible
+ *  e.g. if it is already denied, authorized or the user does not want to be asked again.
+ *
+ *  @param completion The block is called once the user has made a decision. 
+ *                    The block is called right away if no dialogue was presented.
+ */
 - (void)requestUserPermissionWithCompletionBlock:(ISHPermissionRequestCompletionBlock)completion;
 @end
 
@@ -54,12 +77,6 @@ static inline NSString *ISHStringFromPermissionState(ISHPermissionState state) {
 static inline BOOL ISHPermissionStateAllowsUserPrompt(ISHPermissionState state) {
     return (state != ISHPermissionStateDenied) && (state != ISHPermissionStateAuthorized) && (state != ISHPermissionStateDontAsk) && (state != ISHPermissionStateUnsupported);
 }
-
-@interface ISHPermissionRequest (Subclasses)
-// these interfaces are available to subclasses, there should be no need to override these.
-- (ISHPermissionState)internalPermissionState;
-- (void)setInternalPermissionState:(ISHPermissionState)state;
-@end
 
 /**
  *  When using ISHPermissionKit to register for UILocalNotifications, the app delegate must implement 

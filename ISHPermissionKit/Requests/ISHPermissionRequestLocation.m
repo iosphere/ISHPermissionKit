@@ -7,6 +7,8 @@
 //
 
 #import "ISHPermissionRequestLocation.h"
+#import "ISHPermissionRequest+Private.h"
+
 @import CoreLocation;
 
 @interface ISHPermissionRequestLocation () <CLLocationManagerDelegate>

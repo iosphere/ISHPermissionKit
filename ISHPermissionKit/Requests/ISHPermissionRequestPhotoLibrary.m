@@ -7,6 +7,8 @@
 //
 
 #import "ISHPermissionRequestPhotoLibrary.h"
+#import "ISHPermissionRequest+Private.h"
+
 @import AssetsLibrary;
 
 @interface ISHPermissionRequestPhotoLibrary ()

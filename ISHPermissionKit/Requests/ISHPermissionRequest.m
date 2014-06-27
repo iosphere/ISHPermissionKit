@@ -9,6 +9,10 @@
 #import "ISHPermissionRequest.h"
 @import CoreLocation;
 
+@interface ISHPermissionRequest ()
+@property (readwrite) ISHPermissionCategory permissionCategory;
+@end
+
 @implementation ISHPermissionRequest
 
 - (ISHPermissionState)permissionState {
