@@ -60,3 +60,11 @@ static inline BOOL ISHPermissionStateAllowsUserPrompt(ISHPermissionState state) 
 - (ISHPermissionState)internalPermissionState;
 - (void)setInternalPermissionState:(ISHPermissionState)state;
 @end
+
+/**
+ *  When using ISHPermissionKit to register for UILocalNotifications, the app delegate must implement 
+ *  -application:didRegisterUserNotificationSettings: and post a notification with name 
+ *  'ISHPermissionNotificationApplicationDidRegisterUserNotificationSettings' to inform any pending 
+ *  requests that a change occured.
+ */
+extern NSString * const ISHPermissionNotificationApplicationDidRegisterUserNotificationSettings;

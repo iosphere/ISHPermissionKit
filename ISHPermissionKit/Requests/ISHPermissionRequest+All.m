@@ -12,29 +12,39 @@
 #import "ISHPermissionRequestMicrophone.h"
 #import "ISHPermissionRequestPhotoLibrary.h"
 #import "ISHPermissionRequestPhotoCamera.h"
+#import "ISHPermissionRequestNotificationsLocal.h"
 
 @implementation ISHPermissionRequest (All)
 
 + (ISHPermissionRequest *)requestForCategory:(ISHPermissionCategory)category {
+    ISHPermissionRequest *request = nil;
     switch (category) {
         case ISHPermissionCategoryLocationAlways:
         case ISHPermissionCategoryLocationWhenInUse: {
-            ISHPermissionRequestLocation *request = [ISHPermissionRequestLocation new];
-            [request setPermissionCategory:category];
+            request = [ISHPermissionRequestLocation new];
             return request;
         }
         case ISHPermissionCategoryActivity:
-            return [ISHPermissionRequestMotion new];
+            request =  [ISHPermissionRequestMotion new];
+            break;
         case ISHPermissionCategoryMicrophone:
-            return [ISHPermissionRequestMicrophone new];
+            request =  [ISHPermissionRequestMicrophone new];
+            break;
         case ISHPermissionCategoryPhotoLibrary:
-            return [ISHPermissionRequestPhotoLibrary new];
+            request =  [ISHPermissionRequestPhotoLibrary new];
+            break;
         case ISHPermissionCategoryPhotoCamera:
-            return [ISHPermissionRequestPhotoCamera new];
+            request =  [ISHPermissionRequestPhotoCamera new];
+            break;
+        case ISHPermissionCategoryNotificationLocal:
+            request =  [ISHPermissionRequestNotificationsLocal new];
+            break;
     }
+    
+    [request setPermissionCategory:category];
 
-    NSAssert(false, @"Request not implemented for category %@", @(category));
-    return nil;
+    NSAssert(request, @"Request not implemented for category %@", @(category));
+    return request;
 }
 
 @end

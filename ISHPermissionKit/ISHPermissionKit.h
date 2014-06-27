@@ -20,3 +20,5 @@ FOUNDATION_EXPORT const unsigned char ISHPermissionKitVersionString[];
 #import <ISHPermissionKit/ISHPermissionCategory.h>
 #import <ISHPermissionKit/ISHPermissionRequest.h>
 
+
+#import <ISHPermissionKit/ISHPermissionRequestNotificationsLocal.h>

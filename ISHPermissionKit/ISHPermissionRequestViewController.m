@@ -20,28 +20,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSAssert(self.permissionDelegate, @"permissionDelegate is should not be nil");
-    self.permissionRequest = [ISHPermissionRequest requestForCategory:self.permissionCategory];
+    NSAssert(self.permissionDelegate, @"PermissionDelegate should not be nil");
+    NSAssert(self.permissionRequest, @"PermissionRequest should not be nil");
 }
 
 - (IBAction)changePermissionStateToDontAskFromSender:(id)sender {
-    [self.permissionRequest setInternalPermissionState:ISHPermissionStateDontAsk];
-    [self didComplete];
+    [self changePermissionToInternalState:ISHPermissionStateDontAsk];
 }
 
 - (IBAction)changePermissionStateToAskAgainFromSender:(id)sender {
-    [self.permissionRequest setInternalPermissionState:ISHPermissionStateAskAgain];
-    [self didComplete];
+    [self changePermissionToInternalState:ISHPermissionStateAskAgain];
+}
+
+- (void)changePermissionToInternalState:(ISHPermissionState)state {
+    [self.permissionRequest setInternalPermissionState:state];
+    [self didCompleteWithPermissionState:state];
 }
 
 - (IBAction)requestPermissionFromSender:(id)sender {
     [self.permissionRequest requestUserPermissionWithCompletionBlock:^(ISHPermissionRequest *request, ISHPermissionState state, NSError *error) {
-        [self didComplete];
+        [self didCompleteWithPermissionState:state];
     }];
 }
 
-- (void)didComplete {
-    [self.permissionDelegate permissionRequestViewController:self didCompleteWithState:self.permissionRequest.permissionState];
+- (void)didCompleteWithPermissionState:(ISHPermissionState)state {
+    [self.permissionDelegate permissionRequestViewController:self didCompleteWithState:state];
 }
 
 @end

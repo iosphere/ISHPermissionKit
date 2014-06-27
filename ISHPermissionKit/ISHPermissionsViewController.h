@@ -8,17 +8,24 @@
 
 #import <UIKit/UIKit.h>
 #import <ISHPermissionKit/ISHPermissionRequestViewController.h>
-#import <ISHPermissionKit/ISHPermissionCategory.h>
+#import <ISHPermissionKit/ISHPermissionRequest.h>
 
 @class ISHPermissionsViewController;
 
 @protocol ISHPermissionsViewControllerDatasource <NSObject>
 - (ISHPermissionRequestViewController *)permissionsViewController:(ISHPermissionsViewController *)vc requestViewControllerForCategory:(ISHPermissionCategory)category;
-/*
-FUTURE IDEAS
- @optional
-- (ISHPermissionRequestViewController *)permissionsViewController:(ISHPermissionsViewController *)vc didChangeToState:(ISHPermissionState)state forCategory:(ISHPermissionCategory)category;
-*/
+
+@optional
+/**
+ *  Called by the ISHPermissionsViewController before starting to handle the given request. 
+ *  This is the appropriate moment to configure the request further if this is needed.
+ *  Currently this is only needed/possible for ISHPermissionRequestNotificationsLocal.
+ *
+ *  @param vc      The view controller that currently handles permissions. 
+ *  @param request The request that will be handled by the vc once this method returns. 
+ *                 Direct interaction other than configuration should be avoided.
+ */
+- (void)permissionsViewController:(ISHPermissionsViewController *)vc didConfigureRequest:(ISHPermissionRequest *)request;
 @end
 
 @protocol ISHPermissionsViewControllerDelegate <NSObject>

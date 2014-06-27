@@ -29,7 +29,7 @@
 - (void)presentPermissionsIfNeeded {
     NSArray *permissions = @[ @(ISHPermissionCategoryLocationWhenInUse), @(ISHPermissionCategoryActivity) , @(ISHPermissionCategoryMicrophone),
                               @(ISHPermissionCategoryPhotoLibrary), @(ISHPermissionCategoryPhotoCamera) ];
-    ISHPermissionsViewController *perm = [ISHPermissionsViewController permissionsViewControllerWithCategories:permissions];
+    ISHPermissionsViewController *perm = [ISHPermissionsViewController permissionsViewControllerWithCategories:@[ @(ISHPermissionCategoryNotificationLocal) ]];
     if (perm) {
         [perm setDataSource:self];
         [self.window.rootViewController presentViewController:perm animated:NO completion:nil];
@@ -40,6 +40,22 @@
 
 - (ISHPermissionRequestViewController *)permissionsViewController:(ISHPermissionsViewController *)vc requestViewControllerForCategory:(ISHPermissionCategory)category {
     return [SamplePermissionViewController new];
+}
+
+-(void)permissionsViewController:(ISHPermissionsViewController *)vc didConfigureRequest:(ISHPermissionRequest *)request {
+    if (request.permissionCategory == ISHPermissionCategoryNotificationLocal) {
+        // the demo app only requests permissions for badges
+        UIUserNotificationSettings *setting = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge categories:nil];
+        ISHPermissionRequestNotificationsLocal *localNotesRequest = (ISHPermissionRequestNotificationsLocal *)([request isKindOfClass:[ISHPermissionRequestNotificationsLocal class]] ? request : nil);
+        [localNotesRequest setNoticationSettings:setting];
+    }
+}
+
+#pragma mark Important for local Notifications
+
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
+    [[NSNotificationCenter defaultCenter] postNotificationName:ISHPermissionNotificationApplicationDidRegisterUserNotificationSettings
+                                                        object:self];
 }
 
 #pragma mark Boiler plate

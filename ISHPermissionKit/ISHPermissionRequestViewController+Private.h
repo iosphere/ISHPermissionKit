@@ -7,7 +7,9 @@
 //
 
 #import "ISHPermissionRequestViewControllerDelegate.h"
+#import "ISHPermissionRequest.h"
 
 @interface ISHPermissionRequestViewController (Private)
 - (void)setPermissionDelegate:(id <ISHPermissionRequestViewControllerDelegate>)permissionDelegate;
+- (void)setPermissionRequest:(ISHPermissionRequest *)request;
 @end

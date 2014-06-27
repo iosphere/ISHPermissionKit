@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ISHPermissionCategory.h"
+#import <ISHPermissionKit/ISHPermissionCategory.h>
 
 @interface ISHPermissionRequestViewController : UIViewController
 @property ISHPermissionCategory permissionCategory;

@@ -28,6 +28,7 @@ Missing support for permissions to:
 6. ...
 
 Missing Support iOS7:
+
 1. Activity permission only works on iOS8
 2. CoreLocation permission only works on iOS8
 
