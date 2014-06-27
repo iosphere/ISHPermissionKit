@@ -19,10 +19,9 @@ Missing support for permissions to:
 1. Health-App
 2. AdressBook
 3. Calender
-4. Photos
-5. Camera
-6. Social-Services
-7. Reminders
+4. Camera
+5. Social-Services
+6. Reminders
 8. ...
 
 # How to contribute

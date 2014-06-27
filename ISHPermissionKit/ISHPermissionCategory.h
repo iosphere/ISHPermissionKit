@@ -11,6 +11,7 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
     ISHPermissionCategoryLocationAlways = 3100,
     ISHPermissionCategoryLocationWhenInUse = 3200,
     ISHPermissionCategoryMicrophone = 4000,
+    ISHPermissionCategoryPhotoLibrary = 5000,
 };
 
 static inline NSString *ISHStringFromPermissionCategory(ISHPermissionCategory category) {
@@ -23,5 +24,7 @@ static inline NSString *ISHStringFromPermissionCategory(ISHPermissionCategory ca
             return @"ISHPermissionCategoryLocationWhenInUse";
         case ISHPermissionCategoryMicrophone:
             return @"ISHPermissionCategoryMicrophone";
+        case ISHPermissionCategoryPhotoLibrary:
+            return @"ISHPermissionCategoryPhotoLibrary";
     }
 }

@@ -44,18 +44,15 @@
             return ISHPermissionStateDenied;
 
         default:
-            // handle with internal permission state
-            break;
+            return [self internalPermissionState];
     }
-
-    return [self internalPermissionState];
 }
 
 - (void)requestUserPermissionWithCompletionBlock:(ISHPermissionRequestCompletionBlock)completion {
     NSAssert(completion, @"requestUserPermissionWithCompletionBlock requires a completion block");
     ISHPermissionState currentState = self.permissionState;
 
-    if (ISHPermissionStateAllowsUserPrompt(currentState)) {
+    if (!ISHPermissionStateAllowsUserPrompt(currentState)) {
         completion(self, currentState, nil);
         return;
     }

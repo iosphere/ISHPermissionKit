@@ -25,7 +25,13 @@
 
 - (void)requestUserPermissionWithCompletionBlock:(ISHPermissionRequestCompletionBlock)completion {
     NSAssert(completion, @"requestUserPermissionWithCompletionBlock requires a completion block");
-
+    
+    ISHPermissionState currentState = self.permissionState;
+    if (!ISHPermissionStateAllowsUserPrompt(currentState)) {
+        completion(self, currentState, nil);
+        return;
+    }
+    
     [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
         dispatch_async(dispatch_get_main_queue(), ^{
             completion(self, granted, nil);
