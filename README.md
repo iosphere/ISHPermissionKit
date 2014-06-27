@@ -1,4 +1,4 @@
-# ISHPermissionKit
+# <img src="AppIcon40x40@2x.png" align="center" width="40" height="40" style="margin: 25px 25px;"> ISHPermissionKit
 
 This framework provides a unified way of asking for user permissions on iOS. It also provides UI to explain the permission requirements before presenting the user with the system permission dialog. This allows the developer to postpone the system dialog. The framework provides no actual chrome, leaving the developer and designer in charge of creating the views. 
 
@@ -42,3 +42,7 @@ What these methods will do depends on the mechanism that the system APIs provide
 
 When requesting the permission state you should only store the result in internalPermissionState if the state cannot easily be retrieved from the the system (as is the case e.g. with M7-ActivityMonitoring).
 
+
+App Icon designed by [Jason Grube (CC BY 3.0)](http://thenounproject.com/term/fingerprint/23303/) from the [Noun Project](http://thenounproject.com)
+
+ 
