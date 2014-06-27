@@ -17,12 +17,13 @@ Missing features:
 Missing support for permissions to:
 
 1. Health-App
-2. Microphone
-3. Bluetooth
-4. Activity
-5. AdressBook
-6. Calender
-7. ....
+2. AdressBook
+3. Calender
+4. Photos
+5. Camera
+6. Social-Services
+7. Reminders
+8. ...
 
 # How to contribute
 
@@ -35,4 +36,6 @@ Subclasses must implement at least two methods:
 1. `- (ISHPermissionState)permissionState` 
 2. `- (void)requestUserPermissionWithCompletionBlock:(ISHPermissionRequestCompletionBlock)completion`
 
-What these methods will do depends on the mechanism that the system APIs provide. Ideally `permissionState` should check the system authorization state first and should return appropriate internal enum values from `ISHPermissionState`. If the system state is unavailable or is similar to `kCLAuthorizationStatusNotDetermined` then this method should return `internalPermissionState`.
+What these methods will do depends on the mechanism that the system APIs provide. Ideally `permissionState` should check the system authorization state first and should return appropriate internal enum values from `ISHPermissionState`. If the system state is unavailable or is similar to `kCLAuthorizationStatusNotDetermined` then this method should return `internalPermissionState`. You should try to map system provided states to ISHPermissionState without resorting the internalPermissionState as much as possible.
+
+When requesting the permission state you should only store the result in internalPermissionState if the state cannot easily be retrieved from the the system (as is the case e.g. with M7-ActivityMonitoring).

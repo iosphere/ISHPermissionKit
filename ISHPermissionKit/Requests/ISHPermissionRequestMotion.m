@@ -40,6 +40,8 @@
         } else if (pedometerData || !error) {
             currentState = ISHPermissionStateGranted;
         }
+        
+        [self setInternalPermissionState:currentState];
 
         dispatch_async(dispatch_get_main_queue(), ^{
             completion(self, currentState, error);

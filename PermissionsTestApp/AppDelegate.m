@@ -29,7 +29,8 @@
     
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        ISHPermissionsViewController *perm = [ISHPermissionsViewController permissionsViewControllerWithCategories:@[ @(ISHPermissionCategoryLocationWhenInUse), @(ISHPermissionCategoryActivity) ]];
+        NSArray *permissions = @[ @(ISHPermissionCategoryLocationWhenInUse), @(ISHPermissionCategoryActivity) , @(ISHPermissionCategoryMicrophone) ];
+        ISHPermissionsViewController *perm = [ISHPermissionsViewController permissionsViewControllerWithCategories:permissions];
         if (perm) {
             [perm setDataSource:self];
             [rootVC presentViewController:perm animated:NO completion:nil];

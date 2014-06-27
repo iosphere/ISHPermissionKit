@@ -71,7 +71,8 @@
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     if ((status != kCLAuthorizationStatusNotDetermined) && self.completionBlock) {
-        self.completionBlock(self, self.permissionState, nil);
+        ISHPermissionState currentState = self.permissionState;
+        self.completionBlock(self, currentState, nil);
         self.completionBlock = nil;
     }
 }
