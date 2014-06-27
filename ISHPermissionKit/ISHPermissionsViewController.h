@@ -31,11 +31,13 @@
 @protocol ISHPermissionsViewControllerDelegate <NSObject>
 
 - (ISHPermissionRequestViewController *)permissionsViewControllerDidComplete:(ISHPermissionsViewController *)vc;
-
 @end
+
+typedef void (^ISHPermissionsViewControllerCompletionBlock)(void);
 
 @interface ISHPermissionsViewController : UIViewController
 + (instancetype)permissionsViewControllerWithCategories:(NSArray *)categories;
 @property (nonatomic, weak) id <ISHPermissionsViewControllerDatasource> dataSource;
 @property (nonatomic, weak) id <ISHPermissionsViewControllerDelegate> delegate;
+@property (strong) ISHPermissionsViewControllerCompletionBlock completionBlock;
 @end

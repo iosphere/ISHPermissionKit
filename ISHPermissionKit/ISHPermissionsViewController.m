@@ -128,10 +128,13 @@
 
     if (nextIndex == self.permissionCategories.count) {
         [self.delegate permissionsViewControllerDidComplete:self];
-
+        
         if (!self.delegate) {
-            [self dismissViewControllerAnimated:YES completion:nil];
+            [self dismissViewControllerAnimated:YES completion:self.completionBlock];
+        } else if (self.completionBlock) {
+            self.completionBlock();
         }
+        
     } else {
         [self transitionToPermissionCategoryAtIndex:nextIndex];
         [self setCurrentIndex:self.currentIndex + 1];
