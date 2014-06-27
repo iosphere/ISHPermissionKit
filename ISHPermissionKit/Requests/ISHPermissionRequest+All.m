@@ -11,6 +11,7 @@
 #import "ISHPermissionRequestMotion.h"
 #import "ISHPermissionRequestMicrophone.h"
 #import "ISHPermissionRequestPhotoLibrary.h"
+#import "ISHPermissionRequestPhotoCamera.h"
 
 @implementation ISHPermissionRequest (All)
 
@@ -28,6 +29,8 @@
             return [ISHPermissionRequestMicrophone new];
         case ISHPermissionCategoryPhotoLibrary:
             return [ISHPermissionRequestPhotoLibrary new];
+        case ISHPermissionCategoryPhotoCamera:
+            return [ISHPermissionRequestPhotoCamera new];
     }
 
     NSAssert(false, @"Request not implemented for category %@", @(category));

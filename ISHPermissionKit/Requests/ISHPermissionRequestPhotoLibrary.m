@@ -37,9 +37,16 @@
     ALAssetsLibrary *assetsLibrary = [ALAssetsLibrary new];
     
     [assetsLibrary enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
-        completion(self, self.permissionState, nil);
+        if (!group) {
+            // ensure that completion is only called once
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(self, self.permissionState, nil);
+            });
+        }
     } failureBlock:^(NSError *error) {
-        completion(self, self.permissionState, error);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completion(self, self.permissionState, nil);
+        });
     }];
 }
 
