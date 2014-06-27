@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <ISHPermissionKit/ISHPermissionRequest.h>
+#import "ISHPermissionRequest.h"
 
 @interface ISHPermissionRequestNotificationsLocal : ISHPermissionRequest
 @property UIUserNotificationSettings *noticationSettings;

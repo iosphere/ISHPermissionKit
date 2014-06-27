@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 iosphere GmbH. All rights reserved.
 //
 
-#import <ISHPermissionKit/ISHPermissionKit.h>
+#import "ISHPermissionRequest.h"
 
 @interface ISHPermissionRequestLocation : ISHPermissionRequest
 @end

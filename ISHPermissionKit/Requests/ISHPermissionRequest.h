@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <ISHPermissionKit/ISHPermissionCategory.h>
+#import "ISHPermissionCategory.h"
 
 typedef NS_ENUM(NSUInteger, ISHPermissionState) {
     ISHPermissionStateUnknown = 0,

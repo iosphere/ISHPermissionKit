@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <ISHPermissionKit/ISHPermissionRequestViewController.h>
-#import <ISHPermissionKit/ISHPermissionRequest.h>
+#import "ISHPermissionRequestViewController.h"
+#import "ISHPermissionRequest.h"
 
 @class ISHPermissionsViewController;
 
