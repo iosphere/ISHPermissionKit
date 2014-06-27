@@ -83,7 +83,7 @@
     [newVC setPermissionDelegate:self];
     [newVC setPermissionCategory:category];
     [newVC setPermissionRequest:[self requestAtIndex:index]];
-    
+
     [self transitionFromViewController:self.currentViewController toViewController:newVC];
 }
 
@@ -149,20 +149,20 @@
                           toViewController:toViewController
                                   duration:0.5
                                    options:UIViewAnimationOptionTransitionCrossDissolve
-                                animations:NULL
+                                animations:nil
                                 completion:^(BOOL finished) {
-                                    if (finished) {
-                                        [self completedTransitionFromViewController:fromViewController toViewController:toViewController];
-                                    }
-                                }];
+            if (finished) {
+                [self completedTransitionFromViewController:fromViewController toViewController:toViewController];
+            }
+        }];
     } else {
+        [[self view] addSubview:toViewController.view];
         [self completedTransitionFromViewController:nil toViewController:toViewController];
     }
 }
 
 - (void)beginTransitionFromViewController:(ISHPermissionRequestViewController *)fromViewController toViewController:(ISHPermissionRequestViewController *)toViewController {
     [self addChildViewController:toViewController];
-    [[self view] addSubview:toViewController.view];
     [fromViewController willMoveToParentViewController:nil];
 }
 

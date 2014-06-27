@@ -21,4 +21,8 @@
     [self.titleLabel setText:ISHStringFromPermissionCategory(self.permissionCategory)];
 }
 
+- (NSString *)description {
+    return [[super description] stringByAppendingFormat:@" - %@", ISHStringFromPermissionCategory(self.permissionCategory)];
+}
+
 @end

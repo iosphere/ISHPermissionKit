@@ -28,8 +28,8 @@
 
 - (void)presentPermissionsIfNeeded {
     NSArray *permissions = @[ @(ISHPermissionCategoryLocationWhenInUse), @(ISHPermissionCategoryActivity) , @(ISHPermissionCategoryMicrophone),
-                              @(ISHPermissionCategoryPhotoLibrary), @(ISHPermissionCategoryPhotoCamera) ];
-    ISHPermissionsViewController *perm = [ISHPermissionsViewController permissionsViewControllerWithCategories:@[ @(ISHPermissionCategoryNotificationLocal) ]];
+                              @(ISHPermissionCategoryPhotoLibrary), @(ISHPermissionCategoryPhotoCamera), @(ISHPermissionCategoryNotificationLocal) ];
+    ISHPermissionsViewController *perm = [ISHPermissionsViewController permissionsViewControllerWithCategories:permissions];
     if (perm) {
         [perm setDataSource:self];
         [self.window.rootViewController presentViewController:perm animated:NO completion:nil];
