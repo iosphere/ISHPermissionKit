@@ -15,9 +15,36 @@
 @end
 
 @implementation AppDelegate
-            
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [self setupWindow];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self presentPermissionsIfNeeded];
+    });
+    
+    return YES;
+}
+
+- (void)presentPermissionsIfNeeded {
+    NSArray *permissions = @[ @(ISHPermissionCategoryLocationWhenInUse), @(ISHPermissionCategoryActivity) , @(ISHPermissionCategoryMicrophone),
+                              @(ISHPermissionCategoryPhotoLibrary), @(ISHPermissionCategoryPhotoCamera) ];
+    ISHPermissionsViewController *perm = [ISHPermissionsViewController permissionsViewControllerWithCategories:permissions];
+    if (perm) {
+        [perm setDataSource:self];
+        [self.window.rootViewController presentViewController:perm animated:NO completion:nil];
+    }
+}
+
+#pragma mark ISHPermissionsViewControllerDatasource
+
+- (ISHPermissionRequestViewController *)permissionsViewController:(ISHPermissionsViewController *)vc requestViewControllerForCategory:(ISHPermissionCategory)category {
+    return [SamplePermissionViewController new];
+}
+
+#pragma mark Boiler plate
+
+- (void)setupWindow {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
@@ -26,25 +53,6 @@
     [rootVC.view setBackgroundColor:[UIColor greenColor]];
     [self.window setRootViewController:rootVC];
     [self.window makeKeyAndVisible];
-    
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        NSArray *permissions = @[ @(ISHPermissionCategoryLocationWhenInUse), @(ISHPermissionCategoryActivity) , @(ISHPermissionCategoryMicrophone), @(ISHPermissionCategoryPhotoLibrary), @(ISHPermissionCategoryPhotoCamera) ];
-        ISHPermissionsViewController *perm = [ISHPermissionsViewController permissionsViewControllerWithCategories:permissions];
-        if (perm) {
-            [perm setDataSource:self];
-            [rootVC presentViewController:perm animated:NO completion:nil];
-        }
-    });
-
-    
-    return YES;
-}
-
-#pragma mark ISHPermissionsViewControllerDatasource
-
-- (ISHPermissionRequestViewController *)permissionsViewController:(ISHPermissionsViewController *)vc requestViewControllerForCategory:(ISHPermissionCategory)category {
-    return [SamplePermissionViewController new];
 }
 
 @end
