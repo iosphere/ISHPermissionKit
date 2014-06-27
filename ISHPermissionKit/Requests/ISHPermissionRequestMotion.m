@@ -17,6 +17,9 @@
 @implementation ISHPermissionRequestMotion
 
 - (ISHPermissionState)permissionState {
+    if (!NSClassFromString(@"CMPedometer") || ![CMPedometer isStepCountingAvailable]) {
+        return ISHPermissionStateUnsupported;
+    }
     return [self internalPermissionState];
 }
 

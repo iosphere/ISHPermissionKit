@@ -11,6 +11,7 @@
 
 typedef NS_ENUM(NSUInteger, ISHPermissionState) {
     ISHPermissionStateUnknown = 0,
+    ISHPermissionStateUnsupported = 0,
     ISHPermissionStateNeverAsked = 100,
     ISHPermissionStateAskAgain = 101,
     ISHPermissionStateDontAsk = 110,
@@ -49,7 +50,7 @@ static inline NSString *ISHStringFromPermissionState(ISHPermissionState state) {
 }
 
 static inline BOOL ISHPermissionStateAllowsUserPrompt(ISHPermissionState state) {
-    return (state != ISHPermissionStateDenied) && (state != ISHPermissionStateAuthorized) && (state != ISHPermissionStateDontAsk);
+    return (state != ISHPermissionStateDenied) && (state != ISHPermissionStateAuthorized) && (state != ISHPermissionStateDontAsk) && (state != ISHPermissionStateUnsupported);
 }
 
 @interface ISHPermissionRequest (Subclasses)

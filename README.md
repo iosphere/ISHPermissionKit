@@ -27,6 +27,10 @@ Missing support for permissions to:
 5. Reminders
 6. ...
 
+Missing Support iOS7:
+1. Activity permission only works on iOS8
+2. CoreLocation permission only works on iOS8
+
 # How to contribute
 
 ## Adding support for new permissions

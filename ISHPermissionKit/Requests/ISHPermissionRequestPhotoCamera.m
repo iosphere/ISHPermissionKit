@@ -10,7 +10,14 @@
 @import AVFoundation;
 
 @implementation ISHPermissionRequestPhotoCamera
-- (ISHPermissionState)permissionState {    
+
+- (ISHPermissionState)permissionState {
+    AVCaptureDevice *inputDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    AVCaptureDeviceInput *captureInput = [AVCaptureDeviceInput deviceInputWithDevice:inputDevice error:nil];
+    if (!captureInput) {
+        return ISHPermissionStateUnsupported;
+    }
+    
     AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
     switch (authStatus) {
         case AVAuthorizationStatusAuthorized:
