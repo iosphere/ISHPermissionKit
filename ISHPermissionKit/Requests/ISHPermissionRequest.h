@@ -11,7 +11,7 @@
 
 typedef NS_ENUM(NSUInteger, ISHPermissionState) {
     ISHPermissionStateUnknown = 0,
-    ISHPermissionStateUnsupported = 0,
+    ISHPermissionStateUnsupported = 1,
     ISHPermissionStateNeverAsked = 100,
     ISHPermissionStateAskAgain = 101,
     ISHPermissionStateDontAsk = 110,
