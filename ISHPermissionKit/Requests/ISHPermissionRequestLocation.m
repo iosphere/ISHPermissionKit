@@ -29,14 +29,14 @@
 
     switch (systemState) {
         case kCLAuthorizationStatusAuthorizedAlways:
-            return ISHPermissionStateGranted;
+            return ISHPermissionStateAuthorized;
 
         case kCLAuthorizationStatusAuthorizedWhenInUse:
 
             if (self.permissionCategory == ISHPermissionCategoryLocationAlways) {
                 return ISHPermissionStateDenied;
             } else {
-                return ISHPermissionStateGranted;
+                return ISHPermissionStateAuthorized;
             }
 
         case kCLAuthorizationStatusDenied:

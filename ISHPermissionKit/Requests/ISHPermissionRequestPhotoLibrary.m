@@ -17,7 +17,7 @@
     ALAuthorizationStatus systemState = [ALAssetsLibrary authorizationStatus];
     switch (systemState) {
         case ALAuthorizationStatusAuthorized:
-            return ISHPermissionStateGranted;
+            return ISHPermissionStateAuthorized;
         case ALAuthorizationStatusDenied:
         case ALAuthorizationStatusRestricted:
             return ISHPermissionStateDenied;

@@ -14,7 +14,7 @@
     AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
     switch (authStatus) {
         case AVAuthorizationStatusAuthorized:
-            return ISHPermissionStateGranted;
+            return ISHPermissionStateAuthorized;
 
         case AVAuthorizationStatusDenied:
         case AVAuthorizationStatusRestricted:

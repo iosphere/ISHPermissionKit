@@ -38,7 +38,7 @@
         if (error && (error.domain == CMErrorDomain) && (error.code == CMErrorMotionActivityNotAuthorized)) {
             currentState = ISHPermissionStateDenied;
         } else if (pedometerData || !error) {
-            currentState = ISHPermissionStateGranted;
+            currentState = ISHPermissionStateAuthorized;
         }
         
         [self setInternalPermissionState:currentState];

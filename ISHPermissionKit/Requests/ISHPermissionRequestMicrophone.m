@@ -17,7 +17,7 @@
         case AVAudioSessionRecordPermissionDenied:
             return ISHPermissionStateDenied;
         case AVAudioSessionRecordPermissionGranted:
-            return ISHPermissionStateGranted;
+            return ISHPermissionStateAuthorized;
         case AVAudioSessionRecordPermissionUndetermined:
             return [self internalPermissionState];
     }
