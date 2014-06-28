@@ -49,8 +49,7 @@ Missing support for permissions to:
 Missing Support iOS7:
 
 1. Activity permission only works on iOS8
-2. CoreLocation permission only works on iOS8
-3. Currently the project can only be compiled with iOS8 as Base-SDK
+2. Currently the project can only be compiled with iOS8 as Base-SDK
 
 # How to use
 

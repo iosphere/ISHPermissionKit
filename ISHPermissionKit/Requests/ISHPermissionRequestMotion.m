@@ -12,14 +12,14 @@
 @import CoreMotion;
 
 @interface ISHPermissionRequestMotion ()
-@property (nonatomic, strong) CMPedometer *stepCounter;
+@property (nonatomic, strong) CMMotionActivityManager *activityManager;
 @property (nonatomic, strong) NSOperationQueue *motionActivityQueue;
 @end
 
 @implementation ISHPermissionRequestMotion
 
 - (ISHPermissionState)permissionState {
-    if (!NSClassFromString(@"CMPedometer") || ![CMPedometer isStepCountingAvailable]) {
+    if (![CMMotionActivityManager isActivityAvailable]) {
         return ISHPermissionStateUnsupported;
     }
     return [self internalPermissionState];
@@ -35,24 +35,24 @@
     }
 
     [self setInternalPermissionState:ISHPermissionStateDontAsk]; // avoid asking again
-    self.stepCounter = [[CMPedometer alloc] init];
+    self.activityManager = [[CMMotionActivityManager alloc] init];
     self.motionActivityQueue = [[NSOperationQueue alloc] init];
-    [self.stepCounter queryPedometerDataFromDate:[NSDate distantPast] toDate:[NSDate date] withHandler:^(CMPedometerData *pedometerData, NSError *error) {
+    [self.activityManager queryActivityStartingFromDate:[NSDate distantPast] toDate:[NSDate date] toQueue:self.motionActivityQueue withHandler:^(NSArray *activities, NSError *error) {
         ISHPermissionState currentState = ISHPermissionStateUnknown;
-
+        
         if (error && (error.domain == CMErrorDomain) && (error.code == CMErrorMotionActivityNotAuthorized)) {
             currentState = ISHPermissionStateDenied;
-        } else if (pedometerData || !error) {
+        } else if (activities || !error) {
             currentState = ISHPermissionStateAuthorized;
         }
         
         [self setInternalPermissionState:currentState];
-
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             completion(self, currentState, error);
         });
-
-        [self setStepCounter:nil];
+        
+        [self setActivityManager:nil];
         [self setMotionActivityQueue:nil];
     }];
 }
