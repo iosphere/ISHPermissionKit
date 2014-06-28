@@ -27,7 +27,8 @@ Supported permission categories:
 
 The static library and sample app compile and run under iOS8 and iOS7. 
 If compiled against iOS8 both make use of the latest available APIs 
-(e.g. microphone, location and local notification permissions).
+(e.g. microphone, location and local notification permissions) 
+and fall back gracefully when running under iOS7.
 
 # Roadmap
 
