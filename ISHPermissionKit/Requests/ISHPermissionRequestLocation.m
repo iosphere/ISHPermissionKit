@@ -60,7 +60,13 @@
     }
 
     self.completionBlock = completion;
-
+    
+    if ([self useFallback]) {
+        // iOS7 fallback
+        [self.locationManager startUpdatingLocation];
+        return;
+    }
+    
     if (self.permissionCategory == ISHPermissionCategoryLocationAlways) {
         [self.locationManager requestAlwaysAuthorization];
     } else {
@@ -68,11 +74,24 @@
     }
 }
 
+- (BOOL)useFallback {
+#ifdef __IPHONE_8_0 // only for builds with base sdk of iOS8 and higher
+    // when building for iOS8 we need to feature check if running on iOS7:
+    return !([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]);
+#else
+    return YES;
+#endif
+}
+
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     if ((status != kCLAuthorizationStatusNotDetermined) && self.completionBlock) {
         ISHPermissionState currentState = self.permissionState;
         self.completionBlock(self, currentState, nil);
         self.completionBlock = nil;
+        
+        if ([self useFallback]) {
+            [self.locationManager stopUpdatingLocation];
+        }
     }
 }
 
