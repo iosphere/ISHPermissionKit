@@ -30,6 +30,10 @@
     CLAuthorizationStatus systemState = [CLLocationManager authorizationStatus];
 
     switch (systemState) {
+#ifndef __IPHONE_8_0
+        case kCLAuthorizationStatusAuthorized:
+            return ISHPermissionStateAuthorized;
+#else
         case kCLAuthorizationStatusAuthorizedAlways:
             return ISHPermissionStateAuthorized;
 
@@ -40,7 +44,7 @@
             } else {
                 return ISHPermissionStateAuthorized;
             }
-
+#endif
         case kCLAuthorizationStatusDenied:
         case kCLAuthorizationStatusRestricted:
             return ISHPermissionStateDenied;
@@ -66,12 +70,13 @@
         [self.locationManager startUpdatingLocation];
         return;
     }
-    
+#ifdef __IPHONE_8_0
     if (self.permissionCategory == ISHPermissionCategoryLocationAlways) {
         [self.locationManager requestAlwaysAuthorization];
     } else {
         [self.locationManager requestWhenInUseAuthorization];
     }
+#endif
 }
 
 - (BOOL)useFallback {

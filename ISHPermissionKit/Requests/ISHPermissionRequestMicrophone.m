@@ -14,7 +14,14 @@
 @implementation ISHPermissionRequestMicrophone
 
 - (ISHPermissionState)permissionState {
-    AVAudioSessionRecordPermission systemState = [[AVAudioSession sharedInstance] recordPermission];
+#ifdef __IPHONE_8_0 // only for builds with base sdk of iOS8 and higher
+    AVAudioSession * audioSession = [AVAudioSession sharedInstance];
+    if (![audioSession respondsToSelector:@selector(recordPermission)]) {
+        // iOS7 fallback
+        return [self internalPermissionState];
+    }
+    
+    AVAudioSessionRecordPermission systemState = [audioSession recordPermission];
     switch (systemState) {
         case AVAudioSessionRecordPermissionDenied:
             return ISHPermissionStateDenied;
@@ -23,6 +30,9 @@
         case AVAudioSessionRecordPermissionUndetermined:
             return [self internalPermissionState];
     }
+#else
+    return [self internalPermissionState];
+#endif
 }
 
 - (void)requestUserPermissionWithCompletionBlock:(ISHPermissionRequestCompletionBlock)completion {
@@ -36,6 +46,7 @@
     
     [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            [self setInternalPermissionState:granted ? ISHPermissionStateAuthorized : ISHPermissionStateDenied];
             completion(self, granted, nil);
         });
     }];

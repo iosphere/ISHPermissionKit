@@ -25,16 +25,19 @@ Supported permission categories:
 * Photos: Camera Roll and Camera
 * LocalNotifications
 
+The static library and sample app compile and run under iOS8 and iOS7. 
+If compiled against iOS8 both make use of the latest available APIs 
+(e.g. microphone, location and local notification permissions).
+
 # Roadmap
 
 Missing features:
 
-1. Add Support for iOS7 
-2. Documentation
-3. Resetting state correctly when device is reset
-4. CocoaPod
-5. Improve transitions between sub view controllers
-6. Get iOS8-Style framework target to work. 
+1. Documentation
+2. Resetting state correctly when device is reset
+3. CocoaPod
+4. Improve transitions between sub view controllers
+5. Get iOS8-Style framework target to work. 
 
 Missing support for permissions to:
 
@@ -45,11 +48,6 @@ Missing support for permissions to:
 5. Reminders
 6. Remote notifications
 7. ...
-
-Missing Support iOS7:
-
-1. Activity permission only works on iOS8
-2. Currently the project can only be compiled with iOS8 as Base-SDK
 
 # How to use
 

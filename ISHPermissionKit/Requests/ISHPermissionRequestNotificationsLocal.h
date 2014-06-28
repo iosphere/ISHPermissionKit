@@ -10,5 +10,7 @@
 #import "ISHPermissionRequest.h"
 
 @interface ISHPermissionRequestNotificationsLocal : ISHPermissionRequest
+#ifdef __IPHONE_8_0
 @property UIUserNotificationSettings *noticationSettings;
+#endif
 @end
