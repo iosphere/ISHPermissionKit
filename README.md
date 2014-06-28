@@ -1,4 +1,4 @@
-# <img src="AppIcon40x40@2x.png" align="center" width="40" height="40" style="margin: 25px 25px;"> ISHPermissionKit
+# <img src="AppIcon40x40@2x.png" align="center" width="40" height="40" > ISHPermissionKit
 
 This framework provides a unified way of asking for user permissions on iOS. It
 also provides UI to explain the permission requirements before presenting the
@@ -11,7 +11,8 @@ things at the same time and out of context, you should continue to ask for
 permission only when the app needs it. However there might be occassions, where
 multiple permissions are required at the same time: e.g. when starting to record location and motion data.
 
-This framework also provides explicit ways to ask for the user's permission where the systems APIs only provide implicit methods of doing so. 
+This framework also provides explicit ways to ask for the user's permission
+where the systems APIs only provide implicit methods of doing so.
 
 Recommended reading: [The Right Way To Ask Users For iOS
 Permissions](http://techcrunch.com/2014/04/04/the-right-way-to-ask-users-for-
@@ -33,7 +34,7 @@ Missing features:
 3. Resetting state correctly when device is reset
 4. CocoaPod
 5. Improve transitions between sub view controllers
-
+6. Get iOS8-Style framework target to work. 
 
 Missing support for permissions to:
 
@@ -49,8 +50,74 @@ Missing Support iOS7:
 
 1. Activity permission only works on iOS8
 2. CoreLocation permission only works on iOS8
+3. Currently the project can only be compiled with iOS8 as Base-SDK
+
+# How to use
+
+Add the XCode-Project as a sub project. Then link your app-target against the
+static library (not the framework, as this is currently not working on devices
+and requires iOS8). You will also need to add the static library as a target
+dependency.
+
+## ISHPermissionsViewController
+
+You can request permission for a single category or a sequence of categories.
+The following example presents a `ISHPermissionsViewController` for `Activity`
+and `LocationWhenInUse` permissions if needed.
+
+    NSArray *permissions = @[ 
+        @(ISHPermissionCategoryLocationWhenInUse), 
+        @(ISHPermissionCategoryActivity) 
+        ];
+    ISHPermissionsViewController *vc = [ISHPermissionsViewController permissionsViewControllerWithCategories:permissions];
+    [vc setDataSource:self];
+    
+    if (vc) {
+        UIViewController *presentingVC = [self.window rootViewController];
+        [presentingVC presentViewController:vc
+                                   animated:YES
+                                 completion:nil];
+    } 
+
+The designated constructor returns nil if non of the categories allow a user
+prompt (either because the user already granted or denied the permission, does
+not want to be asked again, or the feature is simply not supported on the
+device).
+
+You can set a `completionBlock` or `delegate` (both optional) that will be
+notified once the `ISHPermissionsViewController` has iterated through all
+categories. If you do not set a delegate the view controller will simply be
+dismissed once finished and if set the completion block will be called. If you
+do set a delegate, the delegate is responsible for dismissing the view
+controller.
+
+The `dataSource` is required and must provide one instance of a
+`ISHPermissionRequestViewController` for each requested 
+`ISHPermissionCategory`.
+
+The `ISHPermissionRequestViewController` provides `IBAction` to _prompt for the
+user's permission_, _ask later_, and _don't ask_. It does not however provide
+any buttons or UI. Your subclass can create a view with text, images and buttons
+etc. explaining in greater detail why your app needs a certain permission. The
+subclass should contain buttons that trigger at least one of the actions above
+mentioned above (see the header for their signatures). A _cancel button_ should
+call `changePermissionStateToAskAgainFromSender`. If you subclass these three
+actions you must call super.
+
+## ISHPermissionRequest
+
+The `ISHPermissionRequest` can be used to determine the current state of a
+permission category. It can also be used to trigger the user prompt asking for
+permission outside of the `ISHPermissionsViewController`.
+
+You must use the addition (+all) method `+requestForCategory:` to create the
+appropriate request for the given permission category.
 
 # How to contribute
+
+Contributions are welcome. Check out the roadmap and open issues. Adding support
+for more permission types is probably the most "rewarding", you can find a few
+hints below on how to get started.
 
 ## Adding support for new permissions
 
@@ -62,10 +129,10 @@ persisted). Don't change existing values. Finally wire it up in
 
 Subclasses must implement at least two methods:
 
-1. `- (ISHPermissionState)permissionState` 
+1. `- (ISHPermissionState)permissionState`
 2. `- (void)requestUserPermissionWithCompletionBlock:(ISHPermissionRequestCompletionBlock)completion`
 
-What these methods will do depends on the mechanism that the system APIs
+What these methods will do, depends on the mechanisms that the system APIs
 provide. Ideally `permissionState` should check the system authorization state
 first and should return appropriate internal enum values from
 `ISHPermissionState`. If the system state is unavailable or is similar to
@@ -81,9 +148,7 @@ system (as is the case e.g. with M7-ActivityMonitoring).
 
 
 
-App Icon designed by [Jason Grube (CC BY
-3.0)](http://thenounproject.com/term/fingerprint/23303/) from the [Noun
-Project](http://thenounproject.com)
+App Icon designed by 
+[Jason Grube (CC BY 3.0)](http://thenounproject.com/term/fingerprint/23303/) from the 
+[Noun Project](http://thenounproject.com)
 
-
- 
