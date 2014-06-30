@@ -92,7 +92,7 @@ typedef void (^ISHPermissionRequestCompletionBlock)(ISHPermissionRequest *reques
  *  If the system state is unavailable or is similar to e.g. kCLAuthorizationStatusNotDetermined 
  *  then this method should return internalPermissionState. 
  *  Subclasses should try to map system provided states to ISHPermissionState without 
- *  resorting the internalPermissionState as much as possible.
+ *  resorting to the internalPermissionState as much as possible.
  *
  *  @return The current permission state.
  *  @note Calling this method does not trigger any user interaction.
@@ -138,8 +138,8 @@ static inline NSString *ISHStringFromPermissionState(ISHPermissionState state) {
 /**
  *  @param state A permission state value.
  *
- *  @return A boolean value determining if the user should be prompted again
- *          regaring the given permission state.
+ *  @return A boolean value determining whether the user should be prompted again
+ *          regarding the given permission state.
  */
 static inline BOOL ISHPermissionStateAllowsUserPrompt(ISHPermissionState state) {
     return (state != ISHPermissionStateDenied) && (state != ISHPermissionStateAuthorized) && (state != ISHPermissionStateDontAsk) && (state != ISHPermissionStateUnsupported);

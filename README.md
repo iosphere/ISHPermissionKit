@@ -180,7 +180,7 @@ first and should return appropriate internal enum values from
 `ISHPermissionState`. If the system state is unavailable or is similar to
 `kCLAuthorizationStatusNotDetermined` then this method should return
 `internalPermissionState`. You should try to map system provided states to
-`ISHPermissionState` without resorting the `internalPermissionState` as much as
+`ISHPermissionState` without resorting to the `internalPermissionState` as much as
 possible.
 
 
