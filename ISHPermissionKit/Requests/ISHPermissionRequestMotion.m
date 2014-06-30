@@ -34,7 +34,7 @@
         return;
     }
 
-    [self setInternalPermissionState:ISHPermissionStateDontAsk]; // avoid asking again
+    [self setInternalPermissionState:ISHPermissionStateDoNotAskAgain]; // avoid asking again
     self.activityManager = [[CMMotionActivityManager alloc] init];
     self.motionActivityQueue = [[NSOperationQueue alloc] init];
     [self.activityManager queryActivityStartingFromDate:[NSDate distantPast] toDate:[NSDate date] toQueue:self.motionActivityQueue withHandler:^(NSArray *activities, NSError *error) {

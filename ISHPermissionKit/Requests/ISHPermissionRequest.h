@@ -43,7 +43,7 @@ typedef NS_ENUM(NSUInteger, ISHPermissionState) {
      *
      *  @note Does not allow user prompt.
      */
-    ISHPermissionStateDontAsk = 406,
+    ISHPermissionStateDoNotAskAgain = 406,
 
     /**
      *  The user denied the permission through system UI. 
@@ -125,8 +125,8 @@ static inline NSString *ISHStringFromPermissionState(ISHPermissionState state) {
             return @"ISHPermissionStateUnsupported";
         case ISHPermissionStateAskAgain:
             return @"ISHPermissionStateAskAgain";
-        case ISHPermissionStateDontAsk:
-            return @"ISHPermissionStateDontAsk";
+        case ISHPermissionStateDoNotAskAgain:
+            return @"ISHPermissionStateDoNotAskAgain";
         case ISHPermissionStateDenied:
             return @"ISHPermissionStateDenied";
         case ISHPermissionStateAuthorized:
@@ -142,7 +142,7 @@ static inline NSString *ISHStringFromPermissionState(ISHPermissionState state) {
  *          regarding the given permission state.
  */
 static inline BOOL ISHPermissionStateAllowsUserPrompt(ISHPermissionState state) {
-    return (state != ISHPermissionStateDenied) && (state != ISHPermissionStateAuthorized) && (state != ISHPermissionStateDontAsk) && (state != ISHPermissionStateUnsupported);
+    return (state != ISHPermissionStateDenied) && (state != ISHPermissionStateAuthorized) && (state != ISHPermissionStateDoNotAskAgain) && (state != ISHPermissionStateUnsupported);
 }
 
 /**
