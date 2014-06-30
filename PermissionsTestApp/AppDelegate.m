@@ -38,7 +38,7 @@
     ISHPermissionsViewController *permissionsVC = [ISHPermissionsViewController permissionsViewControllerWithCategories:permissions];
     if (permissionsVC) {
         [permissionsVC setDataSource:self];
-        [self.window.rootViewController presentViewController:permissionsVC animated:NO completion:nil];
+        [self.window.rootViewController presentViewController:permissionsVC animated:YES completion:nil];
     }
 }
 
@@ -75,7 +75,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     UIViewController *rootVC = [UIViewController new];
-    [rootVC.view setBackgroundColor:[UIColor greenColor]];
+    [rootVC.view setBackgroundColor:[UIColor colorWithRed:0.400 green:0.800 blue:1.000 alpha:1.000]];
     [self.window setRootViewController:rootVC];
     [self.window makeKeyAndVisible];
 }

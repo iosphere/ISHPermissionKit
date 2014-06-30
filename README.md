@@ -30,6 +30,7 @@ If compiled against iOS8 both make use of the latest available APIs
 (e.g. microphone, location and local notification permissions) 
 and fall back gracefully when running under iOS7.
 
+<img src="demo.gif" align="center" width="320" height="568" alt="Sample App Demo"> 
 # Roadmap
 
 Missing features:
@@ -37,8 +38,7 @@ Missing features:
 1. Documentation
 2. Resetting state correctly when device is reset
 3. CocoaPod
-4. Improve transitions between sub view controllers
-5. Get iOS8-Style framework target to work. 
+4. Test iPad presentation
 
 Missing support for permissions to:
 
@@ -135,6 +135,16 @@ permission outside of the `ISHPermissionsViewController`.
 
 You must use the addition (+all) method `+requestForCategory:` to create the
 appropriate request for the given permission category.
+
+Here is how you check for user permissions to the microphone:
+
+    ISHPermissionRequest *r = [ISHPermissionRequest requestForCategory:ISHPermissionCategoryMicrophone];
+    BOOL granted = ([r permissionState] == ISHPermissionStateAuthorized);
+
+The same example for local notifications (`granted` will always be true on iOS7): 
+
+    ISHPermissionRequest *r = [ISHPermissionRequest requestForCategory:ISHPermissionCategoryNotificationLocal];
+    BOOL granted = ([r permissionState] == ISHPermissionStateAuthorized);
 
 # How to contribute
 
