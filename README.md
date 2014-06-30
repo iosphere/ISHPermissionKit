@@ -36,8 +36,8 @@ and fall back gracefully when running under iOS7.
 
 In contrast to other libraries (such as
 [JLPermissions](https://github.com/jlaws/JLPermissions) and
-[ClusterPrePermissions](https://github.com/clusterinc/ClusterPrePermissions))
-available it allows you to present custom view controllers, ask for several
+[ClusterPrePermissions](https://github.com/clusterinc/ClusterPrePermissions)) 
+it allows you to present custom view controllers, ask for several
 permissions in a sequence and  provides a unified API through subclasses.
 
 # Roadmap
