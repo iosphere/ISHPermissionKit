@@ -34,6 +34,12 @@ and fall back gracefully when running under iOS7.
 
 <img src="demo.gif" align="center" width="320" height="568" alt="Sample App Demo"> 
 
+In contrast to other libraries (such as
+[JLPermissions](https://github.com/jlaws/JLPermissions) and
+[ClusterPrePermissions](https://github.com/clusterinc/ClusterPrePermissions))
+available it allows you to present custom view controllers, ask for several
+permissions in a sequence and  provides a unified API through subclasses.
+
 # Roadmap
 
 Missing features:
