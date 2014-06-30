@@ -22,7 +22,7 @@ typedef NS_ENUM(NSUInteger, ISHPermissionState) {
     
     /**
      *  The permission is not supported on the current device or SDK. 
-     *  This may be the case for CoreMotion related APIs on device 
+     *  This may be the case for CoreMotion related APIs on devices
      *  such as the iPhone 4S or for Camera permission on the Simulator.
      *
      * @note Does not allow user prompt.
@@ -66,9 +66,9 @@ typedef NS_ENUM(NSUInteger, ISHPermissionState) {
 typedef void (^ISHPermissionRequestCompletionBlock)(ISHPermissionRequest *request, ISHPermissionState state, NSError *error);
 
 /**
- *  Permission request provide information about the current permission state of the associated category. 
+ *  Permission requests provide information about the current permission state of the associated category.
  *  It can also be used to request the user's permission via the system dialogue or to remember the user's
- *  desire to not be asked again.
+ *  desire not to be asked again.
  *
  *  The actual interaction is handled by subclasses. With the exception of those subclasses that 
  *  require more configuration, subclasses are "hidden" and should be transparent to the developer 
@@ -82,15 +82,15 @@ typedef void (^ISHPermissionRequestCompletionBlock)(ISHPermissionRequest *reques
 @interface ISHPermissionRequest : NSObject
 
 /// The permission category associated with the request.
-@property (readonly) ISHPermissionCategory permissionCategory;
+@property (nonatomic, readonly) ISHPermissionCategory permissionCategory;
 
 /**
  *  Subclasses must implement this method to reflect the correct state.
  *
- *  Ideally permissionState should check the system authorization state first 
+ *  Ideally, permissionState should check the system authorization state first
  *  and should return appropriate internal enum values from ISHPermissionState. 
  *  If the system state is unavailable or is similar to e.g. kCLAuthorizationStatusNotDetermined 
- *  then this method should return internalPermissionState. 
+ *  then this method should return the persisted internalPermissionState.
  *  Subclasses should try to map system provided states to ISHPermissionState without 
  *  resorting to the internalPermissionState as much as possible.
  *
@@ -100,8 +100,8 @@ typedef void (^ISHPermissionRequestCompletionBlock)(ISHPermissionRequest *reques
 - (ISHPermissionState)permissionState;
 
 /**
- *  If possible this presents the user permissions dialogue. This might not be possible
- *  e.g. if it is already denied, authorized or the user does not want to be asked again.
+ *  If possible, this presents the user permissions dialogue. This might not be possible
+ *  if, e.g., it has already been denied, authorized, or the user does not want to be asked again.
  *
  *  @param completion The block is called once the user has made a decision. 
  *                    The block is called right away if no dialogue was presented.
