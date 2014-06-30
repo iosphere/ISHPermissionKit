@@ -103,20 +103,21 @@ You can request permission for a single category or a sequence of categories.
 The following example presents a `ISHPermissionsViewController` for `Activity`
 and `LocationWhenInUse` permissions if needed.
 
-    NSArray *permissions = @[ 
-        @(ISHPermissionCategoryLocationWhenInUse), 
-        @(ISHPermissionCategoryActivity) 
-        ];
-    ISHPermissionsViewController *vc = [ISHPermissionsViewController permissionsViewControllerWithCategories:permissions];
-    [vc setDataSource:self];
-    
-    if (vc) {
-        UIViewController *presentingVC = [self.window rootViewController];
-        [presentingVC presentViewController:vc
-                                   animated:YES
-                                 completion:nil];
-    } 
+```objective-c
+NSArray *permissions = @[ 
+    @(ISHPermissionCategoryLocationWhenInUse), 
+    @(ISHPermissionCategoryActivity) 
+    ];
+ISHPermissionsViewController *vc = [ISHPermissionsViewController permissionsViewControllerWithCategories:permissions];
+[vc setDataSource:self];
 
+if (vc) {
+    UIViewController *presentingVC = [self.window rootViewController];
+    [presentingVC presentViewController:vc
+                               animated:YES
+                             completion:nil];
+} 
+```
 The designated constructor returns nil if non of the categories allow a user
 prompt (either because the user already granted or denied the permission, does
 not want to be asked again, or the feature is simply not supported on the
@@ -153,13 +154,17 @@ appropriate request for the given permission category.
 
 Here is how you check for user permissions to the microphone:
 
-    ISHPermissionRequest *r = [ISHPermissionRequest requestForCategory:ISHPermissionCategoryMicrophone];
-    BOOL granted = ([r permissionState] == ISHPermissionStateAuthorized);
+```objective-c
+ISHPermissionRequest *r = [ISHPermissionRequest requestForCategory:ISHPermissionCategoryMicrophone];
+BOOL granted = ([r permissionState] == ISHPermissionStateAuthorized);
+```
 
 The same example for local notifications (`granted` will always be true on iOS7): 
 
-    ISHPermissionRequest *r = [ISHPermissionRequest requestForCategory:ISHPermissionCategoryNotificationLocal];
-    BOOL granted = ([r permissionState] == ISHPermissionStateAuthorized);
+```objective-c
+ISHPermissionRequest *r = [ISHPermissionRequest requestForCategory:ISHPermissionCategoryNotificationLocal];
+BOOL granted = ([r permissionState] == ISHPermissionStateAuthorized);
+```
 
 # How to contribute
 
