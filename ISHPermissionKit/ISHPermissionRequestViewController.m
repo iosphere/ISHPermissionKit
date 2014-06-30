@@ -7,7 +7,6 @@
 //
 
 #import "ISHPermissionRequestViewController.h"
-#import "ISHPermissionsViewController.h"
 #import "ISHPermissionRequestViewControllerDelegate.h"
 #import "ISHPermissionRequest+All.h"
 #import "ISHPermissionRequest+Private.h"

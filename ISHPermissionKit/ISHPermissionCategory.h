@@ -8,8 +8,8 @@
 
 
 /**
- *  Permission categories describe type of permissions on iOS. 
- *  Each is related to specific PermissionRequest.
+ *  Permission categories describe types of permissions on iOS.
+ *  Each is related to a specific PermissionRequest.
  *  @note Values assigned to each category must not be changed, as 
  *        they may have been persisted on user devices.
  */
@@ -25,7 +25,7 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      */
     ISHPermissionCategoryLocationAlways = 3100,
     /**
-     *  Permission required to user the user's location only when your app
+     *  Permission required to use the user's location only when your app
      *  is visible to them.
      */
     ISHPermissionCategoryLocationWhenInUse = 3200,
@@ -51,7 +51,7 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
 /**
  *  @param category A value from the ISHPermissionCategory enum.
  *
- *  @return A string represenation of an ISHPermissionCategory enum value. (Used mainly for debugging).
+ *  @return A string representation of an ISHPermissionCategory enum value. (Used mainly for debugging).
  */
 static inline NSString *ISHStringFromPermissionCategory(ISHPermissionCategory category) {
     switch (category) {
