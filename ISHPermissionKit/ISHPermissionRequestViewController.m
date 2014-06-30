@@ -25,7 +25,7 @@
 }
 
 - (IBAction)changePermissionStateToDontAskFromSender:(id)sender {
-    [self changePermissionToInternalState:ISHPermissionStateDontAsk];
+    [self changePermissionToInternalState:ISHPermissionStateDoNotAskAgain];
 }
 
 - (IBAction)changePermissionStateToAskAgainFromSender:(id)sender {

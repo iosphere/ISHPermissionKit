@@ -57,7 +57,7 @@
     }
     
     // avoid asking again (system state does not correctly reflect if we asked already).
-    [self setInternalPermissionState:ISHPermissionStateDontAsk];
+    [self setInternalPermissionState:ISHPermissionStateDoNotAskAgain];
     
     self.completionBlock = completion;
     [[NSNotificationCenter defaultCenter] addObserver:self
