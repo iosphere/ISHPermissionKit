@@ -9,10 +9,72 @@
 #import <UIKit/UIKit.h>
 #import "ISHPermissionCategory.h"
 
+/**
+ *  A UIViewController subclass that allows you to easily ask the for her
+ *  permission regarding a permission cateogry. You should not instantiate 
+ *  ISHPermissionRequestViewController objects directly.
+ *  Instead, you instantiate subclasses of the ISHPermissionRequestViewController class.
+ *
+ *  Instances of this class are expected to be used in concert with ISHPermissionsViewController
+ *  and to be returned from the ISHPermissionsViewControllerDatasource method:
+ *
+ *  @code
+ *  - (ISHPermissionRequestViewController *)permissionsViewController:(ISHPermissionsViewController *)vc requestViewControllerForCategory:(ISHPermissionCategory)category {
+ *       return [YourPermissionRequestViewController new];
+ *  }
+ *  @endcode
+ *
+ *  Usually no further configuration is required on your part.
+ *
+ *  Your subclass can create a view with text, images and buttons etc. explaining in greater
+ *  detail why your app needs a certain permission. The subclass should contain buttons that trigger
+ *  at least one of the actions above mentioned above (see the header for their signatures). 
+ *  A cancel button should call changePermissionStateToAskAgainFromSender. 
+ *  If you subclass these three actions you must call super.
+ */
 @interface ISHPermissionRequestViewController : UIViewController
+
+/**
+ *  The permission category associated with this view controller. This is usually set by 
+ *  the ISHPermissionsViewController.
+ */
 @property ISHPermissionCategory permissionCategory;
 
+/**
+ *  User action to flag the permission category as "Don't ask again". This will lead 
+ *  to the permission not being prompted again.
+ *
+ *  This will not present the system dialogue asking for the user permission.
+ *  This will dismiss the view controller immediately.
+ *
+ *  @note If you subclass this method, you must call super at some point.
+ *
+ *  @param sender The sender (e.g. button) that triggered the call.
+ */
 - (IBAction)changePermissionStateToDontAskFromSender:(id)sender NS_REQUIRES_SUPER;
+
+/**
+ *  User action to skip the current permission dialogue. The permission category
+ *  will again be presented to the user, when next asking for it.
+ *
+ *  This will not present the system dialogue asking for the user permission.
+ *  This will dismiss the view controller immediately.
+ *
+ *  @note If you subclass this method, you must call super at some point.
+ *
+ *  @param sender The sender (e.g. button) that triggered the call.
+ */
 - (IBAction)changePermissionStateToAskAgainFromSender:(id)sender NS_REQUIRES_SUPER;
+
+
+/**
+ *  User action to present the system dialogue for the current permission category. 
+ *
+ *  This will dismiss the view controller once the user has taken a decision.
+ *
+ *  @note If you subclass this method, you must call super at some point.
+ *
+ *  @param sender The sender (e.g. button) that triggered the call.
+ */
 - (IBAction)requestPermissionFromSender:(id)sender NS_REQUIRES_SUPER;
 @end
