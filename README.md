@@ -30,6 +30,7 @@ If compiled against iOS8 both make use of the latest available APIs
 (e.g. microphone, location and local notification permissions) 
 and fall back gracefully when running under iOS7.
 
+<img src="demo.gif" align="center" width="320" height="576" alt="Sample App Demo"> 
 # Roadmap
 
 Missing features:
@@ -37,8 +38,8 @@ Missing features:
 1. Documentation
 2. Resetting state correctly when device is reset
 3. CocoaPod
-4. Improve transitions between sub view controllers
-5. Get iOS8-Style framework target to work. 
+4. Get iOS8-Style framework target to work. 
+5. Test iPad presentation
 
 Missing support for permissions to:
 
