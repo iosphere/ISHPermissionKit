@@ -52,7 +52,7 @@
 }
 
 - (void)loadView {
-    if ((self.modalPresentationStyle != UIModalPresentationCurrentContext) && (self.modalPresentationStyle != UIModalPresentationFormSheet)) {
+    if (NSClassFromString(@"UIVisualEffectView") && (self.modalPresentationStyle != UIModalPresentationFormSheet) ) {
         self.view = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
         [self.view setBounds:[[UIScreen mainScreen] bounds]];
     } else {
