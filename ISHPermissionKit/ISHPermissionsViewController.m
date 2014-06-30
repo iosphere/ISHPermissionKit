@@ -135,7 +135,6 @@
         
         switch (state) {
             case ISHPermissionStateUnknown :
-            case ISHPermissionStateNeverAsked:
             case ISHPermissionStateAskAgain:
                 [requestable addObject:categoryObj];
                 break;

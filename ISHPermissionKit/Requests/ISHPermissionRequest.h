@@ -9,13 +9,55 @@
 #import <Foundation/Foundation.h>
 #import "ISHPermissionCategory.h"
 
+/**
+ *  Enumeration for possible permission states.
+ *  These are used inlieu of the permission state values 
+ *  provided by the system.
+ */
 typedef NS_ENUM(NSUInteger, ISHPermissionState) {
+    /**
+     *  THe state of the permission could not be determined.
+     */
     ISHPermissionStateUnknown = 0,
-    ISHPermissionStateUnsupported = 1,
-    ISHPermissionStateNeverAsked = 100,
-    ISHPermissionStateAskAgain = 101,
-    ISHPermissionStateDontAsk = 110,
+    
+    /**
+     *  The permission is not supported on the current device or SDK. 
+     *  This may be the case for CoreMotion related APIs on device 
+     *  such as the iPhone 4S or for Camera permission on the Simulator.
+     *
+     * @note Does not allow user prompt.
+     */
+    ISHPermissionStateUnsupported = 501,
+    
+    /**
+     *  The user has been asked for permission before through internal UI
+     *  (without presenting the system dialogue) and wanted
+     *  to be asked again. No final decision has been made.
+     */
+    ISHPermissionStateAskAgain = 100,
+    
+    /**
+     *  The user has been asked for permission before through internal UI
+     *  (without presenting the system dialogue) and does not want
+     *  to be asked again. No final decision has been made.
+     *
+     *  @note Does not allow user prompt.
+     */
+    ISHPermissionStateDontAsk = 406,
+
+    /**
+     *  The user denied the permission through system UI. 
+     *  To recover the user must go to the system settings.
+     *
+     *  @note Does not allow user prompt.
+     */
     ISHPermissionStateDenied = 403,
+    
+    /**
+     *  The user granted the permission through system UI.
+     *
+     *  @note Does not allow user prompt.
+     */
     ISHPermissionStateAuthorized = 200,
 };
 
@@ -28,6 +70,10 @@ typedef void (^ISHPermissionRequestCompletionBlock)(ISHPermissionRequest *reques
  *  It can also be used to request the user's permission via the system dialogue or to remember the user's
  *  desire to not be asked again.
  *
+ *  The actual interaction is handled by subclasses. With the exception of those subclasses that 
+ *  require more configuration, subclasses are "hidden" and should be transparent to the developer 
+ *  using this framework.
+ *
  *  Instances should be created via the category class method:
  *  @code
  *  + (ISHPermissionRequest *)requestForCategory:(ISHPermissionCategory)category;
@@ -39,6 +85,15 @@ typedef void (^ISHPermissionRequestCompletionBlock)(ISHPermissionRequest *reques
 @property (readonly) ISHPermissionCategory permissionCategory;
 
 /**
+ *  Subclasses must implement this method to reflect the correct state.
+ *
+ *  Ideally permissionState should check the system authorization state first 
+ *  and should return appropriate internal enum values from ISHPermissionState. 
+ *  If the system state is unavailable or is similar to e.g. kCLAuthorizationStatusNotDetermined 
+ *  then this method should return internalPermissionState. 
+ *  Subclasses should try to map system provided states to ISHPermissionState without 
+ *  resorting the internalPermissionState as much as possible.
+ *
  *  @return The current permission state.
  *  @note Calling this method does not trigger any user interaction.
  */
@@ -54,14 +109,20 @@ typedef void (^ISHPermissionRequestCompletionBlock)(ISHPermissionRequest *reques
 - (void)requestUserPermissionWithCompletionBlock:(ISHPermissionRequestCompletionBlock)completion;
 @end
 
+
+/**
+ *  Used for debugging purposes.
+ *
+ *  @param state A permission state value.
+ *
+ *  @return A string representation of a permission state enum value.
+ */
 static inline NSString *ISHStringFromPermissionState(ISHPermissionState state) {
     switch (state) {
         case ISHPermissionStateUnknown:
             return @"ISHPermissionStateUnknown";
         case ISHPermissionStateUnsupported:
             return @"ISHPermissionStateUnsupported";
-        case ISHPermissionStateNeverAsked:
-            return @"ISHPermissionStateNeverAsked";
         case ISHPermissionStateAskAgain:
             return @"ISHPermissionStateAskAgain";
         case ISHPermissionStateDontAsk:
@@ -74,6 +135,12 @@ static inline NSString *ISHStringFromPermissionState(ISHPermissionState state) {
     }
 }
 
+/**
+ *  @param state A permission state value.
+ *
+ *  @return A boolean value determining if the user should be prompted again
+ *          regaring the given permission state.
+ */
 static inline BOOL ISHPermissionStateAllowsUserPrompt(ISHPermissionState state) {
     return (state != ISHPermissionStateDenied) && (state != ISHPermissionStateAuthorized) && (state != ISHPermissionStateDontAsk) && (state != ISHPermissionStateUnsupported);
 }
