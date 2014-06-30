@@ -52,10 +52,17 @@
 }
 
 - (void)loadView {
-    if (NSClassFromString(@"UIVisualEffectView") && (self.modalPresentationStyle != UIModalPresentationFormSheet) ) {
-        self.view = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
-        [self.view setBounds:[[UIScreen mainScreen] bounds]];
-    } else {
+    UIView *view = nil;
+    
+#ifdef __IPHONE_8_0
+    if (NSClassFromString(@"UIVisualEffectView") && (self.modalPresentationStyle != UIModalPresentationFormSheet)) {
+        view = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
+        [view setBounds:[[UIScreen mainScreen] bounds]];
+        self.view = view;
+    }
+#endif
+    
+    if (!view) {
         [super loadView];
         [self.view setBackgroundColor:[UIColor blackColor]];
     }
@@ -184,6 +191,7 @@
                                 }];
     } else {
         [[self view] addSubview:toViewController.view];
+        [toViewController.view setFrame:self.view.bounds];
         [self completedTransitionFromViewController:nil toViewController:toViewController];
     }
 }
