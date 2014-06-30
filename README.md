@@ -1,5 +1,7 @@
 # <img src="AppIcon40x40@2x.png" align="center" width="40" height="40" > ISHPermissionKit
 
+<img src="https://travis-ci.org/iosphere/ISHPermissionKit.svg?branch=master">
+
 This framework provides a unified way of asking for user permissions on iOS. It
 also provides UI to explain the permission requirements before presenting the
 user with the system permission dialogue. This allows the developer to postpone
@@ -31,6 +33,7 @@ If compiled against iOS8 both make use of the latest available APIs
 and fall back gracefully when running under iOS7.
 
 <img src="demo.gif" align="center" width="320" height="568" alt="Sample App Demo"> 
+
 # Roadmap
 
 Missing features:
