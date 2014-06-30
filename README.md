@@ -38,8 +38,7 @@ Missing features:
 1. Documentation
 2. Resetting state correctly when device is reset
 3. CocoaPod
-4. Get iOS8-Style framework target to work. 
-5. Test iPad presentation
+4. Test iPad presentation
 
 Missing support for permissions to:
 
@@ -53,10 +52,35 @@ Missing support for permissions to:
 
 # How to use
 
-Add the XCode-Project as a sub project. Then link your app-target against the
-static library (not the framework, as this is currently not working on devices
-and requires iOS8). You will also need to add the static library as a target
-dependency.
+## Installation
+
+### Static Library
+
+Add this Xcode project as a sub project of your app. Then link your app target 
+against the static library (`ISHPermissionKitLib.a`). You will also need to add 
+the static library as a target dependency. Both settings can be found in your
+app target's *Build Phases*.
+
+Use `#import <ISHPermissionKit/ISHPermissionKit.h>` to import all public headers.
+
+### Dynamically-Linked Framework
+
+Add this Xcode project as a sub project of your app. Then add the framework
+(`ISHPermissionKit.framework`) to the app's embedded binaries (On the *General*
+tab of your app target's settings). On the *Build Phases* tab, verify that the
+framework has also been added to the *Target Dependencies* and *Link Binary with
+Libraries* phases, and that a new *Embed Frameworks* phase has been created.
+
+The framework can be used as a module, so you can use `@import ISHPermissionKit;`
+to import all public headers.
+Further reading on Modules: [Clang Documentation](http://clang.llvm.org/docs/Modules.html)
+
+**Note:** To link against dynamic frameworks on iOS, a deployment target of at
+least iOS 8 is required.
+
+### CocoaPods
+
+Coming soon.
 
 ## ISHPermissionsViewController
 

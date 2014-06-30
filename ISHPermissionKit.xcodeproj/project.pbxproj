@@ -33,7 +33,7 @@
 		DC799EC0195C186100A0CA36 /* ISHPermissionRequestLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DC799EBE195C186100A0CA36 /* ISHPermissionRequestLocation.m */; };
 		DC799EC4195C19CD00A0CA36 /* ISHPermissionRequest+All.h in Headers */ = {isa = PBXBuildFile; fileRef = DC799EC2195C19CD00A0CA36 /* ISHPermissionRequest+All.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC799EC5195C19CD00A0CA36 /* ISHPermissionRequest+All.m in Sources */ = {isa = PBXBuildFile; fileRef = DC799EC3195C19CD00A0CA36 /* ISHPermissionRequest+All.m */; };
-		DCAEF7C1195C5B6B0074EB5B /* ISHPermissionRequestMotion.h in Headers */ = {isa = PBXBuildFile; fileRef = DCAEF7BF195C5B6B0074EB5B /* ISHPermissionRequestMotion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DCAEF7C1195C5B6B0074EB5B /* ISHPermissionRequestMotion.h in Headers */ = {isa = PBXBuildFile; fileRef = DCAEF7BF195C5B6B0074EB5B /* ISHPermissionRequestMotion.h */; };
 		DCAEF7C2195C5B6B0074EB5B /* ISHPermissionRequestMotion.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAEF7C0195C5B6B0074EB5B /* ISHPermissionRequestMotion.m */; };
 		DCAEF7E1195C60250074EB5B /* ISHPermissionRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A80AF195B2C960069235F /* ISHPermissionRequestViewController.m */; };
 		DCAEF7E2195C60250074EB5B /* ISHPermissionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A80A2195B21DC0069235F /* ISHPermissionsViewController.m */; };
@@ -53,6 +53,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1B4CC53E19615DB500ECE149 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCC1BF9C195B174200362559 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCC1BFA4195B174200362559;
+			remoteInfo = ISHPermissionKit;
+		};
 		DCAEF7E8195C603F0074EB5B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DCC1BF9C195B174200362559 /* Project object */;
@@ -279,10 +286,10 @@
 				DCC1BFAB195B174200362559 /* ISHPermissionKit.h in Headers */,
 				DC1A80A3195B21DC0069235F /* ISHPermissionsViewController.h in Headers */,
 				DC1A80B0195B2C960069235F /* ISHPermissionRequestViewController.h in Headers */,
-				DCAEF7C1195C5B6B0074EB5B /* ISHPermissionRequestMotion.h in Headers */,
 				DC5E5BB3195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.h in Headers */,
 				DC5E5BAE195D67500092EAFD /* ISHPermissionRequestMicrophone.h in Headers */,
 				DC799EBF195C186100A0CA36 /* ISHPermissionRequestLocation.h in Headers */,
+				DCAEF7C1195C5B6B0074EB5B /* ISHPermissionRequestMotion.h in Headers */,
 				DC799EB4195C0CF300A0CA36 /* ISHPermissionRequestViewController+Private.h in Headers */,
 				DC5E5BC3195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.h in Headers */,
 				DC1A80AC195B23640069235F /* ISHPermissionRequest.h in Headers */,
@@ -343,6 +350,7 @@
 			);
 			dependencies = (
 				DCC1BFB3195B174200362559 /* PBXTargetDependency */,
+				1B4CC53F19615DB500ECE149 /* PBXTargetDependency */,
 			);
 			name = ISHPermissionKitTests;
 			productName = ISHPermissionKitTests;
@@ -493,6 +501,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1B4CC53F19615DB500ECE149 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCC1BFA4195B174200362559 /* ISHPermissionKit */;
+			targetProxy = 1B4CC53E19615DB500ECE149 /* PBXContainerItemProxy */;
+		};
 		DCAEF7E9195C603F0074EB5B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DCAEF7C9195C60070074EB5B /* ISHPermissionKitLib */;

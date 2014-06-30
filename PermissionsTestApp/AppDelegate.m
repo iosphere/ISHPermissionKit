@@ -27,12 +27,18 @@
 }
 
 - (void)presentPermissionsIfNeeded {
-    NSArray *permissions = @[ @(ISHPermissionCategoryLocationWhenInUse), @(ISHPermissionCategoryActivity) , @(ISHPermissionCategoryMicrophone),
-                              @(ISHPermissionCategoryPhotoLibrary), @(ISHPermissionCategoryPhotoCamera), @(ISHPermissionCategoryNotificationLocal) ];
-    ISHPermissionsViewController *perm = [ISHPermissionsViewController permissionsViewControllerWithCategories:permissions];
-    if (perm) {
-        [perm setDataSource:self];
-        [self.window.rootViewController presentViewController:perm animated:YES completion:nil];
+    NSArray *permissions = @[
+                             @(ISHPermissionCategoryLocationWhenInUse),
+                             @(ISHPermissionCategoryActivity),
+                             @(ISHPermissionCategoryMicrophone),
+                             @(ISHPermissionCategoryPhotoLibrary),
+                             @(ISHPermissionCategoryPhotoCamera),
+                             @(ISHPermissionCategoryNotificationLocal)
+                             ];
+    ISHPermissionsViewController *permissionsVC = [ISHPermissionsViewController permissionsViewControllerWithCategories:permissions];
+    if (permissionsVC) {
+        [permissionsVC setDataSource:self];
+        [self.window.rootViewController presentViewController:permissionsVC animated:YES completion:nil];
     }
 }
 
