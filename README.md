@@ -83,7 +83,13 @@ least iOS 8 is required.
 
 ### CocoaPods
 
-Coming soon.
+You can use CocoaPods to install ISHPermissionKit as a static library:
+
+```ruby
+pod 'ISHPermissionKit', :git => 'https://github.com/iosphere/ISHPermissionKit', :tag => '0.0.1'
+```
+
+The library will be available via CocoaPods trunk soon.
 
 ## ISHPermissionsViewController
 
