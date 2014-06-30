@@ -61,6 +61,27 @@
 			remoteGlobalIDString = DCC1BFA4195B174200362559;
 			remoteInfo = ISHPermissionKit;
 		};
+		1B87C1B41961A782001D85E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCC1BF9C195B174200362559 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCC1BFA4195B174200362559;
+			remoteInfo = ISHPermissionKit;
+		};
+		1B87C1B61961A782001D85E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCC1BF9C195B174200362559 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCC1BFA4195B174200362559;
+			remoteInfo = ISHPermissionKit;
+		};
+		1B87C1B81961A79C001D85E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCC1BF9C195B174200362559 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCC1BFA4195B174200362559;
+			remoteInfo = ISHPermissionKit;
+		};
 		DC7790BA19617CD7007CB2BC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DCC1BF9C195B174200362559 /* Project object */;
@@ -97,6 +118,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1B87C1BA1961AA5D001D85E7 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		1B87C1BB1961AA5D001D85E7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DC1A80A1195B21DC0069235F /* ISHPermissionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHPermissionsViewController.h; sourceTree = "<group>"; };
 		DC1A80A2195B21DC0069235F /* ISHPermissionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionsViewController.m; sourceTree = "<group>"; };
 		DC1A80A8195B22A10069235F /* ISHPermissionCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHPermissionCategory.h; sourceTree = "<group>"; };
@@ -226,6 +249,8 @@
 		DCC1BF9B195B174200362559 = {
 			isa = PBXGroup;
 			children = (
+				1B87C1BA1961AA5D001D85E7 /* LICENSE */,
+				1B87C1BB1961AA5D001D85E7 /* README.md */,
 				DCC1BFA7195B174200362559 /* ISHPermissionKit */,
 				DCC1BFB4195B174200362559 /* ISHPermissionKitTests */,
 				DCC1BFC6195B176E00362559 /* PermissionsTestApp */,
@@ -405,6 +430,9 @@
 			dependencies = (
 				DCC1BFB3195B174200362559 /* PBXTargetDependency */,
 				1B4CC53F19615DB500ECE149 /* PBXTargetDependency */,
+				1B87C1B51961A782001D85E7 /* PBXTargetDependency */,
+				1B87C1B71961A782001D85E7 /* PBXTargetDependency */,
+				1B87C1B91961A79C001D85E7 /* PBXTargetDependency */,
 			);
 			name = ISHPermissionKitTests;
 			productName = ISHPermissionKitTests;
@@ -579,6 +607,21 @@
 			target = DCC1BFA4195B174200362559 /* ISHPermissionKit */;
 			targetProxy = 1B4CC53E19615DB500ECE149 /* PBXContainerItemProxy */;
 		};
+		1B87C1B51961A782001D85E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCC1BFA4195B174200362559 /* ISHPermissionKit */;
+			targetProxy = 1B87C1B41961A782001D85E7 /* PBXContainerItemProxy */;
+		};
+		1B87C1B71961A782001D85E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCC1BFA4195B174200362559 /* ISHPermissionKit */;
+			targetProxy = 1B87C1B61961A782001D85E7 /* PBXContainerItemProxy */;
+		};
+		1B87C1B91961A79C001D85E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCC1BFA4195B174200362559 /* ISHPermissionKit */;
+			targetProxy = 1B87C1B81961A79C001D85E7 /* PBXContainerItemProxy */;
+		};
 		DC7790BB19617CD7007CB2BC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DCAEF7C9195C60070074EB5B /* ISHPermissionKitLib */;
@@ -634,6 +677,10 @@
 		DCAEF7DC195C60070074EB5B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
+				DYLIB_COMPATIBILITY_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
+				DYLIB_CURRENT_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
+				FRAMEWORK_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -648,6 +695,10 @@
 		DCAEF7DD195C60070074EB5B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
+				DYLIB_COMPATIBILITY_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
+				DYLIB_CURRENT_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
+				FRAMEWORK_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
 				METAL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -691,6 +742,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ISH_BUNDLE_VERSION = 1;
+				ISH_BUNDLE_VERSION_MAJOR = 0;
+				ISH_BUNDLE_VERSION_MINOR = 0;
+				ISH_BUNDLE_VERSION_SHORT = "${ISH_BUNDLE_VERSION_MAJOR}.${ISH_BUNDLE_VERSION_MINOR}.${ISH_BUNDLE_VERSION}";
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -730,6 +785,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ISH_BUNDLE_VERSION = 1;
+				ISH_BUNDLE_VERSION_MAJOR = 0;
+				ISH_BUNDLE_VERSION_MINOR = 0;
+				ISH_BUNDLE_VERSION_SHORT = "${ISH_BUNDLE_VERSION_MAJOR}.${ISH_BUNDLE_VERSION_MINOR}.${ISH_BUNDLE_VERSION}";
 				METAL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -742,10 +801,12 @@
 		DCC1BFBC195B174200362559 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
 				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_COMPATIBILITY_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
+				DYLIB_CURRENT_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
 				INFOPLIST_FILE = ISHPermissionKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -757,10 +818,12 @@
 		DCC1BFBD195B174200362559 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
 				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_COMPATIBILITY_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
+				DYLIB_CURRENT_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
 				INFOPLIST_FILE = ISHPermissionKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -843,6 +906,7 @@
 				DC7790BD19617CD7007CB2BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DCAEF7DB195C60070074EB5B /* Build configuration list for PBXNativeTarget "ISHPermissionKitLib" */ = {
 			isa = XCConfigurationList;
