@@ -47,8 +47,7 @@ Missing features:
 
 1. Documentation
 2. Resetting state correctly when device is reset
-3. CocoaPod
-4. Test iPad presentation
+3. Test iPad presentation
 
 Missing support for permissions to:
 
@@ -93,10 +92,10 @@ least iOS 8 is required.
 You can use CocoaPods to install ISHPermissionKit as a static library:
 
 ```ruby
-pod 'ISHPermissionKit', :git => 'https://github.com/iosphere/ISHPermissionKit', :tag => '0.0.1'
+pod 'ISHPermissionKit', :git => 'https://github.com/iosphere/ISHPermissionKit', :tag => '0.1.1'
 ```
 
-The library will be available via CocoaPods trunk soon.
+The library is also available via CocoaPods trunk.
 
 ## ISHPermissionsViewController
 
