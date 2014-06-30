@@ -1,6 +1,7 @@
-# <img src="AppIcon40x40@2x.png" align="center" width="40" height="40" > ISHPermissionKit
+# <img src="AppIcon40x40_2x.png" align="center" width="40" height="40"> ISHPermissionKit
 
-<img src="https://travis-ci.org/iosphere/ISHPermissionKit.svg?branch=master">
+<img src="https://travis-ci.org/iosphere/ISHPermissionKit.svg?branch=master">&nbsp;
+[![Version](http://cocoapod-badges.herokuapp.com/v/ISHPermissionKit/badge.png)](http://cocoadocs.org/docsets/ISHPermissionKit)
 
 This framework provides a unified way of asking for user permissions on iOS. It
 also provides UI to explain the permission requirements before presenting the
