@@ -121,15 +121,9 @@
         
         ISHPermissionState state = [request permissionState];
         
-        switch (state) {
-            case ISHPermissionStateUnknown:
-            case ISHPermissionStateAskAgain:
+        if (ISHPermissionStateAllowsUserPrompt(state)) {
                 [requestableCategories addObject:categoryObj];
                 [requests addObject:request];
-                break;
-                
-            default:
-                break;
         }
     }
     [self setPermissionRequests:[NSArray arrayWithArray:requests]];
