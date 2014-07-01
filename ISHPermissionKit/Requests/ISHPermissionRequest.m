@@ -41,6 +41,10 @@
     return [NSStringFromClass([self class]) stringByAppendingFormat:@"-%@", @(self.permissionCategory)];
 }
 
+- (BOOL)allowsConfiguration {
+    return NO;
+}
+
 @end
 
 NSString * const ISHPermissionNotificationApplicationDidRegisterUserNotificationSettings = @"ISHPermissionNotificationApplicationDidRegisterUserNotificationSettings";

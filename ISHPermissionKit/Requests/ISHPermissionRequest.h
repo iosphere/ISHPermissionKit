@@ -107,6 +107,18 @@ typedef void (^ISHPermissionRequestCompletionBlock)(ISHPermissionRequest *reques
  *                    The block is called right away if no dialogue was presented.
  */
 - (void)requestUserPermissionWithCompletionBlock:(ISHPermissionRequestCompletionBlock)completion;
+
+/**
+ *  Some permission requests allow or require further configuration
+ *  (such as those for local notifications and Health app). Subclasses for such
+ *  permission categories should overwrite this method and return YES.
+ *  The default implementation returns NO. 
+ *
+ *  @return Boolean value indicating if the request  
+ *          allows further configuration.
+ */
+- (BOOL)allowsConfiguration;
+
 @end
 
 
