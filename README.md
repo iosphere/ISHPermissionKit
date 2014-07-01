@@ -92,7 +92,8 @@ You can use CocoaPods to install ISHPermissionKit as a static library. This is a
 you have to put in your Podfile:
 
 ```ruby
-pod 'ISHPermissionKit'```
+pod 'ISHPermissionKit'
+```
 
 See the [official guides](http://guides.cocoapods.org) to get started with CocoaPods.
 
