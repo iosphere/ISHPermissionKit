@@ -109,8 +109,7 @@ NSArray *permissions = @[
     @(ISHPermissionCategoryLocationWhenInUse), 
     @(ISHPermissionCategoryActivity) 
     ];
-ISHPermissionsViewController *vc = [ISHPermissionsViewController permissionsViewControllerWithCategories:permissions];
-[vc setDataSource:self];
+ISHPermissionsViewController *vc = [ISHPermissionsViewController permissionsViewControllerWithCategories:permissions dataSource:self];
 
 if (vc) {
     UIViewController *presentingVC = [self.window rootViewController];

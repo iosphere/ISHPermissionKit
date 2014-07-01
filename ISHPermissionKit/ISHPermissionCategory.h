@@ -46,12 +46,25 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
     ISHPermissionCategoryPhotoCamera = 5100,
     
     /**
-     *  Permission required to schedule local notifications.
+     *  Permission required to schedule local notifications. 
+     *  @note Requests for this permission might require further 
+     *        configuration via the ISHPermissionsViewControllerDatasource.
+     *
+     *  @warning Your app delegate will need to implement the following lines:
+     *  @code
+     *  - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
+     *       [[NSNotificationCenter defaultCenter] postNotificationName:ISHPermissionNotificationApplicationDidRegisterUserNotificationSettings
+     *                                                           object:self];
+     *  }
+     *  @endcode
      */
     ISHPermissionCategoryNotificationLocal = 6100,
     
     /**
      *  Permission required to access the user's Facebook acounts.
+     *  @note Requests for this permission require further
+     *        configuration via the ISHPermissionsViewControllerDatasource.
+     *        The request will require an options dictionary including e.g. ACFacebookAppIdKey.
      */
     ISHPermissionCategorySocialFacebook = 7100,
     /**
@@ -66,6 +79,8 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  Permission required to access the user's TencentWeibo acounts.
      */
     ISHPermissionCategorySocialTencentWeibo = 7130,
+    
+    
 };
 
 

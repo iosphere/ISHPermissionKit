@@ -142,7 +142,7 @@ static inline NSString *ISHStringFromPermissionState(ISHPermissionState state) {
  *          regarding the given permission state.
  */
 static inline BOOL ISHPermissionStateAllowsUserPrompt(ISHPermissionState state) {
-    return (state != ISHPermissionStateDenied) && (state != ISHPermissionStateAuthorized) && (state != ISHPermissionStateDoNotAskAgain) && (state != ISHPermissionStateUnsupported);
+    return (state == ISHPermissionStateUnknown) || (state == ISHPermissionStateAskAgain);
 }
 
 /**
