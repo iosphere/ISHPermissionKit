@@ -18,8 +18,7 @@ This framework also provides explicit ways to ask for the user's permission
 where the systems APIs only provide implicit methods of doing so.
 
 Recommended reading: [The Right Way To Ask Users For iOS
-Permissions](http://techcrunch.com/2014/04/04/the-right-way-to-ask-users-for-
-ios-permissions/ "by Brenden Mulligan (@mulligan)")
+Permissions](http://techcrunch.com/2014/04/04/the-right-way-to-ask-users-for-ios-permissions/ "by Brenden Mulligan (@mulligan)")
 
 Supported permission categories:
 * CoreLocation: Always and WhenInUse
