@@ -19,7 +19,7 @@
 @implementation ISHPermissionRequestAccount
 
 - (BOOL)allowsConfiguration {
-    // Facebook requires furter configuration
+    // Facebook requires further configuration
     return (self.permissionCategory == ISHPermissionCategorySocialFacebook);
 }
 
