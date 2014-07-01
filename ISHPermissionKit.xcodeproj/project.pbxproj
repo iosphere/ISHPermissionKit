@@ -52,6 +52,9 @@
 		DCD56C781962AEDC00508F4A /* ISHPermissionRequestAccount.h in Headers */ = {isa = PBXBuildFile; fileRef = DCD56C761962AEDC00508F4A /* ISHPermissionRequestAccount.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DCD56C791962AEDC00508F4A /* ISHPermissionRequestAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD56C771962AEDC00508F4A /* ISHPermissionRequestAccount.m */; };
 		DCD56C7A1962AEDC00508F4A /* ISHPermissionRequestAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD56C771962AEDC00508F4A /* ISHPermissionRequestAccount.m */; };
+		DCD56C7D1962BB8600508F4A /* ISHPermissionRequestHealth.h in Headers */ = {isa = PBXBuildFile; fileRef = DCD56C7B1962BB8600508F4A /* ISHPermissionRequestHealth.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DCD56C7E1962BB8600508F4A /* ISHPermissionRequestHealth.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD56C7C1962BB8600508F4A /* ISHPermissionRequestHealth.m */; };
+		DCD56C7F1962BB8600508F4A /* ISHPermissionRequestHealth.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD56C7C1962BB8600508F4A /* ISHPermissionRequestHealth.m */; };
 		DCF18617195C2B1B00CC155E /* SamplePermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF18615195C2B1B00CC155E /* SamplePermissionViewController.m */; };
 		DCF18618195C2B1B00CC155E /* SamplePermissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCF18616195C2B1B00CC155E /* SamplePermissionViewController.xib */; };
 /* End PBXBuildFile section */
@@ -164,6 +167,8 @@
 		DCC1BFCE195B176E00362559 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DCD56C761962AEDC00508F4A /* ISHPermissionRequestAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHPermissionRequestAccount.h; sourceTree = "<group>"; };
 		DCD56C771962AEDC00508F4A /* ISHPermissionRequestAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestAccount.m; sourceTree = "<group>"; };
+		DCD56C7B1962BB8600508F4A /* ISHPermissionRequestHealth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHPermissionRequestHealth.h; sourceTree = "<group>"; };
+		DCD56C7C1962BB8600508F4A /* ISHPermissionRequestHealth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestHealth.m; sourceTree = "<group>"; };
 		DCF18614195C2B1B00CC155E /* SamplePermissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamplePermissionViewController.h; sourceTree = "<group>"; };
 		DCF18615195C2B1B00CC155E /* SamplePermissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SamplePermissionViewController.m; sourceTree = "<group>"; };
 		DCF18616195C2B1B00CC155E /* SamplePermissionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SamplePermissionViewController.xib; sourceTree = "<group>"; };
@@ -230,25 +235,27 @@
 		DC799EC1195C187700A0CA36 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
-				DC799EC2195C19CD00A0CA36 /* ISHPermissionRequest+All.h */,
-				DC799EC3195C19CD00A0CA36 /* ISHPermissionRequest+All.m */,
 				DC1A80AA195B23640069235F /* ISHPermissionRequest.h */,
 				DC1A80AB195B23640069235F /* ISHPermissionRequest.m */,
-				DC799EBD195C186100A0CA36 /* ISHPermissionRequestLocation.h */,
-				DC799EBE195C186100A0CA36 /* ISHPermissionRequestLocation.m */,
-				DCAEF7BF195C5B6B0074EB5B /* ISHPermissionRequestMotion.h */,
-				DCAEF7C0195C5B6B0074EB5B /* ISHPermissionRequestMotion.m */,
-				DC5E5BAC195D67500092EAFD /* ISHPermissionRequestMicrophone.h */,
-				DC5E5BAD195D67500092EAFD /* ISHPermissionRequestMicrophone.m */,
-				DC5E5BB1195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.h */,
-				DC5E5BB2195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.m */,
-				DC5E5BB6195D78800092EAFD /* ISHPermissionRequestPhotoCamera.h */,
-				DC5E5BB7195D78800092EAFD /* ISHPermissionRequestPhotoCamera.m */,
-				DC5E5BC1195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.h */,
-				DC5E5BC2195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.m */,
+				DC799EC2195C19CD00A0CA36 /* ISHPermissionRequest+All.h */,
+				DC799EC3195C19CD00A0CA36 /* ISHPermissionRequest+All.m */,
 				DC5E5BC6195DC1F30092EAFD /* ISHPermissionRequest+Private.h */,
 				DCD56C761962AEDC00508F4A /* ISHPermissionRequestAccount.h */,
 				DCD56C771962AEDC00508F4A /* ISHPermissionRequestAccount.m */,
+				DCD56C7B1962BB8600508F4A /* ISHPermissionRequestHealth.h */,
+				DCD56C7C1962BB8600508F4A /* ISHPermissionRequestHealth.m */,
+				DC799EBD195C186100A0CA36 /* ISHPermissionRequestLocation.h */,
+				DC799EBE195C186100A0CA36 /* ISHPermissionRequestLocation.m */,
+				DC5E5BAC195D67500092EAFD /* ISHPermissionRequestMicrophone.h */,
+				DC5E5BAD195D67500092EAFD /* ISHPermissionRequestMicrophone.m */,
+				DCAEF7BF195C5B6B0074EB5B /* ISHPermissionRequestMotion.h */,
+				DCAEF7C0195C5B6B0074EB5B /* ISHPermissionRequestMotion.m */,
+				DC5E5BC1195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.h */,
+				DC5E5BC2195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.m */,
+				DC5E5BB6195D78800092EAFD /* ISHPermissionRequestPhotoCamera.h */,
+				DC5E5BB7195D78800092EAFD /* ISHPermissionRequestPhotoCamera.m */,
+				DC5E5BB1195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.h */,
+				DC5E5BB2195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -366,6 +373,7 @@
 				DC1A80A9195B22A10069235F /* ISHPermissionCategory.h in Headers */,
 				DC799EB6195C113D00A0CA36 /* ISHPermissionRequestViewControllerDelegate.h in Headers */,
 				DC5E5BB8195D78800092EAFD /* ISHPermissionRequestPhotoCamera.h in Headers */,
+				DCD56C7D1962BB8600508F4A /* ISHPermissionRequestHealth.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,6 +570,7 @@
 				DC5E5BC5195DAD770092EAFD /* ISHPermissionRequestNotificationsLocal.m in Sources */,
 				DC5E5BBA195D78800092EAFD /* ISHPermissionRequestPhotoCamera.m in Sources */,
 				DCAEF7E5195C60250074EB5B /* ISHPermissionRequestLocation.m in Sources */,
+				DCD56C7F1962BB8600508F4A /* ISHPermissionRequestHealth.m in Sources */,
 				DCAEF7E1195C60250074EB5B /* ISHPermissionRequestViewController.m in Sources */,
 				DC5E5BB5195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.m in Sources */,
 				DCAEF7E6195C60250074EB5B /* ISHPermissionRequestMotion.m in Sources */,
@@ -580,6 +589,7 @@
 				DC5E5BC4195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.m in Sources */,
 				DC5E5BB9195D78800092EAFD /* ISHPermissionRequestPhotoCamera.m in Sources */,
 				DC799EC5195C19CD00A0CA36 /* ISHPermissionRequest+All.m in Sources */,
+				DCD56C7E1962BB8600508F4A /* ISHPermissionRequestHealth.m in Sources */,
 				DCAEF7C2195C5B6B0074EB5B /* ISHPermissionRequestMotion.m in Sources */,
 				DC5E5BB4195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.m in Sources */,
 				DC799EC0195C186100A0CA36 /* ISHPermissionRequestLocation.m in Sources */,
