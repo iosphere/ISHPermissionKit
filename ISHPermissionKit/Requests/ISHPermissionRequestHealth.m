@@ -45,7 +45,6 @@
         return ISHPermissionStateUnsupported;
     }
 #ifdef __IPHONE_8_0
-#endif
     NSMutableSet *allType = [NSMutableSet set];
     
     if (self.objectTypesRead.count) {
@@ -85,7 +84,9 @@
     if (countDenied > countAuthorized) {
         return ISHPermissionStateDenied;
     }
-    
+#else
+    return ISHPermissionStateUnsupported;
+#endif
     return ISHPermissionStateAuthorized;
 }
 
