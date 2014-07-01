@@ -35,7 +35,7 @@ typedef void (^ISHPermissionsViewControllerCompletionBlock)(void);
  *  @param dataSource The dataSource is required and must provide one instance of a
  *                    ISHPermissionRequestViewController for each requested ISHPermissionCategory. 
  *                    If it implements the optional didConfigureRequest: method, it will be asked
- *                    for each request to configure it.
+ *                    to configure any request that allows configuration.
  *
  *  @warning Returns nil if non of the categories allow a user prompt.
  *

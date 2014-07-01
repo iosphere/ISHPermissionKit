@@ -18,6 +18,11 @@
 
 @implementation ISHPermissionRequestAccount
 
+- (BOOL)allowsConfiguration {
+    // Facebook requires furter configuration
+    return (self.permissionCategory == ISHPermissionCategorySocialFacebook);
+}
+
 - (NSString *)accountTypeIdentifier {
     switch (self.permissionCategory) {
         case ISHPermissionCategorySocialFacebook:

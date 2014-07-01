@@ -115,7 +115,7 @@
         ISHPermissionCategory category = [categoryObj integerValue];
         ISHPermissionRequest *request = [ISHPermissionRequest requestForCategory:category];
         
-        if (dataSourceConfiguresRequests) {
+        if (dataSourceConfiguresRequests && request.allowsConfiguration) {
             [self.dataSource permissionsViewController:self didConfigureRequest:request];
         }
         
