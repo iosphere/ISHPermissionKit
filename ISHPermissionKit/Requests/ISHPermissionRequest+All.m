@@ -14,6 +14,7 @@
 #import "ISHPermissionRequestPhotoCamera.h"
 #import "ISHPermissionRequestNotificationsLocal.h"
 #import "ISHPermissionRequestAccount.h"
+#import "ISHPermissionRequestHealth.h"
 #import "ISHPermissionRequest+Private.h"
 
 @implementation ISHPermissionRequest (All)
@@ -30,6 +31,9 @@
             
         case ISHPermissionCategoryActivity:
             request = [ISHPermissionRequestMotion new];
+            break;
+        case ISHPermissionCategoryHealth:
+            request = [ISHPermissionRequestHealth new];
             break;
             
         case ISHPermissionCategoryMicrophone:
