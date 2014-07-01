@@ -32,19 +32,23 @@ typedef void (^ISHPermissionsViewControllerCompletionBlock)(void);
  *  @param categories An NSArray of ISHPermissionCategory values boxed in NSNumber objects. 
  *                    The permission categories that should be requested from the user. 
  *                    Only those categories that allow a user prompt will be respected.
+ *  @param datasource The dataSource is required and must provide one instance of a
+ *                    ISHPermissionRequestViewController for each requested ISHPermissionCategory. 
+ *                    If it implements the optional didConfigureRequest: method, it will be asked
+ *                    for each request to configure it.
  *
  *  @warning Returns nil if non of the categories allow a user prompt.
  *
  *  @return Returns a new instance of ISHPermissionsViewController for all categories that allow 
  *          a user prompt. Nil if non of the categories allow a user prompt.
  */
-+ (instancetype)permissionsViewControllerWithCategories:(NSArray *)categories;
++ (instancetype)permissionsViewControllerWithCategories:(NSArray *)categories dataSource:(id <ISHPermissionsViewControllerDatasource>)dataSource;
 
 /**
  *  The dataSource is required and must provide one instance of a 
  *  ISHPermissionRequestViewController for each requested ISHPermissionCategory.
  */
-@property (nonatomic, weak) id <ISHPermissionsViewControllerDatasource> dataSource;
+@property (nonatomic, readonly, weak) id <ISHPermissionsViewControllerDatasource> dataSource;
 
 /**
  *  The optional delegate is informed by the ISHPermissionsViewController once all permission categories

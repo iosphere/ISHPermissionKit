@@ -15,19 +15,20 @@
 @property (nonatomic) NSArray *permissionCategories;
 @property (nonatomic) NSArray *permissionRequests;
 @property (nonatomic) ISHPermissionRequestViewController *currentViewController;
+
+@property (nonatomic, readwrite, weak) id <ISHPermissionsViewControllerDatasource> dataSource;
 @end
 
 @implementation ISHPermissionsViewController
 
-+ (instancetype)permissionsViewControllerWithCategories:(NSArray *)categories {
-    NSArray *requestableCategories = [self requestablePermissionsCategoriesFromArray:categories];
++ (instancetype)permissionsViewControllerWithCategories:(NSArray *)categories dataSource:(id <ISHPermissionsViewControllerDatasource>)dataSource {
+    ISHPermissionsViewController *vc = [ISHPermissionsViewController new];
+    [vc setDataSource:dataSource];
+    [vc setupRequestablePermissionsCategoriesFromArray:categories];
     
-    if (!requestableCategories.count) {
+    if (!vc.permissionCategories.count) {
         return nil;
     }
-    
-    ISHPermissionsViewController *vc = [ISHPermissionsViewController new];
-    [vc setPermissionCategories:requestableCategories];
     
     return vc;
 }
@@ -41,7 +42,7 @@
         UIModalPresentationStyle phonePresentation = UIModalPresentationCurrentContext;
 #ifdef __IPHONE_8_0
         if ([self respondsToSelector:@selector(presentationController)]) {
-            // if built for and running on iOS8 use over presnetation context to use blurred background
+            // if built for and running on iOS8 use over presentation context to use blurred background
             phonePresentation = UIModalPresentationOverCurrentContext;
         }
 #endif
@@ -72,28 +73,8 @@
     [super viewDidLoad];
     NSAssert(self.dataSource, @"Datasource should not be nil");
     
-    [self setupRequests];
-    
     // setup UI for first permission category:
     [self transitionToPermissionCategoryAtIndex:self.currentIndex];
-}
-
-- (void)setupRequests {
-    BOOL datasourceConfigureRequests = [self.dataSource respondsToSelector:@selector(permissionsViewController:didConfigureRequest:)];
-    NSMutableArray *requests = [NSMutableArray new];
-    
-    for (NSNumber *categoryObj in self.permissionCategories) {
-        ISHPermissionCategory category = [categoryObj integerValue];
-        ISHPermissionRequest *request = [ISHPermissionRequest requestForCategory:category];
-        
-        if (datasourceConfigureRequests) {
-            [self.dataSource permissionsViewController:self didConfigureRequest:request];
-        }
-        
-        [requests addObject:request];
-    }
-    
-    [self setPermissionRequests:[NSArray arrayWithArray:requests]];
 }
 
 - (void)transitionToPermissionCategoryAtIndex:(NSUInteger)index {
@@ -125,26 +106,34 @@
     return [self.permissionRequests objectAtIndex:index];
 }
 
-+ (NSArray *)requestablePermissionsCategoriesFromArray:(NSArray *)neededCategories {
-    NSMutableArray *requestable = [NSMutableArray arrayWithCapacity:neededCategories.count];
-    
+- (void)setupRequestablePermissionsCategoriesFromArray:(NSArray *)neededCategories {
+    NSMutableArray *requestableCategories = [NSMutableArray arrayWithCapacity:neededCategories.count];
+    NSMutableArray *requests = [NSMutableArray arrayWithCapacity:neededCategories.count];
+    BOOL datasourceConfigureRequests = [self.dataSource respondsToSelector:@selector(permissionsViewController:didConfigureRequest:)];
+
     for (NSNumber *categoryObj in neededCategories) {
         ISHPermissionCategory category = [categoryObj integerValue];
         ISHPermissionRequest *request = [ISHPermissionRequest requestForCategory:category];
+        
+        if (datasourceConfigureRequests) {
+            [self.dataSource permissionsViewController:self didConfigureRequest:request];
+        }
+        
         ISHPermissionState state = [request permissionState];
         
         switch (state) {
-            case ISHPermissionStateUnknown :
+            case ISHPermissionStateUnknown:
             case ISHPermissionStateAskAgain:
-                [requestable addObject:categoryObj];
+                [requestableCategories addObject:categoryObj];
+                [requests addObject:request];
                 break;
                 
             default:
                 break;
         }
     }
-    
-    return [requestable copy];
+    [self setPermissionRequests:[NSArray arrayWithArray:requests]];
+    [self setPermissionCategories:[requestableCategories copy]];
 }
 
 #pragma mark - ISHPermissionRequestViewControllerDelegate

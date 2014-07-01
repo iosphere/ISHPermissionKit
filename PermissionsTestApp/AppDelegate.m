@@ -38,9 +38,8 @@
                              @(ISHPermissionCategorySocialTwitter),
                              @(ISHPermissionCategorySocialFacebook),
                              ];
-    ISHPermissionsViewController *permissionsVC = [ISHPermissionsViewController permissionsViewControllerWithCategories:permissions];
+    ISHPermissionsViewController *permissionsVC = [ISHPermissionsViewController permissionsViewControllerWithCategories:permissions dataSource:self];
     if (permissionsVC) {
-        [permissionsVC setDataSource:self];
         [self.window.rootViewController presentViewController:permissionsVC animated:YES completion:nil];
     }
 }
@@ -65,7 +64,7 @@
         ISHPermissionRequestAccount *accountRequest = (ISHPermissionRequestAccount *)([request isKindOfClass:[ISHPermissionRequestAccount class]] ? request : nil);
         
         NSDictionary *options = @{
-                                  ACFacebookAppIdKey: @"YOUR-API-KET",
+                                  ACFacebookAppIdKey: @"YOUR-API-KEY",
                                   ACFacebookPermissionsKey: @[@"email", @"user_about_me"],
                                   ACFacebookAudienceKey: ACFacebookAudienceFriends
                                   };
