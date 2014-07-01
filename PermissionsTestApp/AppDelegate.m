@@ -11,7 +11,7 @@
 #import <ISHPermissionKit/ISHPermissionKit.h>
 @import Accounts;
 
-@interface AppDelegate () <ISHPermissionsViewControllerDatasource>
+@interface AppDelegate () <ISHPermissionsViewControllerDataSource>
         
 @end
 
@@ -44,7 +44,7 @@
     }
 }
 
-#pragma mark ISHPermissionsViewControllerDatasource
+#pragma mark ISHPermissionsViewControllerDataSource
 
 - (ISHPermissionRequestViewController *)permissionsViewController:(ISHPermissionsViewController *)vc requestViewControllerForCategory:(ISHPermissionCategory)category {
     return [SamplePermissionViewController new];

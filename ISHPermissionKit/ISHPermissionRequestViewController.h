@@ -16,7 +16,7 @@
  *  Instead, you instantiate subclasses of the ISHPermissionRequestViewController class.
  *
  *  Instances of this class are expected to be used in concert with ISHPermissionsViewController
- *  and to be returned from the ISHPermissionsViewControllerDatasource method:
+ *  and to be returned from the ISHPermissionsViewControllerDataSource method:
  *
  *  @code
  *  - (ISHPermissionRequestViewController *)permissionsViewController:(ISHPermissionsViewController *)vc requestViewControllerForCategory:(ISHPermissionCategory)category {

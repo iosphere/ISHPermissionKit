@@ -16,12 +16,12 @@
 @property (nonatomic) NSArray *permissionRequests;
 @property (nonatomic) ISHPermissionRequestViewController *currentViewController;
 
-@property (nonatomic, readwrite, weak) id <ISHPermissionsViewControllerDatasource> dataSource;
+@property (nonatomic, readwrite, weak) id <ISHPermissionsViewControllerDataSource> dataSource;
 @end
 
 @implementation ISHPermissionsViewController
 
-+ (instancetype)permissionsViewControllerWithCategories:(NSArray *)categories dataSource:(id <ISHPermissionsViewControllerDatasource>)dataSource {
++ (instancetype)permissionsViewControllerWithCategories:(NSArray *)categories dataSource:(id <ISHPermissionsViewControllerDataSource>)dataSource {
     ISHPermissionsViewController *vc = [ISHPermissionsViewController new];
     [vc setDataSource:dataSource];
     [vc setupRequestablePermissionsCategoriesFromArray:categories];

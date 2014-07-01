@@ -10,7 +10,7 @@
 #import "ISHPermissionRequestViewController.h"
 
 @class ISHPermissionRequest;
-@protocol ISHPermissionsViewControllerDatasource;
+@protocol ISHPermissionsViewControllerDataSource;
 @protocol ISHPermissionsViewControllerDelegate;
 
 typedef void (^ISHPermissionsViewControllerCompletionBlock)(void);
@@ -42,13 +42,13 @@ typedef void (^ISHPermissionsViewControllerCompletionBlock)(void);
  *  @return Returns a new instance of ISHPermissionsViewController for all categories that allow 
  *          a user prompt. Nil if non of the categories allow a user prompt.
  */
-+ (instancetype)permissionsViewControllerWithCategories:(NSArray *)categories dataSource:(id <ISHPermissionsViewControllerDatasource>)dataSource;
++ (instancetype)permissionsViewControllerWithCategories:(NSArray *)categories dataSource:(id <ISHPermissionsViewControllerDataSource>)dataSource;
 
 /**
  *  The dataSource is required and must provide one instance of a 
  *  ISHPermissionRequestViewController for each requested ISHPermissionCategory.
  */
-@property (nonatomic, readonly, weak) id <ISHPermissionsViewControllerDatasource> dataSource;
+@property (nonatomic, readonly, weak) id <ISHPermissionsViewControllerDataSource> dataSource;
 
 /**
  *  The optional delegate is informed by the ISHPermissionsViewController once all permission categories
@@ -73,7 +73,7 @@ typedef void (^ISHPermissionsViewControllerCompletionBlock)(void);
  *  the individual permission categories and to configure permission requests 
  *  that require configuration.
  */
-@protocol ISHPermissionsViewControllerDatasource <NSObject>;
+@protocol ISHPermissionsViewControllerDataSource <NSObject>;
 
 /**
  *  Called by the permissions view controller on its data source when it needs an individual

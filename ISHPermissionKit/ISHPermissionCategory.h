@@ -48,7 +48,7 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
     /**
      *  Permission required to schedule local notifications. 
      *  @note Requests for this permission might require further 
-     *        configuration via the ISHPermissionsViewControllerDatasource.
+     *        configuration via the ISHPermissionsViewControllerDataSource.
      *
      *  @warning Your app delegate will need to implement the following lines:
      *  @code
@@ -63,7 +63,7 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
     /**
      *  Permission required to access the user's Facebook acounts.
      *  @note Requests for this permission require further
-     *        configuration via the ISHPermissionsViewControllerDatasource.
+     *        configuration via the ISHPermissionsViewControllerDataSource.
      *        The request will require an options dictionary including e.g. ACFacebookAppIdKey.
      */
     ISHPermissionCategorySocialFacebook = 7100,
