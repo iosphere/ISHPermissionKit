@@ -21,5 +21,6 @@ FOUNDATION_EXPORT const unsigned char ISHPermissionKitVersionString[];
 #import <ISHPermissionKit/ISHPermissionRequest.h>
 #import <ISHPermissionKit/ISHPermissionRequest+All.h>
 
-// Public module headers: Special request subclasses
+// Public module headers: Special request subclasses that might require further configuration
 #import <ISHPermissionKit/ISHPermissionRequestNotificationsLocal.h>
+#import <ISHPermissionKit/ISHPermissionRequestAccount.h>

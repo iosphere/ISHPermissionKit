@@ -1,6 +1,6 @@
 # <img src="AppIcon40x40_2x.png" align="center" width="40" height="40"> ISHPermissionKit
 
-<img src="https://travis-ci.org/iosphere/ISHPermissionKit.svg?branch=master">&nbsp;
+[![Travis Build Status](https://travis-ci.org/iosphere/ISHPermissionKit.svg?branch=master)](http://travis-ci.org/iosphere/ISHPermissionKit)&nbsp;
 [![Version](http://cocoapod-badges.herokuapp.com/v/ISHPermissionKit/badge.png)](http://cocoadocs.org/docsets/ISHPermissionKit)
 
 This framework provides a unified way of asking for user permissions on iOS. It
@@ -17,15 +17,14 @@ multiple permissions are required at the same time: e.g. when starting to record
 This framework also provides explicit ways to ask for the user's permission
 where the systems APIs only provide implicit methods of doing so.
 
-Recommended reading: [The Right Way To Ask Users For iOS
-Permissions](http://techcrunch.com/2014/04/04/the-right-way-to-ask-users-for-ios-permissions/ "by Brenden Mulligan (@mulligan)")
+**Supported permission categories:**
 
-Supported permission categories:
 * CoreLocation: Always and WhenInUse
 * CoreMotion: Activity data (step counting, etc.)
 * Microphone
 * Photos: Camera Roll and Camera
-* LocalNotifications
+* Notifications: Local
+* Social-Services: Facebook, Twitter, SinaWeibo, TencentWeibo
 
 The static library and sample app compile and run under iOS8 and iOS7. 
 If compiled against iOS8 both make use of the latest available APIs 
@@ -40,23 +39,25 @@ In contrast to other libraries (such as
 it allows you to present custom view controllers, ask for several
 permissions in a sequence and  provides a unified API through subclasses.
 
+Recommended reading: [The Right Way To Ask Users For iOS
+Permissions](https://medium.com/@mulligan/the-right-way-to-ask-users-for-ios-permissions-96fa4eb54f2c "by Brenden Mulligan (@mulligan)")
+
 # Roadmap
 
 Missing features:
 
-1. Documentation
-2. Resetting state correctly when device is reset
-3. Test iPad presentation
+1. Resetting state correctly when device is reset
+2. Test iPad presentation
+3. Permission Monitoring and NSNotification upon changes
 
 Missing support for permissions to:
 
 1. Health-App
 2. AdressBook
-3. Calender
-4. Social-Services
-5. Reminders
-6. Remote notifications
-7. ...
+3. Calendar
+4. Reminders
+5. Remote notifications
+6. ...
 
 # How to use
 
@@ -168,9 +169,9 @@ BOOL granted = ([r permissionState] == ISHPermissionStateAuthorized);
 
 # How to contribute
 
-Contributions are welcome. Check out the roadmap and open issues. Adding support
-for more permission types is probably the most "rewarding", you can find a few
-hints below on how to get started.
+Contributions are welcome. Check out the roadmap and open issues. 
+Adding support for more permission types is probably the 
+most "rewarding", you can find a few hints below on how to get started.
 
 ## Adding support for new permissions
 

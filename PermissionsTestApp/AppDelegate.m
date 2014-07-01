@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "SamplePermissionViewController.h"
 #import <ISHPermissionKit/ISHPermissionKit.h>
+@import Accounts;
 
 @interface AppDelegate () <ISHPermissionsViewControllerDatasource>
         
@@ -33,7 +34,9 @@
                              @(ISHPermissionCategoryMicrophone),
                              @(ISHPermissionCategoryPhotoLibrary),
                              @(ISHPermissionCategoryPhotoCamera),
-                             @(ISHPermissionCategoryNotificationLocal)
+                             @(ISHPermissionCategoryNotificationLocal),
+                             @(ISHPermissionCategorySocialTwitter),
+                             @(ISHPermissionCategorySocialFacebook),
                              ];
     ISHPermissionsViewController *permissionsVC = [ISHPermissionsViewController permissionsViewControllerWithCategories:permissions];
     if (permissionsVC) {
@@ -48,7 +51,7 @@
     return [SamplePermissionViewController new];
 }
 
--(void)permissionsViewController:(ISHPermissionsViewController *)vc didConfigureRequest:(ISHPermissionRequest *)request {
+- (void)permissionsViewController:(ISHPermissionsViewController *)vc didConfigureRequest:(ISHPermissionRequest *)request {
 #ifdef __IPHONE_8_0
     if (request.permissionCategory == ISHPermissionCategoryNotificationLocal) {
         // the demo app only requests permissions for badges
@@ -57,6 +60,18 @@
         [localNotesRequest setNoticationSettings:setting];
     }
 #endif
+    
+    if (request.permissionCategory == ISHPermissionCategorySocialFacebook) {
+        ISHPermissionRequestAccount *accountRequest = (ISHPermissionRequestAccount *)([request isKindOfClass:[ISHPermissionRequestAccount class]] ? request : nil);
+        
+        NSDictionary *options = @{
+                                  ACFacebookAppIdKey: @"YOUR-API-KET",
+                                  ACFacebookPermissionsKey: @[@"email", @"user_about_me"],
+                                  ACFacebookAudienceKey: ACFacebookAudienceFriends
+                                  };
+        
+        [accountRequest setOptions:options];
+    }
 }
 
 #pragma mark Important for local Notifications
