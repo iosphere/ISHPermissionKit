@@ -11,6 +11,6 @@
 
 @interface ISHPermissionRequestNotificationsLocal : ISHPermissionRequest
 #ifdef __IPHONE_8_0
-@property UIUserNotificationSettings *noticationSettings;
+@property (nonatomic) UIUserNotificationSettings *noticationSettings;
 #endif
 @end

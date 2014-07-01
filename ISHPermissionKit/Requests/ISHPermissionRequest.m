@@ -10,7 +10,7 @@
 @import CoreLocation;
 
 @interface ISHPermissionRequest ()
-@property (readwrite) ISHPermissionCategory permissionCategory;
+@property (nonatomic, readwrite) ISHPermissionCategory permissionCategory;
 @end
 
 @implementation ISHPermissionRequest
