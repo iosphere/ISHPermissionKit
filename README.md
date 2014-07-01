@@ -25,6 +25,7 @@ where the systems APIs only provide implicit methods of doing so.
 * Photos: Camera Roll and Camera
 * Notifications: Local
 * Social-Services: Facebook, Twitter, SinaWeibo, TencentWeibo
+* Health-App
 
 The static library and sample app compile and run under iOS8 and iOS7. 
 If compiled against iOS8 both make use of the latest available APIs 
@@ -52,12 +53,11 @@ Missing features:
 
 Missing support for permissions to:
 
-1. Health-App
-2. AdressBook
-3. Calendar
-4. Reminders
-5. Remote notifications
-6. ...
+1. AdressBook
+2. Calendar
+3. Reminders
+4. Remote notifications
+5. ...
 
 # How to use
 
@@ -69,6 +69,9 @@ Add this Xcode project as a sub project of your app. Then link your app target
 against the static library (`ISHPermissionKitLib.a`). You will also need to add 
 the static library as a target dependency. Both settings can be found in your
 app target's *Build Phases*.
+
+Add `$(BUILT_PRODUCTS_DIR)/include/` (recursive) to your app 
+target's *Framework Search paths*.
 
 Use `#import <ISHPermissionKit/ISHPermissionKit.h>` to import all public headers.
 

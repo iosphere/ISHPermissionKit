@@ -21,6 +21,11 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
     ISHPermissionCategoryActivity = 1000,
     
     /**
+     *  Permission required
+     */
+    ISHPermissionCategoryHealth = 2000,
+    
+    /**
      *  Permission required to use the user's location at any time,
      *  including monitoring for regions, visits, or significant location changes.
      */
@@ -93,6 +98,8 @@ static inline NSString *ISHStringFromPermissionCategory(ISHPermissionCategory ca
     switch (category) {
         case ISHPermissionCategoryActivity:
             return @"ISHPermissionCategoryActivity";
+        case ISHPermissionCategoryHealth:
+            return @"ISHPermissionCategoryHealth";
         case ISHPermissionCategoryLocationAlways:
             return @"ISHPermissionCategoryLocationAlways";
         case ISHPermissionCategoryLocationWhenInUse:
