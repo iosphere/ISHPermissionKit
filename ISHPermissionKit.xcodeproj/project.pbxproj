@@ -27,6 +27,23 @@
 		DC5E5BC4195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5E5BC2195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.m */; };
 		DC5E5BC5195DAD770092EAFD /* ISHPermissionRequestNotificationsLocal.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5E5BC2195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.m */; };
 		DC5E5BC7195DC1F50092EAFD /* ISHPermissionRequest+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = DC5E5BC6195DC1F30092EAFD /* ISHPermissionRequest+Private.h */; };
+		DC6A8A7D19633180005AC5BD /* ISHPermissionCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = DC1A80A8195B22A10069235F /* ISHPermissionCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC6A8A7E19633180005AC5BD /* ISHPermissionKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC1BFAA195B174200362559 /* ISHPermissionKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC6A8A7F19633180005AC5BD /* ISHPermissionRequestViewController+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = DC799EB3195C0CF300A0CA36 /* ISHPermissionRequestViewController+Private.h */; };
+		DC6A8A8019633180005AC5BD /* ISHPermissionRequestViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = DC1A80AE195B2C960069235F /* ISHPermissionRequestViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC6A8A8119633180005AC5BD /* ISHPermissionRequestViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = DC799EB5195C113900A0CA36 /* ISHPermissionRequestViewControllerDelegate.h */; };
+		DC6A8A8219633180005AC5BD /* ISHPermissionsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = DC1A80A1195B21DC0069235F /* ISHPermissionsViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC6A8A8319633180005AC5BD /* ISHPermissionRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = DC1A80AA195B23640069235F /* ISHPermissionRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC6A8A8419633180005AC5BD /* ISHPermissionRequest+All.h in Headers */ = {isa = PBXBuildFile; fileRef = DC799EC2195C19CD00A0CA36 /* ISHPermissionRequest+All.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC6A8A8519633180005AC5BD /* ISHPermissionRequest+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = DC5E5BC6195DC1F30092EAFD /* ISHPermissionRequest+Private.h */; };
+		DC6A8A8619633180005AC5BD /* ISHPermissionRequestAccount.h in Headers */ = {isa = PBXBuildFile; fileRef = DCD56C761962AEDC00508F4A /* ISHPermissionRequestAccount.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC6A8A8719633180005AC5BD /* ISHPermissionRequestHealth.h in Headers */ = {isa = PBXBuildFile; fileRef = DCD56C7B1962BB8600508F4A /* ISHPermissionRequestHealth.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC6A8A8819633180005AC5BD /* ISHPermissionRequestLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = DC799EBD195C186100A0CA36 /* ISHPermissionRequestLocation.h */; };
+		DC6A8A8919633180005AC5BD /* ISHPermissionRequestMicrophone.h in Headers */ = {isa = PBXBuildFile; fileRef = DC5E5BAC195D67500092EAFD /* ISHPermissionRequestMicrophone.h */; };
+		DC6A8A8A19633180005AC5BD /* ISHPermissionRequestMotion.h in Headers */ = {isa = PBXBuildFile; fileRef = DCAEF7BF195C5B6B0074EB5B /* ISHPermissionRequestMotion.h */; };
+		DC6A8A8B19633180005AC5BD /* ISHPermissionRequestNotificationsLocal.h in Headers */ = {isa = PBXBuildFile; fileRef = DC5E5BC1195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC6A8A8C19633180005AC5BD /* ISHPermissionRequestPhotoCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = DC5E5BB6195D78800092EAFD /* ISHPermissionRequestPhotoCamera.h */; };
+		DC6A8A8D19633180005AC5BD /* ISHPermissionRequestPhotoLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = DC5E5BB1195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.h */; };
 		DC7790B919617CD7007CB2BC /* libISHPermissionKitLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAEF7CA195C60070074EB5B /* libISHPermissionKitLib.a */; };
 		DC799EB4195C0CF300A0CA36 /* ISHPermissionRequestViewController+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = DC799EB3195C0CF300A0CA36 /* ISHPermissionRequestViewController+Private.h */; };
 		DC799EB6195C113D00A0CA36 /* ISHPermissionRequestViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = DC799EB5195C113900A0CA36 /* ISHPermissionRequestViewControllerDelegate.h */; };
@@ -353,6 +370,30 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		DC6A8A7C19633164005AC5BD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC6A8A7E19633180005AC5BD /* ISHPermissionKit.h in Headers */,
+				DC6A8A8419633180005AC5BD /* ISHPermissionRequest+All.h in Headers */,
+				DC6A8A8019633180005AC5BD /* ISHPermissionRequestViewController.h in Headers */,
+				DC6A8A8219633180005AC5BD /* ISHPermissionsViewController.h in Headers */,
+				DC6A8A7D19633180005AC5BD /* ISHPermissionCategory.h in Headers */,
+				DC6A8A8319633180005AC5BD /* ISHPermissionRequest.h in Headers */,
+				DC6A8A8619633180005AC5BD /* ISHPermissionRequestAccount.h in Headers */,
+				DC6A8A8719633180005AC5BD /* ISHPermissionRequestHealth.h in Headers */,
+				DC6A8A8B19633180005AC5BD /* ISHPermissionRequestNotificationsLocal.h in Headers */,
+				DC6A8A7F19633180005AC5BD /* ISHPermissionRequestViewController+Private.h in Headers */,
+				DC6A8A8119633180005AC5BD /* ISHPermissionRequestViewControllerDelegate.h in Headers */,
+				DC6A8A8519633180005AC5BD /* ISHPermissionRequest+Private.h in Headers */,
+				DC6A8A8819633180005AC5BD /* ISHPermissionRequestLocation.h in Headers */,
+				DC6A8A8919633180005AC5BD /* ISHPermissionRequestMicrophone.h in Headers */,
+				DC6A8A8A19633180005AC5BD /* ISHPermissionRequestMotion.h in Headers */,
+				DC6A8A8C19633180005AC5BD /* ISHPermissionRequestPhotoCamera.h in Headers */,
+				DC6A8A8D19633180005AC5BD /* ISHPermissionRequestPhotoLibrary.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DCC1BFA2195B174200362559 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -404,6 +445,7 @@
 			buildPhases = (
 				DCAEF7C6195C60070074EB5B /* Sources */,
 				DCAEF7C7195C60070074EB5B /* Frameworks */,
+				DC6A8A7C19633164005AC5BD /* Headers */,
 				DCAEF7C8195C60070074EB5B /* CopyFiles */,
 			);
 			buildRules = (
@@ -708,6 +750,7 @@
 				METAL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PROJECT_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -722,6 +765,7 @@
 				METAL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PROJECT_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
