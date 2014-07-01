@@ -59,7 +59,7 @@ typedef void (^ISHPermissionsViewControllerCompletionBlock)(void);
  *  once the dismissal of the view controller has been completed.
  *  Otherwise it is called immediately after informing the delegate.
  */
-@property (strong) ISHPermissionsViewControllerCompletionBlock completionBlock;
+@property (copy) ISHPermissionsViewControllerCompletionBlock completionBlock;
 
 @end
 

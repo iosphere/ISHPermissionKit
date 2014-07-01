@@ -11,7 +11,7 @@
 @interface ISHPermissionRequestAccount : ISHPermissionRequest
 
 /// A unique identifier for the account type. Well known system account type identifiers are listed in <Accounts/ACAccountType.h>
-@property (readonly) NSString *accountTypeIdentifier;
+@property (nonatomic, readonly) NSString *accountTypeIdentifier;
 
 /**
  *  An optional dictionary that will be used when requesting access to the account of the given type.
