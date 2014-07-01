@@ -109,13 +109,13 @@
 - (void)setupRequestablePermissionsCategoriesFromArray:(NSArray *)neededCategories {
     NSMutableArray *requestableCategories = [NSMutableArray arrayWithCapacity:neededCategories.count];
     NSMutableArray *requests = [NSMutableArray arrayWithCapacity:neededCategories.count];
-    BOOL datasourceConfigureRequests = [self.dataSource respondsToSelector:@selector(permissionsViewController:didConfigureRequest:)];
+    BOOL dataSourceConfiguresRequests = [self.dataSource respondsToSelector:@selector(permissionsViewController:didConfigureRequest:)];
 
     for (NSNumber *categoryObj in neededCategories) {
         ISHPermissionCategory category = [categoryObj integerValue];
         ISHPermissionRequest *request = [ISHPermissionRequest requestForCategory:category];
         
-        if (datasourceConfigureRequests) {
+        if (dataSourceConfiguresRequests) {
             [self.dataSource permissionsViewController:self didConfigureRequest:request];
         }
         
