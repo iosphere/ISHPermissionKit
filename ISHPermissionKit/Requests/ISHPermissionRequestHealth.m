@@ -45,21 +45,21 @@
         return ISHPermissionStateUnsupported;
     }
 #ifdef __IPHONE_8_0
-    NSMutableSet *allType = [NSMutableSet set];
+    NSMutableSet *allTypes = [NSMutableSet set];
     
     if (self.objectTypesRead.count) {
-        [allType unionSet:self.objectTypesRead];
+        [allTypes unionSet:self.objectTypesRead];
     }
     
     if (self.objectTypesWrite.count) {
-        [allType unionSet:self.objectTypesWrite];
+        [allTypes unionSet:self.objectTypesWrite];
     }
     
     BOOL anyUndetermined = NO;
     NSUInteger countDenied = 0;
     NSUInteger countAuthorized = 0;
     
-    for (HKObjectType *sampleType in allType) {
+    for (HKObjectType *sampleType in allTypes) {
         HKAuthorizationStatus status = [self.store authorizationStatusForType:sampleType];
         switch (status) {
             case HKAuthorizationStatusNotDetermined:

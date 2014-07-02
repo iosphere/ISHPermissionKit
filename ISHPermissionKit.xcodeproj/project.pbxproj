@@ -77,6 +77,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1B09129C1963F2BF00D69D3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCC1BF9C195B174200362559 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCAEF7C9195C60070074EB5B;
+			remoteInfo = ISHPermissionKitLib;
+		};
+		1B09129E1963F2D800D69D3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCC1BF9C195B174200362559 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCC1BFA4195B174200362559;
+			remoteInfo = ISHPermissionKit;
+		};
+		1B0912A01963F2DF00D69D3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCC1BF9C195B174200362559 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCAEF7C9195C60070074EB5B;
+			remoteInfo = ISHPermissionKitLib;
+		};
 		1B4CC53E19615DB500ECE149 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DCC1BF9C195B174200362559 /* Project object */;
@@ -433,6 +454,8 @@
 			);
 			dependencies = (
 				DC7790BB19617CD7007CB2BC /* PBXTargetDependency */,
+				1B09129D1963F2BF00D69D3B /* PBXTargetDependency */,
+				1B0912A11963F2DF00D69D3B /* PBXTargetDependency */,
 			);
 			name = ISHPermissionKitLibTests;
 			productName = ISHPermissionKitLibTests;
@@ -491,6 +514,7 @@
 				1B87C1B51961A782001D85E7 /* PBXTargetDependency */,
 				1B87C1B71961A782001D85E7 /* PBXTargetDependency */,
 				1B87C1B91961A79C001D85E7 /* PBXTargetDependency */,
+				1B09129F1963F2D800D69D3B /* PBXTargetDependency */,
 			);
 			name = ISHPermissionKitTests;
 			productName = ISHPermissionKitTests;
@@ -664,6 +688,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1B09129D1963F2BF00D69D3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCAEF7C9195C60070074EB5B /* ISHPermissionKitLib */;
+			targetProxy = 1B09129C1963F2BF00D69D3B /* PBXContainerItemProxy */;
+		};
+		1B09129F1963F2D800D69D3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCC1BFA4195B174200362559 /* ISHPermissionKit */;
+			targetProxy = 1B09129E1963F2D800D69D3B /* PBXContainerItemProxy */;
+		};
+		1B0912A11963F2DF00D69D3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCAEF7C9195C60070074EB5B /* ISHPermissionKitLib */;
+			targetProxy = 1B0912A01963F2DF00D69D3B /* PBXContainerItemProxy */;
+		};
 		1B4CC53F19615DB500ECE149 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DCC1BFA4195B174200362559 /* ISHPermissionKit */;
@@ -873,6 +912,7 @@
 				FRAMEWORK_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
 				INFOPLIST_FILE = ISHPermissionKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -890,6 +930,7 @@
 				FRAMEWORK_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
 				INFOPLIST_FILE = ISHPermissionKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -938,7 +979,6 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = PermissionsTestApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "-ObjC";
@@ -952,7 +992,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = PermissionsTestApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-ObjC";
