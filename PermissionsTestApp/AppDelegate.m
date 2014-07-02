@@ -29,6 +29,7 @@
 
 - (void)presentPermissionsIfNeeded {
     NSArray *permissions = @[
+                             @(ISHPermissionCategoryAddressBook),
                              @(ISHPermissionCategoryLocationWhenInUse),
                              @(ISHPermissionCategoryActivity),
                              @(ISHPermissionCategoryMicrophone),

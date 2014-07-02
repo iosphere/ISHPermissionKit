@@ -44,6 +44,10 @@
 		DC6A8A8B19633180005AC5BD /* ISHPermissionRequestNotificationsLocal.h in Headers */ = {isa = PBXBuildFile; fileRef = DC5E5BC1195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC6A8A8C19633180005AC5BD /* ISHPermissionRequestPhotoCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = DC5E5BB6195D78800092EAFD /* ISHPermissionRequestPhotoCamera.h */; };
 		DC6A8A8D19633180005AC5BD /* ISHPermissionRequestPhotoLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = DC5E5BB1195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.h */; };
+		DC6A8ACD19641549005AC5BD /* ISHPermissionRequestAddressBook.h in Headers */ = {isa = PBXBuildFile; fileRef = DC6A8ACB19641549005AC5BD /* ISHPermissionRequestAddressBook.h */; };
+		DC6A8ACE19641549005AC5BD /* ISHPermissionRequestAddressBook.h in Headers */ = {isa = PBXBuildFile; fileRef = DC6A8ACB19641549005AC5BD /* ISHPermissionRequestAddressBook.h */; };
+		DC6A8ACF19641549005AC5BD /* ISHPermissionRequestAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6A8ACC19641549005AC5BD /* ISHPermissionRequestAddressBook.m */; };
+		DC6A8AD019641549005AC5BD /* ISHPermissionRequestAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6A8ACC19641549005AC5BD /* ISHPermissionRequestAddressBook.m */; };
 		DC7790B919617CD7007CB2BC /* libISHPermissionKitLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAEF7CA195C60070074EB5B /* libISHPermissionKitLib.a */; };
 		DC799EB4195C0CF300A0CA36 /* ISHPermissionRequestViewController+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = DC799EB3195C0CF300A0CA36 /* ISHPermissionRequestViewController+Private.h */; };
 		DC799EB6195C113D00A0CA36 /* ISHPermissionRequestViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = DC799EB5195C113900A0CA36 /* ISHPermissionRequestViewControllerDelegate.h */; };
@@ -180,6 +184,8 @@
 		DC5E5BC1195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHPermissionRequestNotificationsLocal.h; sourceTree = "<group>"; };
 		DC5E5BC2195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestNotificationsLocal.m; sourceTree = "<group>"; };
 		DC5E5BC6195DC1F30092EAFD /* ISHPermissionRequest+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ISHPermissionRequest+Private.h"; sourceTree = "<group>"; };
+		DC6A8ACB19641549005AC5BD /* ISHPermissionRequestAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHPermissionRequestAddressBook.h; sourceTree = "<group>"; };
+		DC6A8ACC19641549005AC5BD /* ISHPermissionRequestAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestAddressBook.m; sourceTree = "<group>"; };
 		DC7790B319617CD7007CB2BC /* ISHPermissionKitLibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ISHPermissionKitLibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7790B619617CD7007CB2BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC799EB3195C0CF300A0CA36 /* ISHPermissionRequestViewController+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ISHPermissionRequestViewController+Private.h"; sourceTree = "<group>"; };
@@ -280,6 +286,8 @@
 				DC5E5BC6195DC1F30092EAFD /* ISHPermissionRequest+Private.h */,
 				DCD56C761962AEDC00508F4A /* ISHPermissionRequestAccount.h */,
 				DCD56C771962AEDC00508F4A /* ISHPermissionRequestAccount.m */,
+				DC6A8ACB19641549005AC5BD /* ISHPermissionRequestAddressBook.h */,
+				DC6A8ACC19641549005AC5BD /* ISHPermissionRequestAddressBook.m */,
 				DCD56C7B1962BB8600508F4A /* ISHPermissionRequestHealth.h */,
 				DCD56C7C1962BB8600508F4A /* ISHPermissionRequestHealth.m */,
 				DC799EBD195C186100A0CA36 /* ISHPermissionRequestLocation.h */,
@@ -395,6 +403,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC6A8ACE19641549005AC5BD /* ISHPermissionRequestAddressBook.h in Headers */,
 				DC6A8A7E19633180005AC5BD /* ISHPermissionKit.h in Headers */,
 				DC6A8A8419633180005AC5BD /* ISHPermissionRequest+All.h in Headers */,
 				DC6A8A8019633180005AC5BD /* ISHPermissionRequestViewController.h in Headers */,
@@ -419,6 +428,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC6A8ACD19641549005AC5BD /* ISHPermissionRequestAddressBook.h in Headers */,
 				DC799EC4195C19CD00A0CA36 /* ISHPermissionRequest+All.h in Headers */,
 				DCC1BFAB195B174200362559 /* ISHPermissionKit.h in Headers */,
 				DC1A80A3195B21DC0069235F /* ISHPermissionsViewController.h in Headers */,
@@ -634,6 +644,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC5E5BC5195DAD770092EAFD /* ISHPermissionRequestNotificationsLocal.m in Sources */,
+				DC6A8AD019641549005AC5BD /* ISHPermissionRequestAddressBook.m in Sources */,
 				DC5E5BBA195D78800092EAFD /* ISHPermissionRequestPhotoCamera.m in Sources */,
 				DCAEF7E5195C60250074EB5B /* ISHPermissionRequestLocation.m in Sources */,
 				DCD56C7F1962BB8600508F4A /* ISHPermissionRequestHealth.m in Sources */,
@@ -653,6 +664,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC5E5BC4195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.m in Sources */,
+				DC6A8ACF19641549005AC5BD /* ISHPermissionRequestAddressBook.m in Sources */,
 				DC5E5BB9195D78800092EAFD /* ISHPermissionRequestPhotoCamera.m in Sources */,
 				DC799EC5195C19CD00A0CA36 /* ISHPermissionRequest+All.m in Sources */,
 				DCD56C7E1962BB8600508F4A /* ISHPermissionRequestHealth.m in Sources */,

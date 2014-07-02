@@ -15,6 +15,7 @@
 #import "ISHPermissionRequestNotificationsLocal.h"
 #import "ISHPermissionRequestAccount.h"
 #import "ISHPermissionRequestHealth.h"
+#import "ISHPermissionRequestAddressBook.h"
 #import "ISHPermissionRequest+Private.h"
 
 @implementation ISHPermissionRequest (All)
@@ -57,6 +58,10 @@
         case ISHPermissionCategorySocialSinaWeibo:
         case ISHPermissionCategorySocialTencentWeibo:
             request = [ISHPermissionRequestAccount new];
+            break;
+            
+        case ISHPermissionCategoryAddressBook:
+            request = [ISHPermissionRequestAddressBook new];
             break;
     }
     

@@ -19,13 +19,14 @@ where the systems APIs only provide implicit methods of doing so.
 
 **Supported permission categories:**
 
+* AdressBook
 * CoreLocation: Always and WhenInUse
 * CoreMotion: Activity data (step counting, etc.)
-* Microphone
-* Photos: Camera Roll and Camera
-* Notifications: Local
-* Social-Services: Facebook, Twitter, SinaWeibo, TencentWeibo
 * Health-App
+* Microphone
+* Notifications: Local
+* Photos: Camera Roll and Camera
+* Social-Services: Facebook, Twitter, SinaWeibo, TencentWeibo
 
 The static library and sample app compile and run under iOS8 and iOS7. 
 If compiled against iOS8 both make use of the latest available APIs 
@@ -52,11 +53,10 @@ Missing features:
 
 Missing support for permissions to:
 
-1. AdressBook
-2. Calendar
-3. Reminders
-4. Remote notifications
-5. ...
+1. Calendar
+2. Reminders
+3. Remote notifications
+4. ...
 
 # How to use
 

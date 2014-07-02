@@ -85,7 +85,10 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      */
     ISHPermissionCategorySocialTencentWeibo = 7130,
     
-    
+    /**
+     *  Permission required to access the user's contacts.
+     */
+    ISHPermissionCategoryAddressBook = 8100,
 };
 
 
@@ -120,5 +123,7 @@ static inline NSString *ISHStringFromPermissionCategory(ISHPermissionCategory ca
             return @"ISHPermissionCategorySocialSinaWeibo";
         case ISHPermissionCategorySocialTencentWeibo:
             return @"ISHPermissionCategorySocialTencentWeibo";
+        case ISHPermissionCategoryAddressBook:
+            return @"ISHPermissionCategoryAddressBook";
     }
 }
