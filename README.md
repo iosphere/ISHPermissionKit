@@ -71,7 +71,7 @@ the static library as a target dependency. Both settings can be found in your
 app target's *Build Phases*.
 
 Add `$(BUILT_PRODUCTS_DIR)/include/` (recursive) to your app 
-target's *Framework Search paths*.
+target's *Framework Search Paths*.
 
 Use `#import <ISHPermissionKit/ISHPermissionKit.h>` to import all public headers.
 
