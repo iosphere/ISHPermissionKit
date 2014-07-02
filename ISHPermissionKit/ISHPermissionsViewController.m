@@ -38,7 +38,6 @@
     
     if (self) {
         [self setCurrentIndex:0];
-        BOOL isIpad = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
         UIModalPresentationStyle phonePresentation = UIModalPresentationCurrentContext;
 #ifdef __IPHONE_8_0
         if ([self respondsToSelector:@selector(presentationController)]) {
@@ -46,6 +45,7 @@
             phonePresentation = UIModalPresentationOverCurrentContext;
         }
 #endif
+        BOOL isIpad = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
         [self setModalPresentationStyle:isIpad ? UIModalPresentationFormSheet:phonePresentation];
     }
     
@@ -59,6 +59,7 @@
     if (NSClassFromString(@"UIVisualEffectView") && (self.modalPresentationStyle != UIModalPresentationFormSheet)) {
         view = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
         [view setBounds:[[UIScreen mainScreen] bounds]];
+        [view setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth];
         self.view = view;
     }
 #endif
@@ -110,7 +111,7 @@
     NSMutableArray *requestableCategories = [NSMutableArray arrayWithCapacity:neededCategories.count];
     NSMutableArray *requests = [NSMutableArray arrayWithCapacity:neededCategories.count];
     BOOL dataSourceConfiguresRequests = [self.dataSource respondsToSelector:@selector(permissionsViewController:didConfigureRequest:)];
-
+    
     for (NSNumber *categoryObj in neededCategories) {
         ISHPermissionCategory category = [categoryObj integerValue];
         ISHPermissionRequest *request = [ISHPermissionRequest requestForCategory:category];
@@ -122,12 +123,23 @@
         ISHPermissionState state = [request permissionState];
         
         if (ISHPermissionStateAllowsUserPrompt(state)) {
-                [requestableCategories addObject:categoryObj];
-                [requests addObject:request];
+            [requestableCategories addObject:categoryObj];
+            [requests addObject:request];
         }
     }
     [self setPermissionRequests:[NSArray arrayWithArray:requests]];
     [self setPermissionCategories:[requestableCategories copy]];
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    [self layoutChildViewControllerView:self.currentViewController.view];
+}
+
+- (void)layoutChildViewControllerView:(UIView *)childView {
+    UIView *containerView = self.view;
+    [childView setBounds:containerView.bounds];
+    [childView setCenter:CGPointMake(CGRectGetMidX(containerView.bounds), CGRectGetMidY(containerView.bounds))];
 }
 
 #pragma mark - ISHPermissionRequestViewControllerDelegate
@@ -155,7 +167,10 @@
     [self beginTransitionFromViewController:fromViewController toViewController:toViewController];
     
     if (fromViewController) {
+        // prepare incoming view controller:
+        [self layoutChildViewControllerView:toViewController.view];
         [toViewController.view setTransform:CGAffineTransformMakeScale(0.8, 0.8)];
+        
         [self transitionFromViewController:fromViewController
                           toViewController:toViewController
                                   duration:0.5

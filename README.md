@@ -48,8 +48,7 @@ Permissions](https://medium.com/@mulligan/the-right-way-to-ask-users-for-ios-per
 Missing features:
 
 1. Resetting state correctly when device is reset
-2. Test iPad presentation
-3. Permission Monitoring and NSNotification upon changes
+2. Permission Monitoring and NSNotification upon changes
 
 Missing support for permissions to:
 
