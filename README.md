@@ -20,6 +20,7 @@ where the systems APIs only provide implicit methods of doing so.
 **Supported permission categories:**
 
 * AdressBook
+* Calendar: Events and Reminders
 * CoreLocation: Always and WhenInUse
 * CoreMotion: Activity data (step counting, etc.)
 * Health-App
@@ -53,10 +54,8 @@ Missing features:
 
 Missing support for permissions to:
 
-1. Calendar
-2. Reminders
-3. Remote notifications
-4. ...
+1. Remote notifications
+2. Please file an issue if there you require more permisions...
 
 # How to use
 

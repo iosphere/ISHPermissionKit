@@ -48,6 +48,10 @@
 		DC6A8ACE19641549005AC5BD /* ISHPermissionRequestAddressBook.h in Headers */ = {isa = PBXBuildFile; fileRef = DC6A8ACB19641549005AC5BD /* ISHPermissionRequestAddressBook.h */; };
 		DC6A8ACF19641549005AC5BD /* ISHPermissionRequestAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6A8ACC19641549005AC5BD /* ISHPermissionRequestAddressBook.m */; };
 		DC6A8AD019641549005AC5BD /* ISHPermissionRequestAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6A8ACC19641549005AC5BD /* ISHPermissionRequestAddressBook.m */; };
+		DC6A8AD319642793005AC5BD /* ISHPermissionRequestEventStore.h in Headers */ = {isa = PBXBuildFile; fileRef = DC6A8AD119642793005AC5BD /* ISHPermissionRequestEventStore.h */; };
+		DC6A8AD419642793005AC5BD /* ISHPermissionRequestEventStore.h in Headers */ = {isa = PBXBuildFile; fileRef = DC6A8AD119642793005AC5BD /* ISHPermissionRequestEventStore.h */; };
+		DC6A8AD519642793005AC5BD /* ISHPermissionRequestEventStore.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6A8AD219642793005AC5BD /* ISHPermissionRequestEventStore.m */; };
+		DC6A8AD619642793005AC5BD /* ISHPermissionRequestEventStore.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6A8AD219642793005AC5BD /* ISHPermissionRequestEventStore.m */; };
 		DC7790B919617CD7007CB2BC /* libISHPermissionKitLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAEF7CA195C60070074EB5B /* libISHPermissionKitLib.a */; };
 		DC799EB4195C0CF300A0CA36 /* ISHPermissionRequestViewController+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = DC799EB3195C0CF300A0CA36 /* ISHPermissionRequestViewController+Private.h */; };
 		DC799EB6195C113D00A0CA36 /* ISHPermissionRequestViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = DC799EB5195C113900A0CA36 /* ISHPermissionRequestViewControllerDelegate.h */; };
@@ -186,6 +190,8 @@
 		DC5E5BC6195DC1F30092EAFD /* ISHPermissionRequest+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ISHPermissionRequest+Private.h"; sourceTree = "<group>"; };
 		DC6A8ACB19641549005AC5BD /* ISHPermissionRequestAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHPermissionRequestAddressBook.h; sourceTree = "<group>"; };
 		DC6A8ACC19641549005AC5BD /* ISHPermissionRequestAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestAddressBook.m; sourceTree = "<group>"; };
+		DC6A8AD119642793005AC5BD /* ISHPermissionRequestEventStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHPermissionRequestEventStore.h; sourceTree = "<group>"; };
+		DC6A8AD219642793005AC5BD /* ISHPermissionRequestEventStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestEventStore.m; sourceTree = "<group>"; };
 		DC7790B319617CD7007CB2BC /* ISHPermissionKitLibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ISHPermissionKitLibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7790B619617CD7007CB2BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC799EB3195C0CF300A0CA36 /* ISHPermissionRequestViewController+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ISHPermissionRequestViewController+Private.h"; sourceTree = "<group>"; };
@@ -288,6 +294,8 @@
 				DCD56C771962AEDC00508F4A /* ISHPermissionRequestAccount.m */,
 				DC6A8ACB19641549005AC5BD /* ISHPermissionRequestAddressBook.h */,
 				DC6A8ACC19641549005AC5BD /* ISHPermissionRequestAddressBook.m */,
+				DC6A8AD119642793005AC5BD /* ISHPermissionRequestEventStore.h */,
+				DC6A8AD219642793005AC5BD /* ISHPermissionRequestEventStore.m */,
 				DCD56C7B1962BB8600508F4A /* ISHPermissionRequestHealth.h */,
 				DCD56C7C1962BB8600508F4A /* ISHPermissionRequestHealth.m */,
 				DC799EBD195C186100A0CA36 /* ISHPermissionRequestLocation.h */,
@@ -413,6 +421,7 @@
 				DC6A8A8619633180005AC5BD /* ISHPermissionRequestAccount.h in Headers */,
 				DC6A8A8719633180005AC5BD /* ISHPermissionRequestHealth.h in Headers */,
 				DC6A8A8B19633180005AC5BD /* ISHPermissionRequestNotificationsLocal.h in Headers */,
+				DC6A8AD419642793005AC5BD /* ISHPermissionRequestEventStore.h in Headers */,
 				DC6A8A7F19633180005AC5BD /* ISHPermissionRequestViewController+Private.h in Headers */,
 				DC6A8A8119633180005AC5BD /* ISHPermissionRequestViewControllerDelegate.h in Headers */,
 				DC6A8A8519633180005AC5BD /* ISHPermissionRequest+Private.h in Headers */,
@@ -438,6 +447,7 @@
 				DCD56C781962AEDC00508F4A /* ISHPermissionRequestAccount.h in Headers */,
 				DC799EBF195C186100A0CA36 /* ISHPermissionRequestLocation.h in Headers */,
 				DCAEF7C1195C5B6B0074EB5B /* ISHPermissionRequestMotion.h in Headers */,
+				DC6A8AD319642793005AC5BD /* ISHPermissionRequestEventStore.h in Headers */,
 				DC799EB4195C0CF300A0CA36 /* ISHPermissionRequestViewController+Private.h in Headers */,
 				DC5E5BC3195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.h in Headers */,
 				DC1A80AC195B23640069235F /* ISHPermissionRequest.h in Headers */,
@@ -653,6 +663,7 @@
 				DCAEF7E6195C60250074EB5B /* ISHPermissionRequestMotion.m in Sources */,
 				DC5E5BB0195D67500092EAFD /* ISHPermissionRequestMicrophone.m in Sources */,
 				DCAEF7E2195C60250074EB5B /* ISHPermissionsViewController.m in Sources */,
+				DC6A8AD619642793005AC5BD /* ISHPermissionRequestEventStore.m in Sources */,
 				DCAEF7E3195C60250074EB5B /* ISHPermissionRequest+All.m in Sources */,
 				DCD56C7A1962AEDC00508F4A /* ISHPermissionRequestAccount.m in Sources */,
 				DCAEF7E4195C60250074EB5B /* ISHPermissionRequest.m in Sources */,
@@ -673,6 +684,7 @@
 				DC799EC0195C186100A0CA36 /* ISHPermissionRequestLocation.m in Sources */,
 				DC5E5BAF195D67500092EAFD /* ISHPermissionRequestMicrophone.m in Sources */,
 				DC1A80A4195B21DC0069235F /* ISHPermissionsViewController.m in Sources */,
+				DC6A8AD519642793005AC5BD /* ISHPermissionRequestEventStore.m in Sources */,
 				DC1A80B1195B2C960069235F /* ISHPermissionRequestViewController.m in Sources */,
 				DCD56C791962AEDC00508F4A /* ISHPermissionRequestAccount.m in Sources */,
 				DC1A80AD195B23640069235F /* ISHPermissionRequest.m in Sources */,

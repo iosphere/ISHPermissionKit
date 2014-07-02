@@ -29,6 +29,8 @@
 
 - (void)presentPermissionsIfNeeded {
     NSArray *permissions = @[
+                             @(ISHPermissionCategoryEvents),
+                             @(ISHPermissionCategoryReminders),
                              @(ISHPermissionCategoryAddressBook),
                              @(ISHPermissionCategoryLocationWhenInUse),
                              @(ISHPermissionCategoryActivity),
