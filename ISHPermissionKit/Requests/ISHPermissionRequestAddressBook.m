@@ -61,11 +61,11 @@
 
 - (void)setAddressBook:(ABAddressBookRef)newAddressBook {
     if (_addressBook != newAddressBook) {
-        if (_addressBook != NULL) {
+        if (_addressBook) {
             CFRelease(_addressBook);
         }
         
-        if (newAddressBook != NULL) {
+        if (newAddressBook) {
             CFRetain(newAddressBook);
         }
         
