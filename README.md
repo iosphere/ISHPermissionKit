@@ -55,7 +55,7 @@ Missing features:
 Missing support for permissions to:
 
 1. Remote notifications
-2. Please file an issue for missing permisions
+2. Please file an issue for missing permissions
 
 # How to use
 
