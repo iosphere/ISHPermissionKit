@@ -23,6 +23,7 @@
 
 + (instancetype)permissionsViewControllerWithCategories:(NSArray *)categories dataSource:(id <ISHPermissionsViewControllerDataSource>)dataSource {
     ISHPermissionsViewController *vc = [ISHPermissionsViewController new];
+    
     [vc setDataSource:dataSource];
     [vc setupRequestablePermissionsCategoriesFromArray:categories];
     
@@ -116,7 +117,7 @@
         ISHPermissionCategory category = [categoryObj integerValue];
         ISHPermissionRequest *request = [ISHPermissionRequest requestForCategory:category];
         
-        if (dataSourceConfiguresRequests && request.allowsConfiguration) {
+        if (dataSourceConfiguresRequests && request.allowsConfiguration && ([request permissionState] != ISHPermissionStateUnsupported)) {
             [self.dataSource permissionsViewController:self didConfigureRequest:request];
         }
         
@@ -127,6 +128,7 @@
             [requests addObject:request];
         }
     }
+    
     [self setPermissionRequests:[NSArray arrayWithArray:requests]];
     [self setPermissionCategories:[requestableCategories copy]];
 }
@@ -138,6 +140,7 @@
 
 - (void)layoutChildViewControllerView:(UIView *)childView {
     UIView *containerView = self.view;
+    
     [childView setBounds:containerView.bounds];
     [childView setCenter:CGPointMake(CGRectGetMidX(containerView.bounds), CGRectGetMidY(containerView.bounds))];
 }
