@@ -38,9 +38,8 @@
             return ISHPermissionStateAuthorized;
 
         case kCLAuthorizationStatusAuthorizedWhenInUse:
-
             if (self.permissionCategory == ISHPermissionCategoryLocationAlways) {
-                return ISHPermissionStateDenied;
+                return ISHPermissionStateAskAgain;
             } else {
                 return ISHPermissionStateAuthorized;
             }
