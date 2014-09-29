@@ -23,8 +23,8 @@
 - (instancetype)init {
     self = [super init];
     #ifndef ISHPermissionRequestHealthKitEnabled
-    NSAssert(false, @"HealthKit Permission requests require the use of the +HealthKit framework or static library. "
-                    @"This assertion was most likely triggered, because your app links to the wrong target. "
+    NSAssert(false, @"HealthKit permission requests require the use of the +HealthKit framework or static library. "
+                    @"This assertion was most likely triggered because your app links to the wrong target. "
                     @"Please check your project settings.");
     #endif
     return self;
