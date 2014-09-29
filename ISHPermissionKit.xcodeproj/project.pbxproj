@@ -93,6 +93,7 @@
 		DC6A46AA19D712AC00B11E88 /* ISHPermissionRequestViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = DC799EB5195C113900A0CA36 /* ISHPermissionRequestViewControllerDelegate.h */; };
 		DC6A46AB19D712AC00B11E88 /* ISHPermissionRequestPhotoCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = DC5E5BB6195D78800092EAFD /* ISHPermissionRequestPhotoCamera.h */; };
 		DC6A46AC19D712AC00B11E88 /* ISHPermissionRequestHealth.h in Headers */ = {isa = PBXBuildFile; fileRef = DCD56C7B1962BB8600508F4A /* ISHPermissionRequestHealth.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC6A46B519D94E6A00B11E88 /* libISHPermissionKitLib+HealthKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6A468719D7125300B11E88 /* libISHPermissionKitLib+HealthKit.a */; };
 		DC6A8A7D19633180005AC5BD /* ISHPermissionCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = DC1A80A8195B22A10069235F /* ISHPermissionCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC6A8A7E19633180005AC5BD /* ISHPermissionKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC1BFAA195B174200362559 /* ISHPermissionKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC6A8A7F19633180005AC5BD /* ISHPermissionRequestViewController+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = DC799EB3195C0CF300A0CA36 /* ISHPermissionRequestViewController+Private.h */; };
@@ -133,7 +134,6 @@
 		DCAEF7E4195C60250074EB5B /* ISHPermissionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A80AB195B23640069235F /* ISHPermissionRequest.m */; };
 		DCAEF7E5195C60250074EB5B /* ISHPermissionRequestLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DC799EBE195C186100A0CA36 /* ISHPermissionRequestLocation.m */; };
 		DCAEF7E6195C60250074EB5B /* ISHPermissionRequestMotion.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAEF7C0195C5B6B0074EB5B /* ISHPermissionRequestMotion.m */; };
-		DCAEF7E7195C60340074EB5B /* libISHPermissionKitLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAEF7CA195C60070074EB5B /* libISHPermissionKitLib.a */; };
 		DCC1BFAB195B174200362559 /* ISHPermissionKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC1BFAA195B174200362559 /* ISHPermissionKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DCC1BFB1195B174200362559 /* ISHPermissionKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC1BFA5195B174200362559 /* ISHPermissionKit.framework */; };
 		DCC1BFB8195B174200362559 /* ISHPermissionKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1BFB7195B174200362559 /* ISHPermissionKitTests.m */; };
@@ -200,14 +200,14 @@
 			remoteGlobalIDString = DCC1BFA4195B174200362559;
 			remoteInfo = ISHPermissionKit;
 		};
-		DC7790BA19617CD7007CB2BC /* PBXContainerItemProxy */ = {
+		DC6A46B319D94E2700B11E88 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DCC1BF9C195B174200362559 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DCAEF7C9195C60070074EB5B;
-			remoteInfo = ISHPermissionKitLib;
+			remoteGlobalIDString = DC6A465E19D7125300B11E88;
+			remoteInfo = "ISHPermissionKitLib+HealthKit";
 		};
-		DCAEF7E8195C603F0074EB5B /* PBXContainerItemProxy */ = {
+		DC7790BA19617CD7007CB2BC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DCC1BF9C195B174200362559 /* Project object */;
 			proxyType = 1;
@@ -263,8 +263,8 @@
 		DC5E5BC1195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHPermissionRequestNotificationsLocal.h; sourceTree = "<group>"; };
 		DC5E5BC2195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestNotificationsLocal.m; sourceTree = "<group>"; };
 		DC5E5BC6195DC1F30092EAFD /* ISHPermissionRequest+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ISHPermissionRequest+Private.h"; sourceTree = "<group>"; };
-		DC6A468719D7125300B11E88 /* libISHPermissionKitLib copy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libISHPermissionKitLib copy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC6A46B119D712AC00B11E88 /* ISHPermissionKit copy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "ISHPermissionKit copy.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC6A468719D7125300B11E88 /* libISHPermissionKitLib+HealthKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libISHPermissionKitLib+HealthKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC6A46B119D712AC00B11E88 /* ISHPermissionKit+HealthKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "ISHPermissionKit+HealthKit.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC6A8ACB19641549005AC5BD /* ISHPermissionRequestAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHPermissionRequestAddressBook.h; sourceTree = "<group>"; };
 		DC6A8ACC19641549005AC5BD /* ISHPermissionRequestAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestAddressBook.m; sourceTree = "<group>"; };
 		DC6A8AD119642793005AC5BD /* ISHPermissionRequestEventStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHPermissionRequestEventStore.h; sourceTree = "<group>"; };
@@ -350,7 +350,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCAEF7E7195C60340074EB5B /* libISHPermissionKitLib.a in Frameworks */,
+				DC6A46B519D94E6A00B11E88 /* libISHPermissionKitLib+HealthKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,8 +426,8 @@
 				DCC1BFC5195B176E00362559 /* PermissionsTestApp.app */,
 				DCAEF7CA195C60070074EB5B /* libISHPermissionKitLib.a */,
 				DC7790B319617CD7007CB2BC /* ISHPermissionKitLibTests.xctest */,
-				DC6A468719D7125300B11E88 /* libISHPermissionKitLib copy.a */,
-				DC6A46B119D712AC00B11E88 /* ISHPermissionKit copy.framework */,
+				DC6A468719D7125300B11E88 /* libISHPermissionKitLib+HealthKit.a */,
+				DC6A46B119D712AC00B11E88 /* ISHPermissionKit+HealthKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -622,7 +622,7 @@
 			);
 			name = "ISHPermissionKitLib+HealthKit";
 			productName = ISHPermissionKitLib;
-			productReference = DC6A468719D7125300B11E88 /* libISHPermissionKitLib copy.a */;
+			productReference = DC6A468719D7125300B11E88 /* libISHPermissionKitLib+HealthKit.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		DC6A468819D712AC00B11E88 /* ISHPermissionKit+HealthKit */ = {
@@ -640,7 +640,7 @@
 			);
 			name = "ISHPermissionKit+HealthKit";
 			productName = ISHPermissionKit;
-			productReference = DC6A46B119D712AC00B11E88 /* ISHPermissionKit copy.framework */;
+			productReference = DC6A46B119D712AC00B11E88 /* ISHPermissionKit+HealthKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		DC7790B219617CD7007CB2BC /* ISHPermissionKitLibTests */ = {
@@ -733,7 +733,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				DCAEF7E9195C603F0074EB5B /* PBXTargetDependency */,
+				DC6A46B419D94E2700B11E88 /* PBXTargetDependency */,
 			);
 			name = PermissionsTestApp;
 			productName = PermissionsTestApp;
@@ -979,15 +979,15 @@
 			target = DCC1BFA4195B174200362559 /* ISHPermissionKit */;
 			targetProxy = 1B87C1B81961A79C001D85E7 /* PBXContainerItemProxy */;
 		};
+		DC6A46B419D94E2700B11E88 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC6A465E19D7125300B11E88 /* ISHPermissionKitLib+HealthKit */;
+			targetProxy = DC6A46B319D94E2700B11E88 /* PBXContainerItemProxy */;
+		};
 		DC7790BB19617CD7007CB2BC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DCAEF7C9195C60070074EB5B /* ISHPermissionKitLib */;
 			targetProxy = DC7790BA19617CD7007CB2BC /* PBXContainerItemProxy */;
-		};
-		DCAEF7E9195C603F0074EB5B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DCAEF7C9195C60070074EB5B /* ISHPermissionKitLib */;
-			targetProxy = DCAEF7E8195C603F0074EB5B /* PBXContainerItemProxy */;
 		};
 		DCC1BFB3195B174200362559 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1010,7 +1010,7 @@
 				);
 				METAL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "ISHPermissionKitLib copy";
+				PRODUCT_NAME = "ISHPermissionKitLib+HealthKit";
 				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PROJECT_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -1029,7 +1029,7 @@
 				);
 				METAL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "ISHPermissionKitLib copy";
+				PRODUCT_NAME = "ISHPermissionKitLib+HealthKit";
 				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PROJECT_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -1052,7 +1052,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "ISHPermissionKit copy";
+				PRODUCT_NAME = "ISHPermissionKit+HealthKit";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -1074,7 +1074,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "ISHPermissionKit copy";
+				PRODUCT_NAME = "ISHPermissionKit+HealthKit";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
