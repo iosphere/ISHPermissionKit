@@ -23,7 +23,7 @@ where the systems APIs only provide implicit methods of doing so.
 * Calendar: Events and Reminders
 * CoreLocation: Always and WhenInUse
 * CoreMotion: Activity data (step counting, etc.)
-* Health-App
+* Health-App *(use `+HealthKit` variants of static library or framework)*
 * Microphone
 * Notifications: Local
 * Photos: Camera Roll and Camera
@@ -64,9 +64,10 @@ Missing support for permissions to:
 ### Static Library
 
 Add this Xcode project as a sub project of your app. Then link your app target 
-against the static library (`ISHPermissionKitLib.a`). You will also need to add 
-the static library as a target dependency. Both settings can be found in your
-app target's *Build Phases*.
+against the static library (`ISHPermissionKitLib.a` or 
+`ISHPermissionKitLib+HealthKit.a` if you require HealthKit support).
+You will also need to add the static library as a target dependency. 
+Both settings can be found in your app target's *Build Phases*.
 
 Add `$(BUILT_PRODUCTS_DIR)/include/` (recursive) to your app 
 target's *Framework Search Paths*.
@@ -76,7 +77,8 @@ Use `#import <ISHPermissionKit/ISHPermissionKit.h>` to import all public headers
 ### Dynamically-Linked Framework
 
 Add this Xcode project as a sub project of your app. Then add the framework
-(`ISHPermissionKit.framework`) to the app's embedded binaries (On the *General*
+(`ISHPermissionKit.framework` or `ISHPermissionKit+HealthKit.framework` if you 
+require HealthKit support) to the app's embedded binaries (On the *General*
 tab of your app target's settings). On the *Build Phases* tab, verify that the
 framework has also been added to the *Target Dependencies* and *Link Binary with
 Libraries* phases, and that a new *Embed Frameworks* phase has been created.
@@ -90,14 +92,15 @@ least iOS 8 is required.
 
 ### CocoaPods
 
-You can use CocoaPods to install ISHPermissionKit as a static library. This is all
-you have to put in your Podfile:
+You can use CocoaPods to install ISHPermissionKit as a static library. 
+This is all you have to put in your Podfile:
 
 ```ruby
 pod 'ISHPermissionKit'
 ```
 
 See the [official guides](http://guides.cocoapods.org) to get started with CocoaPods.
+
 
 ## ISHPermissionsViewController
 

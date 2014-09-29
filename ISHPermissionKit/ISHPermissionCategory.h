@@ -21,7 +21,11 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
     ISHPermissionCategoryActivity = 1000,
     
     /**
-     *  Permission required
+     *  Permission required to use HealthKit data.
+     *  Make sure to comply with sections 27.4 - 27.6 of the review guidelines.
+     *  Use the `ISHPermissionKitLib+HealthKit` static library or
+     *  the `ISHPermissionKit+HealthKit` framework if
+     *  you want to use this permission category.
      */
     ISHPermissionCategoryHealth = 2000,
     

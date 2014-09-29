@@ -9,8 +9,9 @@
 #import "ISHPermissionRequestHealth.h"
 #import "ISHPermissionRequest+Private.h"
 
-#ifdef __IPHONE_8_0
+#ifdef ISHPermissionRequestHealthKitEnabled
 @import HealthKit;
+
 
 @interface ISHPermissionRequestHealth ()
 @property (nonatomic) HKHealthStore *store;
@@ -19,11 +20,21 @@
 
 @implementation ISHPermissionRequestHealth
 
+- (instancetype)init {
+    self = [super init];
+    #ifndef ISHPermissionRequestHealthKitEnabled
+    NSAssert(false, @"HealthKit permission requests require the use of the +HealthKit framework or static library. "
+                    @"This assertion was most likely triggered because your app links to the wrong target. "
+                    @"Please check your project settings.");
+    #endif
+    return self;
+}
+
 - (BOOL)allowsConfiguration {
     return YES;
 }
 
-#ifdef __IPHONE_8_0
+#ifdef ISHPermissionRequestHealthKitEnabled
 - (HKHealthStore *)store {
     if (!_store) {
         _store = [HKHealthStore new];
@@ -31,20 +42,27 @@
     
     return _store;
 }
+#else 
+- (id)store {
+    return nil;
+}
 #endif
 
 + (BOOL)useFallBack {
-#ifndef __IPHONE_8_0
+#ifndef ISHPermissionRequestHealthKitEnabled
     return YES;
-#endif
+#else
     return !(NSClassFromString(@"HKHealthStore"));
+#endif
 }
 
 - (ISHPermissionState)permissionState {
     if ([ISHPermissionRequestHealth useFallBack]) {
         return ISHPermissionStateUnsupported;
     }
-#ifdef __IPHONE_8_0
+#ifndef ISHPermissionRequestHealthKitEnabled
+    return ISHPermissionStateUnsupported; // should already be covered by above Fallback
+#else
     NSMutableSet *allTypes = [NSMutableSet set];
     
     if (self.objectTypesRead.count) {
@@ -84,10 +102,8 @@
     if (countDenied > countAuthorized) {
         return ISHPermissionStateDenied;
     }
-#else
-    return ISHPermissionStateUnsupported;
-#endif
     return ISHPermissionStateAuthorized;
+#endif  // #ifndef ISHPermissionRequestHealthKitEnabled
 }
 
 - (void)requestUserPermissionWithCompletionBlock:(ISHPermissionRequestCompletionBlock)completion {
@@ -99,7 +115,7 @@
         return;
     }
     
-#ifdef __IPHONE_8_0
+#ifdef ISHPermissionRequestHealthKitEnabled
     [self.store requestAuthorizationToShareTypes:self.objectTypesWrite
                                        readTypes:self.objectTypesRead
                                       completion:^(BOOL success, NSError *error) {
