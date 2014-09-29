@@ -100,6 +100,23 @@ This is all you have to put in your Podfile:
 pod 'ISHPermissionKit'
 ```
 
+The default installation does not include HealthKit support. To enable HealthKit 
+permissions, the `ISHPermissionRequestHealthKitEnabled` preprocessor macro needs 
+to be set. Use the following sample podfile to ensure the flag is still set 
+after pod updates:
+
+```ruby
+pod 'ISHPermissionKit'
+
+post_install do |installer_representation|
+  installer_representation.project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)', 'ISHPermissionRequestHealthKitEnabled=1']
+    end
+  end
+end
+```
+
 See the [official guides](http://guides.cocoapods.org) to get started with CocoaPods.
 
 
