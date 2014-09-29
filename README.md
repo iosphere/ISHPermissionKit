@@ -5,33 +5,34 @@
 
 This framework provides a unified way of asking for user permissions on iOS. It
 also provides UI to explain the permission requirements before presenting the
-user with the system permission dialogue. This allows the developer to postpone
+the system permission dialogue to the user. This allows the developer to postpone
 the system dialogue. The framework provides no actual chrome, leaving the
 developer and designer in charge of creating the views.
 
-While you can use this framework to ask for a user's permission to multiple
-things at the same time and out of context, you should continue to ask for
-permission only when the app needs it. However there might be occassions, where
-multiple permissions are required at the same time: e.g. when starting to record location and motion data.
+While you can use this framework to ask for a user's permission for multiple
+data sources at the same time and out of context, you should continue to ask for
+permission only when the app needs it. However, there might be occassions when
+multiple permissions are required at the same time, e.g., when starting to record
+location and motion data.
 
 This framework also provides explicit ways to ask for the user's permission
-where the systems APIs only provide implicit methods of doing so.
+where the system APIs only provide implicit methods of doing so.
 
 **Supported permission categories:**
 
-* AdressBook
+* AddressBook
 * Calendar: Events and Reminders
 * CoreLocation: Always and WhenInUse
 * CoreMotion: Activity data (step counting, etc.)
-* Health-App *(use `+HealthKit` variants of static library or framework)*
+* HealthKit *(use `+HealthKit` variants of the static library or framework)*
 * Microphone
 * Notifications: Local
 * Photos: Camera Roll and Camera
-* Social-Services: Facebook, Twitter, SinaWeibo, TencentWeibo
+* Social: Facebook, Twitter, SinaWeibo, TencentWeibo
 
 The static library and sample app compile and run under iOS8 and iOS7. 
-If compiled against iOS8 both make use of the latest available APIs 
-(e.g. microphone, location and local notification permissions) 
+If compiled against iOS8 they make use of the latest available APIs 
+(e.g., microphone, location, and local notification permissions) 
 and fall back gracefully when running under iOS7.
 
 <img src="demo.gif" align="center" width="320" height="568" alt="Sample App Demo"> 
@@ -40,7 +41,7 @@ In contrast to other libraries (such as
 [JLPermissions](https://github.com/jlaws/JLPermissions) and
 [ClusterPrePermissions](https://github.com/clusterinc/ClusterPrePermissions)) 
 it allows you to present custom view controllers, ask for several
-permissions in a sequence and  provides a unified API through subclasses.
+permissions in a sequence, and provides a unified API through subclasses.
 
 Recommended reading: [The Right Way To Ask Users For iOS
 Permissions](https://medium.com/@mulligan/the-right-way-to-ask-users-for-ios-permissions-96fa4eb54f2c "by Brenden Mulligan (@mulligan)")
@@ -50,9 +51,9 @@ Permissions](https://medium.com/@mulligan/the-right-way-to-ask-users-for-ios-per
 Missing features:
 
 1. Resetting state correctly when device is reset
-2. Permission Monitoring and NSNotification upon changes
+2. Permission monitoring and NSNotifications upon changes
 
-Missing support for permissions to:
+Missing support for permissions for:
 
 1. Remote notifications
 2. Please file an issue for missing permissions
@@ -78,7 +79,7 @@ Use `#import <ISHPermissionKit/ISHPermissionKit.h>` to import all public headers
 
 Add this Xcode project as a sub project of your app. Then add the framework
 (`ISHPermissionKit.framework` or `ISHPermissionKit+HealthKit.framework` if you 
-require HealthKit support) to the app's embedded binaries (On the *General*
+require HealthKit support) to the app's embedded binaries (on the *General*
 tab of your app target's settings). On the *Build Phases* tab, verify that the
 framework has also been added to the *Target Dependencies* and *Link Binary with
 Libraries* phases, and that a new *Embed Frameworks* phase has been created.
@@ -130,7 +131,7 @@ device).
 You can set a `completionBlock` or `delegate` (both optional) that will be
 notified once the `ISHPermissionsViewController` has iterated through all
 categories. If you do not set a delegate the view controller will simply be
-dismissed once finished and if set the completion block will be called. If you
+dismissed once finished, and if set, the completion block will be called. If you
 do set a delegate, the delegate is responsible for dismissing the view
 controller.
 
@@ -138,25 +139,25 @@ The `dataSource` is required and must provide one instance of a
 `ISHPermissionRequestViewController` for each requested 
 `ISHPermissionCategory`.
 
-The `ISHPermissionRequestViewController` provides `IBAction` to _prompt for the
+The `ISHPermissionRequestViewController` provides `IBAction`s to _prompt for the
 user's permission_, _ask later_, and _don't ask_. It does not however provide
-any buttons or UI. Your subclass can create a view with text, images and buttons
+any buttons or UI. Your subclass can create a view with text, images, and buttons
 etc. explaining in greater detail why your app needs a certain permission. The
-subclass should contain buttons that trigger at least one of the actions above
+subclass should contain buttons that trigger at least one of the actions
 mentioned above (see the header for their signatures). A _cancel button_ should
-call `changePermissionStateToAskAgainFromSender`. If you subclass these three
-actions you must call super.
+call `changePermissionStateToAskAgainFromSender:`. If your subclass overwrites 
+any of these three actions, you must call super.
 
 ## ISHPermissionRequest
 
 The `ISHPermissionRequest` can be used to determine the current state of a
 permission category. It can also be used to trigger the user prompt asking for
-permission outside of the `ISHPermissionsViewController`.
+permissions outside of the `ISHPermissionsViewController`.
 
-You must use the addition (+all) method `+requestForCategory:` to create the
+You must use the additional (`...+All.h`) method `+requestForCategory:` to create the
 appropriate request for the given permission category.
 
-Here is how you check for user permissions to the microphone:
+Here is how you check the permissions to access the microphone:
 
 ```objective-c
 ISHPermissionRequest *r = [ISHPermissionRequest requestForCategory:ISHPermissionCategoryMicrophone];
@@ -173,14 +174,14 @@ BOOL granted = ([r permissionState] == ISHPermissionStateAuthorized);
 # How to contribute
 
 Contributions are welcome. Check out the roadmap and open issues. 
-Adding support for more permission types is probably the 
-most "rewarding", you can find a few hints below on how to get started.
+Adding support for more permission types is probably 
+most "rewarding", you can find a few hints on how to get started below.
 
 ## Adding support for new permissions
 
 You will need to create a new subclass of `ISHPermissionRequest` and add a
 `ISHPermissionCategory` (make sure to use explicit values as these may be
-persisted). Don't change existing values. Finally wire it up in
+persisted). Don't change existing values. Finally, wire it up in
 `ISHPermissionRequest+All` by returning your new subclass in
 `+requestForCategory:`.
 
@@ -189,9 +190,9 @@ Subclasses must implement at least two methods:
 1. `- (ISHPermissionState)permissionState`
 2. `- (void)requestUserPermissionWithCompletionBlock:(ISHPermissionRequestCompletionBlock)completion`
 
-What these methods will do, depends on the mechanisms that the system APIs
-provide. Ideally `permissionState` should check the system authorization state
-first and should return appropriate internal enum values from
+What these methods do depends on the mechanisms that the system APIs
+provide. Ideally, `permissionState` should check the system authorization state
+first and return appropriate internal enum values from
 `ISHPermissionState`. If the system state is unavailable or is similar to
 `kCLAuthorizationStatusNotDetermined` then this method should return
 `internalPermissionState`. You should try to map system provided states to
@@ -200,8 +201,8 @@ possible.
 
 
 When requesting the permission state you should only store the result in
-internalPermissionState if the state cannot easily be retrieved from the the
-system (as is the case e.g. with M7-ActivityMonitoring).
+internalPermissionState if the state cannot easily be retrieved from the
+system (as is the case, e.g., with M7-ActivityMonitoring).
 
 
 
