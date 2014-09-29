@@ -52,10 +52,7 @@
 #ifndef ISHPermissionRequestHealthKitEnabled
     return YES;
 #else
-    #ifndef __IPHONE_8_0
-        return YES;
-    #endif
-        return !(NSClassFromString(@"HKHealthStore"));
+    return !(NSClassFromString(@"HKHealthStore"));
 #endif
 }
 
@@ -66,7 +63,6 @@
 #ifndef ISHPermissionRequestHealthKitEnabled
     return ISHPermissionStateUnsupported; // should already be covered by above Fallback
 #else
-#ifdef __IPHONE_8_0
     NSMutableSet *allTypes = [NSMutableSet set];
     
     if (self.objectTypesRead.count) {
@@ -106,9 +102,6 @@
     if (countDenied > countAuthorized) {
         return ISHPermissionStateDenied;
     }
-#else
-    return ISHPermissionStateUnsupported;
-#endif
     return ISHPermissionStateAuthorized;
 #endif  // #ifndef ISHPermissionRequestHealthKitEnabled
 }
