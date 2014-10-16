@@ -111,7 +111,15 @@ pod 'ISHPermissionKit'
 post_install do |installer_representation|
   installer_representation.project.targets.each do |target|
     target.build_configurations.each do |config|
-      config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= ['$(inherited)', 'ISHPermissionRequestHealthKitEnabled=1']
+      preprocessor_defs = config.build_settings['GCC_PREPROCESSOR_DEFINITIONS']
+      permission_kit_defs = ['$(inherited)', 'ISHPermissionRequestHealthKitEnabled=1']
+      if preprocessor_defs
+      	preprocessor_defs += permission_kit_defs
+        preprocessor_defs.uniq!
+      else
+        preprocessor_defs = permission_kit_defs
+      end
+      config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] = preprocessor_defs
     end
   end
 end
