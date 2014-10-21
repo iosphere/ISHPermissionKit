@@ -26,6 +26,8 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  Use the `ISHPermissionKitLib+HealthKit` static library or
      *  the `ISHPermissionKit+HealthKit` framework if
      *  you want to use this permission category.
+     *
+     *  @note: The Health app and HealthKit are not available on iPad.
      */
     ISHPermissionCategoryHealth = 2000,
     

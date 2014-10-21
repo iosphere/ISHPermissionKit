@@ -52,7 +52,7 @@
 #ifndef ISHPermissionRequestHealthKitEnabled
     return YES;
 #else
-    return !(NSClassFromString(@"HKHealthStore"));
+    return [HKHealthStore isHealthDataAvailable];
 #endif
 }
 
