@@ -52,7 +52,7 @@
 #ifndef ISHPermissionRequestHealthKitEnabled
     return YES;
 #else
-    return [HKHealthStore isHealthDataAvailable];
+    return ![HKHealthStore isHealthDataAvailable];
 #endif
 }
 
