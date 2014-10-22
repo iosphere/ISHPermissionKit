@@ -231,7 +231,13 @@ system (as is the case, e.g., with M7-ActivityMonitoring).
 
 
 
-App Icon designed by 
+ISHPermissionKit Icon designed by 
 [Jason Grube (CC BY 3.0)](http://thenounproject.com/term/fingerprint/23303/) from the 
 [Noun Project](http://thenounproject.com)
 
+# Apps using ISHPermissionKit
+
+<img src="https://trails.io/images/trails-recorder-72.png" align="center" width="36" height="36"> 
+<a href="http://trails.io/" title="Trails · GPS tracker for hiking, biking &amp; skiing · Offline topo maps &amp; GPX file import">Trails · GPS tracker</a>
+
+If your app uses ISHPermissionKit let us know and we will include it here.
