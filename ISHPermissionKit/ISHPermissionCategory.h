@@ -34,6 +34,9 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
     /**
      *  Permission required to use the user's location at any time,
      *  including monitoring for regions, visits, or significant location changes.
+     *  If you want to request both Always and WhenInUse, you should ask for 
+     *  WhenInUse first. You can do so by passing both categories to the
+     *  ISHPermissionsViewController with WhenInUse before Always.
      */
     ISHPermissionCategoryLocationAlways = 3100,
     /**
