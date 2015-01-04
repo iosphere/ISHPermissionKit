@@ -147,8 +147,24 @@
 
 #pragma mark - ISHPermissionRequestViewControllerDelegate
 - (void)permissionRequestViewController:(ISHPermissionRequestViewController *)vc didCompleteWithState:(ISHPermissionState)state {
-    NSUInteger nextIndex = self.currentIndex + 1;
+    /* Determine the nextIndex that is requestable.
     
+       There might be dependencies between the permission categories.
+       Currently this is only the case when asking asking for 
+       whenInUse and always location permissions in one set.
+       E.g. the user might be asked for whenInUse and then always location 
+       permissions. If whenInUse permissions are denied, always permissions 
+       must be skipped.
+    */
+    ISHPermissionState nextState = ISHPermissionStateDenied;
+    NSUInteger nextIndex = self.currentIndex;
+    do {
+        nextIndex++;
+        ISHPermissionRequest *req = [self requestAtIndex:nextIndex];
+        nextState = [req permissionState];
+    } while (nextIndex < self.permissionCategories.count && !ISHPermissionStateAllowsUserPrompt(nextState));
+    
+    // dismiss if we reached the end, or transition to next permission category
     if (nextIndex == self.permissionCategories.count) {
         [self.delegate permissionsViewControllerDidComplete:self];
         
