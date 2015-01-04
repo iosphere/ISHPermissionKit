@@ -100,10 +100,11 @@
 #endif
 }
 
+#ifdef __IPHONE_8_0
 + (BOOL)grantedWhenInUse {
     return ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse);
 }
-
+#endif
 
 - (BOOL)useFallback {
 #ifdef __IPHONE_8_0 // only for builds with base sdk of iOS8 and higher
@@ -116,8 +117,14 @@
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     BOOL notDetermined = (status == kCLAuthorizationStatusNotDetermined);
+#ifdef __IPHONE_8_0
     BOOL grantedWhenInUse = (status == kCLAuthorizationStatusAuthorizedWhenInUse);
     BOOL requestingAlways = (self.permissionCategory == ISHPermissionCategoryLocationAlways);
+#else
+    // If we are building with iOS7, there is no always/whenInUse case
+    BOOL grantedWhenInUse = NO;
+    BOOL requestingAlways = NO;
+#endif
     
     if (notDetermined || (grantedWhenInUse && requestingAlways)) {
         /* early calls to this delegate method are ignored, if this is not the change we are waiting for.
