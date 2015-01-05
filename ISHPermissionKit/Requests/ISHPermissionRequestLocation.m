@@ -14,8 +14,8 @@
 
 @interface ISHPermissionRequestLocation () <CLLocationManagerDelegate>
 @property (nonatomic) CLLocationManager *locationManager;
-@property BOOL initialChangeAuthorizationStatusCallWasIgnored;
-@property (strong) ISHPermissionRequestCompletionBlock completionBlock;
+@property (nonatomic) BOOL initialChangeAuthorizationStatusCallWasIgnored;
+@property (nonatomic, copy) ISHPermissionRequestCompletionBlock completionBlock;
 @end
 
 @implementation ISHPermissionRequestLocation
