@@ -55,18 +55,19 @@
     AVAudioSession * audioSession = [AVAudioSession sharedInstance];
     [audioSession requestRecordPermission:^(BOOL granted) {
         dispatch_async(dispatch_get_main_queue(), ^{
-#ifdef __IPHONE_8_0 
+            ISHPermissionState state = granted ? ISHPermissionStateAuthorized : ISHPermissionStateDenied;
+#ifdef __IPHONE_8_0
             if (![audioSession respondsToSelector:@selector(recordPermission)]) {
 #endif
                 // set internal state to result of permission request, if
                 // a) not building against iOS8
                 // b) not running on iOS8 or later
                 // -> when we can't retrieve the current state later.
-                [self setInternalPermissionState:granted ? ISHPermissionStateAuthorized : ISHPermissionStateDenied];
+                [self setInternalPermissionState:state];
 #ifdef __IPHONE_8_0
             }
 #endif
-            completion(self, granted, nil);
+            completion(self, state, nil);
         });
     }];
 }

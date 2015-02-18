@@ -45,7 +45,8 @@
     
     [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            completion(self, granted, nil);
+            ISHPermissionState state = granted ? ISHPermissionStateAuthorized : ISHPermissionStateDenied;
+            completion(self, state, nil);
         });
     }];
 }
