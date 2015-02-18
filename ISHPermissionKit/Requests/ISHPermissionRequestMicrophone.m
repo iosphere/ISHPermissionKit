@@ -46,8 +46,9 @@
     
     [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self setInternalPermissionState:granted ? ISHPermissionStateAuthorized : ISHPermissionStateDenied];
-            completion(self, granted, nil);
+            ISHPermissionState state = granted ? ISHPermissionStateAuthorized : ISHPermissionStateDenied;
+            [self setInternalPermissionState:state];
+            completion(self, state, nil);
         });
     }];
 }
