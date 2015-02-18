@@ -27,8 +27,16 @@
             return ISHPermissionStateDenied;
         case AVAudioSessionRecordPermissionGranted:
             return ISHPermissionStateAuthorized;
-        case AVAudioSessionRecordPermissionUndetermined:
-            return [self internalPermissionState];
+        case AVAudioSessionRecordPermissionUndetermined: {
+            ISHPermissionState internalState = [self internalPermissionState];
+            if (internalState == ISHPermissionStateAuthorized || internalState == ISHPermissionStateDenied) {
+                /* the internal state falsely stores an invalid value that conflicts with 'undetermined'
+                   (the result of the user permissions request was stored is stored for backwards
+                   compatability reasons, as iOS7 does not provide a query method.) */
+                return ISHPermissionStateUnknown;
+            }
+            return internalState;
+        }
     }
 #else
     return [self internalPermissionState];
@@ -44,9 +52,20 @@
         return;
     }
     
-    [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
+    AVAudioSession * audioSession = [AVAudioSession sharedInstance];
+    [audioSession requestRecordPermission:^(BOOL granted) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self setInternalPermissionState:granted ? ISHPermissionStateAuthorized : ISHPermissionStateDenied];
+#ifdef __IPHONE_8_0 
+            if (![audioSession respondsToSelector:@selector(recordPermission)]) {
+#endif
+                // set internal state to result of permission request, if
+                // a) not building against iOS8
+                // b) not running on iOS8 or later
+                // -> when we can't retrieve the current state later.
+                [self setInternalPermissionState:granted ? ISHPermissionStateAuthorized : ISHPermissionStateDenied];
+#ifdef __IPHONE_8_0
+            }
+#endif
             completion(self, granted, nil);
         });
     }];
