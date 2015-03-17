@@ -264,7 +264,7 @@
 		DC5E5BC2195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestNotificationsLocal.m; sourceTree = "<group>"; };
 		DC5E5BC6195DC1F30092EAFD /* ISHPermissionRequest+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ISHPermissionRequest+Private.h"; sourceTree = "<group>"; };
 		DC6A468719D7125300B11E88 /* libISHPermissionKitLib+HealthKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libISHPermissionKitLib+HealthKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC6A46B119D712AC00B11E88 /* ISHPermissionKit+HealthKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "ISHPermissionKit+HealthKit.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC6A46B119D712AC00B11E88 /* ISHPermissionKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ISHPermissionKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC6A8ACB19641549005AC5BD /* ISHPermissionRequestAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHPermissionRequestAddressBook.h; sourceTree = "<group>"; };
 		DC6A8ACC19641549005AC5BD /* ISHPermissionRequestAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestAddressBook.m; sourceTree = "<group>"; };
 		DC6A8AD119642793005AC5BD /* ISHPermissionRequestEventStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHPermissionRequestEventStore.h; sourceTree = "<group>"; };
@@ -427,7 +427,7 @@
 				DCAEF7CA195C60070074EB5B /* libISHPermissionKitLib.a */,
 				DC7790B319617CD7007CB2BC /* ISHPermissionKitLibTests.xctest */,
 				DC6A468719D7125300B11E88 /* libISHPermissionKitLib+HealthKit.a */,
-				DC6A46B119D712AC00B11E88 /* ISHPermissionKit+HealthKit.framework */,
+				DC6A46B119D712AC00B11E88 /* ISHPermissionKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -640,7 +640,7 @@
 			);
 			name = "ISHPermissionKit+HealthKit";
 			productName = ISHPermissionKit;
-			productReference = DC6A46B119D712AC00B11E88 /* ISHPermissionKit+HealthKit.framework */;
+			productReference = DC6A46B119D712AC00B11E88 /* ISHPermissionKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		DC7790B219617CD7007CB2BC /* ISHPermissionKitLibTests */ = {
@@ -1050,9 +1050,9 @@
 				);
 				INFOPLIST_FILE = ISHPermissionKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_MODULE_NAME = ISHPermissionKit;
-				PRODUCT_NAME = "ISHPermissionKit+HealthKit";
+				PRODUCT_NAME = ISHPermissionKit;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -1072,9 +1072,9 @@
 				);
 				INFOPLIST_FILE = ISHPermissionKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_MODULE_NAME = ISHPermissionKit;
-				PRODUCT_NAME = "ISHPermissionKit+HealthKit";
+				PRODUCT_NAME = ISHPermissionKit;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -1246,6 +1246,7 @@
 				FRAMEWORK_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
 				INFOPLIST_FILE = ISHPermissionKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1263,6 +1264,7 @@
 				FRAMEWORK_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
 				INFOPLIST_FILE = ISHPermissionKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
