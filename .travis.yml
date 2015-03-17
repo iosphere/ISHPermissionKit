@@ -2,5 +2,4 @@ language: objective-c
 xcode_project: ISHPermissionKit.xcodeproj
 xcode_scheme: ISHPermissionKitLib
 xcode_sdk: 
- - iphonesimulator7.0
  - iphonesimulator8.1
