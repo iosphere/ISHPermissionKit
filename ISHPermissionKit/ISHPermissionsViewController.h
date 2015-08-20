@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ISHPermissionRequestViewController.h"
 
+NS_ASSUME_NONNULL_BEGIN
 @class ISHPermissionRequest;
 @protocol ISHPermissionsViewControllerDataSource;
 @protocol ISHPermissionsViewControllerDelegate;
@@ -42,7 +43,7 @@ typedef void (^ISHPermissionsViewControllerCompletionBlock)(void);
  *  @return Returns a new instance of ISHPermissionsViewController for all categories that allow 
  *          a user prompt. Nil if non of the categories allow a user prompt.
  */
-+ (instancetype)permissionsViewControllerWithCategories:(NSArray *)categories dataSource:(id <ISHPermissionsViewControllerDataSource>)dataSource;
++ (nullable instancetype)permissionsViewControllerWithCategories:(NSArray<NSNumber *> *)categories dataSource:(id <ISHPermissionsViewControllerDataSource>)dataSource;
 
 /**
  *  The dataSource is required and must provide one instance of a 
@@ -63,7 +64,7 @@ typedef void (^ISHPermissionsViewControllerCompletionBlock)(void);
  *  once the dismissal of the view controller has been completed.
  *  Otherwise it is called immediately after informing the delegate.
  */
-@property (copy) ISHPermissionsViewControllerCompletionBlock completionBlock;
+@property (copy, nullable) ISHPermissionsViewControllerCompletionBlock completionBlock;
 
 @end
 
@@ -117,4 +118,6 @@ typedef void (^ISHPermissionsViewControllerCompletionBlock)(void);
  */
 - (void)permissionsViewControllerDidComplete:(ISHPermissionsViewController *)vc;
 @end
+
+NS_ASSUME_NONNULL_END
 
