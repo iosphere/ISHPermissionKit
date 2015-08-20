@@ -224,4 +224,8 @@
     [self setCurrentViewController:toViewController];
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return self.currentViewController.preferredStatusBarStyle;
+}
+
 @end
