@@ -162,5 +162,13 @@ static inline BOOL ISHPermissionStateAllowsUserPrompt(ISHPermissionState state) 
  *  -application:didRegisterUserNotificationSettings: and post a notification with name 
  *  'ISHPermissionNotificationApplicationDidRegisterUserNotificationSettings' to inform any pending 
  *  requests that a change occured.
+ *  You can also use the convenience method ISHPermissionPostNotificationDidRegisterUserNotificationSettings(self)
  */
 extern NSString * const ISHPermissionNotificationApplicationDidRegisterUserNotificationSettings;
+
+static inline void ISHPermissionPostNotificationDidRegisterUserNotificationSettings(id object) {
+    [[NSNotificationCenter defaultCenter] postNotificationName:ISHPermissionNotificationApplicationDidRegisterUserNotificationSettings
+                                                        object:object];
+}
+
+
