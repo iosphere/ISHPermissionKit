@@ -54,6 +54,10 @@
             request = [ISHPermissionRequestNotificationsLocal new];
             break;
             
+        case ISHPermissionCategoryNotificationRemote:
+            request = [ISHPermissionRequestNotificationsRemote new];
+            break;
+            
         case ISHPermissionCategorySocialFacebook:
         case ISHPermissionCategorySocialTwitter:
         case ISHPermissionCategorySocialSinaWeibo:

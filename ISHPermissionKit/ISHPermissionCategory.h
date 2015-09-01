@@ -67,12 +67,25 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  @warning Your app delegate will need to implement the following lines:
      *  @code
      *  - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
-     *       [[NSNotificationCenter defaultCenter] postNotificationName:ISHPermissionNotificationApplicationDidRegisterUserNotificationSettings
-     *                                                           object:self];
+     *       ISHPermissionPostNotificationDidRegisterUserNotificationSettings(self)
      *  }
      *  @endcode
      */
     ISHPermissionCategoryNotificationLocal = 6100,
+    
+    /**
+     *  Permission required to receive remote notifications.
+     *  @note Requests for this permission might require further
+     *        configuration via the ISHPermissionsViewControllerDataSource.
+     *
+     *  @warning Your app delegate will need to implement the following lines:
+     *  @code
+     *  - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
+     *       ISHPermissionPostNotificationDidRegisterUserNotificationSettings(self)
+     *  }
+     *  @endcode
+     */
+    ISHPermissionCategoryNotificationRemote = 6200,
     
     /**
      *  Permission required to access the user's Facebook acounts.
@@ -133,6 +146,8 @@ static inline NSString *ISHStringFromPermissionCategory(ISHPermissionCategory ca
             return @"ISHPermissionCategoryPhotoCamera";
         case ISHPermissionCategoryNotificationLocal:
             return @"ISHPermissionCategoryNotificationLocal";
+        case ISHPermissionCategoryNotificationRemote:
+            return @"ISHPermissionCategoryNotificationRemote";
         case ISHPermissionCategorySocialFacebook:
             return @"ISHPermissionCategorySocialFacebook";
         case ISHPermissionCategorySocialTwitter:
