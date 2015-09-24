@@ -45,6 +45,19 @@ typedef void (^ISHPermissionsViewControllerCompletionBlock)(void);
 + (instancetype)permissionsViewControllerWithCategories:(NSArray *)categories dataSource:(id <ISHPermissionsViewControllerDataSource>)dataSource;
 
 /**
+ *  Initialization should preferrably be done within this method and
+ *  called from all reasonable initializers of a class. Will be called
+ *  for you from initWithNibName:bundle:, initWithCoder:, and init.
+ *
+ *  The default implementation ensures that commonInit is only called
+ *  once when going through the above-mentioned initializers.
+ *
+ *  You must call it yourself when you support additional initializers,
+ *  or overwrite the above-mentioned initializers without calling super.
+ */
+- (void)commonInit NS_REQUIRES_SUPER;
+
+/**
  *  The dataSource is required and must provide one instance of a 
  *  ISHPermissionRequestViewController for each requested ISHPermissionCategory.
  */
