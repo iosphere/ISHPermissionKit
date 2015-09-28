@@ -9,12 +9,15 @@
 #import "ISHPermissionRequestNotificationsRemote.h"
 #import "ISHPermissionRequest+Private.h"
 
+@interface ISHPermissionRequestNotificationsLocal ()
+@property (copy) ISHPermissionRequestCompletionBlock completionBlockRemote;
+@end
+
 @implementation ISHPermissionRequestNotificationsRemote
 
-#ifdef __IPHONE_8_0
 
 - (ISHPermissionState)permissionState {
-    if (!NSClassFromString(@"UIUserNotificationSettings")) {
+    if (![[UIApplication sharedApplication] respondsToSelector:@selector(isRegisteredForRemoteNotifications)]) {
         return ISHPermissionStateAuthorized;
     }
     
@@ -26,22 +29,40 @@
 }
 
 - (void)requestUserPermissionWithCompletionBlock:(ISHPermissionRequestCompletionBlock)completion {
-    if (ISHPermissionStateAllowsUserPrompt(self.permissionState)) {
+    NSAssert(self.noticationSettings, @"Requested notification settings should be set for request before requesting user permission");
+    // ensure that the app delegate implements the didRegisterForRemoteNotificationsWithDeviceToken:
+    NSAssert([[[UIApplication sharedApplication] delegate] respondsToSelector:@selector(application:didRegisterForRemoteNotificationsWithDeviceToken:)], @"AppDelegate must implement application:didRegisterForRemoteNotificationsWithDeviceToken: and post notification ISHPermissionNotificationApplicationDidRegisterUserNotificationSettings");
+    
+    // register for remote notification
+    ISHPermissionState currentState = self.permissionState;
+    if (ISHPermissionStateAllowsUserPrompt(currentState)
+        && [[UIApplication sharedApplication] respondsToSelector:@selector(registerForRemoteNotifications)]) {
         [[UIApplication sharedApplication] registerForRemoteNotifications];
     }
     
-    [super requestUserPermissionWithCompletionBlock:completion];
+    if (!ISHPermissionStateAllowsUserPrompt(currentState)) {
+        completion(self, currentState, nil);
+        return;
+    }
+    
+    // avoid asking again (system state does not correctly reflect if we asked already).
+    [self setInternalPermissionState:ISHPermissionStateDoNotAskAgain];
+    
+    self.completionBlockRemote = completion;
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(ISHPermissionNotificationApplicationDidRegisterForRemoteNotificationsWithDeviceToken:)
+                                                 name:ISHPermissionNotificationApplicationDidRegisterForRemoteNotificationsWithDeviceToken
+                                               object:nil];
+    
+    [[UIApplication sharedApplication] registerUserNotificationSettings:self.noticationSettings];
 }
 
-#else
-
-- (void)requestUserPermissionWithCompletionBlock:(ISHPermissionRequestCompletionBlock)completion {
-    completion(self, ISHPermissionStateAuthorized, nil);
+- (void)ISHPermissionNotificationApplicationDidRegisterForRemoteNotificationsWithDeviceToken:(NSNotification *)note {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    if (self.completionBlockRemote) {
+        self.completionBlockRemote(self, self.permissionState, nil);
+        self.completionBlockRemote = nil;
+    }
 }
 
-- (ISHPermissionState)permissionState {
-    return ISHPermissionStateUnsupported;
-}
-
-#endif
 @end

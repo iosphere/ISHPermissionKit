@@ -15,7 +15,6 @@
 
 @implementation ISHPermissionRequestNotificationsLocal
 
-#ifdef __IPHONE_8_0
 - (instancetype)init {
     self = [super init];
     if (self) {
@@ -79,14 +78,5 @@
         self.completionBlock = nil;
     }
 }
-#else
 
-- (void)requestUserPermissionWithCompletionBlock:(ISHPermissionRequestCompletionBlock)completion {
-    completion(self, ISHPermissionStateAuthorized, nil);
-}
-- (ISHPermissionState)permissionState {
-    return ISHPermissionStateAuthorized;
-}
-
-#endif
 @end
