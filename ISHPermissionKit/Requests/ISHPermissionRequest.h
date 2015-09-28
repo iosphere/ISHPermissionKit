@@ -166,23 +166,7 @@ static inline BOOL ISHPermissionStateAllowsUserPrompt(ISHPermissionState state) 
  */
 extern NSString * const ISHPermissionNotificationApplicationDidRegisterUserNotificationSettings;
 
-/**
- *  When using ISHPermissionKit to register for remote notifications, the app delegate must implement
- *  -application:didRegisterForRemoteNotificationsWithDeviceToken: and post a notification with name
- *  'ISHPermissionNotificationApplicationDidRegisterForRemoteNotificationsWithDeviceToken' to inform any pending
- *  requests that a change occured.
- *  You can also use the convenience function ISHPermissionPostNotificationApplicationDidRegisterForRemoteNotificationsWithDeviceToken(self)
- */
-extern NSString * const ISHPermissionNotificationApplicationDidRegisterForRemoteNotificationsWithDeviceToken;
-
 static inline void ISHPermissionPostNotificationDidRegisterUserNotificationSettings(id object) {
     [[NSNotificationCenter defaultCenter] postNotificationName:ISHPermissionNotificationApplicationDidRegisterUserNotificationSettings
                                                         object:object];
 }
-
-static inline void ISHPermissionPostNotificationApplicationDidRegisterForRemoteNotificationsWithDeviceToken(id object) {
-    [[NSNotificationCenter defaultCenter] postNotificationName:ISHPermissionNotificationApplicationDidRegisterForRemoteNotificationsWithDeviceToken
-                                                        object:object];
-}
-
-

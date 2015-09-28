@@ -33,7 +33,7 @@
 }
 
 - (ISHPermissionState)permissionState {
-    if (!NSClassFromString(@"UIUserNotificationSettings")) {
+    if (![UIUserNotificationSettings class]) {
         return ISHPermissionStateAuthorized;
     }
     

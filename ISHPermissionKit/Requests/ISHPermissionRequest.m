@@ -48,4 +48,3 @@
 @end
 
 NSString * const ISHPermissionNotificationApplicationDidRegisterUserNotificationSettings = @"ISHPermissionNotificationApplicationDidRegisterUserNotificationSettings";
-NSString * const ISHPermissionNotificationApplicationDidRegisterForRemoteNotificationsWithDeviceToken = @"ISHPermissionNotificationApplicationDidRegisterForRemoteNotificationsWithDeviceToken";
