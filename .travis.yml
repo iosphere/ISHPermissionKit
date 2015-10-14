@@ -3,4 +3,5 @@ language: objective-c
 xcode_project: ISHPermissionKit.xcodeproj
 xcode_scheme: ISHPermissionKitLib
 xcode_sdk: 
- - iphonesimulator9
+ - iphonesimulator9.0
+ 
