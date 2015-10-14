@@ -11,6 +11,8 @@
 #import "ISHPermissionRequestViewController+Private.h"
 
 @interface ISHPermissionsViewController () <ISHPermissionRequestViewControllerDelegate>
+@property BOOL hasBeenInitialized;
+
 @property (nonatomic) NSUInteger currentIndex;
 @property (nonatomic) NSArray *permissionCategories;
 @property (nonatomic) NSArray *permissionRequests;
@@ -20,6 +22,8 @@
 @end
 
 @implementation ISHPermissionsViewController
+
+#pragma mark - Init
 
 + (instancetype)permissionsViewControllerWithCategories:(NSArray *)categories dataSource:(id <ISHPermissionsViewControllerDataSource>)dataSource {
     ISHPermissionsViewController *vc = [ISHPermissionsViewController new];
@@ -36,22 +40,44 @@
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    
-    if (self) {
-        [self setCurrentIndex:0];
-        UIModalPresentationStyle phonePresentation = UIModalPresentationCurrentContext;
-#ifdef __IPHONE_8_0
-        if ([self respondsToSelector:@selector(presentationController)]) {
-            // if built for and running on iOS8 use over presentation context to use blurred background
-            phonePresentation = UIModalPresentationOverCurrentContext;
-        }
-#endif
-        BOOL isIpad = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
-        [self setModalPresentationStyle:isIpad ? UIModalPresentationFormSheet:phonePresentation];
-    }
-    
+    [self commonInitIfNeeded];
     return self;
 }
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    [self commonInitIfNeeded];
+    return self;
+}
+
+- (instancetype)init {
+    self = [super init];
+    [self commonInitIfNeeded];
+    return self;
+}
+
+- (void)commonInitIfNeeded {
+    if (self.hasBeenInitialized) {
+        return;
+    }
+    self.hasBeenInitialized = YES;
+    [self commonInit];
+}
+
+- (void)commonInit {
+    [self setCurrentIndex:0];
+    UIModalPresentationStyle phonePresentation = UIModalPresentationCurrentContext;
+#ifdef __IPHONE_8_0
+    if ([self respondsToSelector:@selector(presentationController)]) {
+        // if built for and running on iOS8 use over presentation context to use blurred background
+        phonePresentation = UIModalPresentationOverCurrentContext;
+    }
+#endif
+    BOOL isIpad = [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
+    [self setModalPresentationStyle:isIpad ? UIModalPresentationFormSheet:phonePresentation];
+}
+
+#pragma mark -
 
 - (void)loadView {
     UIView *view = nil;

@@ -11,37 +11,12 @@
 
 @implementation ISHPermissionRequestNotificationsRemote
 
-#ifdef __IPHONE_8_0
-
 - (ISHPermissionState)permissionState {
-    if (!NSClassFromString(@"UIUserNotificationSettings")) {
-        return ISHPermissionStateAuthorized;
+    if (![[UIApplication sharedApplication] respondsToSelector:@selector(isRegisteredForRemoteNotifications)]) {
+        return ISHPermissionStateUnsupported;
     }
     
-    if(![[UIApplication sharedApplication] isRegisteredForRemoteNotifications]) {
-        return [self internalPermissionState];
-    }
-    
-    return ISHPermissionStateAuthorized;
+    return [super permissionState];
 }
 
-- (void)requestUserPermissionWithCompletionBlock:(ISHPermissionRequestCompletionBlock)completion {
-    if (ISHPermissionStateAllowsUserPrompt(self.permissionState)) {
-        [[UIApplication sharedApplication] registerForRemoteNotifications];
-    }
-    
-    [super requestUserPermissionWithCompletionBlock:completion];
-}
-
-#else
-
-- (void)requestUserPermissionWithCompletionBlock:(ISHPermissionRequestCompletionBlock)completion {
-    completion(self, ISHPermissionStateAuthorized, nil);
-}
-
-- (ISHPermissionState)permissionState {
-    return ISHPermissionStateUnsupported;
-}
-
-#endif
 @end

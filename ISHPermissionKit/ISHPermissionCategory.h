@@ -74,9 +74,19 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
     ISHPermissionCategoryNotificationLocal = 6100,
     
     /**
-     *  Permission required to receive remote notifications.
+     *  Permission required to receive user-facing remote notifications.
+     *
      *  @note Requests for this permission might require further
-     *        configuration via the ISHPermissionsViewControllerDataSource.
+     *        configuration via the ISHPermissionsViewControllerDataSource to noticationSettings.
+     *        By default this request permission for [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:nil];
+     *
+     *  This only requests permission to present user-facing notifications. To register for remote
+     *  notifications (without permission, these are delivered silently) you will need to call 
+     *  the following method in your own code:
+     *  @code
+     *      [[UIApplication sharedApplication] registerForRemoteNotifications];
+     *  @endcode
+     *
      *
      *  @warning Your app delegate will need to implement the following lines:
      *  @code
@@ -85,7 +95,8 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  }
      *  @endcode
      */
-    ISHPermissionCategoryNotificationRemote = 6200,
+    ISHPermissionCategoryNotificationRemote NS_ENUM_AVAILABLE_IOS(8_0) = 6200,
+
     
     /**
      *  Permission required to access the user's Facebook acounts.

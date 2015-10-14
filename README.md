@@ -26,7 +26,7 @@ where the system APIs only provide implicit methods of doing so.
 * CoreMotion: Activity data (step counting, etc.)
 * HealthKit *(use `+HealthKit` variants of the static library or framework)*
 * Microphone
-* Notifications: Local
+* Notifications: Local and Remote
 * Photos: Camera Roll and Camera
 * Social: Facebook, Twitter, SinaWeibo, TencentWeibo
 
@@ -53,10 +53,7 @@ Missing features:
 1. Resetting state correctly when device is reset
 2. Permission monitoring and NSNotifications upon changes
 
-Missing support for permissions for:
-
-1. Remote notifications
-2. Please file an issue for missing permissions
+Please file an issue for missing permissions
 
 # How to use
 
