@@ -67,12 +67,36 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  @warning Your app delegate will need to implement the following lines:
      *  @code
      *  - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
-     *       [[NSNotificationCenter defaultCenter] postNotificationName:ISHPermissionNotificationApplicationDidRegisterUserNotificationSettings
-     *                                                           object:self];
+     *       ISHPermissionPostNotificationDidRegisterUserNotificationSettings(self)
      *  }
      *  @endcode
      */
     ISHPermissionCategoryNotificationLocal = 6100,
+    
+    /**
+     *  Permission required to receive user-facing remote notifications.
+     *
+     *  @note Requests for this permission might require further
+     *        configuration via the ISHPermissionsViewControllerDataSource to noticationSettings.
+     *        By default this request permission for [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:nil];
+     *
+     *  This only requests permission to present user-facing notifications. To register for remote
+     *  notifications (without permission, these are delivered silently) you will need to call 
+     *  the following method in your own code:
+     *  @code
+     *      [[UIApplication sharedApplication] registerForRemoteNotifications];
+     *  @endcode
+     *
+     *
+     *  @warning Your app delegate will need to implement the following lines:
+     *  @code
+     *  - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
+     *       ISHPermissionPostNotificationDidRegisterUserNotificationSettings(self)
+     *  }
+     *  @endcode
+     */
+    ISHPermissionCategoryNotificationRemote NS_ENUM_AVAILABLE_IOS(8_0) = 6200,
+
     
     /**
      *  Permission required to access the user's Facebook acounts.
@@ -133,6 +157,8 @@ static inline NSString *ISHStringFromPermissionCategory(ISHPermissionCategory ca
             return @"ISHPermissionCategoryPhotoCamera";
         case ISHPermissionCategoryNotificationLocal:
             return @"ISHPermissionCategoryNotificationLocal";
+        case ISHPermissionCategoryNotificationRemote:
+            return @"ISHPermissionCategoryNotificationRemote";
         case ISHPermissionCategorySocialFacebook:
             return @"ISHPermissionCategorySocialFacebook";
         case ISHPermissionCategorySocialTwitter:
