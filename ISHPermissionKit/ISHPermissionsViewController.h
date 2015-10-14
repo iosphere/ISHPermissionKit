@@ -62,14 +62,14 @@ typedef void (^ISHPermissionsViewControllerCompletionBlock)(void);
  *  The dataSource is required and must provide one instance of a 
  *  ISHPermissionRequestViewController for each requested ISHPermissionCategory.
  */
-@property (nonatomic, readonly, weak) id <ISHPermissionsViewControllerDataSource> dataSource;
+@property (nonatomic, readonly, weak, nullable) id <ISHPermissionsViewControllerDataSource> dataSource;
 
 /**
  *  The optional delegate is informed by the ISHPermissionsViewController once all permission categories
  *  have been handled. If you do not set a delegate, the view controller will simply be dismissed once finished.
  *  If you do set a delegate, the delegate is responsible for dismissing the view controller.
  */
-@property (nonatomic, weak) id <ISHPermissionsViewControllerDelegate> delegate;
+@property (nonatomic, weak, nullable) id <ISHPermissionsViewControllerDelegate> delegate;
 
 /**
  *  The optional completion block is called once all permission categories
