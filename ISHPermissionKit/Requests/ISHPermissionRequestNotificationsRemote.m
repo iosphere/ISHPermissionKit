@@ -9,10 +9,6 @@
 #import "ISHPermissionRequestNotificationsRemote.h"
 #import "ISHPermissionRequest+Private.h"
 
-@interface ISHPermissionRequestNotificationsLocal ()
-@property (copy) ISHPermissionRequestCompletionBlock completionBlockRemote;
-@end
-
 @implementation ISHPermissionRequestNotificationsRemote
 
 - (ISHPermissionState)permissionState {

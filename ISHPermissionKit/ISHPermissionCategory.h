@@ -77,7 +77,8 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  Permission required to receive user-facing remote notifications.
      *
      *  @note Requests for this permission might require further
-     *        configuration via the ISHPermissionsViewControllerDataSource.
+     *        configuration via the ISHPermissionsViewControllerDataSource to noticationSettings.
+     *        By default this request permission for [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:nil];
      *
      *  This only requests permission to present user-facing notifications. To register for remote
      *  notifications (without permission, these are delivered silently) you will need to call 
