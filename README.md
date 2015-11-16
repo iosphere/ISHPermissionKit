@@ -1,16 +1,16 @@
-# <img src="AppIcon40x40_2x.png" align="center" width="40" height="40"> ISHPermissionKit
+# <img src="assets/AppIcon40x40_2x.png" align="center" width="40" height="40"> ISHPermissionKit
 
 [![Travis Build Status](https://travis-ci.org/iosphere/ISHPermissionKit.svg?branch=master)](http://travis-ci.org/iosphere/ISHPermissionKit)&nbsp;
 [![Version](http://cocoapod-badges.herokuapp.com/v/ISHPermissionKit/badge.png)](http://cocoadocs.org/docsets/ISHPermissionKit)
 
-This framework provides a unified way of asking for user permissions on iOS. It
-also provides UI to explain the permission requirements before presenting the
-the system permission dialogue to the user. This allows the developer to postpone
-the system dialogue. The framework provides no actual chrome, leaving the
+*ISHPermissionKit* provides a polite and unified way of asking for permission on iOS. It
+also provides UI to explain the permission requirements before presenting
+the system permission dialog to the user. This allows the developer to postpone
+the system dialog. The framework provides no actual chrome, leaving the
 developer and designer in charge of creating the views.
 
-While you can use this framework to ask for a user's permission for multiple
-data sources at the same time and out of context, you should continue to ask for
+While you can use *ISHPermissionKit* to ask for a user's permission for multiple
+categories at the same time and out of context, you should continue to ask for
 permission only when the app needs it. However, there might be occassions when
 multiple permissions are required at the same time, e.g., when starting to record
 location and motion data.
@@ -30,20 +30,20 @@ where the system APIs only provide implicit methods of doing so.
 * Photos: Camera Roll and Camera
 * Social: Facebook, Twitter, SinaWeibo, TencentWeibo
 
-The static library and sample app compile and run under iOS8 and iOS7. 
-If compiled against iOS8 they make use of the latest available APIs 
+The static library and sample app compile and run under iOS 7 to iOS 9. 
+If compiled against iOS 8 (and later), they make use of the latest available APIs 
 (e.g., microphone, location, and local notification permissions) 
-and fall back gracefully when running under iOS7.
+and fall back gracefully when running on iOS 7.
 
-<img src="demo.gif" align="center" width="320" height="568" alt="Sample App Demo"> 
+<img src="assets/demo.gif" align="center" width="320" height="568" alt="Sample App Demo"> 
 
 In contrast to other libraries (such as
 [JLPermissions](https://github.com/jlaws/JLPermissions) and
 [ClusterPrePermissions](https://github.com/clusterinc/ClusterPrePermissions)) 
-it allows you to present custom view controllers, ask for several
+*ISHPermissionKit* allows you to present custom view controllers, ask for several
 permissions in a sequence, and provides a unified API through subclasses.
 
-Recommended reading: [The Right Way To Ask Users For iOS
+Recommended reading: [The Right Way to Ask Users for Mobile
 Permissions](https://medium.com/@mulligan/the-right-way-to-ask-users-for-ios-permissions-96fa4eb54f2c "by Brenden Mulligan (@mulligan)")
 
 # Roadmap
@@ -53,9 +53,9 @@ Missing features:
 1. Resetting state correctly when device is reset
 2. Permission monitoring and NSNotifications upon changes
 
-Please file an issue for missing permissions
+Please file an issue for missing permissions.
 
-# How to use
+# How to Use
 
 ## Installation
 
@@ -131,7 +131,7 @@ You can request permission for a single category or a sequence of categories.
 The following example presents a `ISHPermissionsViewController` for `Activity`
 and `LocationWhenInUse` permissions if needed.
 
-```objective-c
+```objective-c  
 NSArray *permissions = @[ 
     @(ISHPermissionCategoryLocationWhenInUse), 
     @(ISHPermissionCategoryActivity) 
@@ -144,15 +144,16 @@ if (vc) {
                                animated:YES
                              completion:nil];
 } 
-```
-The designated constructor returns nil if non of the categories allow a user
+```  
+
+The designated constructor returns `nil` if non of the categories allow a user
 prompt (either because the user already granted or denied the permission, does
 not want to be asked again, or the feature is simply not supported on the
 device).
 
 You can set a `completionBlock` or `delegate` (both optional) that will be
 notified once the `ISHPermissionsViewController` has iterated through all
-categories. If you do not set a delegate the view controller will simply be
+categories. If you do not set a delegate, the view controller will simply be
 dismissed once finished, and if set, the completion block will be called. If you
 do set a delegate, the delegate is responsible for dismissing the view
 controller.
@@ -164,11 +165,11 @@ The `dataSource` is required and must provide one instance of a
 The `ISHPermissionRequestViewController` provides `IBAction`s to _prompt for the
 user's permission_, _ask later_, and _don't ask_. It does not however provide
 any buttons or UI. Your subclass can create a view with text, images, and buttons
-etc. explaining in greater detail why your app needs a certain permission. The
+etc., explaining in greater detail why your app needs a certain permission. The
 subclass should contain buttons that trigger at least one of the actions
 mentioned above (see the header for their signatures). A _cancel button_ should
 call `changePermissionStateToAskAgainFromSender:`. If your subclass overwrites 
-any of these three actions, you must call super.
+any of these three actions, you must call `super`.
 
 ## ISHPermissionRequest
 
@@ -181,25 +182,25 @@ appropriate request for the given permission category.
 
 Here is how you check the permissions to access the microphone:
 
-```objective-c
+```objective-c  
 ISHPermissionRequest *r = [ISHPermissionRequest requestForCategory:ISHPermissionCategoryMicrophone];
 BOOL granted = ([r permissionState] == ISHPermissionStateAuthorized);
 ```
 
-The same example for local notifications (`granted` will always be true on iOS7): 
+The same example for local notifications (`granted` will always be true on iOS 7): 
 
-```objective-c
+```objective-c  
 ISHPermissionRequest *r = [ISHPermissionRequest requestForCategory:ISHPermissionCategoryNotificationLocal];
 BOOL granted = ([r permissionState] == ISHPermissionStateAuthorized);
 ```
 
-# How to contribute
+# How to Contribute
 
 Contributions are welcome. Check out the roadmap and open issues. 
 Adding support for more permission types is probably 
 most "rewarding", you can find a few hints on how to get started below.
 
-## Adding support for new permissions
+## Adding Support for New Permissions
 
 You will need to create a new subclass of `ISHPermissionRequest` and add a
 `ISHPermissionCategory` (make sure to use explicit values as these may be
@@ -212,7 +213,7 @@ Subclasses must implement at least two methods:
 1. `- (ISHPermissionState)permissionState`
 2. `- (void)requestUserPermissionWithCompletionBlock:(ISHPermissionRequestCompletionBlock)completion`
 
-What these methods do depends on the mechanisms that the system APIs
+What these methods actually do depends on the mechanism that the system APIs
 provide. Ideally, `permissionState` should check the system authorization state
 first and return appropriate internal enum values from
 `ISHPermissionState`. If the system state is unavailable or is similar to
@@ -223,18 +224,24 @@ possible.
 
 
 When requesting the permission state you should only store the result in
-internalPermissionState if the state cannot easily be retrieved from the
-system (as is the case, e.g., with M7-ActivityMonitoring).
+`internalPermissionState` if the state cannot easily be retrieved from the
+system (as is the case, e.g., with activity monitoring from the designated
+co-processor).
 
 
-
-ISHPermissionKit Icon designed by 
+ISHPermissionKit icon designed by 
 [Jason Grube (CC BY 3.0)](http://thenounproject.com/term/fingerprint/23303/) from the 
 [Noun Project](http://thenounproject.com)
 
-# Apps using ISHPermissionKit
+# Apps Using ISHPermissionKit
 
-<img src="https://trails.io/images/trails-recorder-72.png" align="center" width="36" height="36"> 
+<img src="assets/app_trails.png" align="center" width="36" height="36"> 
 <a href="http://trails.io/" title="Trails · GPS tracker for hiking, biking &amp; skiing · Offline topo maps &amp; GPX file import">Trails · GPS tracker</a>
+
+<img src="assets/app_snow.png" align="center" width="36" height="36"> 
+<a href="https://itunes.apple.com/en/app/snow-report-myswitzerland/id341755817?mt=8" title="Swiss Snow Report - Current snow and weather information for the best Swiss winter sports destinations">Swiss Snow Report</a>
+
+<img src="assets/app_moa.png" align="center" width="36" height="36"> 
+<a href="https://itunes.apple.com/en/app/manualone-anleitungen.-belege./id989213149?mt=8" title="Alle Anleitungen. Alle Belege. Eine App.">manualONE · Anleitungen. Belege. Garantien.</a>
 
 If your app uses ISHPermissionKit let us know and we will include it here.
