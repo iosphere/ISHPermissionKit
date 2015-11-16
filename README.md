@@ -1,4 +1,4 @@
-# <img src="AppIcon40x40_2x.png" align="center" width="40" height="40"> ISHPermissionKit
+# <img src="assets/AppIcon40x40_2x.png" align="center" width="40" height="40"> ISHPermissionKit
 
 [![Travis Build Status](https://travis-ci.org/iosphere/ISHPermissionKit.svg?branch=master)](http://travis-ci.org/iosphere/ISHPermissionKit)&nbsp;
 [![Version](http://cocoapod-badges.herokuapp.com/v/ISHPermissionKit/badge.png)](http://cocoadocs.org/docsets/ISHPermissionKit)
@@ -35,7 +35,7 @@ If compiled against iOS 8 (and later), they make use of the latest available API
 (e.g., microphone, location, and local notification permissions) 
 and fall back gracefully when running on iOS 7.
 
-<img src="demo.gif" align="center" width="320" height="568" alt="Sample App Demo"> 
+<img src="assets/demo.gif" align="center" width="320" height="568" alt="Sample App Demo"> 
 
 In contrast to other libraries (such as
 [JLPermissions](https://github.com/jlaws/JLPermissions) and
@@ -235,8 +235,13 @@ ISHPermissionKit icon designed by
 
 # Apps Using ISHPermissionKit
 
-* [Trails · GPS tracker](https://trails.io/ "Trails · GPS tracker for hiking, biking & skiing · Offline topo maps & GPX file import")
-* [Swiss Snow Report](https://itunes.apple.com/en/app/snow-report-myswitzerland/id341755817?mt=8 "Swiss Snow Report - Current snow and weather information for the best Swiss winter sports destinations")
-* [manualOne](https://itunes.apple.com/en/app/manualone-anleitungen.-belege./id989213149?mt=8 "Alle Anleitungen. Alle Belege. Eine App.")
+<img src="assets/app_trails.png" align="center" width="36" height="36"> 
+<a href="http://trails.io/" title="Trails · GPS tracker for hiking, biking &amp; skiing · Offline topo maps &amp; GPX file import">Trails · GPS tracker</a>
+
+<img src="assets/app_snow.png" align="center" width="36" height="36"> 
+<a href="https://itunes.apple.com/en/app/snow-report-myswitzerland/id341755817?mt=8" title="Swiss Snow Report - Current snow and weather information for the best Swiss winter sports destinations">Swiss Snow Report</a>
+
+<img src="assets/app_moa.png" align="center" width="36" height="36"> 
+<a href="https://itunes.apple.com/en/app/manualone-anleitungen.-belege./id989213149?mt=8" title="Alle Anleitungen. Alle Belege. Eine App.">manualONE · Anleitungen. Belege. Garantien.</a>
 
 If your app uses ISHPermissionKit let us know and we will include it here.
