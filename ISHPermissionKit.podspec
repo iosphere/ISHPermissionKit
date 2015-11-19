@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
                     provides no actual chrome, leaving the developer and designer in charge of creating the views.'
 
   s.homepage     = 'https://github.com/iosphere/ISHPermissionKit.git'
-  s.screenshots  = 'https://raw.githubusercontent.com/iosphere/ISHPermissionKit/master/demo.gif'
+  s.screenshots  = 'https://raw.githubusercontent.com/iosphere/ISHPermissionKit/master/assets/demo.gif'
 
   s.license      = 'New BSD'   
   s.authors      = { 'Felix Lamouroux' => 'felix@iosphere.de' }
