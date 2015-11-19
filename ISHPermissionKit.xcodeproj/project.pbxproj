@@ -130,10 +130,10 @@
 		DC96E8CF1B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.h in Headers */ = {isa = PBXBuildFile; fileRef = DC96E8CC1B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC96E8D01B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.h in Headers */ = {isa = PBXBuildFile; fileRef = DC96E8CC1B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC96E8D11B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.h in Headers */ = {isa = PBXBuildFile; fileRef = DC96E8CC1B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DC96E8D21B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = DC96E8CD1B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.m */; settings = {ASSET_TAGS = (); }; };
-		DC96E8D31B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = DC96E8CD1B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.m */; settings = {ASSET_TAGS = (); }; };
-		DC96E8D41B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = DC96E8CD1B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.m */; settings = {ASSET_TAGS = (); }; };
-		DC96E8D51B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = DC96E8CD1B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.m */; settings = {ASSET_TAGS = (); }; };
+		DC96E8D21B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = DC96E8CD1B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.m */; };
+		DC96E8D31B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = DC96E8CD1B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.m */; };
+		DC96E8D41B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = DC96E8CD1B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.m */; };
+		DC96E8D51B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = DC96E8CD1B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.m */; };
 		DCAEF7C1195C5B6B0074EB5B /* ISHPermissionRequestMotion.h in Headers */ = {isa = PBXBuildFile; fileRef = DCAEF7BF195C5B6B0074EB5B /* ISHPermissionRequestMotion.h */; };
 		DCAEF7C2195C5B6B0074EB5B /* ISHPermissionRequestMotion.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAEF7C0195C5B6B0074EB5B /* ISHPermissionRequestMotion.m */; };
 		DCAEF7E1195C60250074EB5B /* ISHPermissionRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A80AF195B2C960069235F /* ISHPermissionRequestViewController.m */; };
@@ -1206,7 +1206,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ISH_BUNDLE_VERSION = 0;
 				ISH_BUNDLE_VERSION_MAJOR = 0;
-				ISH_BUNDLE_VERSION_MINOR = 8;
+				ISH_BUNDLE_VERSION_MINOR = 9;
 				ISH_BUNDLE_VERSION_SHORT = "${ISH_BUNDLE_VERSION_MAJOR}.${ISH_BUNDLE_VERSION_MINOR}.${ISH_BUNDLE_VERSION}";
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1249,7 +1249,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ISH_BUNDLE_VERSION = 0;
 				ISH_BUNDLE_VERSION_MAJOR = 0;
-				ISH_BUNDLE_VERSION_MINOR = 8;
+				ISH_BUNDLE_VERSION_MINOR = 9;
 				ISH_BUNDLE_VERSION_SHORT = "${ISH_BUNDLE_VERSION_MAJOR}.${ISH_BUNDLE_VERSION_MINOR}.${ISH_BUNDLE_VERSION}";
 				METAL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
