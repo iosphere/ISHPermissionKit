@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ISHPermissionRequestViewController.h"
 
+NS_ASSUME_NONNULL_BEGIN
 @class ISHPermissionRequest;
 @protocol ISHPermissionsViewControllerDataSource;
 @protocol ISHPermissionsViewControllerDelegate;
@@ -42,7 +43,7 @@ typedef void (^ISHPermissionsViewControllerCompletionBlock)(void);
  *  @return Returns a new instance of ISHPermissionsViewController for all categories that allow 
  *          a user prompt. Nil if non of the categories allow a user prompt.
  */
-+ (instancetype)permissionsViewControllerWithCategories:(NSArray *)categories dataSource:(id <ISHPermissionsViewControllerDataSource>)dataSource;
++ (nullable instancetype)permissionsViewControllerWithCategories:(NSArray<NSNumber *> *)categories dataSource:(id <ISHPermissionsViewControllerDataSource>)dataSource;
 
 /**
  *  Initialization should preferrably be done within this method and
@@ -61,14 +62,14 @@ typedef void (^ISHPermissionsViewControllerCompletionBlock)(void);
  *  The dataSource is required and must provide one instance of a 
  *  ISHPermissionRequestViewController for each requested ISHPermissionCategory.
  */
-@property (nonatomic, readonly, weak) id <ISHPermissionsViewControllerDataSource> dataSource;
+@property (nonatomic, readonly, weak, nullable) id <ISHPermissionsViewControllerDataSource> dataSource;
 
 /**
  *  The optional delegate is informed by the ISHPermissionsViewController once all permission categories
  *  have been handled. If you do not set a delegate, the view controller will simply be dismissed once finished.
  *  If you do set a delegate, the delegate is responsible for dismissing the view controller.
  */
-@property (nonatomic, weak) id <ISHPermissionsViewControllerDelegate> delegate;
+@property (nonatomic, weak, nullable) id <ISHPermissionsViewControllerDelegate> delegate;
 
 /**
  *  The optional completion block is called once all permission categories
@@ -76,7 +77,7 @@ typedef void (^ISHPermissionsViewControllerCompletionBlock)(void);
  *  once the dismissal of the view controller has been completed.
  *  Otherwise it is called immediately after informing the delegate.
  */
-@property (copy) ISHPermissionsViewControllerCompletionBlock completionBlock;
+@property (copy, nullable) ISHPermissionsViewControllerCompletionBlock completionBlock;
 
 @end
 
@@ -130,4 +131,6 @@ typedef void (^ISHPermissionsViewControllerCompletionBlock)(void);
  */
 - (void)permissionsViewControllerDidComplete:(ISHPermissionsViewController *)vc;
 @end
+
+NS_ASSUME_NONNULL_END
 
