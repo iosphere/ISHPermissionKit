@@ -6,8 +6,12 @@
 //  Copyright (c) 2014 iosphere GmbH. All rights reserved.
 //
 
-#import <ISHPermissionKit/ISHPermissionKit.h>
+#import "ISHPermissionRequest.h"
 
+/**
+ *  Permission request for calendar events and reminders.
+ *
+ *  @sa ISHPermissionCategoryReminders, ISHPermissionCategoryEvents
+ */
 @interface ISHPermissionRequestEventStore : ISHPermissionRequest
-
 @end

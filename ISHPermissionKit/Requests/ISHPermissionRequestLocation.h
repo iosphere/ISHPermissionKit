@@ -8,5 +8,10 @@
 
 #import "ISHPermissionRequest.h"
 
+/**
+ *  Permission request for location information.
+ *
+ *  @sa ISHPermissionCategoryLocationWhenInUse, ISHPermissionCategoryLocationAlways
+ */
 @interface ISHPermissionRequestLocation : ISHPermissionRequest
 @end

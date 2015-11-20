@@ -8,6 +8,10 @@
 
 #import "ISHPermissionRequest.h"
 
+/**
+ *  Permission request for motion/activity data.
+ *
+ *  @sa ISHPermissionCategoryActivity
+ */
 @interface ISHPermissionRequestMotion : ISHPermissionRequest
-
 @end

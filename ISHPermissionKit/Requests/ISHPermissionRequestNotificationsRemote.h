@@ -6,8 +6,12 @@
 //  Copyright (c) 2014 iosphere GmbH. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "ISHPermissionRequestNotificationsLocal.h"
 
+/**
+ *  Permission request for remote notifications.
+ *
+ *  @sa ISHPermissionCategoryNotificationRemote
+ */
 @interface ISHPermissionRequestNotificationsRemote : ISHPermissionRequestNotificationsLocal
 @end

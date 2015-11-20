@@ -8,6 +8,10 @@
 
 #import "ISHPermissionRequest.h"
 
+/**
+ *  Permission request for the microphone.
+ *
+ *  @sa ISHPermissionCategoryMicrophone
+ */
 @interface ISHPermissionRequestMicrophone : ISHPermissionRequest
-
 @end

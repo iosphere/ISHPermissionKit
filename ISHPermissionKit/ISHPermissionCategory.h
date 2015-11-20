@@ -16,13 +16,13 @@
 typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
     /**
      *  Permission required for step counting and motion activity queries. 
-     *  See reference documentation for CoreMotion.
+     *  @sa Reference documentation for CoreMotion.
      */
     ISHPermissionCategoryActivity = 1000,
     
     /**
      *  Permission required to use HealthKit data.
-     *  Make sure to comply with sections 27.4 - 27.6 of the review guidelines.
+     *  Make sure to comply with section 27 of the review guidelines.
      *  Use the `ISHPermissionKitLib+HealthKit` static library or
      *  the `ISHPermissionKit+HealthKit` framework if
      *  you want to use this permission category.
@@ -67,7 +67,7 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  @warning Your app delegate will need to implement the following lines:
      *  @code
      *  - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
-     *       ISHPermissionPostNotificationDidRegisterUserNotificationSettings(self)
+     *       ISHPermissionPostNotificationDidRegisterUserNotificationSettings(self);
      *  }
      *  @endcode
      */
@@ -77,8 +77,8 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  Permission required to receive user-facing remote notifications.
      *
      *  @note Requests for this permission might require further
-     *        configuration via the ISHPermissionsViewControllerDataSource to noticationSettings.
-     *        By default this request permission for [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:nil];
+     *        configuration via the ISHPermissionsViewControllerDataSource to notificationSettings.
+     *        By default this request asks for [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:nil];
      *
      *  This only requests permission to present user-facing notifications. To register for remote
      *  notifications (without permission, these are delivered silently) you will need to call 
@@ -87,11 +87,10 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *      [[UIApplication sharedApplication] registerForRemoteNotifications];
      *  @endcode
      *
-     *
      *  @warning Your app delegate will need to implement the following lines:
      *  @code
      *  - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
-     *       ISHPermissionPostNotificationDidRegisterUserNotificationSettings(self)
+     *       ISHPermissionPostNotificationDidRegisterUserNotificationSettings(self);
      *  }
      *  @endcode
      */
@@ -99,22 +98,22 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
 
     
     /**
-     *  Permission required to access the user's Facebook acounts.
+     *  Permission required to access the user's Facebook accounts.
      *  @note Requests for this permission require further
      *        configuration via the ISHPermissionsViewControllerDataSource.
-     *        The request will require an options dictionary including e.g. ACFacebookAppIdKey.
+     *        The request will require an options dictionary including, e.g., ACFacebookAppIdKey.
      */
     ISHPermissionCategorySocialFacebook = 7100,
     /**
-     *  Permission required to access the user's Twitter acounts.
+     *  Permission required to access the user's Twitter accounts.
      */
     ISHPermissionCategorySocialTwitter = 7110,
     /**
-     *  Permission required to access the user's SinaWeibo acounts.
+     *  Permission required to access the user's SinaWeibo accounts.
      */
     ISHPermissionCategorySocialSinaWeibo = 7120,
     /**
-     *  Permission required to access the user's TencentWeibo acounts.
+     *  Permission required to access the user's TencentWeibo accounts.
      */
     ISHPermissionCategorySocialTencentWeibo = 7130,
     

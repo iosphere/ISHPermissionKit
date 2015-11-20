@@ -7,8 +7,10 @@
 //
 
 #import "ISHPermissionsViewController.h"
+#import "ISHPermissionRequestViewController.h"
 #import "ISHPermissionRequest+All.h"
 #import "ISHPermissionRequestViewController+Private.h"
+#import "ISHPermissionRequestViewControllerDelegate.h"
 
 @interface ISHPermissionsViewController () <ISHPermissionRequestViewControllerDelegate>
 @property BOOL hasBeenInitialized;

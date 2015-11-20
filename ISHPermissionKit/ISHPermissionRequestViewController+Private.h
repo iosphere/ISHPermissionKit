@@ -6,10 +6,21 @@
 //  Copyright (c) 2014 iosphere GmbH. All rights reserved.
 //
 
-#import "ISHPermissionRequestViewControllerDelegate.h"
-#import "ISHPermissionRequest.h"
+@protocol ISHPermissionRequestViewControllerDelegate;
+@class ISHPermissionRequest;
 
+/**
+ Private header for usage within the framework.
+ */
 @interface ISHPermissionRequestViewController (Private)
-- (void)setPermissionDelegate:(id <ISHPermissionRequestViewControllerDelegate>)permissionDelegate;
+/**
+ Sets the controller's permission delegate.
+ @param permissionDelegate The new delegate.
+ */
+- (void)setPermissionDelegate:(id<ISHPermissionRequestViewControllerDelegate>)permissionDelegate;
+/**
+ Seths the request object.
+ @param request The request.
+ */
 - (void)setPermissionRequest:(ISHPermissionRequest *)request;
 @end

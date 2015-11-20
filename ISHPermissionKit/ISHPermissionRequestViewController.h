@@ -13,14 +13,14 @@
  *  A UIViewController subclass that allows you to easily ask for the
  *  permission status regarding a permission category. You should not instantiate
  *  ISHPermissionRequestViewController objects directly.
- *  Instead, you instantiate subclasses of the ISHPermissionRequestViewController class.
+ *  Instead, you create and instantiate subclasses of the ISHPermissionRequestViewController class.
  *
  *  Instances of this class are expected to be used in concert with ISHPermissionsViewController
  *  and to be returned from the ISHPermissionsViewControllerDataSource method:
  *
  *  @code
  *  - (ISHPermissionRequestViewController *)permissionsViewController:(ISHPermissionsViewController *)vc requestViewControllerForCategory:(ISHPermissionCategory)category {
- *       return [YourPermissionRequestViewController new];
+ *       return [[YourPermissionRequestViewController alloc] init];
  *  }
  *  @endcode
  *
@@ -44,7 +44,7 @@
  *  User action to flag the permission category as "Don't ask again". This will lead 
  *  to the permission not being prompted again.
  *
- *  This will not present the system dialogue asking for the user permission.
+ *  This will not present the system dialog asking for the user permission.
  *  This will dismiss the view controller immediately.
  *
  *  @note If you subclass this method, you must call super at some point.
@@ -54,10 +54,10 @@
 - (IBAction)changePermissionStateToDontAskFromSender:(id)sender NS_REQUIRES_SUPER;
 
 /**
- *  User action to skip the current permission dialogue. The permission category
+ *  User action to skip the current permission dialog. The permission category
  *  will be presented to the user again when requested.
  *
- *  This will not present the system dialogue asking for the user permission.
+ *  This will not present the system dialog asking for the user permission.
  *  This will dismiss the view controller immediately.
  *
  *  @note If you subclass this method, you must call super at some point.
@@ -68,7 +68,7 @@
 
 
 /**
- *  User action to present the system dialogue for the current permission category. 
+ *  User action to present the system dialog for the current permission category.
  *
  *  This will dismiss the view controller once the user has taken a decision.
  *

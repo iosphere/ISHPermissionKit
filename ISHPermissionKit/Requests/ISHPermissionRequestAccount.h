@@ -8,13 +8,24 @@
 
 #import "ISHPermissionRequest.h"
 
+/**
+ *  Permission request for an account (social media).
+ * 
+ *  @sa ISHPermissionCategorySocial<...>
+ */
 @interface ISHPermissionRequestAccount : ISHPermissionRequest
 
-/// A unique identifier for the account type. Well known system account type identifiers are listed in <Accounts/ACAccountType.h>
+/**
+ *  A unique identifier for the account type.
+ *  
+ *  Supported system account type identifiers are listed in 
+ *  <Accounts/ACAccountType.h>.
+ */
 @property (nonatomic, readonly) NSString *accountTypeIdentifier;
 
 /**
- *  An optional dictionary that will be used when requesting access to the account of the given type.
+ *  An optional dictionary that will be used when requesting access 
+ *  to the account of the given type.
  */
 @property (nonatomic) NSDictionary *options;
 
