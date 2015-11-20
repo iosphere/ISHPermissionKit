@@ -8,6 +8,10 @@
 
 #import "ISHPermissionRequest.h"
 
+/**
+ *  Permission request to access the user's photo library.
+ *
+ *  @sa ISHPermissionCategoryPhotoLibrary
+ */
 @interface ISHPermissionRequestPhotoLibrary : ISHPermissionRequest
-
 @end

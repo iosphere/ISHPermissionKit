@@ -8,6 +8,11 @@
 
 #import "ISHPermissionRequest.h"
 
+/**
+ *  Permission request for the Health database.
+ *
+ *  @sa ISHPermissionCategoryHealth
+ */
 @interface ISHPermissionRequestHealth : ISHPermissionRequest
 /**
  *  A set of HKObjectType instances you wish to read from HealthKit.

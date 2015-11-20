@@ -8,6 +8,10 @@
 
 #import "ISHPermissionRequest.h"
 
+/**
+ *  Permission request to access the camera.
+ *
+ *  @sa ISHPermissionCategoryPhotoCamera
+ */
 @interface ISHPermissionRequestPhotoCamera : ISHPermissionRequest
-
 @end

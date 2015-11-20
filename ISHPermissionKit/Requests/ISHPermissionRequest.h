@@ -11,8 +11,10 @@
 
 /**
  *  Enumeration for possible permission states.
- *  These are used inlieu of the permission state values 
- *  provided by the system.
+ *
+ *  These are used instead of the permission state values
+ *  provided by the system to provide unified states
+ *  across all permission categories.
  */
 typedef NS_ENUM(NSUInteger, ISHPermissionState) {
     /**
@@ -22,8 +24,8 @@ typedef NS_ENUM(NSUInteger, ISHPermissionState) {
     
     /**
      *  The permission is not supported on the current device or SDK. 
-     *  This may be the case for CoreMotion related APIs on devices
-     *  such as the iPhone 4S or for Camera permission on the Simulator.
+     *  This may be the case for CoreMotion-related APIs on devices
+     *  such as the iPhone 4S, or for Camera permission on the Simulator.
      *
      * @note Does not allow user prompt.
      */
@@ -31,14 +33,14 @@ typedef NS_ENUM(NSUInteger, ISHPermissionState) {
     
     /**
      *  The user has been asked for permission before through internal UI
-     *  (without presenting the system dialogue) and wanted
+     *  (without presenting the system dialog) and wanted
      *  to be asked again. No final decision has been made.
      */
     ISHPermissionStateAskAgain = 100,
     
     /**
      *  The user has been asked for permission before through internal UI
-     *  (without presenting the system dialogue) and does not want
+     *  (without presenting the system dialog) and does not want
      *  to be asked again. No final decision has been made.
      *
      *  @note Does not allow user prompt.
@@ -47,7 +49,14 @@ typedef NS_ENUM(NSUInteger, ISHPermissionState) {
 
     /**
      *  The user denied the permission through system UI. 
-     *  To recover the user must go to the system settings.
+     *  To recover, the user must go to the system settings.
+     *
+     *  On iOS 8 and later, you can send the user to the app's
+     *  settings by using the following code:
+     *
+     *  @code
+     *  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+     *  @endcode
      *
      *  @note Does not allow user prompt.
      */
@@ -63,11 +72,20 @@ typedef NS_ENUM(NSUInteger, ISHPermissionState) {
 
 @class ISHPermissionRequest;
 
+/**
+ *  Block that takes three parameters and returns void.
+ *
+ *  @param request  The request that has completed.
+ *  @param state    The new state of the associated category.
+ *  @param error    An error, if it has occurred. May be nil.
+ *
+ *  @sa requestUserPermissionWithCompletionBlock:
+ */
 typedef void (^ISHPermissionRequestCompletionBlock)(ISHPermissionRequest *request, ISHPermissionState state, NSError *error);
 
 /**
  *  Permission requests provide information about the current permission state of the associated category.
- *  It can also be used to request the user's permission via the system dialogue or to remember the user's
+ *  It can also be used to request the user's permission via the system dialog or to remember the user's
  *  desire not to be asked again.
  *
  *  The actual interaction is handled by subclasses. With the exception of those subclasses that 
@@ -81,7 +99,11 @@ typedef void (^ISHPermissionRequestCompletionBlock)(ISHPermissionRequest *reques
  */
 @interface ISHPermissionRequest : NSObject
 
-/// The permission category associated with the request.
+/**
+ *  The permission category associated with the request. Cannot be changed.
+ * 
+ *  @sa requestForCategory:
+ */
 @property (nonatomic, readonly) ISHPermissionCategory permissionCategory;
 
 /**
@@ -89,7 +111,7 @@ typedef void (^ISHPermissionRequestCompletionBlock)(ISHPermissionRequest *reques
  *
  *  Ideally, permissionState should check the system authorization state first
  *  and should return appropriate internal enum values from ISHPermissionState. 
- *  If the system state is unavailable or is similar to e.g. kCLAuthorizationStatusNotDetermined 
+ *  If the system state is unavailable or is similar to, e.g., kCLAuthorizationStatusNotDetermined
  *  then this method should return the persisted internalPermissionState.
  *  Subclasses should try to map system provided states to ISHPermissionState without 
  *  resorting to the internalPermissionState as much as possible.
@@ -100,11 +122,11 @@ typedef void (^ISHPermissionRequestCompletionBlock)(ISHPermissionRequest *reques
 - (ISHPermissionState)permissionState;
 
 /**
- *  If possible, this presents the user permissions dialogue. This might not be possible
+ *  If possible, this presents the user permissions dialog. This might not be possible
  *  if, e.g., it has already been denied, authorized, or the user does not want to be asked again.
  *
  *  @param completion The block is called once the user has made a decision. 
- *                    The block is called right away if no dialogue was presented.
+ *                    The block is called right away if no dialog was presented.
  */
 - (void)requestUserPermissionWithCompletionBlock:(ISHPermissionRequestCompletionBlock)completion;
 
@@ -123,7 +145,7 @@ typedef void (^ISHPermissionRequestCompletionBlock)(ISHPermissionRequest *reques
 
 
 /**
- *  Used for debugging purposes.
+ *  Used for debugging purposes, not localized.
  *
  *  @param state A permission state value.
  *
@@ -143,7 +165,6 @@ static inline NSString *ISHStringFromPermissionState(ISHPermissionState state) {
             return @"ISHPermissionStateDenied";
         case ISHPermissionStateAuthorized:
             return @"ISHPermissionStateAuthorized";
-
     }
 }
 
@@ -158,14 +179,26 @@ static inline BOOL ISHPermissionStateAllowsUserPrompt(ISHPermissionState state) 
 }
 
 /**
- *  When using ISHPermissionKit to register for UILocalNotifications, the app delegate must implement
+ *  When using ISHPermissionKit to register for local and user-facing remote notifications, 
+ *  the app delegate must implement
  *  -application:didRegisterUserNotificationSettings: and post a notification with name
- *  'ISHPermissionNotificationApplicationDidRegisterUserNotificationSettings' to inform any pending
- *  requests that a change occured.
- *  You can also use the convenience function ISHPermissionPostNotificationDidRegisterUserNotificationSettings(self)
+ *  'ISHPermissionNotificationApplicationDidRegisterUserNotificationSettings' to inform 
+ *  any pending requests that a change occured.
+ *
+ *  You can also use the convenience function ISHPermissionPostNotificationDidRegisterUserNotificationSettings(self).
+ *
+ *  @sa ISHPermissionCategoryNotificationLocal
+ *  @sa ISHPermissionCategoryNotificationRemote
  */
 extern NSString * const ISHPermissionNotificationApplicationDidRegisterUserNotificationSettings;
 
+/**
+ *  Convenience function to register for local and user-facing remote notifications.
+ *
+ *  @sa ISHPermissionCategoryNotificationLocal
+ *  @sa ISHPermissionCategoryNotificationRemote
+ *  @sa ISHPermissionNotificationApplicationDidRegisterUserNotificationSettings
+ */
 static inline void ISHPermissionPostNotificationDidRegisterUserNotificationSettings(id object) {
     [[NSNotificationCenter defaultCenter] postNotificationName:ISHPermissionNotificationApplicationDidRegisterUserNotificationSettings
                                                         object:object];

@@ -13,11 +13,16 @@
 #import "ISHPermissionRequestPhotoLibrary.h"
 #import "ISHPermissionRequestPhotoCamera.h"
 #import "ISHPermissionRequestNotificationsLocal.h"
+#import "ISHPermissionRequestNotificationsRemote.h"
 #import "ISHPermissionRequestAccount.h"
 #import "ISHPermissionRequestHealth.h"
 #import "ISHPermissionRequestAddressBook.h"
 #import "ISHPermissionRequestEventStore.h"
 #import "ISHPermissionRequest+Private.h"
+
+@interface ISHPermissionRequest (Private)
+- (void)setPermissionCategory:(ISHPermissionCategory)category;
+@end
 
 @implementation ISHPermissionRequest (All)
 

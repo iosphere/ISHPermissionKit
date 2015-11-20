@@ -45,7 +45,7 @@
 - (ACAccountType *)accountType {
     if (!_accountType) {
         NSString *identifier = self.accountTypeIdentifier;
-        NSAssert(identifier, @"Permissions request for accounts requires an identifier e.g. ACAccountTypeIdentifierFacebook");
+        NSAssert(identifier, @"Permissions request for accounts requires an identifier, e.g., ACAccountTypeIdentifierFacebook");
         _accountType = [self.accountStore accountTypeWithAccountTypeIdentifier:identifier];
     }
     
