@@ -1,4 +1,4 @@
-# <img src="assets/AppIcon40x40_2x.png" align="center" width="40" height="40"> ISHPermissionKit
+# <img src="icon.png" align="center" width="40" height="40"> ISHPermissionKit
 
 [![Travis Build Status](https://travis-ci.org/iosphere/ISHPermissionKit.svg?branch=master)](http://travis-ci.org/iosphere/ISHPermissionKit)&nbsp;
 [![Version](http://cocoapod-badges.herokuapp.com/v/ISHPermissionKit/badge.png)](http://cocoadocs.org/docsets/ISHPermissionKit)

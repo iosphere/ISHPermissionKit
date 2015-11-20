@@ -1,4 +1,4 @@
-# <img src="assets/AppIcon40x40_2x.png" align="center" width="40" height="40"> Changelog
+# <img src="icon.png" align="center" width="40" height="40"> Changelog
 
 ## 0.9.0
 
