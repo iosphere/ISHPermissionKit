@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = 'ISHPermissionKit'
-  s.version      = '0.9.0'
+  s.version      = '1.0.0'
   s.summary      = 'A polite and unified way of asking for permission on iOS.'
   s.description  = 'This framework provides a unified way of asking for user permissions on iOS. It also 
                     provides UI to explain the permission requirements before presenting the system
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.authors      = { 'Felix Lamouroux' => 'felix@iosphere.de' }
 
   s.platform     = :ios, '7.0'
-  s.source       = { :git => 'https://github.com/iosphere/ISHPermissionKit.git', :tag => '0.9.0' }
+  s.source       = { :git => 'https://github.com/iosphere/ISHPermissionKit.git', :tag => '1.0.0' }
   s.source_files = 'ISHPermissionKit', 'ISHPermissionKit/**/*.{h,m}'
   s.requires_arc = true
   s.xcconfig     = { 'OTHER_LDFLAGS' => '-ObjC' }

@@ -1,5 +1,14 @@
 # <img src="icon.png" align="center" width="40" height="40"> Changelog
 
+## 1.0.0
+
+* Improves documentation
+  * Improves header documentation
+  * Adds shared schemes to allow builds via `xcodebuild`
+  * Adds changelog file (this one!)
+  * Adds repo icon (shown, e.g., in SourceTree)
+  * Adds appledoc config file (allows `appledoc .` within the root directory)
+
 ## 0.9.0
 
 * Added support for remote notifications
