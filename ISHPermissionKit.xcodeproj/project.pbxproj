@@ -255,6 +255,7 @@
 /* Begin PBXFileReference section */
 		1B87C1BA1961AA5D001D85E7 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		1B87C1BB1961AA5D001D85E7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1BBCCA7E1BFF367D00606D3D /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		DC1A80A1195B21DC0069235F /* ISHPermissionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHPermissionsViewController.h; sourceTree = "<group>"; };
 		DC1A80A2195B21DC0069235F /* ISHPermissionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionsViewController.m; sourceTree = "<group>"; };
 		DC1A80A8195B22A10069235F /* ISHPermissionCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHPermissionCategory.h; sourceTree = "<group>"; };
@@ -422,6 +423,7 @@
 			children = (
 				1B87C1BA1961AA5D001D85E7 /* LICENSE */,
 				1B87C1BB1961AA5D001D85E7 /* README.md */,
+				1BBCCA7E1BFF367D00606D3D /* CHANGELOG.md */,
 				DCC1BFA7195B174200362559 /* ISHPermissionKit */,
 				DCC1BFB4195B174200362559 /* ISHPermissionKitTests */,
 				DCC1BFC6195B176E00362559 /* PermissionsTestApp */,
