@@ -61,7 +61,7 @@ Please file an issue for missing permissions.
 
 ### Static Library
 
-Add this Xcode project as a sub project of your app. Then link your app target 
+Add this Xcode project as a subproject of your app. Then link your app target 
 against the static library (`ISHPermissionKitLib.a` or 
 `ISHPermissionKitLib+HealthKit.a` if you require HealthKit support).
 You will also need to add the static library as a target dependency. 
@@ -74,7 +74,7 @@ Use `#import <ISHPermissionKit/ISHPermissionKit.h>` to import all public headers
 
 ### Dynamically-Linked Framework
 
-Add this Xcode project as a sub project of your app. Then add the framework
+Add this Xcode project as a subproject of your app. Then add the framework
 (`ISHPermissionKit.framework` or `ISHPermissionKit+HealthKit.framework` if you 
 require HealthKit support) to the app's embedded binaries (on the *General*
 tab of your app target's settings). On the *Build Phases* tab, verify that the
@@ -82,7 +82,7 @@ framework has also been added to the *Target Dependencies* and *Link Binary with
 Libraries* phases, and that a new *Embed Frameworks* phase has been created.
 
 The framework can be used as a module, so you can use `@import ISHPermissionKit;`
-to import all public headers.
+to import all public headers.  
 Further reading on Modules: [Clang Documentation](http://clang.llvm.org/docs/Modules.html)
 
 **Note:** To link against dynamic frameworks on iOS, a deployment target of at
@@ -122,7 +122,7 @@ post_install do |installer_representation|
 end
 ```
 
-See the [official guides](http://guides.cocoapods.org) to get started with CocoaPods.
+See the [official guides](https://guides.cocoapods.org) to get started with CocoaPods.
 
 
 ## ISHPermissionsViewController
@@ -198,7 +198,7 @@ BOOL granted = ([r permissionState] == ISHPermissionStateAuthorized);
 
 Contributions are welcome. Check out the roadmap and open issues. 
 Adding support for more permission types is probably 
-most "rewarding", you can find a few hints on how to get started below.
+most rewarding, you can find a few hints on how to get started below.
 
 ## Adding Support for New Permissions
 
