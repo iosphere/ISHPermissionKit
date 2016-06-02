@@ -236,12 +236,12 @@ ISHPermissionKit icon designed by
 # Apps Using ISHPermissionKit
 
 <img src="assets/app_trails.png" align="center" width="36" height="36"> 
-<a href="http://trails.io/" title="Trails · GPS tracker for hiking, biking &amp; skiing · Offline topo maps &amp; GPX file import">Trails · GPS tracker</a>
+<a href="http://trails.io/" title="Trails · Outdoor GPS Logbook">Trails · Outdoor GPS Logbook</a>
+
+<img src="assets/app_sumup.png" align="center" width="36" height="36"> 
+<a href="https://itunes.apple.com/app/sumup/id514879214" title="SumUp – Accept EMV card payments">SumUp – Accept EMV card payments</a>
 
 <img src="assets/app_snow.png" align="center" width="36" height="36"> 
 <a href="https://itunes.apple.com/en/app/snow-report-myswitzerland/id341755817?mt=8" title="Swiss Snow Report - Current snow and weather information for the best Swiss winter sports destinations">Swiss Snow Report</a>
 
-<img src="assets/app_moa.png" align="center" width="36" height="36"> 
-<a href="https://itunes.apple.com/en/app/manualone-anleitungen.-belege./id989213149?mt=8" title="Alle Anleitungen. Alle Belege. Eine App.">manualONE · Anleitungen. Belege. Garantien.</a>
-
-If your app uses ISHPermissionKit let us know and we will include it here.
+If your app uses ISHPermissionKit, let us know and we will include it here.
