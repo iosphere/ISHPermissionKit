@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '7.0'
   s.source       = { :git => 'https://github.com/iosphere/ISHPermissionKit.git', :tag => '1.0.0' }
   s.source_files = 'ISHPermissionKit', 'ISHPermissionKit/**/*.{h,m}'
+  s.private_header_files = 'ISHPermissionKit/Private/*.h'
   s.requires_arc = true
   s.xcconfig     = { 'OTHER_LDFLAGS' => '-ObjC' }
 
