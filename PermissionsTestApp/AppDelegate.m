@@ -11,19 +11,19 @@
 #import <ISHPermissionKit/ISHPermissionKit.h>
 @import Accounts;
 
-@interface AppDelegate () <ISHPermissionsViewControllerDataSource>
-        
+@interface AppDelegate ()<ISHPermissionsViewControllerDataSource>
+
 @end
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self setupWindow];
-    
+
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self presentPermissionsIfNeeded];
     });
-    
+
     return YES;
 }
 
@@ -42,6 +42,7 @@
                              @(ISHPermissionCategorySocialFacebook),
                              ];
     ISHPermissionsViewController *permissionsVC = [ISHPermissionsViewController permissionsViewControllerWithCategories:permissions dataSource:self];
+
     if (permissionsVC) {
         [self.window.rootViewController presentViewController:permissionsVC animated:YES completion:nil];
     }
@@ -62,16 +63,16 @@
         [localNotesRequest setNoticationSettings:setting];
     }
 #endif
-    
+
     if (request.permissionCategory == ISHPermissionCategorySocialFacebook) {
         ISHPermissionRequestAccount *accountRequest = (ISHPermissionRequestAccount *)([request isKindOfClass:[ISHPermissionRequestAccount class]] ? request : nil);
-        
+
         NSDictionary *options = @{
                                   ACFacebookAppIdKey: @"YOUR-API-KEY",
                                   ACFacebookPermissionsKey: @[@"email", @"user_about_me"],
                                   ACFacebookAudienceKey: ACFacebookAudienceFriends
                                   };
-        
+
         [accountRequest setOptions:options];
     }
 }
@@ -90,7 +91,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
-    
+
     UIViewController *rootVC = [UIViewController new];
     [rootVC.view setBackgroundColor:[UIColor colorWithRed:0.400 green:0.800 blue:1.000 alpha:1.000]];
     [self.window setRootViewController:rootVC];
