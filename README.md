@@ -24,7 +24,7 @@ where the system APIs only provide implicit methods of doing so.
 * Calendar: Events and Reminders
 * CoreLocation: Always and WhenInUse
 * CoreMotion: Activity data (step counting, etc.)
-* HealthKit *(use `+HealthKit` variants of the static library or framework)*
+* HealthKit *(use `+HealthKit` variants of the static library/framework/pod), see [Issue #15](https://github.com/iosphere/ISHPermissionKit/issues/15)*
 * Microphone
 * Notifications: Local and Remote
 * Photos: Camera Roll and Camera
@@ -90,40 +90,25 @@ least iOS 8 is required.
 
 ### CocoaPods
 
-You can use CocoaPods to install ISHPermissionKit as a static library. 
-This is all you have to put in your Podfile:
+You can use CocoaPods to install ISHPermissionKit as a static library:
 
 ```ruby
-pod 'ISHPermissionKit'
-```
-
-The default installation does not include HealthKit support. To enable HealthKit 
-permissions, the `ISHPermissionRequestHealthKitEnabled` preprocessor macro needs 
-to be set. Use the following sample podfile to ensure the flag is still set 
-after pod updates:
-
-```ruby
-pod 'ISHPermissionKit'
-
-post_install do |installer_representation|
-  installer_representation.project.targets.each do |target|
-    target.build_configurations.each do |config|
-      preprocessor_defs = config.build_settings['GCC_PREPROCESSOR_DEFINITIONS']
-      permission_kit_defs = ['$(inherited)', 'ISHPermissionRequestHealthKitEnabled=1']
-      if preprocessor_defs
-      	preprocessor_defs += permission_kit_defs
-        preprocessor_defs.uniq!
-      else
-        preprocessor_defs = permission_kit_defs
-      end
-      config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] = preprocessor_defs
-    end
-  end
+target 'MyApp' do
+    pod 'ISHPermissionKit'
 end
 ```
 
-See the [official guides](https://guides.cocoapods.org) to get started with CocoaPods.
+See the [official website](https://cocoapods.org/#get_started) to get started with
+CocoaPods.
 
+The default pod does not include HealthKit support. If you need HealthKit, you need
+to use the 'ISHPermissionKit/Health' pod:
+
+```ruby
+target 'MyApp' do
+    pod 'ISHPermissionKit/Health'
+end
+```
 
 ## ISHPermissionsViewController
 

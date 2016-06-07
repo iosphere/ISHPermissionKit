@@ -1,5 +1,12 @@
 # <img src="icon.png" align="center" width="40" height="40"> Changelog
 
+## 1.1.0
+
+* Improves CocoaPods integration
+  * Example updated to work with CocoaPods 1.0
+  * Private headers are marked private in Podspec
+  * Adds subspec for Health support
+
 ## 1.0.0
 
 * Improves documentation

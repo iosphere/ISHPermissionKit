@@ -25,7 +25,8 @@
     #ifndef ISHPermissionRequestHealthKitEnabled
     NSAssert(false, @"HealthKit permission requests require the use of the ISHPermissionKit+HealthKit framework "
                     @"or static library. This assertion was most likely triggered because your app links to the "
-                    @"wrong target. Please check your project settings.");
+                    @"wrong target. Please check your project settings. If you use CocoaPods, you must use the"
+                    @"ISHPermissionKit/Health pod in your Podfile.");
     #endif
     return self;
 }
