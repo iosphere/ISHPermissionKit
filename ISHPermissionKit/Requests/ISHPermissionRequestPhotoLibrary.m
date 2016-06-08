@@ -31,7 +31,7 @@
         return;
     }
 
-    // TODO: migrate to PHPhotoLibrary API on iOS 9+
+    // TODO: migrate to PHPhotoLibrary API on iOS 9+ (https://github.com/iosphere/ISHPermissionKit/issues/42)
 
     ALAssetsLibrary *assetsLibrary = [ALAssetsLibrary new];
 
