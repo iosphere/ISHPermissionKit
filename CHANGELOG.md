@@ -42,11 +42,11 @@
 ## 0.5.0
 
 * Added additional permissions:
- * Health-App
- * AdressBook
- * Calendar
- * Social-Services
- * Reminders
+  * Health-App
+  * AdressBook
+  * Calendar
+  * Social-Services
+  * Reminders
 * Changed designated constructor for `ISHPermissionsViewController`: `+permissionsViewControllerWithCategories:dataSource:`
 * Improved UI layout on iPad
 
