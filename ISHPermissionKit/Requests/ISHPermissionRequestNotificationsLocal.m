@@ -77,8 +77,10 @@
 - (void)ISHPermissionNotificationApplicationDidRegisterUserNotificationSettings:(NSNotification *)note {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     if (self.completionBlock) {
-        self.completionBlock(self, self.permissionState, nil);
-        self.completionBlock = nil;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.completionBlock(self, self.permissionState, nil);
+            self.completionBlock = nil;
+        });
     }
 }
 

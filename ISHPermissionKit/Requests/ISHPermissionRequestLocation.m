@@ -144,9 +144,12 @@
     if (!self.completionBlock) {
         return;
     }
-    ISHPermissionState currentState = self.permissionState;
-    self.completionBlock(self, currentState, nil);
-    self.completionBlock = nil;
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        ISHPermissionState currentState = self.permissionState;
+        self.completionBlock(self, currentState, nil);
+        self.completionBlock = nil;
+    });
 }
 
 #ifdef __IPHONE_8_0
