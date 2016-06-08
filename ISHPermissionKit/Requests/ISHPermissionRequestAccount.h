@@ -26,6 +26,8 @@
 /**
  *  An optional dictionary that will be used when requesting access 
  *  to the account of the given type.
+ *
+ *  @sa requestAccessToAccountsWithType:options:completion:
  */
 @property (nonatomic, nullable) NSDictionary *options;
 

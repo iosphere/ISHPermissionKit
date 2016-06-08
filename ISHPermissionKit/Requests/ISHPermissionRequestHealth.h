@@ -7,6 +7,8 @@
 //
 
 #import "ISHPermissionRequest.h"
+@class HKObjectType;
+@class HKSampleType;
 
 /**
  *  Permission request for the Health database.
@@ -17,10 +19,10 @@
 /**
  *  A set of HKObjectType instances you wish to read from HealthKit.
  */
-@property (nonatomic, nullable) NSSet *objectTypesRead;
+@property (nonatomic, nullable) NSSet<HKObjectType *> *objectTypesRead;
 /**
  *  A set of HKObjectType instances you wish to write to HealthKit.
  */
-@property (nonatomic, nullable) NSSet *objectTypesWrite;
+@property (nonatomic, nullable) NSSet<HKSampleType *> *objectTypesWrite;
 
 @end
