@@ -3,10 +3,11 @@
 ## 1.1.0
 
 * Improves CocoaPods integration
-  * Example updated to work with CocoaPods 1.0
+  * README examples updated to work with CocoaPods 1.0
   * Private headers are marked private in Podspec
   * Adds subspec for Health support
 * Improves Swift support by adding nullability annotations
+* Internal refactoring
 
 ## 1.0.0
 
