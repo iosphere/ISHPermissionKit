@@ -17,10 +17,11 @@
  Sets the controller's permission delegate.
  @param permissionDelegate The new delegate.
  */
-- (void)setPermissionDelegate:(id<ISHPermissionRequestViewControllerDelegate>)permissionDelegate;
+- (void)setPermissionDelegate:(nullable id<ISHPermissionRequestViewControllerDelegate>)permissionDelegate;
 /**
  Seths the request object.
  @param request The request.
  */
-- (void)setPermissionRequest:(ISHPermissionRequest *)request;
+- (void)setPermissionRequest:(nullable ISHPermissionRequest *)request;
+
 @end

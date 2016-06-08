@@ -22,4 +22,5 @@
  *  A set of HKObjectType instances you wish to write to HealthKit.
  */
 @property (nonatomic, nullable) NSSet *objectTypesWrite;
+
 @end

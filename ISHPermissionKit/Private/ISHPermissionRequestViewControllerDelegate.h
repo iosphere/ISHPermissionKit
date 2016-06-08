@@ -19,5 +19,6 @@
  *  @param vc    ISHPermissionRequestViewController instance that triggered the call.
  *  @param state The current state of the permission category.
  */
-- (void)permissionRequestViewController:(ISHPermissionRequestViewController *)vc didCompleteWithState:(ISHPermissionState)state;
+- (void)permissionRequestViewController:(nonnull ISHPermissionRequestViewController *)vc didCompleteWithState:(ISHPermissionState)state;
+
 @end
