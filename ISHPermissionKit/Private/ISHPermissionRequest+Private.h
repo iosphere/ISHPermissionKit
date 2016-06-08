@@ -25,4 +25,22 @@
  */
 - (void)setInternalPermissionState:(ISHPermissionState)state;
 
+/**
+ *  This method verfies that the completion block is not nil
+ *  (will asssert in non-release builds) and that the current
+ *  state allows a user prompt.
+ *
+ *  Permission request subclasses should call this method in their
+ *  implementation of requestUserPermissionWithCompletionBlock:
+ *  and only continue when it returns YES. If it returns NO,
+ *  the completion block is already called internally.
+ *
+ *  @param completion The completion block given to
+ *  requestUserPermissionWithCompletionBlock:
+ *
+ *  @return YES, if the completion block is not nil and the
+ *  current permission state allows a prompt.
+ */
+- (BOOL)mayRequestUserPermissionWithCompletionBlock:(ISHPermissionRequestCompletionBlock)completion;
+
 @end

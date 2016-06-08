@@ -24,6 +24,22 @@
     NSAssert(false, @"Subclasses should implement -requestUserPermissionWithCompletionBlock: and not call super.");
 }
 
+- (BOOL)mayRequestUserPermissionWithCompletionBlock:(ISHPermissionRequestCompletionBlock)completion {
+    if (!completion) {
+        NSAssert(completion, @"requestUserPermissionWithCompletionBlock: requires a completion block");
+        return NO;
+    }
+
+    ISHPermissionState currentState = self.permissionState;
+
+    if (!ISHPermissionStateAllowsUserPrompt(currentState)) {
+        completion(self, currentState, nil);
+        return NO;
+    }
+
+    return YES;
+}
+
 - (ISHPermissionState)internalPermissionState {
     NSNumber *state = [[NSUserDefaults standardUserDefaults] objectForKey:[self persistentIdentifier]];
     if (!state) {

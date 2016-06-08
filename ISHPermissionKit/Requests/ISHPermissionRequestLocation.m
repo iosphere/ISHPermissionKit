@@ -64,11 +64,7 @@
 }
 
 - (void)requestUserPermissionWithCompletionBlock:(ISHPermissionRequestCompletionBlock)completion {
-    NSAssert(completion, @"requestUserPermissionWithCompletionBlock requires a completion block");
-    ISHPermissionState currentState = self.permissionState;
-
-    if (!ISHPermissionStateAllowsUserPrompt(currentState)) {
-        completion(self, currentState, nil);
+    if (![self mayRequestUserPermissionWithCompletionBlock:completion]) {
         return;
     }
 
@@ -148,9 +144,12 @@
     if (!self.completionBlock) {
         return;
     }
-    ISHPermissionState currentState = self.permissionState;
-    self.completionBlock(self, currentState, nil);
-    self.completionBlock = nil;
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        ISHPermissionState currentState = self.permissionState;
+        self.completionBlock(self, currentState, nil);
+        self.completionBlock = nil;
+    });
 }
 
 #ifdef __IPHONE_8_0

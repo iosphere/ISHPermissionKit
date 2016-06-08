@@ -48,17 +48,20 @@
 }
 
 - (void)requestUserPermissionWithCompletionBlock:(ISHPermissionRequestCompletionBlock)completion {
-    NSAssert(completion, @"requestUserPermissionWithCompletionBlock requires a completion block");
-    NSAssert(self.notificationSettings, @"Requested notification settings should be set for request before requesting user permission");
-    // ensure that the app delegate implements the didRegisterMethods:
-    NSAssert([[[UIApplication sharedApplication] delegate] respondsToSelector:@selector(application:didRegisterUserNotificationSettings:)], @"AppDelegate must implement application:didRegisterUserNotificationSettings: and post notification ISHPermissionNotificationApplicationDidRegisterUserNotificationSettings");
-    
-    ISHPermissionState currentState = self.permissionState;
-    if (!ISHPermissionStateAllowsUserPrompt(currentState)) {
-        completion(self, currentState, nil);
+    if (![self mayRequestUserPermissionWithCompletionBlock:completion]) {
         return;
     }
-    
+
+    if (!self.notificationSettings) {
+        NSAssert(NO, @"Requested notification settings should be set for request before requesting user permission");
+        return;
+    }
+
+    if (![[[UIApplication sharedApplication] delegate] respondsToSelector:@selector(application:didRegisterUserNotificationSettings:)]) {
+        NSAssert(NO, @"AppDelegate must implement application:didRegisterUserNotificationSettings: and post ISHPermissionNotificationApplicationDidRegisterUserNotificationSettings notification");
+        return;
+    }
+
     // avoid asking again (system state does not correctly reflect if we asked already).
     [self setInternalPermissionState:ISHPermissionStateDoNotAskAgain];
     
@@ -74,8 +77,10 @@
 - (void)ISHPermissionNotificationApplicationDidRegisterUserNotificationSettings:(NSNotification *)note {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     if (self.completionBlock) {
-        self.completionBlock(self, self.permissionState, nil);
-        self.completionBlock = nil;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.completionBlock(self, self.permissionState, nil);
+            self.completionBlock = nil;
+        });
     }
 }
 
