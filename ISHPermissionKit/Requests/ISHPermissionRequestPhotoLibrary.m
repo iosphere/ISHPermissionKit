@@ -30,14 +30,17 @@
     if (![self mayRequestUserPermissionWithCompletionBlock:completion]) {
         return;
     }
-    
+
+    // TODO: migrate to PHPhotoLibrary API on iOS 9+
+
     ALAssetsLibrary *assetsLibrary = [ALAssetsLibrary new];
-    
+
     [assetsLibrary enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
         if (!group) {
             // ensure that completion is only called once
             dispatch_async(dispatch_get_main_queue(), ^{
                 completion(self, self.permissionState, nil);
+                *stop = YES;
             });
         }
     } failureBlock:^(NSError *error) {
