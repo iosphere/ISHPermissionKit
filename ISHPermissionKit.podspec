@@ -16,20 +16,20 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, '7.0'
   s.source       = { :git => 'https://github.com/iosphere/ISHPermissionKit.git', :tag => s.version.to_s }
-  #s.module_name = 'ISHPermissionKit'
+  s.module_name = 'ISHPermissionKit'
 
   s.default_subspec = 'Core'
 
   s.subspec 'Core' do |core|
-  	#TODO: remove first
-    core.source_files         = 'ISHPermissionKit', 'ISHPermissionKit/**/*.{h,m}'
-    core.private_header_files = 'ISHPermissionKit/Private/*.h'
+    core.source_files         = 'ISHPermissionKit/**/*.{h,m}'
+    core.private_header_files = 'ISHPermissionKit/Private/**/*.h'
     core.pod_target_xcconfig  = { 'OTHER_LDFLAGS' => '-ObjC' }
     core.requires_arc         = true
   end
 
   s.subspec 'Health' do |health|
    health.dependency 'ISHPermissionKit/Core'
+
    health.weak_framework       = 'HealthKit'
    health.pod_target_xcconfig  = { 'GCC_PREPROCESSOR_DEFINITIONS' => 'ISHPermissionRequestHealthKitEnabled' }
   end
