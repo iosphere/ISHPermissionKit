@@ -11,10 +11,8 @@
 
 @import AssetsLibrary;
 
-@interface ISHPermissionRequestPhotoLibrary ()
-@end
-
 @implementation ISHPermissionRequestPhotoLibrary
+
 - (ISHPermissionState)permissionState {
     ALAuthorizationStatus systemState = [ALAssetsLibrary authorizationStatus];
     switch (systemState) {
@@ -29,10 +27,7 @@
 }
 
 - (void)requestUserPermissionWithCompletionBlock:(ISHPermissionRequestCompletionBlock)completion {
-    NSAssert(completion, @"requestUserPermissionWithCompletionBlock requires a completion block");
-    ISHPermissionState currentState = self.permissionState;
-    if (!ISHPermissionStateAllowsUserPrompt(currentState)) {
-        completion(self, currentState, nil);
+    if (![self mayRequestUserPermissionWithCompletionBlock:completion]) {
         return;
     }
     

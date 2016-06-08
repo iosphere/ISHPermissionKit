@@ -128,7 +128,9 @@ typedef void (^ISHPermissionRequestCompletionBlock)(ISHPermissionRequest *reques
  *  if, e.g., it has already been denied, authorized, or the user does not want to be asked again.
  *
  *  @param completion The block is called once the user has made a decision. 
- *                    The block is called right away if no dialog was presented.
+ *                    The block is called right away if no dialog was presented. The block may be
+ *                    copied, so use weak references whenever possible. It is always called on
+ *                    the main queue.
  */
 - (void)requestUserPermissionWithCompletionBlock:(ISHPermissionRequestCompletionBlock)completion;
 
