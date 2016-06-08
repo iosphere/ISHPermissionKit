@@ -139,7 +139,7 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
  *
  *  @return A string representation of an ISHPermissionCategory enum value. (Used mainly for debugging).
  */
-static inline NSString *ISHStringFromPermissionCategory(ISHPermissionCategory category) {
+static inline NSString * _Nonnull ISHStringFromPermissionCategory(ISHPermissionCategory category) {
     switch (category) {
         case ISHPermissionCategoryActivity:
             return @"ISHPermissionCategoryActivity";
@@ -174,4 +174,7 @@ static inline NSString *ISHStringFromPermissionCategory(ISHPermissionCategory ca
         case ISHPermissionCategoryReminders:
             return @"ISHPermissionCategoryReminders";
     }
+
+    NSLog(@"Invalid category: %lu", (unsigned long)category);
+    return @"";
 }

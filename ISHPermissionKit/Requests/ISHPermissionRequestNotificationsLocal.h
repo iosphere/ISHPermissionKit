@@ -15,10 +15,12 @@
  *  @sa ISHPermissionCategoryNotificationLocal
  */
 @interface ISHPermissionRequestNotificationsLocal : ISHPermissionRequest
+
 /**
  *  Settings to configure the notification.
  *
  *  @sa ISHPermissionCategoryNotificationLocal
  */
-@property (nonatomic) UIUserNotificationSettings *noticationSettings;
+@property (nonatomic, nonnull) UIUserNotificationSettings *notificationSettings;
+
 @end

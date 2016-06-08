@@ -51,7 +51,7 @@
  *
  *  @param sender The sender (e.g., a button) that triggered the call.
  */
-- (IBAction)changePermissionStateToDontAskFromSender:(id)sender NS_REQUIRES_SUPER;
+- (IBAction)changePermissionStateToDontAskFromSender:(nullable id)sender NS_REQUIRES_SUPER;
 
 /**
  *  User action to skip the current permission dialog. The permission category
@@ -64,8 +64,7 @@
  *
  *  @param sender The sender (e.g., a button) that triggered the call.
  */
-- (IBAction)changePermissionStateToAskAgainFromSender:(id)sender NS_REQUIRES_SUPER;
-
+- (IBAction)changePermissionStateToAskAgainFromSender:(nullable id)sender NS_REQUIRES_SUPER;
 
 /**
  *  User action to present the system dialog for the current permission category.
@@ -76,5 +75,6 @@
  *
  *  @param sender The sender (e.g., a button) that triggered the call.
  */
-- (IBAction)requestPermissionFromSender:(id)sender NS_REQUIRES_SUPER;
+- (IBAction)requestPermissionFromSender:(nullable id)sender NS_REQUIRES_SUPER;
+
 @end

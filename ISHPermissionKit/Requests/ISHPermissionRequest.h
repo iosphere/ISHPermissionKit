@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "ISHPermissionCategory.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  *  Enumeration for possible permission states.
  *
@@ -81,7 +83,7 @@ typedef NS_ENUM(NSUInteger, ISHPermissionState) {
  *
  *  @sa requestUserPermissionWithCompletionBlock:
  */
-typedef void (^ISHPermissionRequestCompletionBlock)(ISHPermissionRequest *request, ISHPermissionState state, NSError *error);
+typedef void (^ISHPermissionRequestCompletionBlock)(ISHPermissionRequest *request, ISHPermissionState state, NSError * _Nullable error);
 
 /**
  *  Permission requests provide information about the current permission state of the associated category.
@@ -166,6 +168,9 @@ static inline NSString *ISHStringFromPermissionState(ISHPermissionState state) {
         case ISHPermissionStateAuthorized:
             return @"ISHPermissionStateAuthorized";
     }
+
+    NSLog(@"Invalid state: %lu", (unsigned long)state);
+    return @"";
 }
 
 /**
@@ -199,7 +204,9 @@ extern NSString * const ISHPermissionNotificationApplicationDidRegisterUserNotif
  *  @sa ISHPermissionCategoryNotificationRemote
  *  @sa ISHPermissionNotificationApplicationDidRegisterUserNotificationSettings
  */
-static inline void ISHPermissionPostNotificationDidRegisterUserNotificationSettings(id object) {
+static inline void ISHPermissionPostNotificationDidRegisterUserNotificationSettings(_Nullable id object) {
     [[NSNotificationCenter defaultCenter] postNotificationName:ISHPermissionNotificationApplicationDidRegisterUserNotificationSettings
                                                         object:object];
 }
+
+NS_ASSUME_NONNULL_END

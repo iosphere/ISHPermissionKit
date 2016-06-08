@@ -24,4 +24,5 @@
  *               be persisted.
  */
 - (void)setInternalPermissionState:(ISHPermissionState)state;
+
 @end

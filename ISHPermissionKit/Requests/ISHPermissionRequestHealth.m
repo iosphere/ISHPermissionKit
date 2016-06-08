@@ -65,13 +65,16 @@
     return ISHPermissionStateUnsupported; // should already be covered by above Fallback
 #else
     NSMutableSet *allTypes = [NSMutableSet set];
-    
-    if (self.objectTypesRead.count) {
-        [allTypes unionSet:self.objectTypesRead];
+    NSSet *readableTypes = self.objectTypesRead;
+
+    if (readableTypes.count) {
+        [allTypes unionSet:readableTypes];
     }
-    
-    if (self.objectTypesWrite.count) {
-        [allTypes unionSet:self.objectTypesWrite];
+
+    NSSet *writeableTypes = self.objectTypesWrite;
+
+    if (writeableTypes.count) {
+        [allTypes unionSet:writeableTypes];
     }
     
     BOOL anyUndetermined = NO;
