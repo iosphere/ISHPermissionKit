@@ -24,5 +24,6 @@
  *  @return An instance of the appropriate ISHPermissionRequest subclass
  *          for the given category.
  */
-+ (ISHPermissionRequest *)requestForCategory:(ISHPermissionCategory)category;
++ (nonnull ISHPermissionRequest *)requestForCategory:(ISHPermissionCategory)category;
+
 @end

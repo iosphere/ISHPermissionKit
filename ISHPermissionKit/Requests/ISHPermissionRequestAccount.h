@@ -21,12 +21,12 @@
  *  Supported system account type identifiers are listed in 
  *  <Accounts/ACAccountType.h>.
  */
-@property (nonatomic, readonly) NSString *accountTypeIdentifier;
+@property (nonatomic, readonly, nullable) NSString *accountTypeIdentifier;
 
 /**
  *  An optional dictionary that will be used when requesting access 
  *  to the account of the given type.
  */
-@property (nonatomic) NSDictionary *options;
+@property (nonatomic, nullable) NSDictionary *options;
 
 @end

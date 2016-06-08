@@ -28,6 +28,11 @@
 #pragma mark - Init
 
 + (instancetype)permissionsViewControllerWithCategories:(NSArray *)categories dataSource:(id <ISHPermissionsViewControllerDataSource>)dataSource {
+    if (!categories || !dataSource) {
+        NSAssert(NO, @"Required parameters 'categories' (%@) or 'dataSource' (%@) are missing.", categories, dataSource);
+        return nil;
+    }
+
     ISHPermissionsViewController *vc = [ISHPermissionsViewController new];
     
     [vc setDataSource:dataSource];

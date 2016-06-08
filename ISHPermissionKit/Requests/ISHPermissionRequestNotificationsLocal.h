@@ -20,5 +20,6 @@
  *
  *  @sa ISHPermissionCategoryNotificationLocal
  */
-@property (nonatomic) UIUserNotificationSettings *noticationSettings;
+@property (nonatomic, nullable) UIUserNotificationSettings *noticationSettings;
+
 @end

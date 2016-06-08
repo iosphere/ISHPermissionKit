@@ -46,7 +46,7 @@ typedef void (^ISHPermissionsViewControllerCompletionBlock)(void);
  *                    If it implements the optional didConfigureRequest: method, it will be asked
  *                    to configure any request that allows configuration.
  *
- *  @warning Returns nil if non of the categories allow a user prompt.
+ *  @warning Returns nil if none of the categories allows a user prompt.
  *
  *  @return Returns a new instance of ISHPermissionsViewController for all categories that allow 
  *          a user prompt. Nil if non of the categories allow a user prompt.
@@ -112,6 +112,7 @@ typedef void (^ISHPermissionsViewControllerCompletionBlock)(void);
 - (ISHPermissionRequestViewController *)permissionsViewController:(ISHPermissionsViewController *)vc requestViewControllerForCategory:(ISHPermissionCategory)category;
 
 @optional
+
 /**
  *  Called by the ISHPermissionsViewController before starting to handle the given request.
  *  This is the appropriate moment to configure the request further if needed.
@@ -125,6 +126,7 @@ typedef void (^ISHPermissionsViewControllerCompletionBlock)(void);
  *                 Direct interaction other than configuration should be avoided.
  */
 - (void)permissionsViewController:(ISHPermissionsViewController *)vc didConfigureRequest:(ISHPermissionRequest *)request;
+
 @end
 
 #pragma mark Delegate
@@ -145,6 +147,7 @@ typedef void (^ISHPermissionsViewControllerCompletionBlock)(void);
  *  @param vc ISHPermissionsViewController instance that completed.
  */
 - (void)permissionsViewControllerDidComplete:(ISHPermissionsViewController *)vc;
+
 @end
 
 NS_ASSUME_NONNULL_END

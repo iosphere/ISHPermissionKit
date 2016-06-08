@@ -17,9 +17,9 @@
 /**
  *  A set of HKObjectType instances you wish to read from HealthKit.
  */
-@property (nonatomic) NSSet *objectTypesRead;
+@property (nonatomic, nullable) NSSet *objectTypesRead;
 /**
  *  A set of HKObjectType instances you wish to write to HealthKit.
  */
-@property (nonatomic) NSSet *objectTypesWrite;
+@property (nonatomic, nullable) NSSet *objectTypesWrite;
 @end
