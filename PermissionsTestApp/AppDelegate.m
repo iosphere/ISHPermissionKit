@@ -60,7 +60,7 @@
         // the demo app only requests permissions for badges
         UIUserNotificationSettings *setting = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge categories:nil];
         ISHPermissionRequestNotificationsLocal *localNotesRequest = (ISHPermissionRequestNotificationsLocal *)([request isKindOfClass:[ISHPermissionRequestNotificationsLocal class]] ? request : nil);
-        [localNotesRequest setNoticationSettings:setting];
+        [localNotesRequest setNotificationSettings:setting];
     }
 #endif
 
