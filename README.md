@@ -101,7 +101,7 @@ to import all public headers.
 Further reading on Modules: [Clang Documentation](http://clang.llvm.org/docs/Modules.html)
 
 **Note:** To link against dynamic frameworks on iOS, a deployment target of at
-least iOS 8 is required.
+least iOS 8 is required. If you use Swift, you must use dynamic frameworks.
 
 ### CocoaPods
 
