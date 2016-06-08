@@ -24,7 +24,7 @@ where the system APIs only provide implicit methods of doing so.
 * Calendar: Events and Reminders
 * CoreLocation: Always and WhenInUse
 * CoreMotion: Activity data (step counting, etc.)
-* HealthKit *(use `+HealthKit` variants of the static library/framework/pod), see [Issue #15](https://github.com/iosphere/ISHPermissionKit/issues/15)*
+* HealthKit *(requires `HealthKit` variants of the static library/framework/pod)*
 * Microphone
 * Notifications: Local and Remote
 * Photos: Camera Roll and Camera
@@ -59,23 +59,38 @@ Please file an issue for missing permissions.
 
 ## Installation
 
+### Variants
+
+The library comes in two flavors, with or without HealthKit support. While
+technically you can use the HealthKit-enabled variant even when not using
+HealthKit in your current app, it may lead to issues during App Review, see
+[Issue #15](https://github.com/iosphere/ISHPermissionKit/issues/15).
+
+Therefore, the default installation has HealthKit disabled. While the
+public interface remains unchanged across both variants, all HealthKit-related
+APIs are non-functional and will assert unless you explicitly use the
+HealthKit variant. The HealthKit variant will weakly link the HealthKit
+framework into your app. How you choose between the two variants depends
+on the type of installation, see below.
+
+While HealthKit is not available on iPad, you can install the Health-enabled
+variant of ISHPermissionKit in iPad or Universal apps. Health-related permission
+requests will be skipped.
+
 ### Static Library
 
 Add this Xcode project as a subproject of your app. Then link your app target 
-against the static library (`ISHPermissionKitLib.a` or 
+against the static library (`ISHPermissionKitLib.a`, or 
 `ISHPermissionKitLib+HealthKit.a` if you require HealthKit support).
 You will also need to add the static library as a target dependency. 
 Both settings can be found in your app target's *Build Phases*.
-
-Add `$(BUILT_PRODUCTS_DIR)/include/` (recursive) to your app 
-target's *Framework Search Paths*.
 
 Use `#import <ISHPermissionKit/ISHPermissionKit.h>` to import all public headers.
 
 ### Dynamically-Linked Framework
 
 Add this Xcode project as a subproject of your app. Then add the framework
-(`ISHPermissionKit.framework` or `ISHPermissionKit+HealthKit.framework` if you 
+(`ISHPermissionKit.framework`, or `ISHPermissionKit+HealthKit.framework` if you 
 require HealthKit support) to the app's embedded binaries (on the *General*
 tab of your app target's settings). On the *Build Phases* tab, verify that the
 framework has also been added to the *Target Dependencies* and *Link Binary with
@@ -94,7 +109,7 @@ You can use CocoaPods to install ISHPermissionKit as a static library:
 
 ```ruby
 target 'MyApp' do
-    pod 'ISHPermissionKit'
+  pod 'ISHPermissionKit'
 end
 ```
 
@@ -102,13 +117,24 @@ See the [official website](https://cocoapods.org/#get_started) to get started wi
 CocoaPods.
 
 The default pod does not include HealthKit support. If you need HealthKit, you need
-to use the 'ISHPermissionKit/Health' pod:
+to use the `ISHPermissionKit/Health` pod:
 
 ```ruby
 target 'MyApp' do
-    pod 'ISHPermissionKit/Health'
+  pod 'ISHPermissionKit/Health'
 end
 ```
+
+ISHPermissionKit can also be installed as a framework through CocoaPods:
+
+```ruby
+target 'MyApp' do
+  use_frameworks!
+  pod 'ISHPermissionKit'
+end
+```
+It requires at least iOS 8 at runtime and can be imported as a module, see
+[Dynamically-Linked Framework](#dynamically-linked-framework).
 
 ## ISHPermissionsViewController
 
