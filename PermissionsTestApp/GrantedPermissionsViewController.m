@@ -21,12 +21,9 @@ NSString * const GrantedPermissionsViewControllerCell = @"cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    [self.view setBackgroundColor:[UIColor colorWithRed:0.400 green:0.800 blue:1.000 alpha:1.000]];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:GrantedPermissionsViewControllerCell];
-}
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
     [self reloadPermissions];
 }
 

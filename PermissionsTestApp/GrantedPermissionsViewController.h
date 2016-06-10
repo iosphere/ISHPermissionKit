@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface GrantedPermissionsViewController : UITableViewController
-
+- (void)reloadPermissions;
 @end

@@ -14,7 +14,7 @@
 @import Accounts;
 
 @interface AppDelegate ()<ISHPermissionsViewControllerDataSource>
-
+@property (nonatomic) GrantedPermissionsViewController *rootViewController;
 @end
 
 @implementation AppDelegate
@@ -48,9 +48,10 @@
 - (void)presentPermissionsIfNeeded {
     NSArray *permissions = [AppDelegate requiredPermissions];
     ISHPermissionsViewController *permissionsVC = [ISHPermissionsViewController permissionsViewControllerWithCategories:permissions dataSource:self];
-
-    // use full screen persentation mode to allow viewWillAppear to be triggered on GrantedPermissionsViewController
-    permissionsVC.modalPresentationStyle = UIModalPresentationFullScreen;
+    __weak GrantedPermissionsViewController *rootVC = self.rootViewController;
+    [permissionsVC setCompletionBlock:^{
+        [rootVC reloadPermissions];
+    }];
 
     if (permissionsVC) {
         [self.window.rootViewController presentViewController:permissionsVC animated:YES completion:nil];
@@ -101,9 +102,8 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
 
-    GrantedPermissionsViewController *rootVC = [GrantedPermissionsViewController new];
-    [rootVC.view setBackgroundColor:[UIColor colorWithRed:0.400 green:0.800 blue:1.000 alpha:1.000]];
-    [self.window setRootViewController:rootVC];
+    self.rootViewController = [GrantedPermissionsViewController new];
+    [self.window setRootViewController:self.rootViewController];
     [self.window makeKeyAndVisible];
 }
 

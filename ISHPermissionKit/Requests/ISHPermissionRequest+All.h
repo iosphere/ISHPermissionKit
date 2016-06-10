@@ -36,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @return A set of boxed ISHPermissionCategory values for which the
  *          user has granted permissions among the set of
- *      categories given as an argument.
+ *          categories given as an argument.
  */
 + (NSSet<NSNumber *> *)grantedPermissionsForCategories:(NSSet<NSNumber *> *)categories;
 @end
