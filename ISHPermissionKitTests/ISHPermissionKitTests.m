@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import <ISHPermissionKit/ISHPermissionRequest+All.h>
 
 @interface ISHPermissionKitTests : XCTestCase
 
@@ -14,26 +15,47 @@
 
 @implementation ISHPermissionKitTests
 
-- (void)setUp {
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+- (void)testNonNilRequests {
+    NSArray *allCategories = @[
+                               @(ISHPermissionCategoryActivity),
+                               @(ISHPermissionCategoryHealth),
+                               @(ISHPermissionCategoryLocationAlways),
+                               @(ISHPermissionCategoryLocationWhenInUse),
+                               @(ISHPermissionCategoryMicrophone),
+                               @(ISHPermissionCategoryPhotoLibrary),
+                               @(ISHPermissionCategoryPhotoCamera),
+                               @(ISHPermissionCategoryNotificationLocal),
+                               @(ISHPermissionCategoryNotificationRemote),
+                               @(ISHPermissionCategorySocialFacebook),
+                               @(ISHPermissionCategorySocialTwitter),
+                               @(ISHPermissionCategorySocialSinaWeibo),
+                               @(ISHPermissionCategorySocialTencentWeibo),
+                               @(ISHPermissionCategoryAddressBook),
+                               @(ISHPermissionCategoryEvents),
+                               @(ISHPermissionCategoryReminders),
+                               ];
+
+    for (NSNumber *boxedCategory in allCategories) {
+        ISHPermissionCategory category = boxedCategory.unsignedIntegerValue;
+        ISHPermissionRequest *req = [ISHPermissionRequest requestForCategory:category];
+        XCTAssertNotNil(req, @"Request should not be nil for %@", ISHStringFromPermissionCategory(category));
+    }
 }
 
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
-}
+#if TARGET_OS_SIMULATOR
+- (void)testUnsupportedOnSimulator {
+    NSArray *allCategories = @[
+                               @(ISHPermissionCategoryActivity),
+                               @(ISHPermissionCategoryPhotoCamera),
+                               ];
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+    for (NSNumber *boxedCategory in allCategories) {
+        ISHPermissionCategory category = boxedCategory.unsignedIntegerValue;
+        ISHPermissionRequest *req = [ISHPermissionRequest requestForCategory:category];
+        ISHPermissionState state = [req permissionState];
+        XCTAssertEqual(state, ISHPermissionStateUnsupported, @"Category should be unsupported on simulator: %@", ISHStringFromPermissionCategory(category));
+    }
 }
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
-}
+#endif
 
 @end
