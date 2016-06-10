@@ -10,6 +10,7 @@
 
 @interface AppDelegate : UIResponder<UIApplicationDelegate>
 
-@property (nonatomic) UIWindow *window;
+@property (nonatomic, nullable) UIWindow *window;
 
++ (nonnull NSArray<NSNumber *> *)requiredPermissions;
 @end

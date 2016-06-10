@@ -8,11 +8,13 @@
 
 #import "AppDelegate.h"
 #import "SamplePermissionViewController.h"
+#import "GrantedPermissionsViewController.h"
+
 #import <ISHPermissionKit/ISHPermissionKit.h>
 @import Accounts;
 
 @interface AppDelegate ()<ISHPermissionsViewControllerDataSource>
-
+@property (nonatomic, weak) GrantedPermissionsViewController *rootViewController;
 @end
 
 @implementation AppDelegate
@@ -27,21 +29,29 @@
     return YES;
 }
 
++ (NSArray<NSNumber *> *)requiredPermissions {
+    return @[
+             @(ISHPermissionCategoryEvents),
+             @(ISHPermissionCategoryReminders),
+             @(ISHPermissionCategoryAddressBook),
+             @(ISHPermissionCategoryLocationWhenInUse),
+             @(ISHPermissionCategoryActivity),
+             @(ISHPermissionCategoryMicrophone),
+             @(ISHPermissionCategoryPhotoLibrary),
+             @(ISHPermissionCategoryPhotoCamera),
+             @(ISHPermissionCategoryNotificationLocal),
+             @(ISHPermissionCategorySocialTwitter),
+             @(ISHPermissionCategorySocialFacebook),
+             ];
+}
+
 - (void)presentPermissionsIfNeeded {
-    NSArray *permissions = @[
-                             @(ISHPermissionCategoryEvents),
-                             @(ISHPermissionCategoryReminders),
-                             @(ISHPermissionCategoryAddressBook),
-                             @(ISHPermissionCategoryLocationWhenInUse),
-                             @(ISHPermissionCategoryActivity),
-                             @(ISHPermissionCategoryMicrophone),
-                             @(ISHPermissionCategoryPhotoLibrary),
-                             @(ISHPermissionCategoryPhotoCamera),
-                             @(ISHPermissionCategoryNotificationLocal),
-                             @(ISHPermissionCategorySocialTwitter),
-                             @(ISHPermissionCategorySocialFacebook),
-                             ];
+    NSArray *permissions = [AppDelegate requiredPermissions];
     ISHPermissionsViewController *permissionsVC = [ISHPermissionsViewController permissionsViewControllerWithCategories:permissions dataSource:self];
+    __weak GrantedPermissionsViewController *rootVC = self.rootViewController;
+    [permissionsVC setCompletionBlock:^{
+        [rootVC reloadPermissions];
+    }];
 
     if (permissionsVC) {
         [self.window.rootViewController presentViewController:permissionsVC animated:YES completion:nil];
@@ -92,9 +102,9 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
 
-    UIViewController *rootVC = [UIViewController new];
-    [rootVC.view setBackgroundColor:[UIColor colorWithRed:0.400 green:0.800 blue:1.000 alpha:1.000]];
-    [self.window setRootViewController:rootVC];
+    GrantedPermissionsViewController *rootViewController = [GrantedPermissionsViewController new];
+    [self.window setRootViewController:rootViewController];
+    self.rootViewController = rootViewController;
     [self.window makeKeyAndVisible];
 }
 
