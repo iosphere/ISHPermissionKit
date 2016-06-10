@@ -85,4 +85,18 @@
     return request;
 }
 
++ (NSSet<NSNumber *> *)grantedPermissionsForCategories:(NSSet<NSNumber *> *)categories {
+    NSMutableSet *grantedPermissions = [NSMutableSet set];
+
+    for (NSNumber *boxedCategory in categories) {
+        ISHPermissionRequest *request = [ISHPermissionRequest requestForCategory:boxedCategory.unsignedIntegerValue];
+
+        if (request.permissionState == ISHPermissionStateAuthorized) {
+            [grantedPermissions addObject:boxedCategory];
+        }
+    }
+
+    return [grantedPermissions copy];
+}
+
 @end

@@ -155,6 +155,7 @@
 		DCD56C7D1962BB8600508F4A /* ISHPermissionRequestHealth.h in Headers */ = {isa = PBXBuildFile; fileRef = DCD56C7B1962BB8600508F4A /* ISHPermissionRequestHealth.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DCD56C7E1962BB8600508F4A /* ISHPermissionRequestHealth.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD56C7C1962BB8600508F4A /* ISHPermissionRequestHealth.m */; };
 		DCD56C7F1962BB8600508F4A /* ISHPermissionRequestHealth.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD56C7C1962BB8600508F4A /* ISHPermissionRequestHealth.m */; };
+		DCDB31081D0AC0B9005E9A71 /* GrantedPermissionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDB31071D0AC0B9005E9A71 /* GrantedPermissionsViewController.m */; };
 		DCF18617195C2B1B00CC155E /* SamplePermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF18615195C2B1B00CC155E /* SamplePermissionViewController.m */; };
 		DCF18618195C2B1B00CC155E /* SamplePermissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCF18616195C2B1B00CC155E /* SamplePermissionViewController.xib */; };
 /* End PBXBuildFile section */
@@ -310,6 +311,8 @@
 		DCD56C771962AEDC00508F4A /* ISHPermissionRequestAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestAccount.m; sourceTree = "<group>"; };
 		DCD56C7B1962BB8600508F4A /* ISHPermissionRequestHealth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHPermissionRequestHealth.h; sourceTree = "<group>"; };
 		DCD56C7C1962BB8600508F4A /* ISHPermissionRequestHealth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestHealth.m; sourceTree = "<group>"; };
+		DCDB31061D0AC0B9005E9A71 /* GrantedPermissionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrantedPermissionsViewController.h; sourceTree = "<group>"; };
+		DCDB31071D0AC0B9005E9A71 /* GrantedPermissionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrantedPermissionsViewController.m; sourceTree = "<group>"; };
 		DCF18614195C2B1B00CC155E /* SamplePermissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamplePermissionViewController.h; sourceTree = "<group>"; };
 		DCF18615195C2B1B00CC155E /* SamplePermissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SamplePermissionViewController.m; sourceTree = "<group>"; };
 		DCF18616195C2B1B00CC155E /* SamplePermissionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SamplePermissionViewController.xib; sourceTree = "<group>"; };
@@ -502,6 +505,8 @@
 				DCF18614195C2B1B00CC155E /* SamplePermissionViewController.h */,
 				DCF18615195C2B1B00CC155E /* SamplePermissionViewController.m */,
 				DCF18616195C2B1B00CC155E /* SamplePermissionViewController.xib */,
+				DCDB31061D0AC0B9005E9A71 /* GrantedPermissionsViewController.h */,
+				DCDB31071D0AC0B9005E9A71 /* GrantedPermissionsViewController.m */,
 			);
 			path = PermissionsTestApp;
 			sourceTree = "<group>";
@@ -964,6 +969,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCC1BFCD195B176E00362559 /* AppDelegate.m in Sources */,
+				DCDB31081D0AC0B9005E9A71 /* GrantedPermissionsViewController.m in Sources */,
 				DCF18617195C2B1B00CC155E /* SamplePermissionViewController.m in Sources */,
 				DCC1BFCA195B176E00362559 /* main.m in Sources */,
 			);
