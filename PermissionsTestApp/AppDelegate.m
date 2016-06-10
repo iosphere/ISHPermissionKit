@@ -14,7 +14,7 @@
 @import Accounts;
 
 @interface AppDelegate ()<ISHPermissionsViewControllerDataSource>
-@property (nonatomic) GrantedPermissionsViewController *rootViewController;
+@property (nonatomic, weak) GrantedPermissionsViewController *rootViewController;
 @end
 
 @implementation AppDelegate
@@ -102,8 +102,9 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
 
-    self.rootViewController = [GrantedPermissionsViewController new];
-    [self.window setRootViewController:self.rootViewController];
+    GrantedPermissionsViewController *rootViewController = [GrantedPermissionsViewController new];
+    [self.window setRootViewController:rootViewController];
+    self.rootViewController = rootViewController;
     [self.window makeKeyAndVisible];
 }
 

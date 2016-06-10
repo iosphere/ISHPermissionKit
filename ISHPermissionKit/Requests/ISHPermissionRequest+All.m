@@ -86,14 +86,13 @@
 }
 
 + (NSArray<NSNumber *> *)grantedPermissionsForCategories:(NSArray<NSNumber *> *)categories {
-    return [self permissionsForCategories:categories passingTest:^BOOL(ISHPermissionState state) {
+    return [self permissionsForCategories:categories passingTest:^BOOL (ISHPermissionState state) {
         return state == ISHPermissionStateAuthorized;
     }];
 }
 
-
 + (NSArray<NSNumber *> *)requestablePermissionsForCategories:(NSArray<NSNumber *> *)categories {
-    return [self permissionsForCategories:categories passingTest:^BOOL(ISHPermissionState state) {
+    return [self permissionsForCategories:categories passingTest:^BOOL (ISHPermissionState state) {
         return ISHPermissionStateAllowsUserPrompt(state);
     }];
 }

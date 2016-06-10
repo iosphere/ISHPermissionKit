@@ -142,28 +142,23 @@
 }
 
 - (void)setupRequestablePermissionsCategoriesFromArray:(NSArray *)neededCategories {
-    NSMutableArray *requestableCategories = [NSMutableArray arrayWithCapacity:neededCategories.count];
-    NSMutableArray *requests = [NSMutableArray arrayWithCapacity:neededCategories.count];
+    NSArray *requestableCategories = [ISHPermissionRequest requestablePermissionsForCategories:neededCategories];
+    NSMutableArray *requests = [NSMutableArray arrayWithCapacity:requestableCategories.count];
     BOOL dataSourceConfiguresRequests = [self.dataSource respondsToSelector:@selector(permissionsViewController:didConfigureRequest:)];
     
-    for (NSNumber *categoryObj in neededCategories) {
+    for (NSNumber *categoryObj in requestableCategories) {
         ISHPermissionCategory category = [categoryObj integerValue];
         ISHPermissionRequest *request = [ISHPermissionRequest requestForCategory:category];
         
-        if (dataSourceConfiguresRequests && request.allowsConfiguration && ([request permissionState] != ISHPermissionStateUnsupported)) {
+        if (dataSourceConfiguresRequests && request.allowsConfiguration) {
             [self.dataSource permissionsViewController:self didConfigureRequest:request];
         }
         
-        ISHPermissionState state = [request permissionState];
-        
-        if (ISHPermissionStateAllowsUserPrompt(state)) {
-            [requestableCategories addObject:categoryObj];
-            [requests addObject:request];
-        }
+        [requests addObject:request];
     }
-    
-    [self setPermissionRequests:[NSArray arrayWithArray:requests]];
-    [self setPermissionCategories:[requestableCategories copy]];
+
+    [self setPermissionRequests:[requests copy]];
+    [self setPermissionCategories:requestableCategories];
 }
 
 - (void)viewDidLayoutSubviews {

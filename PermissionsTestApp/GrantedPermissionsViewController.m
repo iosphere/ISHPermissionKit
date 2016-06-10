@@ -57,7 +57,7 @@ NSInteger const GrantedPermissionsSection = 1;
 - (NSNumber *)permissionAtIndexPath:(NSIndexPath *)indexPath {
     NSArray *permissions = [self permissionsForSection:indexPath.section];
 
-    if (permissions.count <= indexPath.row) {
+    if (indexPath.row >= permissions.count) {
         return nil;
     }
 
