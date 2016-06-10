@@ -11,10 +11,12 @@
 #import <ISHPermissionKit/ISHPermissionRequest+All.h>
 
 NSString * const GrantedPermissionsViewControllerCell = @"cell";
+NSInteger const GrantedPermissionsSection = 1;
 
 @interface GrantedPermissionsViewController ()
 @property NSArray *permissionsGranted;
 @property NSArray *permissionsNotGranted;
+@property NSSet *permissionsRequestable;
 @end
 
 @implementation GrantedPermissionsViewController
@@ -33,18 +35,19 @@ NSString * const GrantedPermissionsViewControllerCell = @"cell";
 }
 
 - (void)reloadPermissions {
-    NSSet *permissions = [NSSet setWithArray:[AppDelegate requiredPermissions]];
-    NSSet *grantedPermissions = [ISHPermissionRequest grantedPermissionsForCategories:permissions];
+    NSArray *allPermissions = [AppDelegate requiredPermissions];
+    NSArray *grantedPermissions = [ISHPermissionRequest grantedPermissionsForCategories:allPermissions];
 
-    self.permissionsGranted = [[grantedPermissions allObjects] sortedArrayUsingSelector:@selector(compare:)];
-    NSMutableSet *missingPermissions = [permissions mutableCopy];
-    [missingPermissions minusSet:grantedPermissions];
+    self.permissionsGranted = [grantedPermissions sortedArrayUsingSelector:@selector(compare:)];
+    NSMutableSet *missingPermissions = [NSMutableSet setWithArray:allPermissions];
+    [missingPermissions minusSet:[NSSet setWithArray:grantedPermissions]];
     self.permissionsNotGranted = [[missingPermissions allObjects] sortedArrayUsingSelector:@selector(compare:)];
+    self.permissionsRequestable = [NSSet setWithArray:[ISHPermissionRequest requestablePermissionsForCategories:self.permissionsNotGranted]];
     [self.tableView reloadData];
 }
 
 - (NSArray *)permissionsForSection:(NSInteger)section {
-    if (section) {
+    if (section == GrantedPermissionsSection) {
         return self.permissionsGranted;
     }
 
@@ -71,7 +74,7 @@ NSString * const GrantedPermissionsViewControllerCell = @"cell";
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    if (section) {
+    if (section == GrantedPermissionsSection) {
         return @"Granted";
     }
 
@@ -89,6 +92,13 @@ NSString * const GrantedPermissionsViewControllerCell = @"cell";
     } else {
         cell.textLabel.text = nil;
     }
+
+    UIColor *color = [UIColor greenColor];
+    if (indexPath.section != GrantedPermissionsSection) {
+        // Use redColor for permissions that cannot be requested
+        color = [self.permissionsRequestable containsObject:permission] ? [UIColor darkTextColor] : [UIColor redColor];
+    }
+    cell.textLabel.textColor = color;
 
     return cell;
 }

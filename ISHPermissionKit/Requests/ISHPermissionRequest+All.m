@@ -85,13 +85,26 @@
     return request;
 }
 
-+ (NSSet<NSNumber *> *)grantedPermissionsForCategories:(NSSet<NSNumber *> *)categories {
-    NSMutableSet *grantedPermissions = [NSMutableSet set];
++ (NSArray<NSNumber *> *)grantedPermissionsForCategories:(NSArray<NSNumber *> *)categories {
+    return [self permissionsForCategories:categories passingTest:^BOOL(ISHPermissionState state) {
+        return state == ISHPermissionStateAuthorized;
+    }];
+}
+
+
++ (NSArray<NSNumber *> *)requestablePermissionsForCategories:(NSArray<NSNumber *> *)categories {
+    return [self permissionsForCategories:categories passingTest:^BOOL(ISHPermissionState state) {
+        return ISHPermissionStateAllowsUserPrompt(state);
+    }];
+}
+
++ (NSArray<NSNumber *> *)permissionsForCategories:(NSArray<NSNumber *> *)categories passingTest:(BOOL (^_Nonnull)(ISHPermissionState))testBlock {
+    NSMutableArray *grantedPermissions = [NSMutableArray array];
 
     for (NSNumber *boxedCategory in categories) {
         ISHPermissionRequest *request = [ISHPermissionRequest requestForCategory:boxedCategory.unsignedIntegerValue];
 
-        if (request.permissionState == ISHPermissionStateAuthorized) {
+        if (testBlock([request permissionState])) {
             [grantedPermissions addObject:boxedCategory];
         }
     }
