@@ -249,6 +249,9 @@ ISHPermissionKit icon designed by
 <img src="assets/app_trails.png" align="center" width="36" height="36"> 
 <a href="http://trails.io/" title="Trails · Outdoor GPS Logbook">Trails · Outdoor GPS Logbook</a>
 
+<img src="assets/app_rudel.png" align="center" width="36" height="36"> 
+<a href="http://rudel.io/" title="Rudel · Anonymous Location Sharing">Rudel · Anonymous Location Sharing</a>
+
 <img src="assets/app_sumup.png" align="center" width="36" height="36"> 
 <a href="https://itunes.apple.com/app/sumup/id514879214" title="SumUp – Accept EMV card payments">SumUp – Accept EMV card payments</a>
 
