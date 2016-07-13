@@ -8,12 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-//! Project version number for ISHPermissionKit.
-FOUNDATION_EXPORT double ISHPermissionKitVersionNumber;
-
-//! Project version string for ISHPermissionKit.
-FOUNDATION_EXPORT const unsigned char ISHPermissionKitVersionString[];
-
 // Public module headers
 #import <ISHPermissionKit/ISHPermissionsViewController.h>
 #import <ISHPermissionKit/ISHPermissionRequestViewController.h>
