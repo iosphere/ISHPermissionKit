@@ -244,6 +244,12 @@ ISHPermissionKit icon designed by
 [Jason Grube (CC BY 3.0)](http://thenounproject.com/term/fingerprint/23303/) from the 
 [Noun Project](http://thenounproject.com)
 
+# More OpenSource projects by iosphere
+
+<img src="https://raw.githubusercontent.com/iosphere/ISHHoverBar/master/icon.png" align="center" width="40" height="40"> [`ISHHoverBar`](https://github.com/iosphere/ISHHoverBar) - A floating UIToolBar replacement as seen in the iOS 10 Maps app, supporting both vertical and horizontal orientation
+
+<img src="https://raw.githubusercontent.com/iosphere/ISHPullUp/master/icon.png" align="center" width="40" height="40"> [`ISHPullUp`](https://github.com/iosphere/ISHPullUp) - Vertical split view controller with pull up gesture as seen in the iOS 10 Maps app
+
 # Apps Using ISHPermissionKit
 
 <img src="assets/app_trails.png" align="center" width="36" height="36"> 
