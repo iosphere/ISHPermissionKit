@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DCC1BFAF195B174200362559"
+               BuildableName = "ISHPermissionKitTests.xctest"
+               BlueprintName = "ISHPermissionKitTests"
+               ReferencedContainer = "container:ISHPermissionKit.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "DC6A468819D712AC00B11E88"
+            BuildableName = "ISHPermissionKit.framework"
+            BlueprintName = "ISHPermissionKit+HealthKit"
+            ReferencedContainer = "container:ISHPermissionKit.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>

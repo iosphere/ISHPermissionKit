@@ -28,17 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DC7790B219617CD7007CB2BC"
-               BuildableName = "ISHPermissionKitLibTests.xctest"
-               BlueprintName = "ISHPermissionKitLibTests"
-               ReferencedContainer = "container:ISHPermissionKit.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "DCAEF7C9195C60070074EB5B"
+            BuildableName = "libISHPermissionKitLib.a"
+            BlueprintName = "ISHPermissionKitLib"
+            ReferencedContainer = "container:ISHPermissionKit.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -71,6 +70,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "DCAEF7C9195C60070074EB5B"
+            BuildableName = "libISHPermissionKitLib.a"
+            BlueprintName = "ISHPermissionKitLib"
+            ReferencedContainer = "container:ISHPermissionKit.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

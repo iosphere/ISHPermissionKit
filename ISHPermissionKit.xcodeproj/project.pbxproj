@@ -120,7 +120,6 @@
 		DC6A8AD419642793005AC5BD /* ISHPermissionRequestEventStore.h in Headers */ = {isa = PBXBuildFile; fileRef = DC6A8AD119642793005AC5BD /* ISHPermissionRequestEventStore.h */; };
 		DC6A8AD519642793005AC5BD /* ISHPermissionRequestEventStore.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6A8AD219642793005AC5BD /* ISHPermissionRequestEventStore.m */; };
 		DC6A8AD619642793005AC5BD /* ISHPermissionRequestEventStore.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6A8AD219642793005AC5BD /* ISHPermissionRequestEventStore.m */; };
-		DC7790B919617CD7007CB2BC /* libISHPermissionKitLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCAEF7CA195C60070074EB5B /* libISHPermissionKitLib.a */; };
 		DC799EB4195C0CF300A0CA36 /* ISHPermissionRequestViewController+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = DC799EB3195C0CF300A0CA36 /* ISHPermissionRequestViewController+Private.h */; };
 		DC799EB6195C113D00A0CA36 /* ISHPermissionRequestViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = DC799EB5195C113900A0CA36 /* ISHPermissionRequestViewControllerDelegate.h */; };
 		DC799EBF195C186100A0CA36 /* ISHPermissionRequestLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = DC799EBD195C186100A0CA36 /* ISHPermissionRequestLocation.h */; };
@@ -144,7 +143,6 @@
 		DCAEF7E5195C60250074EB5B /* ISHPermissionRequestLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DC799EBE195C186100A0CA36 /* ISHPermissionRequestLocation.m */; };
 		DCAEF7E6195C60250074EB5B /* ISHPermissionRequestMotion.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAEF7C0195C5B6B0074EB5B /* ISHPermissionRequestMotion.m */; };
 		DCC1BFAB195B174200362559 /* ISHPermissionKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC1BFAA195B174200362559 /* ISHPermissionKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DCC1BFB1195B174200362559 /* ISHPermissionKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC1BFA5195B174200362559 /* ISHPermissionKit.framework */; };
 		DCC1BFB8195B174200362559 /* ISHPermissionKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1BFB7195B174200362559 /* ISHPermissionKitTests.m */; };
 		DCC1BFCA195B176E00362559 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1BFC9195B176E00362559 /* main.m */; };
 		DCC1BFCD195B176E00362559 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1BFCC195B176E00362559 /* AppDelegate.m */; };
@@ -156,60 +154,14 @@
 		DCD56C7E1962BB8600508F4A /* ISHPermissionRequestHealth.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD56C7C1962BB8600508F4A /* ISHPermissionRequestHealth.m */; };
 		DCD56C7F1962BB8600508F4A /* ISHPermissionRequestHealth.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD56C7C1962BB8600508F4A /* ISHPermissionRequestHealth.m */; };
 		DCDB31081D0AC0B9005E9A71 /* GrantedPermissionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDB31071D0AC0B9005E9A71 /* GrantedPermissionsViewController.m */; };
+		DCDB31091D0AFBBD005E9A71 /* ISHPermissionKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1BFB7195B174200362559 /* ISHPermissionKitTests.m */; };
+		DCDB310C1D0AFCB2005E9A71 /* ISHPermissionKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6A46B119D712AC00B11E88 /* ISHPermissionKit.framework */; };
+		DCDB310F1D0AFCC0005E9A71 /* libISHPermissionKitLib+HealthKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6A468719D7125300B11E88 /* libISHPermissionKitLib+HealthKit.a */; };
 		DCF18617195C2B1B00CC155E /* SamplePermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF18615195C2B1B00CC155E /* SamplePermissionViewController.m */; };
 		DCF18618195C2B1B00CC155E /* SamplePermissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCF18616195C2B1B00CC155E /* SamplePermissionViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1B09129C1963F2BF00D69D3B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DCC1BF9C195B174200362559 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DCAEF7C9195C60070074EB5B;
-			remoteInfo = ISHPermissionKitLib;
-		};
-		1B09129E1963F2D800D69D3B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DCC1BF9C195B174200362559 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DCC1BFA4195B174200362559;
-			remoteInfo = ISHPermissionKit;
-		};
-		1B0912A01963F2DF00D69D3B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DCC1BF9C195B174200362559 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DCAEF7C9195C60070074EB5B;
-			remoteInfo = ISHPermissionKitLib;
-		};
-		1B4CC53E19615DB500ECE149 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DCC1BF9C195B174200362559 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DCC1BFA4195B174200362559;
-			remoteInfo = ISHPermissionKit;
-		};
-		1B87C1B41961A782001D85E7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DCC1BF9C195B174200362559 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DCC1BFA4195B174200362559;
-			remoteInfo = ISHPermissionKit;
-		};
-		1B87C1B61961A782001D85E7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DCC1BF9C195B174200362559 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DCC1BFA4195B174200362559;
-			remoteInfo = ISHPermissionKit;
-		};
-		1B87C1B81961A79C001D85E7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DCC1BF9C195B174200362559 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DCC1BFA4195B174200362559;
-			remoteInfo = ISHPermissionKit;
-		};
 		DC6A46B319D94E2700B11E88 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DCC1BF9C195B174200362559 /* Project object */;
@@ -217,19 +169,19 @@
 			remoteGlobalIDString = DC6A465E19D7125300B11E88;
 			remoteInfo = "ISHPermissionKitLib+HealthKit";
 		};
-		DC7790BA19617CD7007CB2BC /* PBXContainerItemProxy */ = {
+		DCDB310A1D0AFCA2005E9A71 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DCC1BF9C195B174200362559 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DCAEF7C9195C60070074EB5B;
-			remoteInfo = ISHPermissionKitLib;
+			remoteGlobalIDString = DC6A468819D712AC00B11E88;
+			remoteInfo = "ISHPermissionKit+HealthKit";
 		};
-		DCC1BFB2195B174200362559 /* PBXContainerItemProxy */ = {
+		DCDB310D1D0AFCBD005E9A71 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DCC1BF9C195B174200362559 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DCC1BFA4195B174200362559;
-			remoteInfo = ISHPermissionKit;
+			remoteGlobalIDString = DC6A465E19D7125300B11E88;
+			remoteInfo = "ISHPermissionKitLib+HealthKit";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -337,7 +289,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC7790B919617CD7007CB2BC /* libISHPermissionKitLib.a in Frameworks */,
+				DCDB310F1D0AFCC0005E9A71 /* libISHPermissionKitLib+HealthKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,7 +311,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCC1BFB1195B174200362559 /* ISHPermissionKit.framework in Frameworks */,
+				DCDB310C1D0AFCB2005E9A71 /* ISHPermissionKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,9 +634,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				DC7790BB19617CD7007CB2BC /* PBXTargetDependency */,
-				1B09129D1963F2BF00D69D3B /* PBXTargetDependency */,
-				1B0912A11963F2DF00D69D3B /* PBXTargetDependency */,
+				DCDB310E1D0AFCBD005E9A71 /* PBXTargetDependency */,
 			);
 			name = ISHPermissionKitLibTests;
 			productName = ISHPermissionKitLibTests;
@@ -738,12 +688,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				DCC1BFB3195B174200362559 /* PBXTargetDependency */,
-				1B4CC53F19615DB500ECE149 /* PBXTargetDependency */,
-				1B87C1B51961A782001D85E7 /* PBXTargetDependency */,
-				1B87C1B71961A782001D85E7 /* PBXTargetDependency */,
-				1B87C1B91961A79C001D85E7 /* PBXTargetDependency */,
-				1B09129F1963F2D800D69D3B /* PBXTargetDependency */,
+				DCDB310B1D0AFCA2005E9A71 /* PBXTargetDependency */,
 			);
 			name = ISHPermissionKitTests;
 			productName = ISHPermissionKitTests;
@@ -909,6 +854,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCDB31091D0AFBBD005E9A71 /* ISHPermissionKitTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -978,55 +924,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1B09129D1963F2BF00D69D3B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DCAEF7C9195C60070074EB5B /* ISHPermissionKitLib */;
-			targetProxy = 1B09129C1963F2BF00D69D3B /* PBXContainerItemProxy */;
-		};
-		1B09129F1963F2D800D69D3B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DCC1BFA4195B174200362559 /* ISHPermissionKit */;
-			targetProxy = 1B09129E1963F2D800D69D3B /* PBXContainerItemProxy */;
-		};
-		1B0912A11963F2DF00D69D3B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DCAEF7C9195C60070074EB5B /* ISHPermissionKitLib */;
-			targetProxy = 1B0912A01963F2DF00D69D3B /* PBXContainerItemProxy */;
-		};
-		1B4CC53F19615DB500ECE149 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DCC1BFA4195B174200362559 /* ISHPermissionKit */;
-			targetProxy = 1B4CC53E19615DB500ECE149 /* PBXContainerItemProxy */;
-		};
-		1B87C1B51961A782001D85E7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DCC1BFA4195B174200362559 /* ISHPermissionKit */;
-			targetProxy = 1B87C1B41961A782001D85E7 /* PBXContainerItemProxy */;
-		};
-		1B87C1B71961A782001D85E7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DCC1BFA4195B174200362559 /* ISHPermissionKit */;
-			targetProxy = 1B87C1B61961A782001D85E7 /* PBXContainerItemProxy */;
-		};
-		1B87C1B91961A79C001D85E7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DCC1BFA4195B174200362559 /* ISHPermissionKit */;
-			targetProxy = 1B87C1B81961A79C001D85E7 /* PBXContainerItemProxy */;
-		};
 		DC6A46B419D94E2700B11E88 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DC6A465E19D7125300B11E88 /* ISHPermissionKitLib+HealthKit */;
 			targetProxy = DC6A46B319D94E2700B11E88 /* PBXContainerItemProxy */;
 		};
-		DC7790BB19617CD7007CB2BC /* PBXTargetDependency */ = {
+		DCDB310B1D0AFCA2005E9A71 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DCAEF7C9195C60070074EB5B /* ISHPermissionKitLib */;
-			targetProxy = DC7790BA19617CD7007CB2BC /* PBXContainerItemProxy */;
+			target = DC6A468819D712AC00B11E88 /* ISHPermissionKit+HealthKit */;
+			targetProxy = DCDB310A1D0AFCA2005E9A71 /* PBXContainerItemProxy */;
 		};
-		DCC1BFB3195B174200362559 /* PBXTargetDependency */ = {
+		DCDB310E1D0AFCBD005E9A71 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DCC1BFA4195B174200362559 /* ISHPermissionKit */;
-			targetProxy = DCC1BFB2195B174200362559 /* PBXContainerItemProxy */;
+			target = DC6A465E19D7125300B11E88 /* ISHPermissionKitLib+HealthKit */;
+			targetProxy = DCDB310D1D0AFCBD005E9A71 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1118,10 +1029,6 @@
 		DC7790BC19617CD7007CB2BC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1130,6 +1037,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.iosphere.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1138,14 +1046,11 @@
 		DC7790BD19617CD7007CB2BC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				INFOPLIST_FILE = ISHPermissionKitLibTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.iosphere.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1321,17 +1226,15 @@
 		DCC1BFBF195B174200362559 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = ISHPermissionKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.iosphere.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1340,13 +1243,11 @@
 		DCC1BFC0195B174200362559 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				INFOPLIST_FILE = ISHPermissionKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.iosphere.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
