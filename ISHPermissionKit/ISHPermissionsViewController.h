@@ -21,6 +21,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 typedef void (^ISHPermissionsViewControllerCompletionBlock)(void);
 
+/**
+ ISHPermissionsViewControllerErrorBlock block is called with the category concerned and provides an error.
+ */
+typedef void (^ISHPermissionsViewControllerErrorBlock)(ISHPermissionCategory, NSError *);
+
 #pragma mark - View Controller
 
 /**
@@ -86,6 +91,12 @@ typedef void (^ISHPermissionsViewControllerCompletionBlock)(void);
  *  Otherwise it is called immediately after informing the delegate.
  */
 @property (copy, nullable) ISHPermissionsViewControllerCompletionBlock completionBlock;
+
+/**
+ *  The error block is called as soon as a single permission request fails with an 
+ *  error other than that the user denied the permission.
+ */
+@property (copy, nullable) ISHPermissionsViewControllerErrorBlock errorBlock;
 
 @end
 

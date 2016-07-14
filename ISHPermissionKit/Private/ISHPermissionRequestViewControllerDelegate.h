@@ -18,7 +18,8 @@
  *
  *  @param vc    ISHPermissionRequestViewController instance that triggered the call.
  *  @param state The current state of the permission category.
+ *  @param error Any error (other than permission denied errors) that occured while requesting the permission.
  */
-- (void)permissionRequestViewController:(nonnull ISHPermissionRequestViewController *)vc didCompleteWithState:(ISHPermissionState)state;
+- (void)permissionRequestViewController:(nonnull ISHPermissionRequestViewController *)vc didCompleteWithState:(ISHPermissionState)state error:(nullable NSError *)error;
 
 @end

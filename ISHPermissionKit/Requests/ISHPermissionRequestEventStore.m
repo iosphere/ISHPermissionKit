@@ -55,7 +55,8 @@
     
     [self.eventStore requestAccessToEntityType:[self entityType] completion:^(BOOL granted, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            completion(self, granted ? ISHPermissionStateAuthorized : ISHPermissionStateDenied, error);
+            NSError *externalError = (error.code == EKErrorEventStoreNotAuthorized) ? nil : error;
+            completion(self, granted ? ISHPermissionStateAuthorized : ISHPermissionStateDenied, externalError);
         });
     }];
 }

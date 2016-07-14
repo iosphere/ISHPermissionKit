@@ -44,8 +44,9 @@
             });
         }
     } failureBlock:^(NSError *error) {
+        NSError *externalError = (error.code == ALAssetsLibraryAccessUserDeniedError) ? nil : error;
         dispatch_async(dispatch_get_main_queue(), ^{
-            completion(self, self.permissionState, nil);
+            completion(self, self.permissionState, externalError);
         });
     }];
 }

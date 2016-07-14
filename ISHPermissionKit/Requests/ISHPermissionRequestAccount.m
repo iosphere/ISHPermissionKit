@@ -75,14 +75,19 @@
     if (![self mayRequestUserPermissionWithCompletionBlock:completion]) {
         return;
     }
-    
+
     [self.accountStore requestAccessToAccountsWithType:self.accountType
                                                options:self.options
                                             completion:^(BOOL granted, NSError *error) {
                                                 dispatch_async(dispatch_get_main_queue(), ^{
                                                     ISHPermissionState state = granted ? ISHPermissionStateAuthorized : ISHPermissionStateDenied;
                                                     [self setInternalPermissionState:state];
-                                                    completion(self, state, error);
+                                                    NSError *externalError;
+                                                    if (error && (error.code != ACErrorPermissionDenied)) {
+                                                        state = ISHPermissionStateUnknown;
+                                                        externalError = error;
+                                                    }
+                                                    completion(self, state, externalError);
                                                 });
                                             }];
 }

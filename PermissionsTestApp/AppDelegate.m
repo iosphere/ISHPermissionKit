@@ -52,6 +52,17 @@
     [permissionsVC setCompletionBlock:^{
         [rootVC reloadPermissions];
     }];
+    
+    __weak ISHPermissionsViewController *weakPermissionsVC = permissionsVC;
+    [permissionsVC setErrorBlock:^(ISHPermissionCategory category, NSError *error) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:ISHStringFromPermissionCategory(category)
+                                                                       message:error.localizedDescription
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"Too bad" style:UIAlertActionStyleCancel handler:nil]];
+        // if weakPermissionsVC still has a parent, present from there else present from root
+        UIViewController *presentingVC = weakPermissionsVC.parentViewController ? weakPermissionsVC : rootVC;
+        [presentingVC presentViewController:alert animated:nil completion:nil];
+    }];
 
     if (permissionsVC) {
         [self.window.rootViewController presentViewController:permissionsVC animated:YES completion:nil];
