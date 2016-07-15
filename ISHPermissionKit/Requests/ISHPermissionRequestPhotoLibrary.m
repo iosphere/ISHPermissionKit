@@ -44,8 +44,9 @@
             });
         }
     } failureBlock:^(NSError *error) {
+        NSError *externalError = [ISHPermissionRequest externalErrorForError:error validationDomain:ALAssetsLibraryErrorDomain denialCodes:[NSSet setWithObject:@(ALAssetsLibraryAccessUserDeniedError)]];
         dispatch_async(dispatch_get_main_queue(), ^{
-            completion(self, self.permissionState, nil);
+            completion(self, self.permissionState, externalError);
         });
     }];
 }

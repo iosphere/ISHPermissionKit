@@ -79,7 +79,7 @@ typedef NS_ENUM(NSUInteger, ISHPermissionState) {
  *
  *  @param request  The request that has completed.
  *  @param state    The new state of the associated category.
- *  @param error    An error, if it has occurred. May be nil.
+ *  @param error    An error, if it has occurred and is not merely 'user denied permission'. May be nil.
  *
  *  @sa requestUserPermissionWithCompletionBlock:
  */

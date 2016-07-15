@@ -34,17 +34,17 @@
 
 - (void)changePermissionToInternalState:(ISHPermissionState)state {
     [self.permissionRequest setInternalPermissionState:state];
-    [self didCompleteWithPermissionState:state];
+    [self didCompleteWithPermissionState:state error:nil];
 }
 
 - (IBAction)requestPermissionFromSender:(id)sender {
     [self.permissionRequest requestUserPermissionWithCompletionBlock:^(ISHPermissionRequest *request, ISHPermissionState state, NSError *error) {
-        [self didCompleteWithPermissionState:state];
+        [self didCompleteWithPermissionState:state error:error];
     }];
 }
 
-- (void)didCompleteWithPermissionState:(ISHPermissionState)state {
-    [self.permissionDelegate permissionRequestViewController:self didCompleteWithState:state];
+- (void)didCompleteWithPermissionState:(ISHPermissionState)state error:(NSError *)error {
+    [self.permissionDelegate permissionRequestViewController:self didCompleteWithState:state error:error];
 }
 
 @end

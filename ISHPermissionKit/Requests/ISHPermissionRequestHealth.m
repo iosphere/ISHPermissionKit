@@ -126,7 +126,8 @@
                                                   NSLog(@"HealthKit error: %@", error);
                                               }
 #endif
-                                              completion(self, [self permissionState], error);
+                                              NSError *externalError = [ISHPermissionRequest externalErrorForError:error validationDomain:HKErrorDomain denialCodes:[NSSet setWithObject:@(HKErrorAuthorizationDenied)]];
+                                              completion(self, [self permissionState], externalError);
                                           });
                                       }];
 #else

@@ -22,6 +22,7 @@
     if (![CMMotionActivityManager isActivityAvailable]) {
         return ISHPermissionStateUnsupported;
     }
+
     return [self internalPermissionState];
 }
 
@@ -35,19 +36,19 @@
     self.motionActivityQueue = [[NSOperationQueue alloc] init];
     [self.activityManager queryActivityStartingFromDate:[NSDate distantPast] toDate:[NSDate date] toQueue:self.motionActivityQueue withHandler:^(NSArray *activities, NSError *error) {
         ISHPermissionState currentState = ISHPermissionStateUnknown;
-        
-        if (error && (error.domain == CMErrorDomain) && (error.code == CMErrorMotionActivityNotAuthorized)) {
+        NSError *externalError = [ISHPermissionRequest externalErrorForError:error validationDomain:CMErrorDomain denialCodes:[NSSet setWithObjects:@(CMErrorMotionActivityNotAuthorized), @(CMErrorNotAuthorized), nil]];
+
+        if (error && !externalError) {
             currentState = ISHPermissionStateDenied;
         } else if (activities || !error) {
             currentState = ISHPermissionStateAuthorized;
         }
-        
+
         [self setInternalPermissionState:currentState];
-        
         dispatch_async(dispatch_get_main_queue(), ^{
-            completion(self, currentState, error);
+            completion(self, currentState, externalError);
         });
-        
+
         [self setActivityManager:nil];
         [self setMotionActivityQueue:nil];
     }];

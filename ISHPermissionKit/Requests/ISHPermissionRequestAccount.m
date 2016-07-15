@@ -75,14 +75,20 @@
     if (![self mayRequestUserPermissionWithCompletionBlock:completion]) {
         return;
     }
-    
+
     [self.accountStore requestAccessToAccountsWithType:self.accountType
                                                options:self.options
                                             completion:^(BOOL granted, NSError *error) {
                                                 dispatch_async(dispatch_get_main_queue(), ^{
                                                     ISHPermissionState state = granted ? ISHPermissionStateAuthorized : ISHPermissionStateDenied;
-                                                    [self setInternalPermissionState:state];
-                                                    completion(self, state, error);
+                                                    NSError *externalError = [ISHPermissionRequest externalErrorForError:error validationDomain:ACErrorDomain denialCodes:[NSSet setWithObject:@(ACErrorPermissionDenied)]];
+                                                    if (externalError) {
+                                                        state = ISHPermissionStateUnknown;
+                                                    } else {
+                                                        // only store interal permissions state if we did not receive an error (other than denied)
+                                                        [self setInternalPermissionState:state];
+                                                    }
+                                                    completion(self, state, externalError);
                                                 });
                                             }];
 }
