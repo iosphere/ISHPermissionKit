@@ -1,5 +1,14 @@
 # <img src="icon.png" align="center" width="40" height="40"> Changelog
 
+## 1.2.0
+
+* Provide callback to handle true errors
+* Fix issues for social media account permissions if user had no user account:  
+  **this may require your implementations to handle the error to avoid asking the user 
+  again for permission** 
+* Add methods to query request-able and granted permissions given a set of categories
+* Add some rudimentary unit tests
+
 ## 1.1.0
 
 * Improves CocoaPods integration
