@@ -36,16 +36,15 @@
     self.motionActivityQueue = [[NSOperationQueue alloc] init];
     [self.activityManager queryActivityStartingFromDate:[NSDate distantPast] toDate:[NSDate date] toQueue:self.motionActivityQueue withHandler:^(NSArray *activities, NSError *error) {
         ISHPermissionState currentState = ISHPermissionStateUnknown;
+        NSError *externalError = [ISHPermissionRequest externalErrorForError:error validationDomain:CMErrorDomain denialCodes:[NSSet setWithObjects:@(CMErrorMotionActivityNotAuthorized), @(CMErrorNotAuthorized), nil]];
 
-        if (error && (error.domain == CMErrorDomain) && (error.code == CMErrorMotionActivityNotAuthorized)) {
+        if (error && !externalError) {
             currentState = ISHPermissionStateDenied;
         } else if (activities || !error) {
             currentState = ISHPermissionStateAuthorized;
         }
 
         [self setInternalPermissionState:currentState];
-        NSError *externalError = (error.code == CMErrorMotionActivityNotAuthorized) || (error.code == CMErrorNotAuthorized) ? nil : error;
-
         dispatch_async(dispatch_get_main_queue(), ^{
             completion(self, currentState, externalError);
         });

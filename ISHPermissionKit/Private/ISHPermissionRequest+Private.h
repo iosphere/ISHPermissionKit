@@ -8,10 +8,11 @@
 
 /**
  *  These methods are available to subclasses. There should be no
- *  need to override these or to call them from outside of a subclass 
+ *  need to override these or to call them from outside of a subclass
  *  implementation.
  */
 @interface ISHPermissionRequest (Subclasses)
+
 /**
  *  @return The permission state saved internally, without
  *          considering state information available by the
@@ -41,6 +42,15 @@
  *  @return YES, if the completion block is not nil and the
  *  current permission state allows a prompt.
  */
-- (BOOL)mayRequestUserPermissionWithCompletionBlock:(ISHPermissionRequestCompletionBlock)completion;
+- (BOOL)mayRequestUserPermissionWithCompletionBlock:(nullable ISHPermissionRequestCompletionBlock)completion;
 
+/**
+ * ISHPermissionKit communicates errors during permissions requests only if the error is
+ * not a result of the user denying the permission.
+ * The underlying APIs for each permission category use different error
+ * codes and domains. This method returns the provided error if:
+ * - the error domain is equal to requiredDomain
+ * - the error code is not contained in denialCodes
+ */
++ (nullable NSError *)externalErrorForError:(nullable NSError *)error validationDomain:(nonnull NSString *)requiredDomain denialCodes:(nonnull NSSet<NSNumber *> *)denialCodes;
 @end

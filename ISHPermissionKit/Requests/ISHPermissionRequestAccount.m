@@ -81,10 +81,9 @@
                                             completion:^(BOOL granted, NSError *error) {
                                                 dispatch_async(dispatch_get_main_queue(), ^{
                                                     ISHPermissionState state = granted ? ISHPermissionStateAuthorized : ISHPermissionStateDenied;
-                                                    NSError *externalError;
-                                                    if (error && (error.code != ACErrorPermissionDenied)) {
+                                                    NSError *externalError = [ISHPermissionRequest externalErrorForError:error validationDomain:ACErrorDomain denialCodes:[NSSet setWithObject:@(ACErrorPermissionDenied)]];
+                                                    if (externalError) {
                                                         state = ISHPermissionStateUnknown;
-                                                        externalError = error;
                                                     } else {
                                                         // only store interal permissions state if we did not receive an error (other than denied)
                                                         [self setInternalPermissionState:state];

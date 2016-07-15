@@ -174,7 +174,7 @@
 }
 
 #pragma mark - ISHPermissionRequestViewControllerDelegate
-- (void)permissionRequestViewController:(ISHPermissionRequestViewController *)vc didCompleteWithState:(ISHPermissionState)state error:(nullable NSError *)error {
+- (void)permissionRequestViewController:(ISHPermissionRequestViewController *)vc didCompleteWithState:(ISHPermissionState)state error:(NSError *)error {
     /* Determine the nextIndex that is requestable.
     
        There might be dependencies between the permission categories.
@@ -193,7 +193,7 @@
     } while (nextIndex < self.permissionCategories.count && !ISHPermissionStateAllowsUserPrompt(nextState));
 
     if (error && self.errorBlock) {
-        self.errorBlock(vc.permissionCategory, (NSError * _Nonnull)error);
+        self.errorBlock(vc.permissionCategory, error);
     }
     
     // dismiss if we reached the end, or transition to next permission category

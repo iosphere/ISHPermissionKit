@@ -44,7 +44,7 @@
             });
         }
     } failureBlock:^(NSError *error) {
-        NSError *externalError = (error.code == ALAssetsLibraryAccessUserDeniedError) ? nil : error;
+        NSError *externalError = [ISHPermissionRequest externalErrorForError:error validationDomain:ALAssetsLibraryErrorDomain denialCodes:[NSSet setWithObject:@(ALAssetsLibraryAccessUserDeniedError)]];
         dispatch_async(dispatch_get_main_queue(), ^{
             completion(self, self.permissionState, externalError);
         });

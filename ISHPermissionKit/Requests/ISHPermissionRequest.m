@@ -61,6 +61,16 @@
     return NO;
 }
 
++ (nullable NSError *)externalErrorForError:(nullable NSError *)error validationDomain:(nonnull NSString *)requiredDomain denialCodes:(nonnull NSSet<NSNumber *> *)denialCodes {
+    if (![error.domain isEqualToString:requiredDomain]) {
+        return nil;
+    }
+    if ([denialCodes containsObject:@(error.code)]) {
+        return nil;
+    }
+    return error;
+}
+
 @end
 
 NSString * const ISHPermissionNotificationApplicationDidRegisterUserNotificationSettings = @"ISHPermissionNotificationApplicationDidRegisterUserNotificationSettings";
