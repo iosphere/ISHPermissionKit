@@ -9,15 +9,17 @@
 #import "AppDelegate.h"
 #import "SamplePermissionViewController.h"
 #import "GrantedPermissionsViewController.h"
-
-#import <ISHPermissionKit/ISHPermissionKit.h>
 @import Accounts;
 
-@interface AppDelegate ()<ISHPermissionsViewControllerDataSource>
+@interface AppDelegate ()
 @property (nonatomic, weak) GrantedPermissionsViewController *rootViewController;
 @end
 
 @implementation AppDelegate
+
++ (AppDelegate *)appDelegate {
+    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self setupWindow];
@@ -50,7 +52,7 @@
     ISHPermissionsViewController *permissionsVC = [ISHPermissionsViewController permissionsViewControllerWithCategories:permissions dataSource:self];
     __weak GrantedPermissionsViewController *rootVC = self.rootViewController;
     [permissionsVC setCompletionBlock:^{
-        [rootVC reloadPermissions];
+        [rootVC reloadPermissionsUsingDataSource:self];
     }];
     
     __weak ISHPermissionsViewController *weakPermissionsVC = permissionsVC;

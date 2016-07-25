@@ -98,6 +98,15 @@ typedef void (^ISHPermissionsViewControllerErrorBlock)(ISHPermissionCategory, NS
  */
 @property (copy, nullable) ISHPermissionsViewControllerErrorBlock errorBlock;
 
+/**
+ *  Returns the permission categories that will be requested by the ISHPermissionsViewController when presented.
+ *
+ *  @return An array of boxed ISHPermissionCategory values for which the
+ *          user can be prompted among the array of
+ *          categories given in the initializer of ISHPermissionsViewController.
+ *          The relative sorting of the categories is maintained.
+ */
+- (NSArray<NSNumber *> *)permissionCategories;
 @end
 
 #pragma mark - Protocols

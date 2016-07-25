@@ -120,6 +120,8 @@ typedef void (^ISHPermissionRequestCompletionBlock)(ISHPermissionRequest *reques
  *
  *  @return The current permission state.
  *  @note Calling this method does not trigger any user interaction.
+ *  @warning If the request needs to be configured, the configuration must be 
+ *           applied before relying on the value returned from this method.
  */
 - (ISHPermissionState)permissionState;
 

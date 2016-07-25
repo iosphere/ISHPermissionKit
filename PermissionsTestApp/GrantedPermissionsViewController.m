@@ -11,12 +11,11 @@
 #import <ISHPermissionKit/ISHPermissionRequest+All.h>
 
 NSString * const GrantedPermissionsViewControllerCell = @"cell";
-NSInteger const GrantedPermissionsSection = 1;
+NSInteger const RequestabalePermissionsSection = 1;
 
 @interface GrantedPermissionsViewController ()
-@property NSArray *permissionsGranted;
-@property NSArray *permissionsNotGranted;
-@property NSSet *permissionsRequestable;
+@property NSArray *permissionsNotRequestable;
+@property NSArray *permissionsRequestable;
 @end
 
 @implementation GrantedPermissionsViewController
@@ -25,8 +24,7 @@ NSInteger const GrantedPermissionsSection = 1;
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor colorWithRed:0.400 green:0.800 blue:1.000 alpha:1.000]];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:GrantedPermissionsViewControllerCell];
-
-    [self reloadPermissions];
+    [self reloadPermissionsUsingDataSource:[AppDelegate appDelegate]];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -34,24 +32,26 @@ NSInteger const GrantedPermissionsSection = 1;
     self.tableView.contentInset = UIEdgeInsetsMake(self.topLayoutGuide.length, 0, self.bottomLayoutGuide.length, 0);
 }
 
-- (void)reloadPermissions {
+- (void)reloadPermissionsUsingDataSource:(id<ISHPermissionsViewControllerDataSource>)datasource {
     NSArray *allPermissions = [AppDelegate requiredPermissions];
-    NSArray *grantedPermissions = [ISHPermissionRequest grantedPermissionsForCategories:allPermissions];
+    ISHPermissionsViewController *viewControllerForStateQueries = [ISHPermissionsViewController permissionsViewControllerWithCategories:allPermissions
+                                                                                                                             dataSource:datasource];
 
-    self.permissionsGranted = [grantedPermissions sortedArrayUsingSelector:@selector(compare:)];
-    NSMutableSet *missingPermissions = [NSMutableSet setWithArray:allPermissions];
-    [missingPermissions minusSet:[NSSet setWithArray:grantedPermissions]];
-    self.permissionsNotGranted = [[missingPermissions allObjects] sortedArrayUsingSelector:@selector(compare:)];
-    self.permissionsRequestable = [NSSet setWithArray:[ISHPermissionRequest requestablePermissionsForCategories:self.permissionsNotGranted]];
+    NSArray *requestablePermissions = [viewControllerForStateQueries permissionCategories] ?: @[];
+
+    self.permissionsRequestable = [requestablePermissions sortedArrayUsingSelector:@selector(compare:)];
+    NSMutableSet *permissionsNotRequestable = [NSMutableSet setWithArray:allPermissions];
+    [permissionsNotRequestable minusSet:[NSSet setWithArray:requestablePermissions]];
+    self.permissionsNotRequestable = [[permissionsNotRequestable allObjects] sortedArrayUsingSelector:@selector(compare:)];
     [self.tableView reloadData];
 }
 
 - (NSArray *)permissionsForSection:(NSInteger)section {
-    if (section == GrantedPermissionsSection) {
-        return self.permissionsGranted;
+    if (section == RequestabalePermissionsSection) {
+        return self.permissionsRequestable;
     }
 
-    return self.permissionsNotGranted;
+    return self.permissionsNotRequestable;
 }
 
 - (NSNumber *)permissionAtIndexPath:(NSIndexPath *)indexPath {
@@ -74,11 +74,11 @@ NSInteger const GrantedPermissionsSection = 1;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    if (section == GrantedPermissionsSection) {
-        return @"Granted";
+    if (section == RequestabalePermissionsSection) {
+        return @"Requestable";
     }
 
-    return @"Not granted";
+    return @"Not requestable";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -93,11 +93,8 @@ NSInteger const GrantedPermissionsSection = 1;
         cell.textLabel.text = nil;
     }
 
-    UIColor *color = [UIColor greenColor];
-    if (indexPath.section != GrantedPermissionsSection) {
-        // Use redColor for permissions that cannot be requested
-        color = [self.permissionsRequestable containsObject:permission] ? [UIColor darkTextColor] : [UIColor redColor];
-    }
+    UIColor *color = (indexPath.section == RequestabalePermissionsSection) ? [UIColor darkTextColor] : [UIColor lightGrayColor];
+
     cell.textLabel.textColor = color;
 
     return cell;

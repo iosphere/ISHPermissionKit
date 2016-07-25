@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ISHPermissionKit/ISHPermissionKit.h>
 
 @interface GrantedPermissionsViewController : UITableViewController
-- (void)reloadPermissions;
+- (void)reloadPermissionsUsingDataSource:(id<ISHPermissionsViewControllerDataSource>)datasource;
 @end

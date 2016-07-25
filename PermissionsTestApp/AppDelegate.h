@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ISHPermissionKit/ISHPermissionKit.h>
 
-@interface AppDelegate : UIResponder<UIApplicationDelegate>
+@interface AppDelegate : UIResponder<UIApplicationDelegate, ISHPermissionsViewControllerDataSource>
 
 @property (nonatomic, nullable) UIWindow *window;
 
++ (AppDelegate *)appDelegate;
 + (nonnull NSArray<NSNumber *> *)requiredPermissions;
 @end
