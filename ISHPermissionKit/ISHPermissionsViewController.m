@@ -142,22 +142,9 @@
 }
 
 - (void)setupRequestablePermissionsCategoriesFromArray:(NSArray *)neededCategories {
-    NSArray *requestableCategories = [ISHPermissionRequest requestablePermissionsForCategories:neededCategories];
-    NSMutableArray *requests = [NSMutableArray arrayWithCapacity:requestableCategories.count];
-    BOOL dataSourceConfiguresRequests = [self.dataSource respondsToSelector:@selector(permissionsViewController:didConfigureRequest:)];
-    
-    for (NSNumber *categoryObj in requestableCategories) {
-        ISHPermissionCategory category = [categoryObj integerValue];
-        ISHPermissionRequest *request = [ISHPermissionRequest requestForCategory:category];
-        
-        if (dataSourceConfiguresRequests && request.allowsConfiguration) {
-            [self.dataSource permissionsViewController:self didConfigureRequest:request];
-        }
-        
-        [requests addObject:request];
-    }
-
-    [self setPermissionRequests:[requests copy]];
+    NSArray<ISHPermissionRequest *> *requestableRequests = [self requestablePermissionRequestsForCategories:neededCategories];
+    NSArray<NSNumber *> *requestableCategories = [self categoriesArrayFromPermissionRequests:requestableRequests];
+    [self setPermissionRequests:requestableRequests];
     [self setPermissionCategories:requestableCategories];
 }
 
@@ -171,6 +158,47 @@
     
     [childView setBounds:containerView.bounds];
     [childView setCenter:CGPointMake(CGRectGetMidX(containerView.bounds), CGRectGetMidY(containerView.bounds))];
+}
+
+#pragma mark Permission state queries
+
+- (NSArray<ISHPermissionRequest *> *)permissionRequestsForCategories:(NSArray<NSNumber *> *)categories passingTest:(BOOL (^_Nonnull)(ISHPermissionState))testBlock {
+    NSMutableArray<ISHPermissionRequest *> *requestsPassingTest = [NSMutableArray array];
+    BOOL dataSourceConfiguresRequests = [self.dataSource respondsToSelector:@selector(permissionsViewController:didConfigureRequest:)];
+
+    for (NSNumber *boxedCategory in categories) {
+        ISHPermissionRequest *request = [ISHPermissionRequest requestForCategory:boxedCategory.unsignedIntegerValue];
+        
+        if (dataSourceConfiguresRequests && request.allowsConfiguration) {
+            [self.dataSource permissionsViewController:self didConfigureRequest:request];
+        }
+
+        if (testBlock([request permissionState])) {
+            [requestsPassingTest addObject:request];
+        }
+    }
+
+    return [requestsPassingTest copy];
+}
+
+- (NSArray<NSNumber *> *)categoriesArrayFromPermissionRequests:(NSArray<ISHPermissionRequest *> *)requests {
+    if (!requests.count) {
+        return @[];
+    }
+
+    NSMutableArray *categories = [NSMutableArray arrayWithCapacity:requests.count];
+
+    for (ISHPermissionRequest *request in requests) {
+        [categories addObject:@(request.permissionCategory)];
+    }
+
+    return [categories copy];
+}
+
+- (NSArray<ISHPermissionRequest *> *)requestablePermissionRequestsForCategories:(NSArray<NSNumber *> *)categories {
+    return [self permissionRequestsForCategories:categories passingTest:^BOOL (ISHPermissionState state) {
+        return ISHPermissionStateAllowsUserPrompt(state);
+    }];
 }
 
 #pragma mark - ISHPermissionRequestViewControllerDelegate
