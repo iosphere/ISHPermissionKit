@@ -31,8 +31,8 @@ where the system APIs only provide implicit methods of doing so.
 * Social: Facebook, Twitter, SinaWeibo, TencentWeibo
 * Siri
 
-The library and sample app compile with the iOS 9 SDK and later, and require a
-deployment target of iOS 7 or later. Permission categories that were added after
+The library and sample app compile with the **iOS 9 SDK** and later, and require a
+**deployment target of iOS 7** or later. Permission categories that were added after
 iOS 7 will be skipped on unsupported versions.
 
 <img src="assets/demo.gif" align="center" width="320" height="568" alt="Sample App Demo"> 
