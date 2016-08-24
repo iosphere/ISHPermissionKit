@@ -62,7 +62,7 @@
 }
 
 #if DEBUG
-- (NSArray<NSString *> *)staticAuthorizationTextKey {
+- (NSArray<NSString *> *)staticUsageDescriptionKeys {
     if (self.permissionCategory == ISHPermissionCategoryReminders) {
         return @[@"NSRemindersUsageDescription"];
     } else {

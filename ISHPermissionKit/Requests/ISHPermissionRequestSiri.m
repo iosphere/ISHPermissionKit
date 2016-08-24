@@ -60,7 +60,7 @@
 }
 
 #if DEBUG
-- (NSArray<NSString *> *)staticAuthorizationTextKeys {
+- (NSArray<NSString *> *)staticUsageDescriptionKeyss {
     return @[@"NSSiriUsageDescription"];
 }
 #endif

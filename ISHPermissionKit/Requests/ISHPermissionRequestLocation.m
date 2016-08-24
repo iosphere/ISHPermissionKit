@@ -173,7 +173,7 @@
 #endif
 
 #if DEBUG
-- (NSArray<NSString *> *)staticAuthorizationTextKeys {
+- (NSArray<NSString *> *)staticUsageDescriptionKeyss {
     if (self.permissionCategory == ISHPermissionCategoryLocationAlways) {
         return @[@"NSLocationAlwaysUsageDescription"];
     } else {

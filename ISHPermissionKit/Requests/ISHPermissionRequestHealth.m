@@ -136,7 +136,7 @@
 }
 
 #if DEBUG
-- (NSString *)staticAuthorizationTextKey {
+- (NSString *)staticUsageDescriptionKeys {
     NSMutableArray<NSString *> *keys = [@[] mutableCopy];
 
     if (self.objectTypesRead.count) {

@@ -77,7 +77,7 @@
 }
 
 #if DEBUG
-- (NSArray<NSString *> *)staticAuthorizationTextKey {
+- (NSArray<NSString *> *)staticUsageDescriptionKeys {
     return @[@"NSContactsUsageDescription"];
 }
 #endif

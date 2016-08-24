@@ -68,9 +68,13 @@
  *  ISHPermissionKit will verify them regardless of the
  *  system version, too.
  *
+ *  Verification is done when requesting permissions. It
+ *  cannot be performed before the request has been
+ *  configured.
+ *
  *  @sa https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html
  */
-- (nullable NSArray<NSString *> *)staticAuthorizationTextKeys;
+- (nullable NSArray<NSString *> *)staticUsageDescriptionKeys;
 #endif
 
 @end
