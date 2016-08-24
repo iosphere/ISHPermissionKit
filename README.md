@@ -27,14 +27,13 @@ where the system APIs only provide implicit methods of doing so.
 * HealthKit *(requires `HealthKit` variants of the static library/framework/pod)*
 * Microphone
 * Notifications: Local and Remote
-* Photos: Camera Roll and Camera
+* Photos: Library and Camera
 * Social: Facebook, Twitter, SinaWeibo, TencentWeibo
 * Siri
 
-The static library and sample app compile and run under iOS 7 to iOS 10. 
-If compiled against iOS 8 (and later), they make use of the latest available APIs 
-(e.g., microphone, location, and local notification permissions) 
-and fall back gracefully when running on iOS 7.
+The library and sample app compile with the iOS 9 SDK and later, and require a
+deployment target of iOS 7 or later. Permission categories that were added after
+iOS 7 will be skipped on unsupported versions.
 
 <img src="assets/demo.gif" align="center" width="320" height="568" alt="Sample App Demo"> 
 

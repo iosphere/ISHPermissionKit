@@ -53,8 +53,19 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
     
     /**
      *  Permission required to access the user's photo library.
+     *
+     *  Deprecated from iOS 9 as it uses ALAssetsLibrary
+     *  internally.
+     *
+     *  @sa ISHPermissionCategoryModernPhotoLibrary
      */
-    ISHPermissionCategoryPhotoLibrary = 5000,
+    ISHPermissionCategoryPhotoLibrary NS_ENUM_DEPRECATED_IOS(7.0, 9.0, "Use ISHPermissionCategoryModernPhotoLibrary") = 5000,
+    /**
+     *  Permission required to access the user's photo library.
+     *
+     *  Uses PHPhotoLibrary APIs.
+     */
+    ISHPermissionCategoryModernPhotoLibrary NS_ENUM_AVAILABLE_IOS(8_0) = 5050,
     /**
      *  Permission required to access the user's camera.
      */
@@ -160,6 +171,8 @@ static inline NSString * _Nonnull ISHStringFromPermissionCategory(ISHPermissionC
             return @"ISHPermissionCategoryMicrophone";
         case ISHPermissionCategoryPhotoLibrary:
             return @"ISHPermissionCategoryPhotoLibrary";
+        case ISHPermissionCategoryModernPhotoLibrary:
+            return @"ISHPermissionCategoryModernPhotoLibrary";
         case ISHPermissionCategoryPhotoCamera:
             return @"ISHPermissionCategoryPhotoCamera";
         case ISHPermissionCategoryNotificationLocal:
