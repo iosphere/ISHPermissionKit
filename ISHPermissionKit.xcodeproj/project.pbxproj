@@ -16,6 +16,14 @@
 		1B4513061D6DC02D00D6E47C /* ISHPermissionRequestSiri.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B4513041D6DC02D00D6E47C /* ISHPermissionRequestSiri.h */; };
 		1B4513071D6DC02D00D6E47C /* ISHPermissionRequestSiri.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B4513041D6DC02D00D6E47C /* ISHPermissionRequestSiri.h */; };
 		1B4513081D6DC02D00D6E47C /* ISHPermissionRequestSiri.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B4513041D6DC02D00D6E47C /* ISHPermissionRequestSiri.h */; };
+		1B63F8981D6DF5F200B14122 /* ISHPermissionRequestModernPhotoLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B63F8931D6DF5F200B14122 /* ISHPermissionRequestModernPhotoLibrary.m */; };
+		1B63F8991D6DF5F200B14122 /* ISHPermissionRequestModernPhotoLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B63F8931D6DF5F200B14122 /* ISHPermissionRequestModernPhotoLibrary.m */; };
+		1B63F89A1D6DF5F200B14122 /* ISHPermissionRequestModernPhotoLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B63F8931D6DF5F200B14122 /* ISHPermissionRequestModernPhotoLibrary.m */; };
+		1B63F89B1D6DF5F200B14122 /* ISHPermissionRequestModernPhotoLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B63F8931D6DF5F200B14122 /* ISHPermissionRequestModernPhotoLibrary.m */; };
+		1B63F89D1D6DF60500B14122 /* ISHPermissionRequestModernPhotoLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B63F89C1D6DF60500B14122 /* ISHPermissionRequestModernPhotoLibrary.h */; };
+		1B63F89E1D6DF60500B14122 /* ISHPermissionRequestModernPhotoLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B63F89C1D6DF60500B14122 /* ISHPermissionRequestModernPhotoLibrary.h */; };
+		1B63F89F1D6DF60500B14122 /* ISHPermissionRequestModernPhotoLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B63F89C1D6DF60500B14122 /* ISHPermissionRequestModernPhotoLibrary.h */; };
+		1B63F8A01D6DF60500B14122 /* ISHPermissionRequestModernPhotoLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B63F89C1D6DF60500B14122 /* ISHPermissionRequestModernPhotoLibrary.h */; };
 		DC1A80A3195B21DC0069235F /* ISHPermissionsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = DC1A80A1195B21DC0069235F /* ISHPermissionsViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC1A80A4195B21DC0069235F /* ISHPermissionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A80A2195B21DC0069235F /* ISHPermissionsViewController.m */; };
 		DC1A80A9195B22A10069235F /* ISHPermissionCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = DC1A80A8195B22A10069235F /* ISHPermissionCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -219,6 +227,8 @@
 		1B2A265F1D07297C000FD12C /* ISHPermissionKit.podspec */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text; path = ISHPermissionKit.podspec; sourceTree = "<group>"; tabWidth = 2; };
 		1B4512FB1D6DC01200D6E47C /* ISHPermissionRequestSiri.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestSiri.m; sourceTree = "<group>"; };
 		1B4513041D6DC02D00D6E47C /* ISHPermissionRequestSiri.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISHPermissionRequestSiri.h; path = ISHPermissionKit/Private/ISHPermissionRequestSiri.h; sourceTree = SOURCE_ROOT; };
+		1B63F8931D6DF5F200B14122 /* ISHPermissionRequestModernPhotoLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestModernPhotoLibrary.m; sourceTree = "<group>"; };
+		1B63F89C1D6DF60500B14122 /* ISHPermissionRequestModernPhotoLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISHPermissionRequestModernPhotoLibrary.h; path = ISHPermissionKit/Private/ISHPermissionRequestModernPhotoLibrary.h; sourceTree = SOURCE_ROOT; };
 		1B87C1BA1961AA5D001D85E7 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		1B87C1BB1961AA5D001D85E7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1BBCCA7E1BFF367D00606D3D /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
@@ -384,6 +394,8 @@
 				DC5E5BB2195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.m */,
 				1B4513041D6DC02D00D6E47C /* ISHPermissionRequestSiri.h */,
 				1B4512FB1D6DC01200D6E47C /* ISHPermissionRequestSiri.m */,
+				1B63F89C1D6DF60500B14122 /* ISHPermissionRequestModernPhotoLibrary.h */,
+				1B63F8931D6DF5F200B14122 /* ISHPermissionRequestModernPhotoLibrary.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -501,6 +513,7 @@
 				DC6A467619D7125300B11E88 /* ISHPermissionRequest.h in Headers */,
 				DC6A467719D7125300B11E88 /* ISHPermissionRequestAccount.h in Headers */,
 				DC6A467819D7125300B11E88 /* ISHPermissionRequestHealth.h in Headers */,
+				1B63F89F1D6DF60500B14122 /* ISHPermissionRequestModernPhotoLibrary.h in Headers */,
 				DC6A467919D7125300B11E88 /* ISHPermissionRequestNotificationsLocal.h in Headers */,
 				DC6A467A19D7125300B11E88 /* ISHPermissionRequestEventStore.h in Headers */,
 				DC96E8D01B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.h in Headers */,
@@ -529,6 +542,7 @@
 				DC6A46A019D712AC00B11E88 /* ISHPermissionRequestMicrophone.h in Headers */,
 				DC6A46A119D712AC00B11E88 /* ISHPermissionRequestAccount.h in Headers */,
 				DC6A46A219D712AC00B11E88 /* ISHPermissionRequestLocation.h in Headers */,
+				1B63F8A01D6DF60500B14122 /* ISHPermissionRequestModernPhotoLibrary.h in Headers */,
 				DC6A46A319D712AC00B11E88 /* ISHPermissionRequestMotion.h in Headers */,
 				DC6A46A419D712AC00B11E88 /* ISHPermissionRequestEventStore.h in Headers */,
 				DC96E8D11B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.h in Headers */,
@@ -557,6 +571,7 @@
 				DC6A8A8319633180005AC5BD /* ISHPermissionRequest.h in Headers */,
 				DC6A8A8619633180005AC5BD /* ISHPermissionRequestAccount.h in Headers */,
 				DC6A8A8719633180005AC5BD /* ISHPermissionRequestHealth.h in Headers */,
+				1B63F89E1D6DF60500B14122 /* ISHPermissionRequestModernPhotoLibrary.h in Headers */,
 				DC6A8A8B19633180005AC5BD /* ISHPermissionRequestNotificationsLocal.h in Headers */,
 				DC6A8AD419642793005AC5BD /* ISHPermissionRequestEventStore.h in Headers */,
 				DC96E8CF1B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.h in Headers */,
@@ -585,6 +600,7 @@
 				DC5E5BAE195D67500092EAFD /* ISHPermissionRequestMicrophone.h in Headers */,
 				DCD56C781962AEDC00508F4A /* ISHPermissionRequestAccount.h in Headers */,
 				DC799EBF195C186100A0CA36 /* ISHPermissionRequestLocation.h in Headers */,
+				1B63F89D1D6DF60500B14122 /* ISHPermissionRequestModernPhotoLibrary.h in Headers */,
 				DCAEF7C1195C5B6B0074EB5B /* ISHPermissionRequestMotion.h in Headers */,
 				DC6A8AD319642793005AC5BD /* ISHPermissionRequestEventStore.h in Headers */,
 				DC96E8CE1B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.h in Headers */,
@@ -831,6 +847,7 @@
 				1B4513021D6DC01200D6E47C /* ISHPermissionRequestSiri.m in Sources */,
 				DC6A466219D7125300B11E88 /* ISHPermissionRequestPhotoCamera.m in Sources */,
 				DC6A466319D7125300B11E88 /* ISHPermissionRequestLocation.m in Sources */,
+				1B63F89A1D6DF5F200B14122 /* ISHPermissionRequestModernPhotoLibrary.m in Sources */,
 				DC6A466419D7125300B11E88 /* ISHPermissionRequestHealth.m in Sources */,
 				DC6A466519D7125300B11E88 /* ISHPermissionRequestViewController.m in Sources */,
 				DC6A466619D7125300B11E88 /* ISHPermissionRequestPhotoLibrary.m in Sources */,
@@ -854,6 +871,7 @@
 				1B4513031D6DC01200D6E47C /* ISHPermissionRequestSiri.m in Sources */,
 				DC6A468C19D712AC00B11E88 /* ISHPermissionRequestPhotoCamera.m in Sources */,
 				DC6A468D19D712AC00B11E88 /* ISHPermissionRequest+All.m in Sources */,
+				1B63F89B1D6DF5F200B14122 /* ISHPermissionRequestModernPhotoLibrary.m in Sources */,
 				DC6A468E19D712AC00B11E88 /* ISHPermissionRequestHealth.m in Sources */,
 				DC6A468F19D712AC00B11E88 /* ISHPermissionRequestMotion.m in Sources */,
 				DC6A469019D712AC00B11E88 /* ISHPermissionRequestPhotoLibrary.m in Sources */,
@@ -885,6 +903,7 @@
 				1B4513011D6DC01200D6E47C /* ISHPermissionRequestSiri.m in Sources */,
 				DC5E5BBA195D78800092EAFD /* ISHPermissionRequestPhotoCamera.m in Sources */,
 				DCAEF7E5195C60250074EB5B /* ISHPermissionRequestLocation.m in Sources */,
+				1B63F8991D6DF5F200B14122 /* ISHPermissionRequestModernPhotoLibrary.m in Sources */,
 				DCD56C7F1962BB8600508F4A /* ISHPermissionRequestHealth.m in Sources */,
 				DCAEF7E1195C60250074EB5B /* ISHPermissionRequestViewController.m in Sources */,
 				DC5E5BB5195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.m in Sources */,
@@ -908,6 +927,7 @@
 				1B4513001D6DC01200D6E47C /* ISHPermissionRequestSiri.m in Sources */,
 				DC5E5BB9195D78800092EAFD /* ISHPermissionRequestPhotoCamera.m in Sources */,
 				DC799EC5195C19CD00A0CA36 /* ISHPermissionRequest+All.m in Sources */,
+				1B63F8981D6DF5F200B14122 /* ISHPermissionRequestModernPhotoLibrary.m in Sources */,
 				DCD56C7E1962BB8600508F4A /* ISHPermissionRequestHealth.m in Sources */,
 				DCAEF7C2195C5B6B0074EB5B /* ISHPermissionRequestMotion.m in Sources */,
 				DC5E5BB4195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.m in Sources */,

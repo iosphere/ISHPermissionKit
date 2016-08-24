@@ -11,6 +11,7 @@
 #import "ISHPermissionRequestMotion.h"
 #import "ISHPermissionRequestMicrophone.h"
 #import "ISHPermissionRequestPhotoLibrary.h"
+#import "ISHPermissionRequestModernPhotoLibrary.h"
 #import "ISHPermissionRequestPhotoCamera.h"
 #import "ISHPermissionRequestNotificationsLocal.h"
 #import "ISHPermissionRequestNotificationsRemote.h"
@@ -51,7 +52,11 @@
         case ISHPermissionCategoryPhotoLibrary:
             request = [ISHPermissionRequestPhotoLibrary new];
             break;
-            
+
+        case ISHPermissionCategoryModernPhotoLibrary:
+            request = [ISHPermissionRequestModernPhotoLibrary new];
+            break;
+
         case ISHPermissionCategoryPhotoCamera:
             request = [ISHPermissionRequestPhotoCamera new];
             break;

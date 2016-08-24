@@ -2,7 +2,7 @@
 
 ## 2.0 (Work in Progress)
 
-* New permission type: Siri
+* New permission types: Siri, (modern) Photo Library
 * Ready for iOS 10
 
 ## 1.2.0
