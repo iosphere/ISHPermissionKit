@@ -19,6 +19,10 @@
 }
 
 - (ISHPermissionState)permissionStateForSiriState:(INSiriAuthorizationStatus)siriState {
+    if (![INPreferences class]) {
+        return ISHPermissionStateUnsupported;
+    }
+
     switch (siriState) {
         case INSiriAuthorizationStatusAuthorized:
             return ISHPermissionStateAuthorized;
@@ -37,6 +41,14 @@
 
 - (void)requestUserPermissionWithCompletionBlock:(ISHPermissionRequestCompletionBlock)completion {
     if (![self mayRequestUserPermissionWithCompletionBlock:completion]) {
+        return;
+    }
+
+    if (![INPreferences class]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completion(self, ISHPermissionStateUnsupported, nil);
+        });
+
         return;
     }
 
