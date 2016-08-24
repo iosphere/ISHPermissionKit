@@ -14,6 +14,8 @@
  *
  *  The app must also provide a localized NSPhotoLibraryUsageDescription
  *  in the Info PLIST.
+ *
+ *  @sa ISHPermissionCategoryModernPhotoLibrary
  */
 @interface ISHPermissionRequestModernPhotoLibrary : ISHPermissionRequest
 
