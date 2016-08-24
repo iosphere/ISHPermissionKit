@@ -1,5 +1,10 @@
 # <img src="icon.png" align="center" width="40" height="40"> Changelog
 
+## 2.0 (Work in Progress)
+
+* New permission type: Siri
+* Ready for iOS 10
+
 ## 1.2.0
 
 * Provide callback to handle true errors
