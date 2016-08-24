@@ -80,9 +80,11 @@
             request = [ISHPermissionRequestEventStore new];
             break;
 
+#ifdef NSFoundationVersionNumber_iOS_9_0
         case ISHPermissionCategorySiri:
             request = [ISHPermissionRequestSiri new];
             break;
+#endif
     }
     
     [request setPermissionCategory:category];

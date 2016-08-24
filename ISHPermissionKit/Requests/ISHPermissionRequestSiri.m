@@ -7,6 +7,8 @@
 //
 
 #import "ISHPermissionRequestSiri.h"
+#ifdef NSFoundationVersionNumber_iOS_9_0
+
 #import "ISHPermissionRequest+Private.h"
 #import <Intents/Intents.h>
 
@@ -46,3 +48,4 @@
 }
 
 @end
+#endif

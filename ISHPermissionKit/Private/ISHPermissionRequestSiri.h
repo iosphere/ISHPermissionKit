@@ -7,6 +7,7 @@
 //
 
 #import <ISHPermissionKit/ISHPermissionKit.h>
+#ifdef NSFoundationVersionNumber_iOS_9_0
 
 /**
  *  Permission request for Siri to access your app's data.
@@ -20,3 +21,4 @@
 @interface ISHPermissionRequestSiri : ISHPermissionRequest
 
 @end
+#endif
