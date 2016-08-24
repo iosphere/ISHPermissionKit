@@ -135,7 +135,7 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
     /**
      *  Permission required for Siri to access your app's data.
      */
-    ISHPermissionCategorySiri = 9000,
+    ISHPermissionCategorySiri NS_ENUM_AVAILABLE_IOS(10_0) = 9000,
 };
 
 
