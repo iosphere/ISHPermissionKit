@@ -13,6 +13,6 @@
 
 @property (nonatomic, nullable) UIWindow *window;
 
-+ (AppDelegate *)appDelegate;
++ (nonnull AppDelegate *)appDelegate;
 + (nonnull NSArray<NSNumber *> *)requiredPermissions;
 @end
