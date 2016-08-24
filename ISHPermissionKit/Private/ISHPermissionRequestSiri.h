@@ -17,6 +17,8 @@
  *
  *  The app must also provide a localized NSSiriUsageDescription
  *  in the Info PLIST.
+ *
+ *  @sa ISHPermissionCategorySiri
  */
 @interface ISHPermissionRequestSiri : ISHPermissionRequest
 
