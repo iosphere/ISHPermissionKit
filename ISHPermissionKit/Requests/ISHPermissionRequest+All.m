@@ -19,6 +19,7 @@
 #import "ISHPermissionRequestAddressBook.h"
 #import "ISHPermissionRequestEventStore.h"
 #import "ISHPermissionRequest+Private.h"
+#import "ISHPermissionRequestSiri.h"
 
 @interface ISHPermissionRequest (Private)
 - (void)setPermissionCategory:(ISHPermissionCategory)category;
@@ -31,14 +32,14 @@
     
     switch (category) {
         case ISHPermissionCategoryLocationAlways:
-        case ISHPermissionCategoryLocationWhenInUse: {
+        case ISHPermissionCategoryLocationWhenInUse:
             request = [ISHPermissionRequestLocation new];
             break;
-        }
             
         case ISHPermissionCategoryActivity:
             request = [ISHPermissionRequestMotion new];
             break;
+
         case ISHPermissionCategoryHealth:
             request = [ISHPermissionRequestHealth new];
             break;
@@ -73,10 +74,17 @@
         case ISHPermissionCategoryAddressBook:
             request = [ISHPermissionRequestAddressBook new];
             break;
+
         case ISHPermissionCategoryEvents:
         case ISHPermissionCategoryReminders:
             request = [ISHPermissionRequestEventStore new];
             break;
+
+#ifdef NSFoundationVersionNumber_iOS_9_0
+        case ISHPermissionCategorySiri:
+            request = [ISHPermissionRequestSiri new];
+            break;
+#endif
     }
     
     [request setPermissionCategory:category];

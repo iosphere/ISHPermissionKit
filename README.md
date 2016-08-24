@@ -29,8 +29,9 @@ where the system APIs only provide implicit methods of doing so.
 * Notifications: Local and Remote
 * Photos: Camera Roll and Camera
 * Social: Facebook, Twitter, SinaWeibo, TencentWeibo
+* Siri
 
-The static library and sample app compile and run under iOS 7 to iOS 9. 
+The static library and sample app compile and run under iOS 7 to iOS 10. 
 If compiled against iOS 8 (and later), they make use of the latest available APIs 
 (e.g., microphone, location, and local notification permissions) 
 and fall back gracefully when running on iOS 7.

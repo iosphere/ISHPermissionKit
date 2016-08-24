@@ -16,12 +16,12 @@
 @implementation ISHPermissionRequest
 
 - (ISHPermissionState)permissionState {
-    NSAssert(false, @"Subclasses should implement permission state and not call super.");
+    NSAssert(NO, @"Subclasses should implement permission state and not call super.");
     return [self internalPermissionState];
 }
 
 - (void)requestUserPermissionWithCompletionBlock:(ISHPermissionRequestCompletionBlock)completion {
-    NSAssert(false, @"Subclasses should implement -requestUserPermissionWithCompletionBlock: and not call super.");
+    NSAssert(NO, @"Subclasses should implement -requestUserPermissionWithCompletionBlock: and not call super.");
 }
 
 - (BOOL)mayRequestUserPermissionWithCompletionBlock:(ISHPermissionRequestCompletionBlock)completion {
