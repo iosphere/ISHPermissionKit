@@ -32,14 +32,14 @@
     
     switch (category) {
         case ISHPermissionCategoryLocationAlways:
-        case ISHPermissionCategoryLocationWhenInUse: {
+        case ISHPermissionCategoryLocationWhenInUse:
             request = [ISHPermissionRequestLocation new];
             break;
-        }
             
         case ISHPermissionCategoryActivity:
             request = [ISHPermissionRequestMotion new];
             break;
+
         case ISHPermissionCategoryHealth:
             request = [ISHPermissionRequestHealth new];
             break;
@@ -74,6 +74,7 @@
         case ISHPermissionCategoryAddressBook:
             request = [ISHPermissionRequestAddressBook new];
             break;
+
         case ISHPermissionCategoryEvents:
         case ISHPermissionCategoryReminders:
             request = [ISHPermissionRequestEventStore new];
