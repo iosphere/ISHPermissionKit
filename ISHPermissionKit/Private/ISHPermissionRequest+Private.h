@@ -45,12 +45,32 @@
 - (BOOL)mayRequestUserPermissionWithCompletionBlock:(nullable ISHPermissionRequestCompletionBlock)completion;
 
 /**
- * ISHPermissionKit communicates errors during permissions requests only if the error is
- * not a result of the user denying the permission.
- * The underlying APIs for each permission category use different error
- * codes and domains. This method returns the provided error if:
- * - the error domain is equal to requiredDomain
- * - the error code is not contained in denialCodes
+ *  ISHPermissionKit communicates errors during permissions requests only if the error is
+ *  not a result of the user denying the permission.
+ *  The underlying APIs for each permission category use different error
+ *  codes and domains. This method returns the provided error if:
+ *  - the error domain is equal to requiredDomain
+ *  - the error code is not contained in denialCodes
  */
 + (nullable NSError *)externalErrorForError:(nullable NSError *)error validationDomain:(nonnull NSString *)requiredDomain denialCodes:(nonnull NSSet<NSNumber *> *)denialCodes;
+
+#if DEBUG
+/**
+ *  Most APIs that require permission also require the app to
+ *  include one ore more static usage descriptions in its Info
+ *  PLIST.
+ *
+ *  While debugging, ISHPermissionKit verifies that the info
+ *  plist indeed contains the required usage descriptions.
+ *
+ *  Different descriptions are enforced on different versions
+ *  of iOS, but since iOS 10 will enforce all of them,
+ *  ISHPermissionKit will verify them regardless of the
+ *  system version, too.
+ *
+ *  @sa https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html
+ */
+- (nullable NSArray<NSString *> *)staticAuthorizationTextKeys;
+#endif
+
 @end

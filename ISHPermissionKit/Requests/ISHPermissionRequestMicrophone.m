@@ -68,4 +68,10 @@
     }];
 }
 
+#if DEBUG
+- (NSArray<NSString *> *)staticAuthorizationTextKeys {
+    return @[@"NSMicrophoneUsageDescription"];
+}
+#endif
+
 @end

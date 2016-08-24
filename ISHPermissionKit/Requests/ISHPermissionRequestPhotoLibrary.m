@@ -51,4 +51,10 @@
     }];
 }
 
+#if DEBUG
+- (NSArray<NSString *> *)staticAuthorizationTextKeys {
+    return @[@"NSPhotoLibraryUsageDescription"];
+}
+#endif
+
 @end

@@ -76,4 +76,10 @@
     }
 }
 
+#if DEBUG
+- (NSArray<NSString *> *)staticAuthorizationTextKey {
+    return @[@"NSContactsUsageDescription"];
+}
+#endif
+
 @end

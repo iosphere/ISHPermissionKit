@@ -54,4 +54,10 @@
     }];
 }
 
+#if DEBUG
+- (NSArray<NSString *> *)staticAuthorizationTextKeys {
+    return @[@"NSMotionUsageDescription"];
+}
+#endif
+
 @end

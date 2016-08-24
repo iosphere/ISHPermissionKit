@@ -7,6 +7,7 @@
 //
 
 #import "ISHPermissionRequest.h"
+#import "ISHPermissionRequest+Private.h"
 @import CoreLocation;
 
 @interface ISHPermissionRequest ()
@@ -70,6 +71,12 @@
     }
     return error;
 }
+
+#if DEBUG
+- (NSArray<NSString *> *)staticAuthorizationTextKey {
+    return nil;
+}
+#endif
 
 @end
 

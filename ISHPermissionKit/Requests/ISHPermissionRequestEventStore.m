@@ -61,4 +61,14 @@
     }];
 }
 
+#if DEBUG
+- (NSArray<NSString *> *)staticAuthorizationTextKey {
+    if (self.permissionCategory == ISHPermissionCategoryReminders) {
+        return @[@"NSRemindersUsageDescription"];
+    } else {
+        return @[@"NSCalendarsUsageDescription"];
+    }
+}
+#endif
+
 @end

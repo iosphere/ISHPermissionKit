@@ -59,5 +59,11 @@
     }];
 }
 
+#if DEBUG
+- (NSArray<NSString *> *)staticAuthorizationTextKeys {
+    return @[@"NSSiriUsageDescription"];
+}
+#endif
+
 @end
 #endif
