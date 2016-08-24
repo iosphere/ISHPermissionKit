@@ -131,6 +131,11 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  Permission required to access the user's reminders.
      */
     ISHPermissionCategoryReminders = 8250,
+
+    /**
+     *  Permission required for Siri to access your app's data.
+     */
+    ISHPermissionCategorySiri = 9000,
 };
 
 
@@ -173,6 +178,8 @@ static inline NSString * _Nonnull ISHStringFromPermissionCategory(ISHPermissionC
             return @"ISHPermissionCategoryEvents";
         case ISHPermissionCategoryReminders:
             return @"ISHPermissionCategoryReminders";
+        case ISHPermissionCategorySiri:
+            return @"ISHPermissionCategorySiri";
     }
 
     NSLog(@"Invalid category: %lu", (unsigned long)category);

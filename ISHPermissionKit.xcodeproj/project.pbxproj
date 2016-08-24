@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		1B20492F1D007F830042FF2E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B20492E1D007F830042FF2E /* Launch Screen.storyboard */; };
+		1B4513001D6DC01200D6E47C /* ISHPermissionRequestSiri.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4512FB1D6DC01200D6E47C /* ISHPermissionRequestSiri.m */; };
+		1B4513011D6DC01200D6E47C /* ISHPermissionRequestSiri.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4512FB1D6DC01200D6E47C /* ISHPermissionRequestSiri.m */; };
+		1B4513021D6DC01200D6E47C /* ISHPermissionRequestSiri.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4512FB1D6DC01200D6E47C /* ISHPermissionRequestSiri.m */; };
+		1B4513031D6DC01200D6E47C /* ISHPermissionRequestSiri.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4512FB1D6DC01200D6E47C /* ISHPermissionRequestSiri.m */; };
+		1B4513051D6DC02D00D6E47C /* ISHPermissionRequestSiri.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B4513041D6DC02D00D6E47C /* ISHPermissionRequestSiri.h */; };
+		1B4513061D6DC02D00D6E47C /* ISHPermissionRequestSiri.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B4513041D6DC02D00D6E47C /* ISHPermissionRequestSiri.h */; };
+		1B4513071D6DC02D00D6E47C /* ISHPermissionRequestSiri.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B4513041D6DC02D00D6E47C /* ISHPermissionRequestSiri.h */; };
+		1B4513081D6DC02D00D6E47C /* ISHPermissionRequestSiri.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B4513041D6DC02D00D6E47C /* ISHPermissionRequestSiri.h */; };
 		DC1A80A3195B21DC0069235F /* ISHPermissionsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = DC1A80A1195B21DC0069235F /* ISHPermissionsViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC1A80A4195B21DC0069235F /* ISHPermissionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A80A2195B21DC0069235F /* ISHPermissionsViewController.m */; };
 		DC1A80A9195B22A10069235F /* ISHPermissionCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = DC1A80A8195B22A10069235F /* ISHPermissionCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -209,6 +217,8 @@
 /* Begin PBXFileReference section */
 		1B20492E1D007F830042FF2E /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		1B2A265F1D07297C000FD12C /* ISHPermissionKit.podspec */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text; path = ISHPermissionKit.podspec; sourceTree = "<group>"; tabWidth = 2; };
+		1B4512FB1D6DC01200D6E47C /* ISHPermissionRequestSiri.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestSiri.m; sourceTree = "<group>"; };
+		1B4513041D6DC02D00D6E47C /* ISHPermissionRequestSiri.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISHPermissionRequestSiri.h; path = ISHPermissionKit/Private/ISHPermissionRequestSiri.h; sourceTree = SOURCE_ROOT; };
 		1B87C1BA1961AA5D001D85E7 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		1B87C1BB1961AA5D001D85E7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1BBCCA7E1BFF367D00606D3D /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
@@ -372,6 +382,8 @@
 				DC5E5BB7195D78800092EAFD /* ISHPermissionRequestPhotoCamera.m */,
 				DC5E5BB1195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.h */,
 				DC5E5BB2195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.m */,
+				1B4513041D6DC02D00D6E47C /* ISHPermissionRequestSiri.h */,
+				1B4512FB1D6DC01200D6E47C /* ISHPermissionRequestSiri.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -497,6 +509,7 @@
 				DC6A467D19D7125300B11E88 /* ISHPermissionRequest+Private.h in Headers */,
 				DC6A467E19D7125300B11E88 /* ISHPermissionRequestLocation.h in Headers */,
 				DC6A467F19D7125300B11E88 /* ISHPermissionRequestMicrophone.h in Headers */,
+				1B4513071D6DC02D00D6E47C /* ISHPermissionRequestSiri.h in Headers */,
 				DC6A468019D7125300B11E88 /* ISHPermissionRequestMotion.h in Headers */,
 				DC6A468119D7125300B11E88 /* ISHPermissionRequestPhotoCamera.h in Headers */,
 				DC6A468219D7125300B11E88 /* ISHPermissionRequestPhotoLibrary.h in Headers */,
@@ -524,6 +537,7 @@
 				DC6A46A719D712AC00B11E88 /* ISHPermissionRequest.h in Headers */,
 				DC6A46A819D712AC00B11E88 /* ISHPermissionRequest+Private.h in Headers */,
 				DC6A46A919D712AC00B11E88 /* ISHPermissionCategory.h in Headers */,
+				1B4513081D6DC02D00D6E47C /* ISHPermissionRequestSiri.h in Headers */,
 				DC6A46AA19D712AC00B11E88 /* ISHPermissionRequestViewControllerDelegate.h in Headers */,
 				DC6A46AB19D712AC00B11E88 /* ISHPermissionRequestPhotoCamera.h in Headers */,
 				DC6A46AC19D712AC00B11E88 /* ISHPermissionRequestHealth.h in Headers */,
@@ -551,6 +565,7 @@
 				DC6A8A8519633180005AC5BD /* ISHPermissionRequest+Private.h in Headers */,
 				DC6A8A8819633180005AC5BD /* ISHPermissionRequestLocation.h in Headers */,
 				DC6A8A8919633180005AC5BD /* ISHPermissionRequestMicrophone.h in Headers */,
+				1B4513061D6DC02D00D6E47C /* ISHPermissionRequestSiri.h in Headers */,
 				DC6A8A8A19633180005AC5BD /* ISHPermissionRequestMotion.h in Headers */,
 				DC6A8A8C19633180005AC5BD /* ISHPermissionRequestPhotoCamera.h in Headers */,
 				DC6A8A8D19633180005AC5BD /* ISHPermissionRequestPhotoLibrary.h in Headers */,
@@ -578,6 +593,7 @@
 				DC1A80AC195B23640069235F /* ISHPermissionRequest.h in Headers */,
 				DC5E5BC7195DC1F50092EAFD /* ISHPermissionRequest+Private.h in Headers */,
 				DC1A80A9195B22A10069235F /* ISHPermissionCategory.h in Headers */,
+				1B4513051D6DC02D00D6E47C /* ISHPermissionRequestSiri.h in Headers */,
 				DC799EB6195C113D00A0CA36 /* ISHPermissionRequestViewControllerDelegate.h in Headers */,
 				DC5E5BB8195D78800092EAFD /* ISHPermissionRequestPhotoCamera.h in Headers */,
 				DCD56C7D1962BB8600508F4A /* ISHPermissionRequestHealth.h in Headers */,
@@ -812,6 +828,7 @@
 			files = (
 				DC6A466019D7125300B11E88 /* ISHPermissionRequestNotificationsLocal.m in Sources */,
 				DC6A466119D7125300B11E88 /* ISHPermissionRequestAddressBook.m in Sources */,
+				1B4513021D6DC01200D6E47C /* ISHPermissionRequestSiri.m in Sources */,
 				DC6A466219D7125300B11E88 /* ISHPermissionRequestPhotoCamera.m in Sources */,
 				DC6A466319D7125300B11E88 /* ISHPermissionRequestLocation.m in Sources */,
 				DC6A466419D7125300B11E88 /* ISHPermissionRequestHealth.m in Sources */,
@@ -834,6 +851,7 @@
 			files = (
 				DC6A468A19D712AC00B11E88 /* ISHPermissionRequestNotificationsLocal.m in Sources */,
 				DC6A468B19D712AC00B11E88 /* ISHPermissionRequestAddressBook.m in Sources */,
+				1B4513031D6DC01200D6E47C /* ISHPermissionRequestSiri.m in Sources */,
 				DC6A468C19D712AC00B11E88 /* ISHPermissionRequestPhotoCamera.m in Sources */,
 				DC6A468D19D712AC00B11E88 /* ISHPermissionRequest+All.m in Sources */,
 				DC6A468E19D712AC00B11E88 /* ISHPermissionRequestHealth.m in Sources */,
@@ -864,6 +882,7 @@
 			files = (
 				DC5E5BC5195DAD770092EAFD /* ISHPermissionRequestNotificationsLocal.m in Sources */,
 				DC6A8AD019641549005AC5BD /* ISHPermissionRequestAddressBook.m in Sources */,
+				1B4513011D6DC01200D6E47C /* ISHPermissionRequestSiri.m in Sources */,
 				DC5E5BBA195D78800092EAFD /* ISHPermissionRequestPhotoCamera.m in Sources */,
 				DCAEF7E5195C60250074EB5B /* ISHPermissionRequestLocation.m in Sources */,
 				DCD56C7F1962BB8600508F4A /* ISHPermissionRequestHealth.m in Sources */,
@@ -886,6 +905,7 @@
 			files = (
 				DC5E5BC4195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.m in Sources */,
 				DC6A8ACF19641549005AC5BD /* ISHPermissionRequestAddressBook.m in Sources */,
+				1B4513001D6DC01200D6E47C /* ISHPermissionRequestSiri.m in Sources */,
 				DC5E5BB9195D78800092EAFD /* ISHPermissionRequestPhotoCamera.m in Sources */,
 				DC799EC5195C19CD00A0CA36 /* ISHPermissionRequest+All.m in Sources */,
 				DCD56C7E1962BB8600508F4A /* ISHPermissionRequestHealth.m in Sources */,

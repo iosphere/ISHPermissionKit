@@ -19,6 +19,7 @@
 #import "ISHPermissionRequestAddressBook.h"
 #import "ISHPermissionRequestEventStore.h"
 #import "ISHPermissionRequest+Private.h"
+#import "ISHPermissionRequestSiri.h"
 
 @interface ISHPermissionRequest (Private)
 - (void)setPermissionCategory:(ISHPermissionCategory)category;
@@ -76,6 +77,10 @@
         case ISHPermissionCategoryEvents:
         case ISHPermissionCategoryReminders:
             request = [ISHPermissionRequestEventStore new];
+            break;
+
+        case ISHPermissionCategorySiri:
+            request = [ISHPermissionRequestSiri new];
             break;
     }
     
