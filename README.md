@@ -35,6 +35,10 @@ The library and sample app compile with the **iOS 9 SDK** and later, and require
 **deployment target of iOS 7** or later. Permission categories that were added after
 iOS 7 will be skipped on unsupported versions.
 
+ISHPermissionKit verifies that the required usage descriptions are provided in your
+apps `Info.plist`. If the `DEBUG` preprocessor macro is set, it will assert and
+explains which keys need to be added.
+
 <img src="assets/demo.gif" align="center" width="320" height="568" alt="Sample App Demo"> 
 
 In contrast to other libraries (such as
