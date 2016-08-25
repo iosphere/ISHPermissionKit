@@ -47,4 +47,11 @@
         });
     }];
 }
+
+#if DEBUG
+- (NSArray<NSString *> *)staticUsageDescriptionKeyss {
+    return @[@"NSCameraUsageDescription"];
+}
+#endif
+
 @end

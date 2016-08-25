@@ -4,6 +4,7 @@
 
 * New permission types: Siri, (modern) Photo Library
 * Ready for iOS 10
+* All required usage descriptions will be asserted in `DEBUG`
 
 ## 1.2.0
 

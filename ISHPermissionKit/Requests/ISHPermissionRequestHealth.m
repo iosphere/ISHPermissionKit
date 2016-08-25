@@ -135,4 +135,20 @@
 #endif
 }
 
+#if DEBUG
+- (NSString *)staticUsageDescriptionKeys {
+    NSMutableArray<NSString *> *keys = [@[] mutableCopy];
+
+    if (self.objectTypesRead.count) {
+        [keys addObject:@"NSHealthShareUsageDescription"];
+    }
+
+    if (self.objectTypesWrite.count) {
+        [keys addObject:@"NSHealthUpdateUsageDescription"];
+    }
+
+    return [keys copy];
+}
+#endif
+
 @end

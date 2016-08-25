@@ -76,4 +76,10 @@
     }
 }
 
+#if DEBUG
+- (NSArray<NSString *> *)staticUsageDescriptionKeys {
+    return @[@"NSContactsUsageDescription"];
+}
+#endif
+
 @end

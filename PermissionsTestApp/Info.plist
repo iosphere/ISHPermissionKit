@@ -22,8 +22,6 @@
 	<string>${ISH_BUNDLE_VERSION}</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>test</string>
 	<key>UILaunchStoryboardName</key>
 	<string>Launch Screen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -37,5 +35,23 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Explain why you use the calendar</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>Explain why you use reminders</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Explain why you use contacts</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Explain why you use the location (always)</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Explain why you use the calendar (when in use)</string>
+	<key>NSMotionUsageDescription</key>
+	<string>Explain why you use motion data</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Explain why you use the microphone</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Explain why you use the photo library</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Explain why you use the camera</string>
 </dict>
 </plist>

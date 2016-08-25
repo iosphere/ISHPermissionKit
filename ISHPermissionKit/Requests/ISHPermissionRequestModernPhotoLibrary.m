@@ -57,4 +57,10 @@
     }];
 }
 
+#if DEBUG
+- (NSArray<NSString *> *)staticUsageDescriptionKeyss {
+    return @[@"NSPhotoLibraryUsageDescription"];
+}
+#endif
+
 @end

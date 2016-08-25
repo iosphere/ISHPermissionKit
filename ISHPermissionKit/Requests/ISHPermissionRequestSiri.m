@@ -59,5 +59,11 @@
     }];
 }
 
+#if DEBUG
+- (NSArray<NSString *> *)staticUsageDescriptionKeyss {
+    return @[@"NSSiriUsageDescription"];
+}
+#endif
+
 @end
 #endif

@@ -54,4 +54,10 @@
     }];
 }
 
+#if DEBUG
+- (NSArray<NSString *> *)staticUsageDescriptionKeyss {
+    return @[@"NSMotionUsageDescription"];
+}
+#endif
+
 @end

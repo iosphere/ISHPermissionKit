@@ -68,4 +68,10 @@
     }];
 }
 
+#if DEBUG
+- (NSArray<NSString *> *)staticUsageDescriptionKeyss {
+    return @[@"NSMicrophoneUsageDescription"];
+}
+#endif
+
 @end
