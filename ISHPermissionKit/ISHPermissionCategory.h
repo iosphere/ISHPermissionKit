@@ -16,18 +16,30 @@
 typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
     /**
      *  Permission required for step counting and motion activity queries. 
+     *
+     *  The app must also provide a localized NSMotionUsageDescription
+     *  in the Info PLIST.
+     *
      *  @sa Reference documentation for CoreMotion.
      */
     ISHPermissionCategoryActivity = 1000,
     
     /**
      *  Permission required to use HealthKit data.
-     *  Make sure to comply with section 27 of the review guidelines.
+     *
+     *  Make sure to comply with section 5.1 of the review guidelines.
      *  Use the `ISHPermissionKitLib+HealthKit` static library or
-     *  the `ISHPermissionKit+HealthKit` framework if
-     *  you want to use this permission category.
+     *  the `ISHPermissionKit+HealthKit` framework if you want to use
+     *  this permission category.
+     *
+     *  The app must also provide a localized NSHealthShareUsageDescription
+     *  in the Info PLIST if you read HealthKit data, and
+     *  NSHealthUpdateUsageDescription to write to HealthKit.
      *
      *  @note: The Health app and HealthKit are not available on iPad.
+     *  Using this category on iPad will fail gracefully by always
+     *  returning the state ISHPermissionStateUnsupported.
+     *
      *  @sa README.md for further reading on HealthKit integration.
      */
     ISHPermissionCategoryHealth = 2000,
@@ -35,19 +47,33 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
     /**
      *  Permission required to use the user's location at any time,
      *  including monitoring for regions, visits, or significant location changes.
+     *
      *  If you want to request both Always and WhenInUse, you should ask for 
      *  WhenInUse first. You can do so by passing both categories to the
      *  ISHPermissionsViewController with WhenInUse before Always.
+     *
+     *  The app must also provide a localized NSLocationAlwaysUsageDescription
+     *  in the Info PLIST.
+     *
+     *  @sa ISHPermissionCategoryLocationWhenInUse
      */
     ISHPermissionCategoryLocationAlways = 3100,
     /**
      *  Permission required to use the user's location only when your app
      *  is visible to them.
+     *
+     *  The app must also provide a localized NSLocationWhenInUseUsageDescription
+     *  in the Info PLIST.
+     *
+     *  @sa ISHPermissionCategoryLocationAlways
      */
     ISHPermissionCategoryLocationWhenInUse = 3200,
     
     /**
      *  Permission required to record the user's microphone input.
+     *
+     *  The app must also provide a localized NSMicrophoneUsageDescription
+     *  in the Info PLIST.
      */
     ISHPermissionCategoryMicrophone = 4000,
     
@@ -57,6 +83,9 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  Deprecated from iOS 9 as it uses ALAssetsLibrary
      *  internally.
      *
+     *  The app must also provide a localized NSPhotoLibraryUsageDescription
+     *  in the Info PLIST.
+     *
      *  @sa ISHPermissionCategoryModernPhotoLibrary
      */
     ISHPermissionCategoryPhotoLibrary NS_ENUM_DEPRECATED_IOS(7.0, 9.0, "Use ISHPermissionCategoryModernPhotoLibrary") = 5000,
@@ -64,10 +93,16 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  Permission required to access the user's photo library.
      *
      *  Uses PHPhotoLibrary APIs.
+     *
+     *  The app must also provide a localized NSPhotoLibraryUsageDescription
+     *  in the Info PLIST.
      */
     ISHPermissionCategoryModernPhotoLibrary NS_ENUM_AVAILABLE_IOS(8_0) = 5050,
     /**
      *  Permission required to access the user's camera.
+     *
+     *  The app must also provide a localized NSCameraUsageDescription
+     *  in the Info PLIST.
      */
     ISHPermissionCategoryPhotoCamera = 5100,
     
@@ -131,21 +166,36 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
     
     /**
      *  Permission required to access the user's contacts.
+     *
+     *  The app must also provide a localized NSContactsUsageDescription
+     *  in the Info PLIST.
      */
     ISHPermissionCategoryAddressBook = 8100,
     
     /**
      *  Permission required to access the user's calendar.
+     *
+     *  The app must also provide a localized NSCalendarsUsageDescription
+     *  in the Info PLIST.
      */
     ISHPermissionCategoryEvents = 8200,
     /**
      *  Permission required to access the user's reminders.
+     *
+     *  The app must also provide a localized NSRemindersUsageDescription
+     *  in the Info PLIST.
      */
     ISHPermissionCategoryReminders = 8250,
 
 #ifdef NSFoundationVersionNumber_iOS_9_0
     /**
      *  Permission required for Siri to access your app's data.
+     *
+     *  To use this category, you must also enable the respective
+     *  capability in your app target, else your app will crash.
+     *
+     *  The app must also provide a localized NSSiriUsageDescription
+     *  in the Info PLIST.
      */
     ISHPermissionCategorySiri NS_ENUM_AVAILABLE_IOS(10_0) = 9000,
 #endif

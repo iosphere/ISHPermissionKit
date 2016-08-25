@@ -31,10 +31,7 @@
         return;
     }
 
-    // TODO: migrate to PHPhotoLibrary API on iOS 9+ (https://github.com/iosphere/ISHPermissionKit/issues/42)
-
     ALAssetsLibrary *assetsLibrary = [ALAssetsLibrary new];
-
     [assetsLibrary enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
         if (!group) {
             // ensure that completion is only called once

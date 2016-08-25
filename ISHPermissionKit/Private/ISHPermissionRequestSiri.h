@@ -12,12 +12,6 @@
 /**
  *  Permission request for Siri to access your app's data.
  *
- *  To use Siri, you must also enable the respective Capability
- *  in your app target.
- *
- *  The app must also provide a localized NSSiriUsageDescription
- *  in the Info PLIST.
- *
  *  @sa ISHPermissionCategorySiri
  */
 @interface ISHPermissionRequestSiri : ISHPermissionRequest

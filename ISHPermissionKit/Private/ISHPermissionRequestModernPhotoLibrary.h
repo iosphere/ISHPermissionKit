@@ -12,9 +12,6 @@
  *  Permission request to acces the user's photo library using
  *  PHPhotoLibrary APIs.
  *
- *  The app must also provide a localized NSPhotoLibraryUsageDescription
- *  in the Info PLIST.
- *
  *  @sa ISHPermissionCategoryModernPhotoLibrary
  */
 @interface ISHPermissionRequestModernPhotoLibrary : ISHPermissionRequest
