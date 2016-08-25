@@ -81,14 +81,12 @@
 }
 
 - (void)permissionsViewController:(ISHPermissionsViewController *)vc didConfigureRequest:(ISHPermissionRequest *)request {
-#ifdef __IPHONE_8_0
     if (request.permissionCategory == ISHPermissionCategoryNotificationLocal) {
         // the demo app only requests permissions for badges
         UIUserNotificationSettings *setting = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge categories:nil];
         ISHPermissionRequestNotificationsLocal *localNotesRequest = (ISHPermissionRequestNotificationsLocal *)([request isKindOfClass:[ISHPermissionRequestNotificationsLocal class]] ? request : nil);
         [localNotesRequest setNotificationSettings:setting];
     }
-#endif
 
     if (request.permissionCategory == ISHPermissionCategorySocialFacebook) {
         ISHPermissionRequestAccount *accountRequest = (ISHPermissionRequestAccount *)([request isKindOfClass:[ISHPermissionRequestAccount class]] ? request : nil);
@@ -104,12 +102,11 @@
 }
 
 #pragma mark Important for local Notifications
-#ifdef __IPHONE_8_0
+
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
     [[NSNotificationCenter defaultCenter] postNotificationName:ISHPermissionNotificationApplicationDidRegisterUserNotificationSettings
                                                         object:self];
 }
-#endif
 
 #pragma mark Boiler plate
 
