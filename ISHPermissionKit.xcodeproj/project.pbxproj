@@ -33,6 +33,8 @@
 		1B96D6021D6F12CF0026A4FC /* ISHPermissionRequestSpeechRecognition.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B96D5FF1D6F12CF0026A4FC /* ISHPermissionRequestSpeechRecognition.h */; };
 		1B96D6031D6F12CF0026A4FC /* ISHPermissionRequestSpeechRecognition.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B96D5FF1D6F12CF0026A4FC /* ISHPermissionRequestSpeechRecognition.h */; };
 		1BAB47C21D6F31F300872D79 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BAB47C11D6F31F300872D79 /* Speech.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		1BAB47F01D6F36FD00872D79 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BAB47C11D6F31F300872D79 /* Speech.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		1BAB47F11D6F370600872D79 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BAB47C11D6F31F300872D79 /* Speech.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		DC1A80A3195B21DC0069235F /* ISHPermissionsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = DC1A80A1195B21DC0069235F /* ISHPermissionsViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC1A80A4195B21DC0069235F /* ISHPermissionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A80A2195B21DC0069235F /* ISHPermissionsViewController.m */; };
 		DC1A80A9195B22A10069235F /* ISHPermissionCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = DC1A80A8195B22A10069235F /* ISHPermissionCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -314,6 +316,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BAB47F11D6F370600872D79 /* Speech.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +339,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BAB47F01D6F36FD00872D79 /* Speech.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
