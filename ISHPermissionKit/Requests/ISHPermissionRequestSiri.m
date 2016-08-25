@@ -15,14 +15,14 @@
 @implementation ISHPermissionRequestSiri
 
 - (ISHPermissionState)permissionState {
-    return [self permissionStateForSiriState:[INPreferences siriAuthorizationStatus]];
-}
-
-- (ISHPermissionState)permissionStateForSiriState:(INSiriAuthorizationStatus)siriState {
     if (![INPreferences class]) {
         return ISHPermissionStateUnsupported;
     }
 
+    return [self permissionStateForSiriState:[INPreferences siriAuthorizationStatus]];
+}
+
+- (ISHPermissionState)permissionStateForSiriState:(INSiriAuthorizationStatus)siriState {
     switch (siriState) {
         case INSiriAuthorizationStatusAuthorized:
             return ISHPermissionStateAuthorized;
