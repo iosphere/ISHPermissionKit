@@ -49,6 +49,7 @@
             text = @"Yet another permission we need.";
             break;
     }
+
     [self.titleLabel setText:title];
     [self.textLabel setText:text];
 }

@@ -30,6 +30,7 @@ where the system APIs only provide implicit methods of doing so.
 * Photos: Library and Camera
 * Social: Facebook, Twitter, SinaWeibo, TencentWeibo
 * Siri
+* Speech Recognition
 
 The library and sample app compile with the **iOS 9 SDK** and later, and require a
 **deployment target of iOS 7** or later. Permission categories that were added after
@@ -62,6 +63,24 @@ Please file an issue for missing permissions.
 # How to Use
 
 ## Installation
+
+### Required Frameworks
+
+ISHPermissionKit uses system frameworks to accomplish its tasks. Most of
+them will be linked automatically unless you have disabled "Enable Modules"
+(`CLANG_ENABLE_MODULES`) and "Link Frameworks Automatically" 
+(`CLANG_MODULES_AUTOLINK`) in your app target's build settings.
+
+Unfortunately, some framework are not weakly linked automatically which
+will cause your app to crash at launch on older systems that don't support
+the respective framework. These frameworks must be explicitly linked in
+your app, and set to "Optional". Feel free to duplicate rdar://28008958.
+
+![Weak-linking a framework in Xcode](assets/weak_linking.png)
+
+This is currently required for these frameworks:
+
+* Speech
 
 ### Variants
 
