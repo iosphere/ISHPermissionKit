@@ -46,6 +46,7 @@
              @(ISHPermissionCategoryNotificationLocal),
              @(ISHPermissionCategorySocialTwitter),
              @(ISHPermissionCategorySocialFacebook),
+             @(ISHPermissionCategorySpeechRecognition),
              ];
 }
 

@@ -30,6 +30,7 @@ where the system APIs only provide implicit methods of doing so.
 * Photos: Library and Camera
 * Social: Facebook, Twitter, SinaWeibo, TencentWeibo
 * Siri
+* Speech Recognition
 
 The library and sample app compile with the **iOS 9 SDK** and later, and require a
 **deployment target of iOS 7** or later. Permission categories that were added after

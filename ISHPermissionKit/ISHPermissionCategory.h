@@ -198,6 +198,15 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  in the Info PLIST.
      */
     ISHPermissionCategorySiri NS_ENUM_AVAILABLE_IOS(10_0) = 9000,
+
+    /**
+     *  Permission required to perform speech recognition, which sends
+     *  user data to Apple's servers.
+     *
+     *  The app must also provide a localized NSSpeechRecognitionUsageDescription
+     *  in the Info PLIST.
+     */
+    ISHPermissionCategorySpeechRecognition NS_ENUM_AVAILABLE_IOS(10_0) = 10000,
 #endif
 };
 
@@ -246,6 +255,8 @@ static inline NSString * _Nonnull ISHStringFromPermissionCategory(ISHPermissionC
 #ifdef NSFoundationVersionNumber_iOS_9_0
         case ISHPermissionCategorySiri:
             return @"ISHPermissionCategorySiri";
+        case ISHPermissionCategorySpeechRecognition:
+            return @"ISHPermissionCategorySpeechRecognition";
 #endif
     }
 

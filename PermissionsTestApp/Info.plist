@@ -53,5 +53,7 @@
 	<string>Explain why you use the photo library</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Explain why you use the camera</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Explain why you use speech recognition</string>
 </dict>
 </plist>
