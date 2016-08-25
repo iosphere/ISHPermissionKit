@@ -8,6 +8,7 @@
 
 #import "ISHPermissionRequestNotificationsLocal.h"
 #import "ISHPermissionRequest+Private.h"
+#import "ISHPermissionRequestUserNotification.h"
 
 @interface ISHPermissionRequestNotificationsLocal ()
 @property (copy) ISHPermissionRequestCompletionBlock completionBlock;
@@ -81,6 +82,10 @@
             self.completionBlock = nil;
         });
     }
+
+    // we also load a new instance of the related user notification so it can update
+    // its internal state
+    __unused id modernPermission = [[ISHPermissionRequestUserNotification alloc] init];
 }
 
 @end
