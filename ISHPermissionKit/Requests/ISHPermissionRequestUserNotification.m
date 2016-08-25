@@ -88,7 +88,9 @@
         // any option was granted
         [[UNUserNotificationCenter currentNotificationCenter] getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                completion(self, [self permissionStateForNotificationSettings:settings], error);
+                ISHPermissionState newState = [self permissionStateForNotificationSettings:settings];
+                [self setInternalPermissionState:newState];
+                completion(self, newState, error);
             });
         }];
     }];
