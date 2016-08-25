@@ -43,6 +43,7 @@
              @(ISHPermissionCategoryPhotoLibrary),
              @(ISHPermissionCategoryModernPhotoLibrary),
              @(ISHPermissionCategoryPhotoCamera),
+             @(ISHPermissionCategoryUserNotification),
              @(ISHPermissionCategoryNotificationLocal),
              @(ISHPermissionCategorySocialTwitter),
              @(ISHPermissionCategorySocialFacebook),

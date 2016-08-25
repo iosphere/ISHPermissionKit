@@ -43,7 +43,6 @@
         return [self internalPermissionState];
     }
     
-    // To be discussed: should types/categories differing from self.noticationSettings lead to denied state?
     return ISHPermissionStateAuthorized;
 }
 
