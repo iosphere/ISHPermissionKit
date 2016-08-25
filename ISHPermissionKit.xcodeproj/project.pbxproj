@@ -32,6 +32,7 @@
 		1B96D6011D6F12CF0026A4FC /* ISHPermissionRequestSpeechRecognition.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B96D5FF1D6F12CF0026A4FC /* ISHPermissionRequestSpeechRecognition.h */; };
 		1B96D6021D6F12CF0026A4FC /* ISHPermissionRequestSpeechRecognition.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B96D5FF1D6F12CF0026A4FC /* ISHPermissionRequestSpeechRecognition.h */; };
 		1B96D6031D6F12CF0026A4FC /* ISHPermissionRequestSpeechRecognition.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B96D5FF1D6F12CF0026A4FC /* ISHPermissionRequestSpeechRecognition.h */; };
+		1BAB47C21D6F31F300872D79 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BAB47C11D6F31F300872D79 /* Speech.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		DC1A80A3195B21DC0069235F /* ISHPermissionsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = DC1A80A1195B21DC0069235F /* ISHPermissionsViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC1A80A4195B21DC0069235F /* ISHPermissionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A80A2195B21DC0069235F /* ISHPermissionsViewController.m */; };
 		DC1A80A9195B22A10069235F /* ISHPermissionCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = DC1A80A8195B22A10069235F /* ISHPermissionCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -241,6 +242,7 @@
 		1B87C1BB1961AA5D001D85E7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1B96D5F61D6F12C00026A4FC /* ISHPermissionRequestSpeechRecognition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestSpeechRecognition.m; sourceTree = "<group>"; };
 		1B96D5FF1D6F12CF0026A4FC /* ISHPermissionRequestSpeechRecognition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISHPermissionRequestSpeechRecognition.h; path = ISHPermissionKit/Private/ISHPermissionRequestSpeechRecognition.h; sourceTree = SOURCE_ROOT; };
+		1BAB47C11D6F31F300872D79 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
 		1BBCCA7E1BFF367D00606D3D /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		DC1A80A1195B21DC0069235F /* ISHPermissionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHPermissionsViewController.h; sourceTree = "<group>"; };
 		DC1A80A2195B21DC0069235F /* ISHPermissionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionsViewController.m; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BAB47C21D6F31F300872D79 /* Speech.framework in Frameworks */,
 				DC6A46B519D94E6A00B11E88 /* libISHPermissionKitLib+HealthKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,6 +359,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BAB47C01D6F31F300872D79 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1BAB47C11D6F31F300872D79 /* Speech.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DC7790B419617CD7007CB2BC /* ISHPermissionKitLibTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -424,6 +435,7 @@
 				DCC1BFC6195B176E00362559 /* PermissionsTestApp */,
 				DC7790B419617CD7007CB2BC /* ISHPermissionKitLibTests */,
 				DCC1BFA6195B174200362559 /* Products */,
+				1BAB47C01D6F31F300872D79 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

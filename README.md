@@ -64,6 +64,24 @@ Please file an issue for missing permissions.
 
 ## Installation
 
+### Required Frameworks
+
+ISHPermissionKit uses system frameworks to accomplish its tasks. Most of
+them will be linked automatically unless you have disabled "Enable Modules"
+(`CLANG_ENABLE_MODULES`) and "Link Frameworks Automatically" 
+(`CLANG_MODULES_AUTOLINK`) in your app target's build settings.
+
+Unfortunately, some framework are not weakly linked automatically which
+will cause your app to crash at launch on older systems that don't support
+the respective framework. These frameworks must be explicitly linked in
+your app, and set to "Optional". Feel free to duplicate rdar://28008958.
+
+![Weak-linking a framework in Xcode](assets/weak_linking.png)
+
+This is currently required for these frameworks:
+
+* Speech
+
 ### Variants
 
 The library comes in two flavors, with or without HealthKit support. While
