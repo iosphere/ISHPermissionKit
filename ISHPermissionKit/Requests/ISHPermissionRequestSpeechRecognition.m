@@ -16,10 +16,10 @@
 @implementation ISHPermissionRequestSpeechRecognition
 
 - (ISHPermissionState)permissionState {
-    return [self permissionStateForPhotosState:[SFSpeechRecognizer authorizationStatus]];
+    return [self permissionStateForSpeechState:[SFSpeechRecognizer authorizationStatus]];
 }
 
-- (ISHPermissionState)permissionStateForPhotosState:(SFSpeechRecognizerAuthorizationStatus)state {
+- (ISHPermissionState)permissionStateForSpeechState:(SFSpeechRecognizerAuthorizationStatus)state {
     if (![SFSpeechRecognizer class]) {
         return ISHPermissionStateUnsupported;
     }
@@ -55,7 +55,7 @@
 
     [SFSpeechRecognizer requestAuthorization:^(SFSpeechRecognizerAuthorizationStatus status) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            completion(self, [self permissionStateForPhotosState:status], nil);
+            completion(self, [self permissionStateForSpeechState:status], nil);
         });
     }];
 }
