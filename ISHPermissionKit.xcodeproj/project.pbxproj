@@ -881,12 +881,12 @@
 			projectRoot = "";
 			targets = (
 				DCC1BFA4195B174200362559 /* ISHPermissionKit */,
-				DCC1BFAF195B174200362559 /* ISHPermissionKitTests */,
-				DCC1BFC4195B176E00362559 /* PermissionsTestApp */,
-				DCAEF7C9195C60070074EB5B /* ISHPermissionKitLib */,
-				DC7790B219617CD7007CB2BC /* ISHPermissionKitLibTests */,
-				DC6A465E19D7125300B11E88 /* ISHPermissionKitLib+HealthKit */,
 				DC6A468819D712AC00B11E88 /* ISHPermissionKit+HealthKit */,
+				DCAEF7C9195C60070074EB5B /* ISHPermissionKitLib */,
+				DC6A465E19D7125300B11E88 /* ISHPermissionKitLib+HealthKit */,
+				DCC1BFC4195B176E00362559 /* PermissionsTestApp */,
+				DCC1BFAF195B174200362559 /* ISHPermissionKitTests */,
+				DC7790B219617CD7007CB2BC /* ISHPermissionKitLibTests */,
 			);
 		};
 /* End PBXProject section */
