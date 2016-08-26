@@ -17,6 +17,14 @@
 		1B0932501D7069DF0095A74A /* ISHPermissionRequestContacts.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0932481D7069C70095A74A /* ISHPermissionRequestContacts.m */; };
 		1B0932511D7069E00095A74A /* ISHPermissionRequestContacts.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0932481D7069C70095A74A /* ISHPermissionRequestContacts.m */; };
 		1B0932521D7069E10095A74A /* ISHPermissionRequestContacts.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0932481D7069C70095A74A /* ISHPermissionRequestContacts.m */; };
+		1B0932591D7074430095A74A /* ISHPermissionRequestBluetooth.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0932541D7074430095A74A /* ISHPermissionRequestBluetooth.m */; };
+		1B09325A1D7074430095A74A /* ISHPermissionRequestBluetooth.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0932541D7074430095A74A /* ISHPermissionRequestBluetooth.m */; };
+		1B09325B1D7074430095A74A /* ISHPermissionRequestBluetooth.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0932541D7074430095A74A /* ISHPermissionRequestBluetooth.m */; };
+		1B09325C1D7074430095A74A /* ISHPermissionRequestBluetooth.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0932541D7074430095A74A /* ISHPermissionRequestBluetooth.m */; };
+		1B09325E1D70745C0095A74A /* ISHPermissionRequestBluetooth.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B09325D1D70745C0095A74A /* ISHPermissionRequestBluetooth.h */; };
+		1B09325F1D70745C0095A74A /* ISHPermissionRequestBluetooth.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B09325D1D70745C0095A74A /* ISHPermissionRequestBluetooth.h */; };
+		1B0932601D70745C0095A74A /* ISHPermissionRequestBluetooth.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B09325D1D70745C0095A74A /* ISHPermissionRequestBluetooth.h */; };
+		1B0932611D70745C0095A74A /* ISHPermissionRequestBluetooth.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B09325D1D70745C0095A74A /* ISHPermissionRequestBluetooth.h */; };
 		1B20492F1D007F830042FF2E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B20492E1D007F830042FF2E /* Launch Screen.storyboard */; };
 		1B4513001D6DC01200D6E47C /* ISHPermissionRequestSiri.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4512FB1D6DC01200D6E47C /* ISHPermissionRequestSiri.m */; };
 		1B4513011D6DC01200D6E47C /* ISHPermissionRequestSiri.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4512FB1D6DC01200D6E47C /* ISHPermissionRequestSiri.m */; };
@@ -275,6 +283,8 @@
 /* Begin PBXFileReference section */
 		1B0932481D7069C70095A74A /* ISHPermissionRequestContacts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestContacts.m; sourceTree = "<group>"; };
 		1B09324B1D7069D90095A74A /* ISHPermissionRequestContacts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISHPermissionRequestContacts.h; path = ISHPermissionKit/Private/ISHPermissionRequestContacts.h; sourceTree = SOURCE_ROOT; };
+		1B0932541D7074430095A74A /* ISHPermissionRequestBluetooth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestBluetooth.m; sourceTree = "<group>"; };
+		1B09325D1D70745C0095A74A /* ISHPermissionRequestBluetooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISHPermissionRequestBluetooth.h; path = ISHPermissionKit/Private/ISHPermissionRequestBluetooth.h; sourceTree = SOURCE_ROOT; };
 		1B20492E1D007F830042FF2E /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		1B2A265F1D07297C000FD12C /* ISHPermissionKit.podspec */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text; path = ISHPermissionKit.podspec; sourceTree = "<group>"; tabWidth = 2; };
 		1B4512FB1D6DC01200D6E47C /* ISHPermissionRequestSiri.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestSiri.m; sourceTree = "<group>"; };
@@ -443,6 +453,8 @@
 				DCD56C771962AEDC00508F4A /* ISHPermissionRequestAccount.m */,
 				DC6A8ACB19641549005AC5BD /* ISHPermissionRequestAddressBook.h */,
 				DC6A8ACC19641549005AC5BD /* ISHPermissionRequestAddressBook.m */,
+				1B09325D1D70745C0095A74A /* ISHPermissionRequestBluetooth.h */,
+				1B0932541D7074430095A74A /* ISHPermissionRequestBluetooth.m */,
 				1B09324B1D7069D90095A74A /* ISHPermissionRequestContacts.h */,
 				1B0932481D7069C70095A74A /* ISHPermissionRequestContacts.m */,
 				DC6A8AD119642793005AC5BD /* ISHPermissionRequestEventStore.h */,
@@ -583,6 +595,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC6A467019D7125300B11E88 /* ISHPermissionRequestAddressBook.h in Headers */,
+				1B0932601D70745C0095A74A /* ISHPermissionRequestBluetooth.h in Headers */,
 				DC6A467119D7125300B11E88 /* ISHPermissionKit.h in Headers */,
 				DC6A467219D7125300B11E88 /* ISHPermissionRequest+All.h in Headers */,
 				1B09324E1D7069D90095A74A /* ISHPermissionRequestContacts.h in Headers */,
@@ -615,6 +628,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC6A469A19D712AC00B11E88 /* ISHPermissionRequestAddressBook.h in Headers */,
+				1B0932611D70745C0095A74A /* ISHPermissionRequestBluetooth.h in Headers */,
 				DC6A469B19D712AC00B11E88 /* ISHPermissionRequest+All.h in Headers */,
 				DC6A469C19D712AC00B11E88 /* ISHPermissionKit.h in Headers */,
 				1B09324F1D7069D90095A74A /* ISHPermissionRequestContacts.h in Headers */,
@@ -647,6 +661,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC6A8ACE19641549005AC5BD /* ISHPermissionRequestAddressBook.h in Headers */,
+				1B09325F1D70745C0095A74A /* ISHPermissionRequestBluetooth.h in Headers */,
 				DC6A8A7E19633180005AC5BD /* ISHPermissionKit.h in Headers */,
 				DC6A8A8419633180005AC5BD /* ISHPermissionRequest+All.h in Headers */,
 				1B09324D1D7069D90095A74A /* ISHPermissionRequestContacts.h in Headers */,
@@ -686,6 +701,7 @@
 				1B09324C1D7069D90095A74A /* ISHPermissionRequestContacts.h in Headers */,
 				DC5E5BB3195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.h in Headers */,
 				DC5E5BAE195D67500092EAFD /* ISHPermissionRequestMicrophone.h in Headers */,
+				1B09325E1D70745C0095A74A /* ISHPermissionRequestBluetooth.h in Headers */,
 				DCD56C781962AEDC00508F4A /* ISHPermissionRequestAccount.h in Headers */,
 				1B69884B1D6F40F400C8EAB8 /* ISHPermissionRequestUserNotification.h in Headers */,
 				DC799EBF195C186100A0CA36 /* ISHPermissionRequestLocation.h in Headers */,
@@ -945,6 +961,7 @@
 				DC6A466519D7125300B11E88 /* ISHPermissionRequestViewController.m in Sources */,
 				DC6A466619D7125300B11E88 /* ISHPermissionRequestPhotoLibrary.m in Sources */,
 				1BC93E501D7063D20033B6E8 /* ISHPermissionRequestMusicLibrary.m in Sources */,
+				1B09325B1D7074430095A74A /* ISHPermissionRequestBluetooth.m in Sources */,
 				DC6A466719D7125300B11E88 /* ISHPermissionRequestMotion.m in Sources */,
 				DC6A466819D7125300B11E88 /* ISHPermissionRequestMicrophone.m in Sources */,
 				1B0932511D7069E00095A74A /* ISHPermissionRequestContacts.m in Sources */,
@@ -973,6 +990,7 @@
 				DC6A468F19D712AC00B11E88 /* ISHPermissionRequestMotion.m in Sources */,
 				DC6A469019D712AC00B11E88 /* ISHPermissionRequestPhotoLibrary.m in Sources */,
 				1BC93E511D7063D20033B6E8 /* ISHPermissionRequestMusicLibrary.m in Sources */,
+				1B09325C1D7074430095A74A /* ISHPermissionRequestBluetooth.m in Sources */,
 				DC6A469119D712AC00B11E88 /* ISHPermissionRequestLocation.m in Sources */,
 				DC6A469219D712AC00B11E88 /* ISHPermissionRequestMicrophone.m in Sources */,
 				1B0932521D7069E10095A74A /* ISHPermissionRequestContacts.m in Sources */,
@@ -1009,6 +1027,7 @@
 				DCAEF7E1195C60250074EB5B /* ISHPermissionRequestViewController.m in Sources */,
 				DC5E5BB5195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.m in Sources */,
 				1BC93E4F1D7063D20033B6E8 /* ISHPermissionRequestMusicLibrary.m in Sources */,
+				1B09325A1D7074430095A74A /* ISHPermissionRequestBluetooth.m in Sources */,
 				DCAEF7E6195C60250074EB5B /* ISHPermissionRequestMotion.m in Sources */,
 				DC5E5BB0195D67500092EAFD /* ISHPermissionRequestMicrophone.m in Sources */,
 				1B0932501D7069DF0095A74A /* ISHPermissionRequestContacts.m in Sources */,
@@ -1037,6 +1056,7 @@
 				DCAEF7C2195C5B6B0074EB5B /* ISHPermissionRequestMotion.m in Sources */,
 				DC5E5BB4195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.m in Sources */,
 				1BC93E4E1D7063D20033B6E8 /* ISHPermissionRequestMusicLibrary.m in Sources */,
+				1B0932591D7074430095A74A /* ISHPermissionRequestBluetooth.m in Sources */,
 				DC799EC0195C186100A0CA36 /* ISHPermissionRequestLocation.m in Sources */,
 				DC5E5BAF195D67500092EAFD /* ISHPermissionRequestMicrophone.m in Sources */,
 				1B09324A1D7069C70095A74A /* ISHPermissionRequestContacts.m in Sources */,
@@ -1404,6 +1424,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PermissionsTestApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1419,6 +1440,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PermissionsTestApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

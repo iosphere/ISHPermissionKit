@@ -24,6 +24,8 @@
 	<true/>
 	<key>NSAppleMusicUsageDescription</key>
 	<string>Explain why you use the music library</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Explain why you use Bluetooth in the background</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Explain why you use the calendar</string>
 	<key>NSCameraUsageDescription</key>

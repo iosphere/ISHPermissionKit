@@ -243,6 +243,14 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  in the Info PLIST.
      */
     ISHPermissionCategoryMusicLibrary NS_ENUM_AVAILABLE_IOS(9.3) = 11000,
+
+
+    ISHPermissionCategoryBluetoothForeground,
+
+    /**
+     *  Capability: Background mode
+     */
+    ISHPermissionCategoryBluetoothBackground,
 };
 
 
@@ -291,6 +299,10 @@ static inline NSString * _Nonnull ISHStringFromPermissionCategory(ISHPermissionC
             return @"ISHPermissionCategoryReminders";
         case ISHPermissionCategoryMusicLibrary:
             return @"ISHPermissionCategoryMusicLibrary";
+        case ISHPermissionCategoryBluetoothForeground:
+            return @"ISHPermissionCategoryBluetoothForeground";
+        case ISHPermissionCategoryBluetoothBackground:
+            return @"ISHPermissionCategoryBluetoothBackground";
 #ifdef NSFoundationVersionNumber_iOS_9_0
         case ISHPermissionCategorySiri:
             return @"ISHPermissionCategorySiri";

@@ -68,6 +68,9 @@
              @(ISHPermissionCategoryReminders),
              @(ISHPermissionCategoryMusicLibrary),
 
+             @(ISHPermissionCategoryBluetoothForeground),
+             @(ISHPermissionCategoryBluetoothBackground),
+
 #ifdef NSFoundationVersionNumber_iOS_9_0
              // reqquires Siri capability & entitlements
              // @(ISHPermissionCategorySiri),

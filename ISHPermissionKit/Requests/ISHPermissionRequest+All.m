@@ -25,6 +25,7 @@
 #import "ISHPermissionRequestSiri.h"
 #import "ISHPermissionRequestSpeechRecognition.h"
 #import "ISHPermissionRequestMusicLibrary.h"
+#import "ISHPermissionRequestBluetooth.h"
 
 @interface ISHPermissionRequest (Private)
 - (void)setPermissionCategory:(ISHPermissionCategory)category;
@@ -94,6 +95,11 @@
 
         case ISHPermissionCategoryMusicLibrary:
             request = [ISHPermissionRequestMusicLibrary new];
+            break;
+
+        case ISHPermissionCategoryBluetoothForeground:
+        case ISHPermissionCategoryBluetoothBackground:
+            request = [ISHPermissionRequestBluetooth new];
             break;
 
 #ifdef NSFoundationVersionNumber_iOS_9_0
