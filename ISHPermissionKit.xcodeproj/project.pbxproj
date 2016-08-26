@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B06A05A1D70949A00C7F8ED /* ISHPermissionKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6A46B119D712AC00B11E88 /* ISHPermissionKit.framework */; };
+		1B06A05B1D70949A00C7F8ED /* ISHPermissionKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DC6A46B119D712AC00B11E88 /* ISHPermissionKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1B09324A1D7069C70095A74A /* ISHPermissionRequestContacts.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0932481D7069C70095A74A /* ISHPermissionRequestContacts.m */; };
 		1B09324C1D7069D90095A74A /* ISHPermissionRequestContacts.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B09324B1D7069D90095A74A /* ISHPermissionRequestContacts.h */; };
 		1B09324D1D7069D90095A74A /* ISHPermissionRequestContacts.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B09324B1D7069D90095A74A /* ISHPermissionRequestContacts.h */; };
@@ -142,7 +144,6 @@
 		DC6A46AA19D712AC00B11E88 /* ISHPermissionRequestViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = DC799EB5195C113900A0CA36 /* ISHPermissionRequestViewControllerDelegate.h */; };
 		DC6A46AB19D712AC00B11E88 /* ISHPermissionRequestPhotoCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = DC5E5BB6195D78800092EAFD /* ISHPermissionRequestPhotoCamera.h */; };
 		DC6A46AC19D712AC00B11E88 /* ISHPermissionRequestHealth.h in Headers */ = {isa = PBXBuildFile; fileRef = DCD56C7B1962BB8600508F4A /* ISHPermissionRequestHealth.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DC6A46B519D94E6A00B11E88 /* libISHPermissionKitLib+HealthKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6A468719D7125300B11E88 /* libISHPermissionKitLib+HealthKit.a */; };
 		DC6A8A7D19633180005AC5BD /* ISHPermissionCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = DC1A80A8195B22A10069235F /* ISHPermissionCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC6A8A7E19633180005AC5BD /* ISHPermissionKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC1BFAA195B174200362559 /* ISHPermissionKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC6A8A7F19633180005AC5BD /* ISHPermissionRequestViewController+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = DC799EB3195C0CF300A0CA36 /* ISHPermissionRequestViewController+Private.h */; };
@@ -210,6 +211,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1B06A05C1D70949A00C7F8ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCC1BF9C195B174200362559 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC6A468819D712AC00B11E88;
+			remoteInfo = "ISHPermissionKit+HealthKit";
+		};
 		DC6A46B319D94E2700B11E88 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DCC1BF9C195B174200362559 /* Project object */;
@@ -234,6 +242,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		1B06A05E1D70949A00C7F8ED /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1B06A05B1D70949A00C7F8ED /* ISHPermissionKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DC6A468319D7125300B11E88 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -383,7 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BAB47C21D6F31F300872D79 /* Speech.framework in Frameworks */,
-				DC6A46B519D94E6A00B11E88 /* libISHPermissionKitLib+HealthKit.a in Frameworks */,
+				1B06A05A1D70949A00C7F8ED /* ISHPermissionKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -808,11 +827,13 @@
 				DCC1BFC1195B176E00362559 /* Sources */,
 				DCC1BFC2195B176E00362559 /* Frameworks */,
 				DCC1BFC3195B176E00362559 /* Resources */,
+				1B06A05E1D70949A00C7F8ED /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				DC6A46B419D94E2700B11E88 /* PBXTargetDependency */,
+				1B06A05D1D70949A00C7F8ED /* PBXTargetDependency */,
 			);
 			name = PermissionsTestApp;
 			productName = PermissionsTestApp;
@@ -1054,6 +1075,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1B06A05D1D70949A00C7F8ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC6A468819D712AC00B11E88 /* ISHPermissionKit+HealthKit */;
+			targetProxy = 1B06A05C1D70949A00C7F8ED /* PBXContainerItemProxy */;
+		};
 		DC6A46B419D94E2700B11E88 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DC6A465E19D7125300B11E88 /* ISHPermissionKitLib+HealthKit */;
@@ -1381,6 +1407,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = PermissionsTestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "-ObjC";
@@ -1395,6 +1422,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = PermissionsTestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-ObjC";
