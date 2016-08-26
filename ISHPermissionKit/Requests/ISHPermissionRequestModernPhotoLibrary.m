@@ -13,14 +13,14 @@
 @implementation ISHPermissionRequestModernPhotoLibrary
 
 - (ISHPermissionState)permissionState {
-    return [self permissionStateForPhotosState:[PHPhotoLibrary authorizationStatus]];
-}
-
-- (ISHPermissionState)permissionStateForPhotosState:(PHAuthorizationStatus)state {
     if (![PHPhotoLibrary class]) {
         return ISHPermissionStateUnsupported;
     }
 
+    return [self permissionStateForPhotosState:[PHPhotoLibrary authorizationStatus]];
+}
+
+- (ISHPermissionState)permissionStateForPhotosState:(PHAuthorizationStatus)state {
     switch ([PHPhotoLibrary authorizationStatus]) {
         case PHAuthorizationStatusAuthorized:
             return ISHPermissionStateAuthorized;

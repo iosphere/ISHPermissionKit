@@ -137,7 +137,8 @@ typedef void (^ISHPermissionsViewControllerErrorBlock)(ISHPermissionCategory, NS
  *  Called by the ISHPermissionsViewController before starting to handle the given request.
  *  This is the appropriate moment to configure the request further if needed.
  *  Currently this is needed/possible for ISHPermissionRequestNotificationsLocal, 
- *  ISHPermissionCategorySocialFacebook, and ISHPermissionRequestHealth.
+ *  ISHPermissionCategorySocialFacebook, ISHPermissionRequestHealth, and 
+ *  ISHPermissionCategoryUserNotification.
  *
  *  @sa [ISHPermissionRequest allowsConfiguration]
  *

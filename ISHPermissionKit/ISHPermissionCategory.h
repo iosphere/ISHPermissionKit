@@ -107,7 +107,8 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
     ISHPermissionCategoryPhotoCamera = 5100,
     
     /**
-     *  Permission required to schedule local notifications. 
+     *  Permission required to schedule local notifications.
+     *
      *  @note Requests for this permission might require further 
      *        configuration via the ISHPermissionsViewControllerDataSource.
      *
@@ -118,7 +119,7 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  }
      *  @endcode
      */
-    ISHPermissionCategoryNotificationLocal = 6100,
+    ISHPermissionCategoryNotificationLocal NS_ENUM_DEPRECATED_IOS(8.0, 10.0, "Use ISHPermissionCategoryUserNotification") = 6100,
     
     /**
      *  Permission required to receive user-facing remote notifications.
@@ -141,8 +142,7 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  }
      *  @endcode
      */
-    ISHPermissionCategoryNotificationRemote NS_ENUM_AVAILABLE_IOS(8_0) = 6200,
-
+    ISHPermissionCategoryNotificationRemote NS_ENUM_DEPRECATED_IOS(8.0, 10.0, "Use ISHPermissionCategoryUserNotification") = 6200,
     
     /**
      *  Permission required to access the user's Facebook accounts.
@@ -207,6 +207,24 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  in the Info PLIST.
      */
     ISHPermissionCategorySpeechRecognition NS_ENUM_AVAILABLE_IOS(10_0) = 10000,
+
+    /**
+     *  Modern way to request permission to local and remote notifications.
+     *
+     *  While it is technically possible to request both the old
+     *  ISHPermissionCategoryNotificationLocal/ISHPermissionCategoryNotificationRemote
+     *  permissions and this new category (which will be skipped on
+     *  unsupported runtimes), we encourage you to check the system
+     *  capabilities in your app and request only the categories
+     *  that are appropriate for the current runtime. Otherwise,
+     *  users on new platforms (which support the old and new APIs)
+     *  may be prompted twice when they choose "Later".
+     *
+     *  Allows configuration by the data source.
+     *
+     *  @sa ISHPermissionRequestUserNotification
+     */
+    ISHPermissionCategoryUserNotification NS_ENUM_AVAILABLE_IOS(10_0) = 6500,
 #endif
 };
 
@@ -257,6 +275,8 @@ static inline NSString * _Nonnull ISHStringFromPermissionCategory(ISHPermissionC
             return @"ISHPermissionCategorySiri";
         case ISHPermissionCategorySpeechRecognition:
             return @"ISHPermissionCategorySpeechRecognition";
+        case ISHPermissionCategoryUserNotification:
+            return @"ISHPermissionCategoryUserNotification";
 #endif
     }
 

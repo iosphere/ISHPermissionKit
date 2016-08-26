@@ -15,6 +15,7 @@
 #import "ISHPermissionRequestPhotoCamera.h"
 #import "ISHPermissionRequestNotificationsLocal.h"
 #import "ISHPermissionRequestNotificationsRemote.h"
+#import "ISHPermissionRequestUserNotification.h"
 #import "ISHPermissionRequestAccount.h"
 #import "ISHPermissionRequestHealth.h"
 #import "ISHPermissionRequestAddressBook.h"
@@ -93,6 +94,9 @@
 
         case ISHPermissionCategorySpeechRecognition:
             request = [ISHPermissionRequestSpeechRecognition new];
+            break;
+        case ISHPermissionCategoryUserNotification:
+            request = [ISHPermissionRequestUserNotification new];
             break;
 #endif
     }

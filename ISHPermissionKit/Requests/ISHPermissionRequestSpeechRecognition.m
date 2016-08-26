@@ -16,14 +16,14 @@
 @implementation ISHPermissionRequestSpeechRecognition
 
 - (ISHPermissionState)permissionState {
-    return [self permissionStateForSpeechState:[SFSpeechRecognizer authorizationStatus]];
-}
-
-- (ISHPermissionState)permissionStateForSpeechState:(SFSpeechRecognizerAuthorizationStatus)state {
     if (![SFSpeechRecognizer class]) {
         return ISHPermissionStateUnsupported;
     }
 
+    return [self permissionStateForSpeechState:[SFSpeechRecognizer authorizationStatus]];
+}
+
+- (ISHPermissionState)permissionStateForSpeechState:(SFSpeechRecognizerAuthorizationStatus)state {
     switch ([SFSpeechRecognizer authorizationStatus]) {
         case SFSpeechRecognizerAuthorizationStatusAuthorized:
             return ISHPermissionStateAuthorized;
