@@ -170,7 +170,7 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  The app must also provide a localized NSContactsUsageDescription
      *  in the Info PLIST.
      */
-    ISHPermissionCategoryAddressBook NS_ENUM_DEPRECATED_IOS(8.0, 10.0, "Use ISHPermissionCategoryContacts") = 8100,
+    ISHPermissionCategoryAddressBook NS_ENUM_DEPRECATED_IOS(7.0, 9.0, "Use ISHPermissionCategoryContacts") = 8100,
     /**
      *  Permission required to access the user's contacts on modern
      *  systems, using the Contacts framework.
