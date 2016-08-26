@@ -83,6 +83,9 @@
     }
 
     [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:self.desiredOptions completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        NSSet *deniedError = [NSSet setWithObject:@(UNErrorCodeNotificationsNotAllowed)];
+        NSError *externalError = [[self class] externalErrorForError:error validationDomain:UNErrorDomain denialCodes:deniedError];
+
         // granted is only YES when all options were granted, but our auth status
         // should reflect whether it is generally possible to use the API, i.e.,
         // any option was granted
@@ -90,7 +93,7 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 ISHPermissionState newState = [self permissionStateForNotificationSettings:settings];
                 [self setInternalPermissionState:newState];
-                completion(self, newState, error);
+                completion(self, newState, externalError);
             });
         }];
     }];
