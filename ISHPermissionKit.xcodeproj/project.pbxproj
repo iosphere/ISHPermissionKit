@@ -40,6 +40,14 @@
 		1BAB47C21D6F31F300872D79 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BAB47C11D6F31F300872D79 /* Speech.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1BAB47F01D6F36FD00872D79 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BAB47C11D6F31F300872D79 /* Speech.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1BAB47F11D6F370600872D79 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BAB47C11D6F31F300872D79 /* Speech.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		1BC93E4E1D7063D20033B6E8 /* ISHPermissionRequestMusicLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC93E491D7063D20033B6E8 /* ISHPermissionRequestMusicLibrary.m */; };
+		1BC93E4F1D7063D20033B6E8 /* ISHPermissionRequestMusicLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC93E491D7063D20033B6E8 /* ISHPermissionRequestMusicLibrary.m */; };
+		1BC93E501D7063D20033B6E8 /* ISHPermissionRequestMusicLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC93E491D7063D20033B6E8 /* ISHPermissionRequestMusicLibrary.m */; };
+		1BC93E511D7063D20033B6E8 /* ISHPermissionRequestMusicLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC93E491D7063D20033B6E8 /* ISHPermissionRequestMusicLibrary.m */; };
+		1BC93E531D7063F10033B6E8 /* ISHPermissionRequestMusicLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC93E521D7063F10033B6E8 /* ISHPermissionRequestMusicLibrary.h */; };
+		1BC93E541D7063F10033B6E8 /* ISHPermissionRequestMusicLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC93E521D7063F10033B6E8 /* ISHPermissionRequestMusicLibrary.h */; };
+		1BC93E551D7063F10033B6E8 /* ISHPermissionRequestMusicLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC93E521D7063F10033B6E8 /* ISHPermissionRequestMusicLibrary.h */; };
+		1BC93E561D7063F10033B6E8 /* ISHPermissionRequestMusicLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC93E521D7063F10033B6E8 /* ISHPermissionRequestMusicLibrary.h */; };
 		DC1A80A3195B21DC0069235F /* ISHPermissionsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = DC1A80A1195B21DC0069235F /* ISHPermissionsViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC1A80A4195B21DC0069235F /* ISHPermissionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A80A2195B21DC0069235F /* ISHPermissionsViewController.m */; };
 		DC1A80A9195B22A10069235F /* ISHPermissionCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = DC1A80A8195B22A10069235F /* ISHPermissionCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -253,6 +261,8 @@
 		1B96D5FF1D6F12CF0026A4FC /* ISHPermissionRequestSpeechRecognition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISHPermissionRequestSpeechRecognition.h; path = ISHPermissionKit/Private/ISHPermissionRequestSpeechRecognition.h; sourceTree = SOURCE_ROOT; };
 		1BAB47C11D6F31F300872D79 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
 		1BBCCA7E1BFF367D00606D3D /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		1BC93E491D7063D20033B6E8 /* ISHPermissionRequestMusicLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestMusicLibrary.m; sourceTree = "<group>"; };
+		1BC93E521D7063F10033B6E8 /* ISHPermissionRequestMusicLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISHPermissionRequestMusicLibrary.h; path = ISHPermissionKit/Private/ISHPermissionRequestMusicLibrary.h; sourceTree = SOURCE_ROOT; };
 		DC1A80A1195B21DC0069235F /* ISHPermissionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHPermissionsViewController.h; sourceTree = "<group>"; };
 		DC1A80A2195B21DC0069235F /* ISHPermissionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionsViewController.m; sourceTree = "<group>"; };
 		DC1A80A8195B22A10069235F /* ISHPermissionCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHPermissionCategory.h; sourceTree = "<group>"; };
@@ -432,6 +442,8 @@
 				1B96D5F61D6F12C00026A4FC /* ISHPermissionRequestSpeechRecognition.m */,
 				1B6988491D6F40F400C8EAB8 /* ISHPermissionRequestUserNotification.h */,
 				1B69884A1D6F40F400C8EAB8 /* ISHPermissionRequestUserNotification.m */,
+				1BC93E521D7063F10033B6E8 /* ISHPermissionRequestMusicLibrary.h */,
+				1BC93E491D7063D20033B6E8 /* ISHPermissionRequestMusicLibrary.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -559,6 +571,7 @@
 				DC6A467D19D7125300B11E88 /* ISHPermissionRequest+Private.h in Headers */,
 				DC6A467E19D7125300B11E88 /* ISHPermissionRequestLocation.h in Headers */,
 				DC6A467F19D7125300B11E88 /* ISHPermissionRequestMicrophone.h in Headers */,
+				1BC93E551D7063F10033B6E8 /* ISHPermissionRequestMusicLibrary.h in Headers */,
 				1B4513071D6DC02D00D6E47C /* ISHPermissionRequestSiri.h in Headers */,
 				1B96D6021D6F12CF0026A4FC /* ISHPermissionRequestSpeechRecognition.h in Headers */,
 				DC6A468019D7125300B11E88 /* ISHPermissionRequestMotion.h in Headers */,
@@ -589,6 +602,7 @@
 				DC6A46A719D712AC00B11E88 /* ISHPermissionRequest.h in Headers */,
 				DC6A46A819D712AC00B11E88 /* ISHPermissionRequest+Private.h in Headers */,
 				DC6A46A919D712AC00B11E88 /* ISHPermissionCategory.h in Headers */,
+				1BC93E561D7063F10033B6E8 /* ISHPermissionRequestMusicLibrary.h in Headers */,
 				1B4513081D6DC02D00D6E47C /* ISHPermissionRequestSiri.h in Headers */,
 				1B96D6031D6F12CF0026A4FC /* ISHPermissionRequestSpeechRecognition.h in Headers */,
 				DC6A46AA19D712AC00B11E88 /* ISHPermissionRequestViewControllerDelegate.h in Headers */,
@@ -619,6 +633,7 @@
 				DC6A8A8519633180005AC5BD /* ISHPermissionRequest+Private.h in Headers */,
 				DC6A8A8819633180005AC5BD /* ISHPermissionRequestLocation.h in Headers */,
 				DC6A8A8919633180005AC5BD /* ISHPermissionRequestMicrophone.h in Headers */,
+				1BC93E541D7063F10033B6E8 /* ISHPermissionRequestMusicLibrary.h in Headers */,
 				1B4513061D6DC02D00D6E47C /* ISHPermissionRequestSiri.h in Headers */,
 				1B96D6011D6F12CF0026A4FC /* ISHPermissionRequestSpeechRecognition.h in Headers */,
 				DC6A8A8A19633180005AC5BD /* ISHPermissionRequestMotion.h in Headers */,
@@ -652,6 +667,7 @@
 				DC1A80A9195B22A10069235F /* ISHPermissionCategory.h in Headers */,
 				1B4513051D6DC02D00D6E47C /* ISHPermissionRequestSiri.h in Headers */,
 				1B96D6001D6F12CF0026A4FC /* ISHPermissionRequestSpeechRecognition.h in Headers */,
+				1BC93E531D7063F10033B6E8 /* ISHPermissionRequestMusicLibrary.h in Headers */,
 				DC799EB6195C113D00A0CA36 /* ISHPermissionRequestViewControllerDelegate.h in Headers */,
 				DC5E5BB8195D78800092EAFD /* ISHPermissionRequestPhotoCamera.h in Headers */,
 				DCD56C7D1962BB8600508F4A /* ISHPermissionRequestHealth.h in Headers */,
@@ -893,6 +909,7 @@
 				DC6A466419D7125300B11E88 /* ISHPermissionRequestHealth.m in Sources */,
 				DC6A466519D7125300B11E88 /* ISHPermissionRequestViewController.m in Sources */,
 				DC6A466619D7125300B11E88 /* ISHPermissionRequestPhotoLibrary.m in Sources */,
+				1BC93E501D7063D20033B6E8 /* ISHPermissionRequestMusicLibrary.m in Sources */,
 				DC6A466719D7125300B11E88 /* ISHPermissionRequestMotion.m in Sources */,
 				DC6A466819D7125300B11E88 /* ISHPermissionRequestMicrophone.m in Sources */,
 				1B96D5FD1D6F12C00026A4FC /* ISHPermissionRequestSpeechRecognition.m in Sources */,
@@ -919,6 +936,7 @@
 				DC6A468E19D712AC00B11E88 /* ISHPermissionRequestHealth.m in Sources */,
 				DC6A468F19D712AC00B11E88 /* ISHPermissionRequestMotion.m in Sources */,
 				DC6A469019D712AC00B11E88 /* ISHPermissionRequestPhotoLibrary.m in Sources */,
+				1BC93E511D7063D20033B6E8 /* ISHPermissionRequestMusicLibrary.m in Sources */,
 				DC6A469119D712AC00B11E88 /* ISHPermissionRequestLocation.m in Sources */,
 				DC6A469219D712AC00B11E88 /* ISHPermissionRequestMicrophone.m in Sources */,
 				1B96D5FE1D6F12C00026A4FC /* ISHPermissionRequestSpeechRecognition.m in Sources */,
@@ -953,6 +971,7 @@
 				DCD56C7F1962BB8600508F4A /* ISHPermissionRequestHealth.m in Sources */,
 				DCAEF7E1195C60250074EB5B /* ISHPermissionRequestViewController.m in Sources */,
 				DC5E5BB5195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.m in Sources */,
+				1BC93E4F1D7063D20033B6E8 /* ISHPermissionRequestMusicLibrary.m in Sources */,
 				DCAEF7E6195C60250074EB5B /* ISHPermissionRequestMotion.m in Sources */,
 				DC5E5BB0195D67500092EAFD /* ISHPermissionRequestMicrophone.m in Sources */,
 				1B96D5FC1D6F12C00026A4FC /* ISHPermissionRequestSpeechRecognition.m in Sources */,
@@ -979,6 +998,7 @@
 				DCD56C7E1962BB8600508F4A /* ISHPermissionRequestHealth.m in Sources */,
 				DCAEF7C2195C5B6B0074EB5B /* ISHPermissionRequestMotion.m in Sources */,
 				DC5E5BB4195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.m in Sources */,
+				1BC93E4E1D7063D20033B6E8 /* ISHPermissionRequestMusicLibrary.m in Sources */,
 				DC799EC0195C186100A0CA36 /* ISHPermissionRequestLocation.m in Sources */,
 				DC5E5BAF195D67500092EAFD /* ISHPermissionRequestMicrophone.m in Sources */,
 				1B96D5FB1D6F12C00026A4FC /* ISHPermissionRequestSpeechRecognition.m in Sources */,

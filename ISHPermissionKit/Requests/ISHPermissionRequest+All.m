@@ -23,6 +23,7 @@
 #import "ISHPermissionRequest+Private.h"
 #import "ISHPermissionRequestSiri.h"
 #import "ISHPermissionRequestSpeechRecognition.h"
+#import "ISHPermissionRequestMusicLibrary.h"
 
 @interface ISHPermissionRequest (Private)
 - (void)setPermissionCategory:(ISHPermissionCategory)category;
@@ -85,6 +86,10 @@
         case ISHPermissionCategoryEvents:
         case ISHPermissionCategoryReminders:
             request = [ISHPermissionRequestEventStore new];
+            break;
+
+        case ISHPermissionCategoryMusicLibrary:
+            request = [ISHPermissionRequestMusicLibrary new];
             break;
 
 #ifdef NSFoundationVersionNumber_iOS_9_0
