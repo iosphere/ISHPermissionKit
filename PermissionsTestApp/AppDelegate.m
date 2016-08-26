@@ -43,11 +43,13 @@
              @(ISHPermissionCategoryPhotoLibrary),
              @(ISHPermissionCategoryModernPhotoLibrary),
              @(ISHPermissionCategoryPhotoCamera),
-             @(ISHPermissionCategoryUserNotification),
              @(ISHPermissionCategoryNotificationLocal),
              @(ISHPermissionCategorySocialTwitter),
              @(ISHPermissionCategorySocialFacebook),
+#ifdef NSFoundationVersionNumber_iOS_9_0
+             @(ISHPermissionCategoryUserNotification),
              @(ISHPermissionCategorySpeechRecognition),
+#endif
              ];
 }
 
