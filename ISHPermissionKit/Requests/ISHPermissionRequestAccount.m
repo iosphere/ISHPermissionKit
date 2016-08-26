@@ -19,8 +19,18 @@
 @implementation ISHPermissionRequestAccount
 
 - (BOOL)allowsConfiguration {
-    // Facebook requires further configuration
-    return (self.permissionCategory == ISHPermissionCategorySocialFacebook);
+    switch (self.permissionCategory) {
+        case ISHPermissionCategorySocialFacebook:
+        case ISHPermissionCategorySocialTencentWeibo:
+            return YES;
+
+        case ISHPermissionCategorySocialSinaWeibo:
+        case ISHPermissionCategorySocialTwitter:
+            return NO;
+    }
+
+    NSAssert(NO, @"Invalid category: %@", @(self.permissionCategory));
+    return NO;
 }
 
 - (NSString *)accountTypeIdentifier {
@@ -38,6 +48,7 @@
             return ACAccountTypeIdentifierTencentWeibo;
             
         default:
+            NSAssert(NO, @"Invalid category: %@", @(self.permissionCategory));
             return nil;
     }
 }

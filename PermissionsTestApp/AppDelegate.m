@@ -53,12 +53,14 @@
              @(ISHPermissionCategoryModernPhotoLibrary),
              @(ISHPermissionCategoryPhotoCamera),
              @(ISHPermissionCategoryNotificationLocal),
-             // @(ISHPermissionCategoryNotificationRemote), // requires capability
+             // requires Push capability & entitlements to actually work
+             @(ISHPermissionCategoryNotificationRemote),
 
-             // @(ISHPermissionCategorySocialFacebook), // requires app ID
+             @(ISHPermissionCategorySocialFacebook),
              @(ISHPermissionCategorySocialTwitter),
              @(ISHPermissionCategorySocialSinaWeibo),
-             // @(ISHPermissionCategorySocialTencentWeibo), // access options required
+             // TODO: alert cannot be presented
+             @(ISHPermissionCategorySocialTencentWeibo),
 
              @(ISHPermissionCategoryAddressBook),
              @(ISHPermissionCategoryContacts),
@@ -67,7 +69,8 @@
              @(ISHPermissionCategoryMusicLibrary),
 
 #ifdef NSFoundationVersionNumber_iOS_9_0
-             // @(ISHPermissionCategorySiri) // reqquires Siri capability
+             // reqquires Siri capability & entitlements
+             // @(ISHPermissionCategorySiri),
              @(ISHPermissionCategorySpeechRecognition),
              @(ISHPermissionCategoryUserNotification),
 #endif
@@ -122,14 +125,22 @@
             break;
         }
 
-        case ISHPermissionCategorySocialFacebook: {
+        case ISHPermissionCategorySocialFacebook:
+        case ISHPermissionCategorySocialTencentWeibo: {
             ISHPermissionRequestAccount *accountRequest = (ISHPermissionRequestAccount *)([request isKindOfClass:[ISHPermissionRequestAccount class]] ? request : nil);
 
-            NSDictionary *options = @{
-                                      ACFacebookAppIdKey: @"YOUR-API-KEY",
-                                      ACFacebookPermissionsKey: @[@"email", @"user_about_me"],
-                                      ACFacebookAudienceKey: ACFacebookAudienceFriends
-                                      };
+            NSDictionary *options;
+            if ([accountRequest.accountTypeIdentifier isEqualToString:ACAccountTypeIdentifierFacebook]) {
+                options = @{
+                            ACFacebookAppIdKey: @"YOUR-API-KEY",
+                            ACFacebookPermissionsKey: @[@"email", @"user_about_me"],
+                            ACFacebookAudienceKey: ACFacebookAudienceFriends,
+                            };
+            } else if ([accountRequest.accountTypeIdentifier isEqualToString:ACAccountTypeIdentifierTencentWeibo]) {
+                options = @{
+                            ACTencentWeiboAppIdKey: @"YOUR-API-KEY",
+                            };
+            }
 
             [accountRequest setOptions:options];
             break;
