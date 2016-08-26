@@ -211,11 +211,14 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
     /**
      *  Modern way to request permission to local and remote notifications.
      *
-     *  If your app supports older deployment targets, you can request this
-     *  category before requesting ISHPermissionCategoryNotificationLocal/
-     *  ISHPermissionCategoryNotificationRemote. In that case, users on
-     *  modern systems will only see one permission request if they make
-     *  a decision, but may be prompted twice if they choose "Later".
+     *  While it is technically possible to request both the old
+     *  ISHPermissionCategoryNotificationLocal/ISHPermissionCategoryNotificationRemote
+     *  permissions and this new category (which will be skipped on
+     *  unsupported runtimes), we encourage you to check the system
+     *  capabilities in your app and request only the categories
+     *  that are appropriate for the current runtime. Otherwise,
+     *  users on new platforms (which support the old and new APIs)
+     *  may be prompted twice when they choose "Later".
      *
      *  Allows configuration by the data source.
      *

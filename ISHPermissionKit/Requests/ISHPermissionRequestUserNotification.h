@@ -14,6 +14,16 @@
  *  Permission request to present local and/or remote
  *  notifications.
  *
+ *  The underlying API to get the current permission state
+ *  is asynchronous, so we cannot guarantee that
+ *  `permissionState` always returns the latest state. This
+ *  class performs an asynchronous update whenever it is
+ *  instantiated, so you can create a new instance to trigger
+ *  a state refresh.
+ *
+ *  The value returned in the completion block when requesting
+ *  permission is always current.
+ *
  *  @sa ISHPermissionCategoryUserNotification
  */
 @interface ISHPermissionRequestUserNotification : ISHPermissionRequest
