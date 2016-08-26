@@ -26,13 +26,14 @@ where the system APIs only provide implicit methods of doing so.
 * CoreMotion: Activity data (step counting, etc.)
 * HealthKit *(requires `HealthKit` variants of the static library/framework/pod)*
 * Microphone
+* Music Library
 * Notifications: Local and Remote
 * Photos: Library and Camera
 * Social: Facebook, Twitter, SinaWeibo, TencentWeibo
 * Siri
 * Speech Recognition
 
-The library and sample app compile with the **iOS 9 SDK** and later, and require a
+The library and sample app compile with the **iOS 9.3 SDK** and later, and require a
 **deployment target of iOS 7** or later. Permission categories that were added after
 iOS 7 will be skipped on unsupported versions.
 

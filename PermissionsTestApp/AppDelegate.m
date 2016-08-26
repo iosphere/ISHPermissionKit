@@ -46,6 +46,7 @@
              @(ISHPermissionCategoryNotificationLocal),
              @(ISHPermissionCategorySocialTwitter),
              @(ISHPermissionCategorySocialFacebook),
+             @(ISHPermissionCategoryMusicLibrary),
 #ifdef NSFoundationVersionNumber_iOS_9_0
              @(ISHPermissionCategoryUserNotification),
              @(ISHPermissionCategorySpeechRecognition),

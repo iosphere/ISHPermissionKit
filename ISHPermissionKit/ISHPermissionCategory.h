@@ -226,6 +226,15 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      */
     ISHPermissionCategoryUserNotification NS_ENUM_AVAILABLE_IOS(10_0) = 6500,
 #endif
+
+    /**
+     *  Permission required to access the user's music library, including,
+     *  but not limited to the user's songs and lists from Apple Music.
+     *
+     *  The app must also provide a localized NSAppleMusicUsageDescription
+     *  in the Info PLIST.
+     */
+    ISHPermissionCategoryMusicLibrary NS_ENUM_AVAILABLE_IOS(9.3) = 11000,
 };
 
 
@@ -270,6 +279,8 @@ static inline NSString * _Nonnull ISHStringFromPermissionCategory(ISHPermissionC
             return @"ISHPermissionCategoryEvents";
         case ISHPermissionCategoryReminders:
             return @"ISHPermissionCategoryReminders";
+        case ISHPermissionCategoryMusicLibrary:
+            return @"ISHPermissionCategoryMusicLibrary";
 #ifdef NSFoundationVersionNumber_iOS_9_0
         case ISHPermissionCategorySiri:
             return @"ISHPermissionCategorySiri";

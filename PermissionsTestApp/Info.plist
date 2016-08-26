@@ -22,6 +22,8 @@
 	<string>${ISH_BUNDLE_VERSION}</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Explain why you use the music library</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Explain why you use the calendar</string>
 	<key>NSCameraUsageDescription</key>
