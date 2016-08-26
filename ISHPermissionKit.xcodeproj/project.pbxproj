@@ -47,7 +47,6 @@
 		1B96D6011D6F12CF0026A4FC /* ISHPermissionRequestSpeechRecognition.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B96D5FF1D6F12CF0026A4FC /* ISHPermissionRequestSpeechRecognition.h */; };
 		1B96D6021D6F12CF0026A4FC /* ISHPermissionRequestSpeechRecognition.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B96D5FF1D6F12CF0026A4FC /* ISHPermissionRequestSpeechRecognition.h */; };
 		1B96D6031D6F12CF0026A4FC /* ISHPermissionRequestSpeechRecognition.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B96D5FF1D6F12CF0026A4FC /* ISHPermissionRequestSpeechRecognition.h */; };
-		1BAB47C21D6F31F300872D79 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BAB47C11D6F31F300872D79 /* Speech.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1BAB47F01D6F36FD00872D79 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BAB47C11D6F31F300872D79 /* Speech.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1BAB47F11D6F370600872D79 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BAB47C11D6F31F300872D79 /* Speech.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1BC93E4E1D7063D20033B6E8 /* ISHPermissionRequestMusicLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BC93E491D7063D20033B6E8 /* ISHPermissionRequestMusicLibrary.m */; };
@@ -401,7 +400,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BAB47C21D6F31F300872D79 /* Speech.framework in Frameworks */,
 				1B06A05A1D70949A00C7F8ED /* ISHPermissionKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
