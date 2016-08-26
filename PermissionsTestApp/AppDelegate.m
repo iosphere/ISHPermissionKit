@@ -9,7 +9,9 @@
 #import "AppDelegate.h"
 #import "SamplePermissionViewController.h"
 #import "GrantedPermissionsViewController.h"
+
 @import Accounts;
+@import HealthKit;
 
 @interface AppDelegate ()
 @property (nonatomic, weak) GrantedPermissionsViewController *rootViewController;
@@ -32,25 +34,42 @@
 }
 
 + (NSArray<NSNumber *> *)requiredPermissions {
+    // The demo app requests all supported permissions. Those that
+    // require special capabilities have been commented out since
+    // they require additional configuration in Xcode.
     return @[
-             @(ISHPermissionCategoryEvents),
-             @(ISHPermissionCategoryReminders),
-             @(ISHPermissionCategoryAddressBook),
-             @(ISHPermissionCategoryContacts),
+             @(ISHPermissionCategoryActivity),
+
+             // requires Health capability & entitlements
+             // @(ISHPermissionCategoryHealth),
+
+             // If you want to request both, the order is important,
+             // as Always implies WhenInUse, too
              @(ISHPermissionCategoryLocationWhenInUse),
              @(ISHPermissionCategoryLocationAlways),
-             @(ISHPermissionCategoryActivity),
+
              @(ISHPermissionCategoryMicrophone),
              @(ISHPermissionCategoryPhotoLibrary),
              @(ISHPermissionCategoryModernPhotoLibrary),
              @(ISHPermissionCategoryPhotoCamera),
              @(ISHPermissionCategoryNotificationLocal),
+             // @(ISHPermissionCategoryNotificationRemote), // requires capability
+
+             // @(ISHPermissionCategorySocialFacebook), // requires app ID
              @(ISHPermissionCategorySocialTwitter),
-             @(ISHPermissionCategorySocialFacebook),
+             @(ISHPermissionCategorySocialSinaWeibo),
+             // @(ISHPermissionCategorySocialTencentWeibo), // access options required
+
+             @(ISHPermissionCategoryAddressBook),
+             @(ISHPermissionCategoryContacts),
+             @(ISHPermissionCategoryEvents),
+             @(ISHPermissionCategoryReminders),
              @(ISHPermissionCategoryMusicLibrary),
+
 #ifdef NSFoundationVersionNumber_iOS_9_0
-             @(ISHPermissionCategoryUserNotification),
+             // @(ISHPermissionCategorySiri) // reqquires Siri capability
              @(ISHPermissionCategorySpeechRecognition),
+             @(ISHPermissionCategoryUserNotification),
 #endif
              ];
 }
@@ -86,23 +105,38 @@
 }
 
 - (void)permissionsViewController:(ISHPermissionsViewController *)vc didConfigureRequest:(ISHPermissionRequest *)request {
-    if (request.permissionCategory == ISHPermissionCategoryNotificationLocal) {
-        // the demo app only requests permissions for badges
-        UIUserNotificationSettings *setting = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge categories:nil];
-        ISHPermissionRequestNotificationsLocal *localNotesRequest = (ISHPermissionRequestNotificationsLocal *)([request isKindOfClass:[ISHPermissionRequestNotificationsLocal class]] ? request : nil);
-        [localNotesRequest setNotificationSettings:setting];
-    }
+    switch (request.permissionCategory) {
+        case ISHPermissionCategoryHealth: {
+            ISHPermissionRequestHealth *healthRequest = (ISHPermissionRequestHealth *)([request isKindOfClass:[ISHPermissionRequestHealth class]] ? request : nil);
+            HKQuantityType *heartRate = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate];
+            healthRequest.objectTypesRead = [NSSet setWithObjects:heartRate, nil];
+            healthRequest.objectTypesWrite = [NSSet setWithObjects:heartRate, nil];
+            break;
+        }
 
-    if (request.permissionCategory == ISHPermissionCategorySocialFacebook) {
-        ISHPermissionRequestAccount *accountRequest = (ISHPermissionRequestAccount *)([request isKindOfClass:[ISHPermissionRequestAccount class]] ? request : nil);
+        case ISHPermissionCategoryNotificationLocal: {
+            // the demo app only requests permissions for badges
+            UIUserNotificationSettings *setting = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge categories:nil];
+            ISHPermissionRequestNotificationsLocal *localNotesRequest = (ISHPermissionRequestNotificationsLocal *)([request isKindOfClass:[ISHPermissionRequestNotificationsLocal class]] ? request : nil);
+            [localNotesRequest setNotificationSettings:setting];
+            break;
+        }
 
-        NSDictionary *options = @{
-                                  ACFacebookAppIdKey: @"YOUR-API-KEY",
-                                  ACFacebookPermissionsKey: @[@"email", @"user_about_me"],
-                                  ACFacebookAudienceKey: ACFacebookAudienceFriends
-                                  };
+        case ISHPermissionCategorySocialFacebook: {
+            ISHPermissionRequestAccount *accountRequest = (ISHPermissionRequestAccount *)([request isKindOfClass:[ISHPermissionRequestAccount class]] ? request : nil);
 
-        [accountRequest setOptions:options];
+            NSDictionary *options = @{
+                                      ACFacebookAppIdKey: @"YOUR-API-KEY",
+                                      ACFacebookPermissionsKey: @[@"email", @"user_about_me"],
+                                      ACFacebookAudienceKey: ACFacebookAudienceFriends
+                                      };
+
+            [accountRequest setOptions:options];
+            break;
+        }
+
+        default:
+            break;
     }
 }
 
