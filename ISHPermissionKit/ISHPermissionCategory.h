@@ -170,7 +170,15 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  The app must also provide a localized NSContactsUsageDescription
      *  in the Info PLIST.
      */
-    ISHPermissionCategoryAddressBook = 8100,
+    ISHPermissionCategoryAddressBook NS_ENUM_DEPRECATED_IOS(8.0, 10.0, "Use ISHPermissionCategoryContacts") = 8100,
+    /**
+     *  Permission required to access the user's contacts on modern
+     *  systems, using the Contacts framework.
+     *
+     *  The app must also provide a localized NSContactsUsageDescription
+     *  in the Info PLIST.
+     */
+    ISHPermissionCategoryContacts NS_ENUM_AVAILABLE_IOS(9_0) = 8500,
     
     /**
      *  Permission required to access the user's calendar.
@@ -275,6 +283,8 @@ static inline NSString * _Nonnull ISHStringFromPermissionCategory(ISHPermissionC
             return @"ISHPermissionCategorySocialTencentWeibo";
         case ISHPermissionCategoryAddressBook:
             return @"ISHPermissionCategoryAddressBook";
+        case ISHPermissionCategoryContacts:
+            return @"ISHPermissionCategoryContacts";
         case ISHPermissionCategoryEvents:
             return @"ISHPermissionCategoryEvents";
         case ISHPermissionCategoryReminders:

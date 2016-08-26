@@ -36,6 +36,7 @@
              @(ISHPermissionCategoryEvents),
              @(ISHPermissionCategoryReminders),
              @(ISHPermissionCategoryAddressBook),
+             @(ISHPermissionCategoryContacts),
              @(ISHPermissionCategoryLocationWhenInUse),
              @(ISHPermissionCategoryLocationAlways),
              @(ISHPermissionCategoryActivity),

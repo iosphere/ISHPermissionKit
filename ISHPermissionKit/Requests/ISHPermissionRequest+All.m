@@ -19,6 +19,7 @@
 #import "ISHPermissionRequestAccount.h"
 #import "ISHPermissionRequestHealth.h"
 #import "ISHPermissionRequestAddressBook.h"
+#import "ISHPermissionRequestContacts.h"
 #import "ISHPermissionRequestEventStore.h"
 #import "ISHPermissionRequest+Private.h"
 #import "ISHPermissionRequestSiri.h"
@@ -81,6 +82,9 @@
             
         case ISHPermissionCategoryAddressBook:
             request = [ISHPermissionRequestAddressBook new];
+            break;
+        case ISHPermissionCategoryContacts:
+            request = [ISHPermissionRequestContacts new];
             break;
 
         case ISHPermissionCategoryEvents:
