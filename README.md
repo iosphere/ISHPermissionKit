@@ -33,9 +33,10 @@ where the system APIs only provide implicit methods of doing so.
 * Siri
 * Speech Recognition
 
-The library and sample app compile with the **iOS 9.3 SDK** and later, and require a
-**deployment target of iOS 7** or later. Permission categories that were added after
-iOS 7 will be skipped on unsupported versions.
+The library and sample app compile with the **iOS 9.3 SDK** and later. The library
+deploys back to **iOS 7**, while the sample app makes use of dynamic frameworks and
+therefore has a deployment target of iOS 8. Permission categories that were added 
+later than the deployment target will be skipped on unsupported versions.
 
 ISHPermissionKit verifies that the required usage descriptions are provided in your
 apps `Info.plist`. If the `DEBUG` preprocessor macro is set, it will assert and

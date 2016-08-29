@@ -30,6 +30,10 @@
 	<string>Explain why you use the camera</string>
 	<key>NSContactsUsageDescription</key>
 	<string>Explain why you use contacts</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Explain why you read heart rates</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Explain why you write heart rates</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Explain why you use the location (always)</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
