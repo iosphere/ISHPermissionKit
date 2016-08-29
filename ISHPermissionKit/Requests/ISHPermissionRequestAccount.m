@@ -27,6 +27,9 @@
         case ISHPermissionCategorySocialSinaWeibo:
         case ISHPermissionCategorySocialTwitter:
             return NO;
+
+        default:
+            break;
     }
 
     NSAssert(NO, @"Invalid category: %@", @(self.permissionCategory));
@@ -48,9 +51,11 @@
             return ACAccountTypeIdentifierTencentWeibo;
             
         default:
-            NSAssert(NO, @"Invalid category: %@", @(self.permissionCategory));
-            return nil;
+            break;
     }
+
+    NSAssert(NO, @"Invalid category: %@", @(self.permissionCategory));
+    return nil;
 }
 
 - (ACAccountType *)accountType {
