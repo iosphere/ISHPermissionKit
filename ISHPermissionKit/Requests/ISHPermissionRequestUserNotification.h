@@ -6,8 +6,11 @@
 //  Copyright © 2016 iosphere GmbH. All rights reserved.
 //
 
-#import <ISHPermissionKit/ISHPermissionKit.h>
+#import "ISHPermissionRequest.h"
+
+#ifdef ISHPermissionRequestNotificationsEnabled
 #ifdef NSFoundationVersionNumber_iOS_9_0
+
 @import UserNotifications;
 
 /**
@@ -39,4 +42,6 @@
 @property (nonatomic) UNAuthorizationOptions desiredOptions;
 
 @end
+
+#endif
 #endif

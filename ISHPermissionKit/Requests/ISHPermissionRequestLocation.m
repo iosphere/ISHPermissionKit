@@ -9,6 +9,8 @@
 #import "ISHPermissionRequestLocation.h"
 #import "ISHPermissionRequest+Private.h"
 
+#ifdef ISHPermissionRequestLocationEnabled
+
 @import CoreLocation;
 @import UIKit;
 
@@ -183,3 +185,5 @@
 #endif
 
 @end
+
+#endif

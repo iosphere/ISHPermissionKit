@@ -9,6 +9,8 @@
 #import "ISHPermissionRequestPhotoCamera.h"
 #import "ISHPermissionRequest+Private.h"
 
+#ifdef ISHPermissionRequestCameraEnabled
+
 @import AVFoundation;
 
 @implementation ISHPermissionRequestPhotoCamera
@@ -55,3 +57,5 @@
 #endif
 
 @end
+
+#endif

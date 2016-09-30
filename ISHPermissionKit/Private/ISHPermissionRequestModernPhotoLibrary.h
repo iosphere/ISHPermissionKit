@@ -8,6 +8,8 @@
 
 #import <ISHPermissionKit/ISHPermissionKit.h>
 
+#ifdef ISHPermissionRequestPhotoLibraryEnabled
+
 /**
  *  Permission request to acces the user's photo library using
  *  PHPhotoLibrary APIs.
@@ -17,3 +19,5 @@
 @interface ISHPermissionRequestModernPhotoLibrary : ISHPermissionRequest
 
 @end
+
+#endif

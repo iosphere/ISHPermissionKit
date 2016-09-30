@@ -9,6 +9,8 @@
 #import "ISHPermissionRequestAddressBook.h"
 #import "ISHPermissionRequest+Private.h"
 
+#ifdef ISHPermissionRequestContactsEnabled
+
 @import AddressBook;
 
 @implementation ISHPermissionRequestAddressBook {
@@ -83,3 +85,5 @@
 #endif
 
 @end
+
+#endif

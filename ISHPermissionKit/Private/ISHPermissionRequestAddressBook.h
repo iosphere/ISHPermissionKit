@@ -8,6 +8,8 @@
 
 #import "ISHPermissionRequest.h"
 
+#ifdef ISHPermissionRequestContactsEnabled
+
 /**
  *  Permission request for the user's address book.
  *
@@ -15,3 +17,5 @@
  */
 @interface ISHPermissionRequestAddressBook : ISHPermissionRequest
 @end
+
+#endif

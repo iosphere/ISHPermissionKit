@@ -8,6 +8,8 @@
 
 #import "ISHPermissionRequest.h"
 
+#if defined(ISHPermissionRequestCalendarEnabled) || defined(ISHPermissionRequestRemindersEnabled)
+
 /**
  *  Permission request for calendar events and reminders.
  *
@@ -15,3 +17,5 @@
  */
 @interface ISHPermissionRequestEventStore : ISHPermissionRequest
 @end
+
+#endif

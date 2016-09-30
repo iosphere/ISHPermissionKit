@@ -36,23 +36,32 @@
     ISHPermissionRequest *request = nil;
     
     switch (category) {
+#ifdef ISHPermissionRequestLocationEnabled
         case ISHPermissionCategoryLocationAlways:
         case ISHPermissionCategoryLocationWhenInUse:
             request = [ISHPermissionRequestLocation new];
             break;
-            
+#endif
+
+#ifdef ISHPermissionRequestMotionEnabled
         case ISHPermissionCategoryActivity:
             request = [ISHPermissionRequestMotion new];
             break;
+#endif
 
+#ifdef ISHPermissionRequestHealthKitEnabled
         case ISHPermissionCategoryHealth:
             request = [ISHPermissionRequestHealth new];
             break;
-            
+#endif
+
+#ifdef ISHPermissionRequestMicrophoneEnabled
         case ISHPermissionCategoryMicrophone:
             request = [ISHPermissionRequestMicrophone new];
             break;
-            
+#endif
+
+#ifdef ISHPermissionRequestPhotoLibraryEnabled
         case ISHPermissionCategoryPhotoLibrary:
             request = [ISHPermissionRequestPhotoLibrary new];
             break;
@@ -60,11 +69,15 @@
         case ISHPermissionCategoryModernPhotoLibrary:
             request = [ISHPermissionRequestModernPhotoLibrary new];
             break;
+#endif
 
+#ifdef ISHPermissionRequestCameraEnabled
         case ISHPermissionCategoryPhotoCamera:
             request = [ISHPermissionRequestPhotoCamera new];
             break;
-            
+#endif
+
+#ifdef ISHPermissionRequestNotificationsEnabled
         case ISHPermissionCategoryNotificationLocal:
             request = [ISHPermissionRequestNotificationsLocal new];
             break;
@@ -72,41 +85,60 @@
         case ISHPermissionCategoryNotificationRemote:
             request = [ISHPermissionRequestNotificationsRemote new];
             break;
-            
+#endif
+
+#ifdef ISHPermissionRequestSocialAccountsEnabled
         case ISHPermissionCategorySocialFacebook:
         case ISHPermissionCategorySocialTwitter:
         case ISHPermissionCategorySocialSinaWeibo:
         case ISHPermissionCategorySocialTencentWeibo:
             request = [ISHPermissionRequestAccount new];
             break;
-            
+#endif
+
+#ifdef ISHPermissionRequestContactsEnabled
         case ISHPermissionCategoryAddressBook:
             request = [ISHPermissionRequestAddressBook new];
             break;
         case ISHPermissionCategoryContacts:
             request = [ISHPermissionRequestContacts new];
             break;
+#endif
 
+#ifdef ISHPermissionRequestCalendarEnabled
         case ISHPermissionCategoryEvents:
+            request = [ISHPermissionRequestEventStore new];
+            break;
+#endif
+
+#ifdef ISHPermissionRequestRemindersEnabled
         case ISHPermissionCategoryReminders:
             request = [ISHPermissionRequestEventStore new];
             break;
+#endif
 
         case ISHPermissionCategoryMusicLibrary:
             request = [ISHPermissionRequestMusicLibrary new];
             break;
 
 #ifdef NSFoundationVersionNumber_iOS_9_0
+#ifdef ISHPermissionRequestSiriEnabled
         case ISHPermissionCategorySiri:
             request = [ISHPermissionRequestSiri new];
             break;
+#endif
 
+#ifdef ISHPermissionRequestSiriEnabled
         case ISHPermissionCategorySpeechRecognition:
             request = [ISHPermissionRequestSpeechRecognition new];
             break;
+#endif
+
+#ifdef ISHPermissionRequestNotificationsEnabled
         case ISHPermissionCategoryUserNotification:
             request = [ISHPermissionRequestUserNotification new];
             break;
+#endif
 #endif
     }
     

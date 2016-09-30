@@ -8,6 +8,8 @@
 
 #import "ISHPermissionRequest.h"
 
+#ifdef ISHPermissionRequestCameraEnabled
+
 /**
  *  Permission request to access the camera.
  *
@@ -15,3 +17,5 @@
  */
 @interface ISHPermissionRequestPhotoCamera : ISHPermissionRequest
 @end
+
+#endif

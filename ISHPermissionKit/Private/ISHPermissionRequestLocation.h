@@ -8,6 +8,8 @@
 
 #import "ISHPermissionRequest.h"
 
+#ifdef ISHPermissionRequestLocationEnabled
+
 /**
  *  Permission request for location information.
  *
@@ -15,3 +17,5 @@
  */
 @interface ISHPermissionRequestLocation : ISHPermissionRequest
 @end
+
+#endif

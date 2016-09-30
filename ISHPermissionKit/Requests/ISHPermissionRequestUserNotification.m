@@ -7,8 +7,12 @@
 //
 
 #import "ISHPermissionRequestUserNotification.h"
-#ifdef NSFoundationVersionNumber_iOS_9_0
 #import "ISHPermissionRequest+Private.h"
+
+#ifdef ISHPermissionRequestNotificationsEnabled
+#ifdef NSFoundationVersionNumber_iOS_9_0
+
+@import UIKit;
 
 @implementation ISHPermissionRequestUserNotification
 
@@ -100,4 +104,6 @@
 }
 
 @end
+
+#endif
 #endif
