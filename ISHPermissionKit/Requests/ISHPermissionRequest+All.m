@@ -128,7 +128,7 @@
             break;
 #endif
 
-#ifdef ISHPermissionRequestSiriEnabled
+#ifdef ISHPermissionRequestSpeechEnabled
         case ISHPermissionCategorySpeechRecognition:
             request = [ISHPermissionRequestSpeechRecognition new];
             break;
