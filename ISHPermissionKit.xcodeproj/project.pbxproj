@@ -158,7 +158,7 @@
 		1B63F89C1D6DF60500B14122 /* ISHPermissionRequestModernPhotoLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISHPermissionRequestModernPhotoLibrary.h; path = ISHPermissionKit/Private/ISHPermissionRequestModernPhotoLibrary.h; sourceTree = SOURCE_ROOT; };
 		1B6988491D6F40F400C8EAB8 /* ISHPermissionRequestUserNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHPermissionRequestUserNotification.h; sourceTree = "<group>"; };
 		1B69884A1D6F40F400C8EAB8 /* ISHPermissionRequestUserNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestUserNotification.m; sourceTree = "<group>"; };
-		1B7221221DA3B5BA00B9266F /* PermissionKitFlags.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PermissionKitFlags.xcconfig; sourceTree = "<group>"; };
+		1B7221721DA3DD7B00B9266F /* ISHPermissionKitFlags.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ISHPermissionKitFlags.xcconfig; sourceTree = "<group>"; };
 		1B87C1BA1961AA5D001D85E7 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		1B87C1BB1961AA5D001D85E7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1B96D5F61D6F12C00026A4FC /* ISHPermissionRequestSpeechRecognition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestSpeechRecognition.m; sourceTree = "<group>"; };
@@ -383,6 +383,7 @@
 			isa = PBXGroup;
 			children = (
 				DCC1BFA9195B174200362559 /* Info.plist */,
+				1B7221721DA3DD7B00B9266F /* ISHPermissionKitFlags.xcconfig */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -426,7 +427,6 @@
 				DCC1BFC8195B176E00362559 /* Info.plist */,
 				DCC1BFC9195B176E00362559 /* main.m */,
 				1B20492E1D007F830042FF2E /* Launch Screen.storyboard */,
-				1B7221221DA3B5BA00B9266F /* PermissionKitFlags.xcconfig */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -771,7 +771,6 @@
 /* Begin XCBuildConfiguration section */
 		DC7790BC19617CD7007CB2BC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B7221221DA3B5BA00B9266F /* PermissionKitFlags.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = ISHPermissionKitLibTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -785,7 +784,6 @@
 		};
 		DC7790BD19617CD7007CB2BC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B7221221DA3B5BA00B9266F /* PermissionKitFlags.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = ISHPermissionKitLibTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -799,7 +797,6 @@
 		};
 		DCAEF7DC195C60070074EB5B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B7221221DA3B5BA00B9266F /* PermissionKitFlags.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
 				DYLIB_COMPATIBILITY_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
@@ -815,7 +812,6 @@
 		};
 		DCAEF7DD195C60070074EB5B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B7221221DA3B5BA00B9266F /* PermissionKitFlags.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
 				DYLIB_COMPATIBILITY_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
@@ -831,7 +827,7 @@
 		};
 		DCC1BFB9195B174200362559 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B7221221DA3B5BA00B9266F /* PermissionKitFlags.xcconfig */;
+			baseConfigurationReference = 1B7221721DA3DD7B00B9266F /* ISHPermissionKitFlags.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -887,7 +883,7 @@
 		};
 		DCC1BFBA195B174200362559 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B7221221DA3B5BA00B9266F /* PermissionKitFlags.xcconfig */;
+			baseConfigurationReference = 1B7221721DA3DD7B00B9266F /* ISHPermissionKitFlags.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -936,7 +932,6 @@
 		};
 		DCC1BFBC195B174200362559 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B7221221DA3B5BA00B9266F /* PermissionKitFlags.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
@@ -957,7 +952,6 @@
 		};
 		DCC1BFBD195B174200362559 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B7221221DA3B5BA00B9266F /* PermissionKitFlags.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
@@ -978,7 +972,6 @@
 		};
 		DCC1BFBF195B174200362559 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B7221221DA3B5BA00B9266F /* PermissionKitFlags.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = ISHPermissionKitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -992,7 +985,6 @@
 		};
 		DCC1BFC0195B174200362559 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B7221221DA3B5BA00B9266F /* PermissionKitFlags.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = ISHPermissionKitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1006,7 +998,6 @@
 		};
 		DCC1BFDD195B176E00362559 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B7221221DA3B5BA00B9266F /* PermissionKitFlags.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1022,7 +1013,6 @@
 		};
 		DCC1BFDE195B176E00362559 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B7221221DA3B5BA00B9266F /* PermissionKitFlags.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

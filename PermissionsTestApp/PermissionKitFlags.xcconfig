@@ -1,9 +1,0 @@
-//
-//  PermissionKitFlags.xcconfig
-//  ISHPermissionKit
-//
-//  Created by Hagi on 04/10/16.
-//  Copyright © 2016 iosphere GmbH. All rights reserved.
-//
-
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) ISHPermissionRequestMotionEnabled ISHPermissionRequestHealthKitEnabled ISHPermissionRequestLocationEnabled ISHPermissionRequestMicrophoneEnabled ISHPermissionRequestPhotoLibraryEnabled ISHPermissionRequestCameraEnabled ISHPermissionRequestNotificationsEnabled ISHPermissionRequestSocialAccountsEnabled ISHPermissionRequestContactsEnabled ISHPermissionRequestCalendarEnabled ISHPermissionRequestRemindersEnabled ISHPermissionRequestSiriEnabled ISHPermissionRequestSpeechEnabled
