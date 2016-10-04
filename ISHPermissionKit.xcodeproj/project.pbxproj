@@ -151,6 +151,7 @@
 		1B0932481D7069C70095A74A /* ISHPermissionRequestContacts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestContacts.m; sourceTree = "<group>"; };
 		1B09324B1D7069D90095A74A /* ISHPermissionRequestContacts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISHPermissionRequestContacts.h; path = ISHPermissionKit/Private/ISHPermissionRequestContacts.h; sourceTree = SOURCE_ROOT; };
 		1B20492E1D007F830042FF2E /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		1B2450C51DA419F100F1EEF0 /* ISHPermissionKitAppConfiguration.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ISHPermissionKitAppConfiguration.xcconfig; sourceTree = "<group>"; };
 		1B2A265F1D07297C000FD12C /* ISHPermissionKit.podspec */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text; path = ISHPermissionKit.podspec; sourceTree = "<group>"; tabWidth = 2; };
 		1B4512FB1D6DC01200D6E47C /* ISHPermissionRequestSiri.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestSiri.m; sourceTree = "<group>"; };
 		1B4513041D6DC02D00D6E47C /* ISHPermissionRequestSiri.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISHPermissionRequestSiri.h; path = ISHPermissionKit/Private/ISHPermissionRequestSiri.h; sourceTree = SOURCE_ROOT; };
@@ -341,6 +342,7 @@
 				1B87C1BB1961AA5D001D85E7 /* README.md */,
 				1BBCCA7E1BFF367D00606D3D /* CHANGELOG.md */,
 				1B2A265F1D07297C000FD12C /* ISHPermissionKit.podspec */,
+				1B2450C51DA419F100F1EEF0 /* ISHPermissionKitAppConfiguration.xcconfig */,
 				DCC1BFA7195B174200362559 /* ISHPermissionKit */,
 				DCC1BFB4195B174200362559 /* ISHPermissionKitTests */,
 				DCC1BFC6195B176E00362559 /* PermissionsTestApp */,

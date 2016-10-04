@@ -1,0 +1,26 @@
+//
+//  ISHPermissionKitAppConfiguration.xcconfig
+//  ISHPermissionKit
+//
+//  Created by Hagi on 04/10/16.
+//  Copyright © 2016 iosphere GmbH. All rights reserved.
+//
+
+// Apps using ISHPermissionKit without CocoaPods should copy this file and paste it in the same directory as ISHPermissionKit's root directory (not *in* the root directory). Please see README.md for further instructions.
+
+ISH_PERMISSION_FLAG_MOTION          = //ISHPermissionRequestMotionEnabled
+ISH_PERMISSION_FLAG_HEALTH          = //ISHPermissionRequestHealthKitEnabled
+ISH_PERMISSION_FLAG_LOCATION        = //ISHPermissionRequestLocationEnabled
+ISH_PERMISSION_FLAG_MIC             = //ISHPermissionRequestMicrophoneEnabled
+ISH_PERMISSION_FLAG_PHOTOS          = //ISHPermissionRequestPhotoLibraryEnabled
+ISH_PERMISSION_FLAG_CAMERA          = //ISHPermissionRequestCameraEnabled
+ISH_PERMISSION_FLAG_NOTIFICATIONS   = //ISHPermissionRequestNotificationsEnabled
+ISH_PERMISSION_FLAG_SOCIAL          = //ISHPermissionRequestSocialAccountsEnabled
+ISH_PERMISSION_FLAG_CONTACTS        = //ISHPermissionRequestContactsEnabled
+ISH_PERMISSION_FLAG_CALENDAR        = //ISHPermissionRequestCalendarEnabled
+ISH_PERMISSION_FLAG_REMINDERS       = //ISHPermissionRequestRemindersEnabled
+ISH_PERMISSION_FLAG_SIRI            = //ISHPermissionRequestSiriEnabled
+ISH_PERMISSION_FLAG_SPEECH          = //ISHPermissionRequestSpeechEnabled
+
+// Do not modify this line. Instead, remove comments above as needed to enable the categories your app uses. Please see ISHPermissionCategory.h for implications and requirements of using certain permission categories.
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) $(ISH_PERMISSION_FLAG_MOTION) $(ISH_PERMISSION_FLAG_HEALTH) $(ISH_PERMISSION_FLAG_LOCATION) $(ISH_PERMISSION_FLAG_MIC) $(ISH_PERMISSION_FLAG_PHOTOS) $(ISH_PERMISSION_FLAG_CAMERA) $(ISH_PERMISSION_FLAG_NOTIFICATIONS) $(ISH_PERMISSION_FLAG_SOCIAL) $(ISH_PERMISSION_FLAG_CONTACTS) $(ISH_PERMISSION_FLAG_CALENDAR) $(ISH_PERMISSION_FLAG_REMINDERS) $(ISH_PERMISSION_FLAG_SIRI) $(ISH_PERMISSION_FLAG_SPEECH)

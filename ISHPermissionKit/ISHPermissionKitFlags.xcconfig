@@ -7,4 +7,4 @@
 //
 
 // This hook allows users of the framework to provide build flags without modifying any files within the ISHPermissionKit repository. See README.md for instructions.
-#include? "../../ISHPermissionKitFlags.xcconfig"
+#include? "../../ISHPermissionKitAppConfiguration.xcconfig"
