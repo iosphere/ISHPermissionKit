@@ -23,6 +23,8 @@
 		1B69884B1D6F40F400C8EAB8 /* ISHPermissionRequestUserNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B6988491D6F40F400C8EAB8 /* ISHPermissionRequestUserNotification.h */; };
 		1B69884C1D6F40F400C8EAB8 /* ISHPermissionRequestUserNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B69884A1D6F40F400C8EAB8 /* ISHPermissionRequestUserNotification.m */; };
 		1B69884D1D6F57DD00C8EAB8 /* ISHPermissionRequestUserNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B69884A1D6F40F400C8EAB8 /* ISHPermissionRequestUserNotification.m */; };
+		1B72213E1DA3D31200B9266F /* ISHPermissionKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC1BFA5195B174200362559 /* ISHPermissionKit.framework */; };
+		1B72213F1DA3D31200B9266F /* ISHPermissionKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DCC1BFA5195B174200362559 /* ISHPermissionKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1B96D5FB1D6F12C00026A4FC /* ISHPermissionRequestSpeechRecognition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B96D5F61D6F12C00026A4FC /* ISHPermissionRequestSpeechRecognition.m */; };
 		1B96D5FC1D6F12C00026A4FC /* ISHPermissionRequestSpeechRecognition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B96D5F61D6F12C00026A4FC /* ISHPermissionRequestSpeechRecognition.m */; };
 		1B96D6001D6F12CF0026A4FC /* ISHPermissionRequestSpeechRecognition.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B96D5FF1D6F12CF0026A4FC /* ISHPermissionRequestSpeechRecognition.h */; };
@@ -112,13 +114,24 @@
 		DCF18618195C2B1B00CC155E /* SamplePermissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCF18616195C2B1B00CC155E /* SamplePermissionViewController.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		1B7221401DA3D31200B9266F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCC1BF9C195B174200362559 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCC1BFA4195B174200362559;
+			remoteInfo = ISHPermissionKit;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
-		1B06A05E1D70949A00C7F8ED /* Embed Frameworks */ = {
+		1B7221421DA3D31200B9266F /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				1B72213F1DA3D31200B9266F /* ISHPermissionKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,6 +158,7 @@
 		1B63F89C1D6DF60500B14122 /* ISHPermissionRequestModernPhotoLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISHPermissionRequestModernPhotoLibrary.h; path = ISHPermissionKit/Private/ISHPermissionRequestModernPhotoLibrary.h; sourceTree = SOURCE_ROOT; };
 		1B6988491D6F40F400C8EAB8 /* ISHPermissionRequestUserNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHPermissionRequestUserNotification.h; sourceTree = "<group>"; };
 		1B69884A1D6F40F400C8EAB8 /* ISHPermissionRequestUserNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestUserNotification.m; sourceTree = "<group>"; };
+		1B7221221DA3B5BA00B9266F /* PermissionKitFlags.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PermissionKitFlags.xcconfig; sourceTree = "<group>"; };
 		1B87C1BA1961AA5D001D85E7 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		1B87C1BB1961AA5D001D85E7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1B96D5F61D6F12C00026A4FC /* ISHPermissionRequestSpeechRecognition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestSpeechRecognition.m; sourceTree = "<group>"; };
@@ -243,6 +257,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B72213E1DA3D31200B9266F /* ISHPermissionKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +426,7 @@
 				DCC1BFC8195B176E00362559 /* Info.plist */,
 				DCC1BFC9195B176E00362559 /* main.m */,
 				1B20492E1D007F830042FF2E /* Launch Screen.storyboard */,
+				1B7221221DA3B5BA00B9266F /* PermissionKitFlags.xcconfig */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -563,11 +579,12 @@
 				DCC1BFC1195B176E00362559 /* Sources */,
 				DCC1BFC2195B176E00362559 /* Frameworks */,
 				DCC1BFC3195B176E00362559 /* Resources */,
-				1B06A05E1D70949A00C7F8ED /* Embed Frameworks */,
+				1B7221421DA3D31200B9266F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1B7221411DA3D31200B9266F /* PBXTargetDependency */,
 			);
 			name = PermissionsTestApp;
 			productName = PermissionsTestApp;
@@ -743,9 +760,18 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		1B7221411DA3D31200B9266F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCC1BFA4195B174200362559 /* ISHPermissionKit */;
+			targetProxy = 1B7221401DA3D31200B9266F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		DC7790BC19617CD7007CB2BC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B7221221DA3B5BA00B9266F /* PermissionKitFlags.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = ISHPermissionKitLibTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -759,6 +785,7 @@
 		};
 		DC7790BD19617CD7007CB2BC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B7221221DA3B5BA00B9266F /* PermissionKitFlags.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = ISHPermissionKitLibTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -772,6 +799,7 @@
 		};
 		DCAEF7DC195C60070074EB5B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B7221221DA3B5BA00B9266F /* PermissionKitFlags.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
 				DYLIB_COMPATIBILITY_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
@@ -787,6 +815,7 @@
 		};
 		DCAEF7DD195C60070074EB5B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B7221221DA3B5BA00B9266F /* PermissionKitFlags.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
 				DYLIB_COMPATIBILITY_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
@@ -802,6 +831,7 @@
 		};
 		DCC1BFB9195B174200362559 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B7221221DA3B5BA00B9266F /* PermissionKitFlags.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -857,6 +887,7 @@
 		};
 		DCC1BFBA195B174200362559 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B7221221DA3B5BA00B9266F /* PermissionKitFlags.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -905,6 +936,7 @@
 		};
 		DCC1BFBC195B174200362559 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B7221221DA3B5BA00B9266F /* PermissionKitFlags.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
@@ -925,6 +957,7 @@
 		};
 		DCC1BFBD195B174200362559 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B7221221DA3B5BA00B9266F /* PermissionKitFlags.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
@@ -945,6 +978,7 @@
 		};
 		DCC1BFBF195B174200362559 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B7221221DA3B5BA00B9266F /* PermissionKitFlags.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = ISHPermissionKitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -958,6 +992,7 @@
 		};
 		DCC1BFC0195B174200362559 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B7221221DA3B5BA00B9266F /* PermissionKitFlags.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = ISHPermissionKitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -971,6 +1006,7 @@
 		};
 		DCC1BFDD195B176E00362559 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B7221221DA3B5BA00B9266F /* PermissionKitFlags.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -986,6 +1022,7 @@
 		};
 		DCC1BFDE195B176E00362559 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B7221221DA3B5BA00B9266F /* PermissionKitFlags.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

@@ -64,8 +64,9 @@
 
              @(ISHPermissionCategoryAddressBook),
              @(ISHPermissionCategoryContacts),
-             @(ISHPermissionCategoryEvents),
-             @(ISHPermissionCategoryReminders),
+             //@(ISHPermissionCategoryEvents),
+             // TODO: fix defines
+             //@(ISHPermissionCategoryReminders),
              @(ISHPermissionCategoryMusicLibrary),
 
 #ifdef NSFoundationVersionNumber_iOS_9_0
