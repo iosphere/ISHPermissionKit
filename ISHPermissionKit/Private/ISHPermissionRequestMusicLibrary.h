@@ -6,7 +6,9 @@
 //  Copyright © 2016 iosphere GmbH. All rights reserved.
 //
 
-#import <ISHPermissionKit/ISHPermissionKit.h>
+#import "ISHPermissionRequest.h"
+
+#ifdef ISHPermissionRequestMusicLibraryEnabled
 
 /**
  *  Permission request to access the user's music library.
@@ -16,3 +18,5 @@
 @interface ISHPermissionRequestMusicLibrary : ISHPermissionRequest
 
 @end
+
+#endif

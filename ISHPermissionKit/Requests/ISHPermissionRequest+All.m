@@ -117,9 +117,11 @@
             break;
 #endif
 
+#ifdef ISHPermissionRequestMusicLibraryEnabled
         case ISHPermissionCategoryMusicLibrary:
             request = [ISHPermissionRequestMusicLibrary new];
             break;
+#endif
 
 #ifdef NSFoundationVersionNumber_iOS_9_0
 #ifdef ISHPermissionRequestSiriEnabled
@@ -140,6 +142,9 @@
             break;
 #endif
 #endif
+
+        case ISHPermissionCategoryInvalid:
+            break;
     }
     
     [request setPermissionCategory:category];

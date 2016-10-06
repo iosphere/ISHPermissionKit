@@ -8,23 +8,27 @@
 
 /**
  *  Permission categories describe types of permissions on iOS.
- *  Each is related to a specific PermissionRequest.
+ *  Each is related to a specific ISHPermissionRequest.
  *
- *  To prevent auto-linking frameworks that are not used, each
- *  category must be explicitly enabled by a build flag. Some
- *  frameworks have additional requirements. Please read the
- *  documentation for each category carefully to avoid App Store
- *  rejections.
+ *  To prevent having unused auto-linked frameworks and privacy-
+ *  sensitive APIS in your app, each category must be explicitly 
+ *  enabled by a build flag. Some frameworks have additional 
+ *  requirements. Please read the documentation for each category
+ *  carefully to avoid App Store rejections.
  *
  *  @note Values assigned to each category must not be changed, as
  *  they may have been persisted on user devices.
  */
 typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
+    /**
+     *  Invalid category. Should be treated as error case.
+     */
+    ISHPermissionCategoryInvalid = 0,
 
 #ifdef ISHPermissionRequestMotionEnabled
     /**
      *  Permission required for accessing the accelerometer, step
-     *  counting and motion activity queries.
+     *  counting, and motion activity queries.
      *
      *  The app must also provide a localized NSMotionUsageDescription
      *  in the Info PLIST. Please consult the app review guidelines 
@@ -122,8 +126,8 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  in the Info PLIST.
      *
      *  To enable this category, you must set the preprocessor flag
-     *  ISHPermissionRequestPhotoLibraryEnabled. This will link AssetsLibrary
-     *  and Photos.
+     *  ISHPermissionRequestPhotoLibraryEnabled. This will link the 
+     *  AssetsLibrary and Photos frameworks.
      *
      *  @sa ISHPermissionCategoryModernPhotoLibrary
      */
@@ -137,8 +141,8 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  in the Info PLIST.
      *
      *  To enable this category, you must set the preprocessor flag
-     *  ISHPermissionRequestPhotoLibraryEnabled. This will link AssetsLibrary
-     *  and Photos.
+     *  ISHPermissionRequestPhotoLibraryEnabled. This will link the
+     *  AssetsLibrary and Photos frameworks.
      */
     ISHPermissionCategoryModernPhotoLibrary NS_ENUM_AVAILABLE_IOS(8_0) = 5050,
 #endif
@@ -162,7 +166,7 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *
      *  To enable this category, you must set the preprocessor flag
      *  ISHPermissionRequestNotificationsEnabled. This will link UIKit and
-     *  UserNotification.
+     *  the UserNotification framework.
      *
      *  @note Requests for this permission might require further 
      *        configuration via the ISHPermissionsViewControllerDataSource.
@@ -182,7 +186,8 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  Permission required to receive user-facing remote notifications.
      *
      *  To enable this category, you must set the preprocessor flag
-     *  ISHPermissionRequestNotificationsEnabled. This will link UserNotification.
+     *  ISHPermissionRequestNotificationsEnabled. This will link UIKit and
+     *  the UserNotification framework.
      *
      *  @note Requests for this permission might require further
      *        configuration via the ISHPermissionsViewControllerDataSource to notificationSettings.
@@ -212,32 +217,37 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  Permission required to access the user's Facebook accounts.
      *
      *  To enable this category, you must set the preprocessor flag
-     *  ISHPermissionRequestSocialAccountsEnabled. This will link Accounts.
+     *  ISHPermissionRequestSocialAccountsEnabled. This will link the
+     *  Accounts framework.
      *
      *  @note Requests for this permission require further
      *        configuration via the ISHPermissionsViewControllerDataSource.
-     *        The request will require an options dictionary including, e.g., ACFacebookAppIdKey.
+     *        The request will require an options dictionary including, e.g., 
+     *        ACFacebookAppIdKey.
      */
     ISHPermissionCategorySocialFacebook = 7100,
     /**
      *  Permission required to access the user's Twitter accounts.
      *
      *  To enable this category, you must set the preprocessor flag
-     *  ISHPermissionRequestSocialAccountsEnabled. This will link Accounts.
+     *  ISHPermissionRequestSocialAccountsEnabled. This will link the
+     *  Accounts framework.
      */
     ISHPermissionCategorySocialTwitter = 7110,
     /**
      *  Permission required to access the user's SinaWeibo accounts.
      *
      *  To enable this category, you must set the preprocessor flag
-     *  ISHPermissionRequestSocialAccountsEnabled. This will link Accounts.
+     *  ISHPermissionRequestSocialAccountsEnabled. This will link the
+     *  Accounts framework.
      */
     ISHPermissionCategorySocialSinaWeibo = 7120,
     /**
      *  Permission required to access the user's TencentWeibo accounts.
      *
      *  To enable this category, you must set the preprocessor flag
-     *  ISHPermissionRequestSocialAccountsEnabled. This will link Accounts.
+     *  ISHPermissionRequestSocialAccountsEnabled. This will link the
+     *  Accounts framework.
      */
     ISHPermissionCategorySocialTencentWeibo = 7130,
 #endif
@@ -252,8 +262,8 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  section 5.1 (Privacy).
      *
      *  To enable this category, you must set the preprocessor flag
-     *  ISHPermissionRequestContactsEnabled. This will link Contacts
-     *  and AddressBook.
+     *  ISHPermissionRequestContactsEnabled. This will link the Contacts
+     *  and AddressBook frameworks.
      *
      *  @sa ISHPermissionCategoryContacts
      */
@@ -268,8 +278,8 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  section 5.1 (Privacy).
      *
      *  To enable this category, you must set the preprocessor flag
-     *  ISHPermissionRequestContactsEnabled. This will link Contacts
-     *  and AddressBook.
+     *  ISHPermissionRequestContactsEnabled. This will link the Contacts
+     *  and AddressBook frameworks.
      */
     ISHPermissionCategoryContacts NS_ENUM_AVAILABLE_IOS(9_0) = 8500,
 #endif
@@ -306,7 +316,6 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
 
 // These categories requires Xcode 8/iOS 10 SDK
 #ifdef NSFoundationVersionNumber_iOS_9_0
-
 #ifdef ISHPermissionRequestSiriEnabled
     /**
      *  Permission required for Siri to access your app's data.
@@ -318,7 +327,8 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  in the Info PLIST.
      *
      *  To enable this category, you must set the preprocessor flag
-     *  ISHPermissionRequestSiriEnabled. This will link Intents.
+     *  ISHPermissionRequestSiriEnabled. This will link the Intents
+     *  framework.
      */
     ISHPermissionCategorySiri NS_ENUM_AVAILABLE_IOS(10_0) = 9000,
 #endif
@@ -332,7 +342,8 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  in the Info PLIST.
      *
      *  To enable this category, you must set the preprocessor flag
-     *  ISHPermissionRequestSpeechEnabled. This will link Speech.
+     *  ISHPermissionRequestSpeechEnabled. This will link the Speech
+     *  framework.
      */
     ISHPermissionCategorySpeechRecognition NS_ENUM_AVAILABLE_IOS(10_0) = 10000,
 #endif
@@ -354,23 +365,27 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *
      *  To enable this category, you must set the preprocessor flag
      *  ISHPermissionRequestNotificationsEnabled. This will link UIKit and
-     *  UserNotification.
+     *  the UserNotification framework.
      */
     ISHPermissionCategoryUserNotification NS_ENUM_AVAILABLE_IOS(10_0) = 6500,
 #endif
-
 #endif
 
+#ifdef ISHPermissionRequestMusicLibraryEnabled
     /**
      *  Permission required to access the user's music library, including,
      *  but not limited to the user's songs and lists from Apple Music.
      *
      *  The app must also provide a localized NSAppleMusicUsageDescription
      *  in the Info PLIST.
+     *
+     *  To enable this category, you must set the preprocessor flag
+     *  ISHPermissionRequestMusicLibraryEnabled. This will link the MediaPlayer
+     *  framework.
      */
     ISHPermissionCategoryMusicLibrary NS_ENUM_AVAILABLE_IOS(9.3) = 11000,
+#endif
 };
-
 
 /**
  *  @param category A value from the ISHPermissionCategory enum.
@@ -448,8 +463,10 @@ static inline NSString * _Nonnull ISHStringFromPermissionCategory(ISHPermissionC
             return @"ISHPermissionCategoryReminders";
 #endif
 
+#ifdef ISHPermissionRequestMusicLibraryEnabled
         case ISHPermissionCategoryMusicLibrary:
             return @"ISHPermissionCategoryMusicLibrary";
+#endif
 
 #ifdef NSFoundationVersionNumber_iOS_9_0
 #ifdef ISHPermissionRequestSiriEnabled
@@ -467,6 +484,9 @@ static inline NSString * _Nonnull ISHStringFromPermissionCategory(ISHPermissionC
             return @"ISHPermissionCategoryUserNotification";
 #endif
 #endif
+
+        case ISHPermissionCategoryInvalid:
+            break;
     }
 
     NSLog(@"Invalid category: %lu", (unsigned long)category);
