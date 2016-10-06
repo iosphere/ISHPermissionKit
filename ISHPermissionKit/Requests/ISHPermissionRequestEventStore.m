@@ -28,7 +28,7 @@
 #endif
 
 #ifdef ISHPermissionRequestCalendarEnabled
-    if (self.permissionCategory == ISHPermissionCategoryReminders) {
+    if (self.permissionCategory == ISHPermissionCategoryEvents) {
         return EKEntityTypeEvent;
     }
 #endif
@@ -76,11 +76,19 @@
 
 #if DEBUG
 - (NSArray<NSString *> *)staticUsageDescriptionKeys {
+#ifdef ISHPermissionRequestRemindersEnabled
     if (self.permissionCategory == ISHPermissionCategoryReminders) {
         return @[@"NSRemindersUsageDescription"];
-    } else {
+    }
+#endif
+
+#ifdef ISHPermissionRequestCalendarEnabled
+    if (self.permissionCategory == ISHPermissionCategoryEvents) {
         return @[@"NSCalendarsUsageDescription"];
     }
+#endif
+
+    return @[];
 }
 #endif
 
