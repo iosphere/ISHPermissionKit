@@ -53,6 +53,7 @@
              @(ISHPermissionCategoryModernPhotoLibrary),
              @(ISHPermissionCategoryPhotoCamera),
              @(ISHPermissionCategoryNotificationLocal),
+
              // requires Push capability & entitlements to actually work
              @(ISHPermissionCategoryNotificationRemote),
 
@@ -64,14 +65,14 @@
 
              @(ISHPermissionCategoryAddressBook),
              @(ISHPermissionCategoryContacts),
-             //@(ISHPermissionCategoryEvents),
-             // TODO: fix defines
-             //@(ISHPermissionCategoryReminders),
+             @(ISHPermissionCategoryEvents),
+             @(ISHPermissionCategoryReminders),
              @(ISHPermissionCategoryMusicLibrary),
 
 #ifdef NSFoundationVersionNumber_iOS_9_0
              // reqquires Siri capability & entitlements
              // @(ISHPermissionCategorySiri),
+
              @(ISHPermissionCategorySpeechRecognition),
              @(ISHPermissionCategoryUserNotification),
 #endif
