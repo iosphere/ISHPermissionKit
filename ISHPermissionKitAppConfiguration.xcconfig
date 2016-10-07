@@ -6,7 +6,7 @@
 //  Copyright © 2016 iosphere GmbH. All rights reserved.
 //
 
-// Apps using ISHPermissionKit without CocoaPods should copy this file and paste it in the same directory as ISHPermissionKit's root directory (not *in* the root directory). Please see README.md for further instructions.
+// Apps using ISHPermissionKit without CocoaPods should copy this file and paste it in the same directory as ISHPermissionKit's root directory (not *within* the root directory). Please see README.md for further instructions.
 
 ISH_PERMISSION_FLAG_MOTION          = //ISHPermissionRequestMotionEnabled
 ISH_PERMISSION_FLAG_HEALTH          = //ISHPermissionRequestHealthKitEnabled
