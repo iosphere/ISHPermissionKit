@@ -82,7 +82,7 @@ Your variant of *ISHPermissionKit* will only include the permission categories
 you actually need. We use preprocessor macros to ensure any unused code is not
 compiled to save you from suprising App Store rejections, as some privacy 
 guidelines apply to all apps that *contain* code to access user data, regardless 
-of whether or not the code is ever called in your app. How you enable the
+of whether or not the code is ever called in your app. How to enable the
 categories you need depends on how you install *ISHPermissionKit* (see below).
 
 ### Static Library

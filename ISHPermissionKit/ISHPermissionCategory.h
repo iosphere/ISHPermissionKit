@@ -11,7 +11,7 @@
  *  Each is related to a specific ISHPermissionRequest.
  *
  *  To prevent having unused auto-linked frameworks and privacy-
- *  sensitive APIS in your app, each category must be explicitly 
+ *  sensitive APIs in your app, each category must be explicitly
  *  enabled by a build flag. Some frameworks have additional 
  *  requirements. Please read the documentation for each category
  *  carefully to avoid App Store rejections.
@@ -36,7 +36,7 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  specifically section 5.1 (Privacy).
      *
      *  To enable this category, you must set the preprocessor flag
-     *  ISHPermissionRequestMotion. This will link CoreMotion.
+     *  ISHPermissionRequestMotionEnabled. This will link CoreMotion.
      */
     ISHPermissionCategoryActivity = 1000,
 #endif
