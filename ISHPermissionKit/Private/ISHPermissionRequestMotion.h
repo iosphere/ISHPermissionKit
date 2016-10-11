@@ -8,6 +8,8 @@
 
 #import "ISHPermissionRequest.h"
 
+#ifdef ISHPermissionRequestMotionEnabled
+
 /**
  *  Permission request for motion/activity data.
  *
@@ -15,3 +17,5 @@
  */
 @interface ISHPermissionRequestMotion : ISHPermissionRequest
 @end
+
+#endif

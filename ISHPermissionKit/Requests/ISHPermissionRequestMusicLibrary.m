@@ -9,6 +9,8 @@
 #import "ISHPermissionRequestMusicLibrary.h"
 #import "ISHPermissionRequest+Private.h"
 
+#ifdef ISHPermissionRequestMusicLibraryEnabled
+
 @import MediaPlayer;
 
 @implementation ISHPermissionRequestMusicLibrary
@@ -66,3 +68,5 @@
 #endif
 
 @end
+
+#endif

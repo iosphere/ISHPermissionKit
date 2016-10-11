@@ -9,6 +9,8 @@
 #import "ISHPermissionRequestPhotoLibrary.h"
 #import "ISHPermissionRequest+Private.h"
 
+#ifdef ISHPermissionRequestPhotoLibraryEnabled
+
 @import AssetsLibrary;
 
 @implementation ISHPermissionRequestPhotoLibrary
@@ -55,3 +57,5 @@
 #endif
 
 @end
+
+#endif

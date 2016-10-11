@@ -6,7 +6,9 @@
 //  Copyright © 2016 iosphere GmbH. All rights reserved.
 //
 
-#import <ISHPermissionKit/ISHPermissionKit.h>
+#import "ISHPermissionRequest.h"
+
+#ifdef ISHPermissionRequestSiriEnabled
 #ifdef NSFoundationVersionNumber_iOS_9_0
 
 /**
@@ -17,4 +19,6 @@
 @interface ISHPermissionRequestSiri : ISHPermissionRequest
 
 @end
+
+#endif
 #endif

@@ -7,9 +7,10 @@
 //
 
 #import "ISHPermissionRequestSpeechRecognition.h"
-#ifdef NSFoundationVersionNumber_iOS_9_0
-
 #import "ISHPermissionRequest+Private.h"
+
+#ifdef ISHPermissionRequestSpeechEnabled
+#ifdef NSFoundationVersionNumber_iOS_9_0
 
 @import Speech;
 
@@ -67,4 +68,6 @@
 #endif
 
 @end
+
+#endif
 #endif

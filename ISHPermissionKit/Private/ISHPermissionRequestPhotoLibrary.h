@@ -8,6 +8,8 @@
 
 #import "ISHPermissionRequest.h"
 
+#ifdef ISHPermissionRequestPhotoLibraryEnabled
+
 /**
  *  Permission request to access the user's photo library.
  *
@@ -15,3 +17,5 @@
  */
 @interface ISHPermissionRequestPhotoLibrary : ISHPermissionRequest
 @end
+
+#endif

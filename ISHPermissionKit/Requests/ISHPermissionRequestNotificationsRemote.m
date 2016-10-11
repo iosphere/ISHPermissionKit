@@ -9,6 +9,10 @@
 #import "ISHPermissionRequestNotificationsRemote.h"
 #import "ISHPermissionRequest+Private.h"
 
+#ifdef ISHPermissionRequestNotificationsEnabled
+
+@import UIKit;
+
 @implementation ISHPermissionRequestNotificationsRemote
 
 - (ISHPermissionState)permissionState {
@@ -20,3 +24,5 @@
 }
 
 @end
+
+#endif

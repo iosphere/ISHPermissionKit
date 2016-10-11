@@ -20,11 +20,11 @@ where the system APIs only provide implicit methods of doing so.
 
 **Supported permission categories:**
 
-* AddressBook
 * Calendar: Events and Reminders
-* CoreLocation: Always and WhenInUse
-* CoreMotion: Activity data (step counting, etc.)
-* HealthKit *(requires `HealthKit` variants of the static library/framework/pod)*
+* Contacts
+* Location: Always and WhenInUse
+* Motion: Activity data (step counting, etc.)
+* HealthKit
 * Microphone
 * Music Library
 * Notifications: Local and Remote
@@ -33,22 +33,28 @@ where the system APIs only provide implicit methods of doing so.
 * Siri
 * Speech Recognition
 
-The library and sample app compile with the **iOS 9.3 SDK** and later. The library
-deploys back to **iOS 7**, while the sample app makes use of dynamic frameworks and
-therefore has a deployment target of iOS 8. Permission categories that were added 
-later than the deployment target will be skipped on unsupported versions.
+The library compiles with the **iOS 9.3 SDK** and later and deploys back to
+**iOS 7**. Permission categories that were added later than the deployment 
+target will be skipped on unsupported versions.
 
-ISHPermissionKit verifies that the required usage descriptions are provided in your
-apps `Info.plist`. If the `DEBUG` preprocessor macro is set, it will assert and
-explains which keys need to be added.
+All permission categories relate to **sensitive user information**. If your app
+binary contains code to access this information, it has to comply with
+special review guidelines and other requirements to pass binary validation
+in iTunes Connect and app review. Therefore, you must specifically enable
+the categories you need with build flags, everything else will not be included
+in the framework. Please read the [installation instructions](#installation)
+carefully.
+
+*ISHPermissionKit* verifies that the required usage descriptions are provided in your
+app's `Info.plist`. If the `DEBUG` preprocessor macro is set, it will assert and
+explain which keys need to be added. Other requirements for each permission
+category are mentioned in the header documentation in `ISHPermissionCategory.h`.
 
 <img src="assets/demo.gif" align="center" width="320" height="568" alt="Sample App Demo"> 
 
-In contrast to other libraries (such as
-[JLPermissions](https://github.com/jlaws/JLPermissions) and
-[ClusterPrePermissions](https://github.com/clusterinc/ClusterPrePermissions)) 
-*ISHPermissionKit* allows you to present custom view controllers, ask for several
-permissions in a sequence, and provides a unified API through subclasses.
+In contrast to other libraries, *ISHPermissionKit* allows you to present custom 
+view controllers, ask for several permissions in a sequence, provides a unified
+API through subclasses, and is **iOS 10 compatible**.
 
 Recommended reading: [The Right Way to Ask Users for Mobile
 Permissions](https://medium.com/@mulligan/the-right-way-to-ask-users-for-ios-permissions-96fa4eb54f2c "by Brenden Mulligan (@mulligan)")
@@ -64,62 +70,44 @@ Please file an issue for missing permissions.
 
 # How to Use
 
+## Sample App
+
+A sample app will be provided in a separate repository. Coming (back) soon.
+
 ## Installation
 
-### Required Frameworks
+### Build Flags
 
-ISHPermissionKit uses system frameworks to accomplish its tasks. Most of
-them will be linked automatically unless you have disabled "Enable Modules"
-(`CLANG_ENABLE_MODULES`) and "Link Frameworks Automatically" 
-(`CLANG_MODULES_AUTOLINK`) in your app target's build settings.
-
-Unfortunately, some framework are not weakly linked automatically which
-will cause your app to crash at launch on older systems that don't support
-the respective framework. These frameworks must be explicitly linked in
-your app, and set to "Optional". Feel free to duplicate rdar://28008958.
-
-![Weak-linking a framework in Xcode](assets/weak_linking.png)
-
-This is currently required for these frameworks:
-
-* Speech
-
-### Variants
-
-The library comes in two flavors, with or without HealthKit support. While
-technically you can use the HealthKit-enabled variant even when not using
-HealthKit in your current app, it may lead to issues during App Review, see
-[Issue #15](https://github.com/iosphere/ISHPermissionKit/issues/15).
-
-Therefore, the default installation has HealthKit disabled. While the
-public interface remains unchanged across both variants, all HealthKit-related
-APIs are non-functional and will assert unless you explicitly use the
-HealthKit variant. The HealthKit variant will weakly link the HealthKit
-framework into your app. How you choose between the two variants depends
-on the type of installation, see below.
-
-While HealthKit is not available on iPad, you can install the Health-enabled
-variant of ISHPermissionKit in iPad or Universal apps. Health-related permission
-requests will be skipped.
+Your variant of *ISHPermissionKit* will only include the permission categories
+you actually need. We use preprocessor macros to ensure any unused code is not
+compiled to save you from suprising App Store rejections, as some privacy 
+guidelines apply to all apps that *contain* code to access user data, regardless 
+of whether or not the code is ever called in your app. How to enable the
+categories you need depends on how you install *ISHPermissionKit* (see below).
 
 ### Static Library
 
 Add this Xcode project as a subproject of your app. Then link your app target 
-against the static library (`ISHPermissionKitLib.a`, or 
-`ISHPermissionKitLib+HealthKit.a` if you require HealthKit support).
-You will also need to add the static library as a target dependency. 
-Both settings can be found in your app target's *Build Phases*.
+against the static library (`ISHPermissionKitLib.a`). You will also need to add
+the static library as a target dependency. Both settings can be found in your 
+app target's *Build Phases*.
+
+**You must [provide a build configuration](#providing-a-build-configuration) manually.**
 
 Use `#import <ISHPermissionKit/ISHPermissionKit.h>` to import all public headers.
+The static library version is recommended when you need to support iOS 7 or
+if you are concerned about app launch time, as a high number of dynamic libraries
+could increase the latter.
 
 ### Dynamically-Linked Framework
 
 Add this Xcode project as a subproject of your app. Then add the framework
-(`ISHPermissionKit.framework`, or `ISHPermissionKit+HealthKit.framework` if you 
-require HealthKit support) to the app's embedded binaries (on the *General*
+(`ISHPermissionKit.framework`) to the app's embedded binaries (on the *General*
 tab of your app target's settings). On the *Build Phases* tab, verify that the
 framework has also been added to the *Target Dependencies* and *Link Binary with
 Libraries* phases, and that a new *Embed Frameworks* phase has been created.
+
+**You must [provide a build configuration](#providing-a-build-configuration) manually.**
 
 The framework can be used as a module, so you can use `@import ISHPermissionKit;`
 to import all public headers.  
@@ -128,38 +116,77 @@ Further reading on Modules: [Clang Documentation](http://clang.llvm.org/docs/Mod
 **Note:** To link against dynamic frameworks on iOS, a deployment target of at
 least iOS 8 is required. If you use Swift, you must use dynamic frameworks.
 
+### Providing a Build Configuration
+
+When building the static or dynamic library, *ISHPermissionKit* will look for an
+`.xcconfig` file in the same directory as *ISHPermissionKit*'s root directory 
+(not *within* the root directory). This file allows you to set preprocessor flags
+that will be used when compiling the framework.
+
+We strongly recommend to start with a copy of the template config provided in this
+repository, [`ISHPermissionKitAppConfiguration.xcconfig`](/ISHPermissionKitAppConfiguration.xcconfig).
+It includes a list of all supported flags, and you can easily specify which features
+you need by commenting or uncommenting the respective lines.
+
+You will have to use the same configuration file to build your app, else the
+category-specific symbols will not be available. In your project settings, you
+can select a configuration file for each target:
+
+![Weak-linking a framework in Xcode](assets/config_file.png)
+
+If you already use a configuration file, you can pick one and include the other
+in it. Ensure to always use `$(inherit)` when setting preprocessor macros.
+
 ### CocoaPods
 
-You can use CocoaPods to install ISHPermissionKit as a static library:
+You can use CocoaPods to install *ISHPermissionKit* as a static or dynamic library.
+Each permission category requires a separate (sub)pod. The following sample Podfile
+includes all available pods – you should pick only those that you are actually
+using in your app.
 
 ```ruby
 target 'MyApp' do
-  pod 'ISHPermissionKit'
+  use_frameworks! // remove this line if you want to link your pods statically
+  pod 'ISHPermissionKit/Motion'
+  pod 'ISHPermissionKit/Health'
+  pod 'ISHPermissionKit/Location'
+  pod 'ISHPermissionKit/Microphone'
+  pod 'ISHPermissionKit/PhotoLibrary'
+  pod 'ISHPermissionKit/Camera'
+  pod 'ISHPermissionKit/Notifications'
+  pod 'ISHPermissionKit/SocialAccounts'
+  pod 'ISHPermissionKit/Contacts'
+  pod 'ISHPermissionKit/Calendar'
+  pod 'ISHPermissionKit/Reminders'
+  pod 'ISHPermissionKit/Siri'
+  pod 'ISHPermissionKit/Speech'
+  pod 'ISHPermissionKit/Music'
 end
 ```
+
+[Providing a build configuration](#providing-a-build-configuration) manually is not
+required when you use CocoaPods.
 
 See the [official website](https://cocoapods.org/#get_started) to get started with
 CocoaPods.
 
-The default pod does not include HealthKit support. If you need HealthKit, you need
-to use the `ISHPermissionKit/Health` pod:
+### Required Frameworks
 
-```ruby
-target 'MyApp' do
-  pod 'ISHPermissionKit/Health'
-end
-```
+*ISHPermissionKit* uses system frameworks to accomplish its tasks. Most of
+them will be linked automatically unless you have disabled "Enable Modules"
+(`CLANG_ENABLE_MODULES`) and "Link Frameworks Automatically" 
+(`CLANG_MODULES_AUTOLINK`) in your app target's build settings.
 
-ISHPermissionKit can also be installed as a framework through CocoaPods:
+Unfortunately, some framework are not weakly linked automatically which
+will cause your app to crash at launch on older systems that don't support
+the respective framework. These frameworks must be explicitly linked in
+your app, and set to "Optional". Feel free to duplicate rdar://28008958
+(https://openradar.appspot.com/search?query=28008958).
 
-```ruby
-target 'MyApp' do
-  use_frameworks!
-  pod 'ISHPermissionKit'
-end
-```
-It requires at least iOS 8 at runtime and can be imported as a module, see
-[Dynamically-Linked Framework](#dynamically-linked-framework).
+![Weak-linking a framework in Xcode](assets/weak_linking.png)
+
+This is currently required for the *Speech* framework, and only if you
+enable the speech permission category.
 
 ## ISHPermissionsViewController
 
@@ -238,7 +265,7 @@ most rewarding, you can find a few hints on how to get started below.
 
 ## Adding Support for New Permissions
 
-You will need to create a new subclass of `ISHPermissionRequest` and add a
+You will need to create a new subclass of `ISHPermissionRequest` and add an
 `ISHPermissionCategory` (make sure to use explicit values as these may be
 persisted). Don't change existing values. Finally, wire it up in
 `ISHPermissionRequest+All` by returning your new subclass in
@@ -258,18 +285,24 @@ first and return appropriate internal enum values from
 `ISHPermissionState` without resorting to the `internalPermissionState` as much as
 possible.
 
-
 When requesting the permission state you should only store the result in
 `internalPermissionState` if the state cannot easily be retrieved from the
 system (as is the case, e.g., with activity monitoring from the designated
 co-processor).
 
+Before a new permission can be added, you must introduce a new build flag and
+ensure the library compiles with and without it. Please update this document
+accordingly, add the new build flag to the template configuration file
+([`ISHPermissionKitAppConfiguration.xcconfig`](/ISHPermissionKitAppConfiguration.xcconfig)),
+and create a new CocoaPods subspec.
 
-ISHPermissionKit icon designed by 
+# Attribution
+
+*ISHPermissionKit* icon designed by 
 [Jason Grube (CC BY 3.0)](http://thenounproject.com/term/fingerprint/23303/) from the 
 [Noun Project](http://thenounproject.com)
 
-# More OpenSource projects by iosphere
+# More OpenSource Projects by iosphere
 
 <img src="https://raw.githubusercontent.com/iosphere/ISHHoverBar/master/icon.png" align="center" width="40" height="40"> [`ISHHoverBar`](https://github.com/iosphere/ISHHoverBar) - A floating UIToolBar replacement as seen in the iOS 10 Maps app, supporting both vertical and horizontal orientation
 

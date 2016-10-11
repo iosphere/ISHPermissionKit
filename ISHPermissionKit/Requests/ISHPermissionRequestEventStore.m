@@ -9,6 +9,8 @@
 #import "ISHPermissionRequestEventStore.h"
 #import "ISHPermissionRequest+Private.h"
 
+#if defined(ISHPermissionRequestCalendarEnabled) || defined(ISHPermissionRequestRemindersEnabled)
+
 @import EventKit;
 
 @interface ISHPermissionRequestEventStore ()
@@ -16,12 +18,23 @@
 @end
 
 @implementation ISHPermissionRequestEventStore
+
 - (EKEntityType)entityType {
+
+#ifdef ISHPermissionRequestRemindersEnabled
     if (self.permissionCategory == ISHPermissionCategoryReminders) {
         return EKEntityTypeReminder;
     }
-    
-    return EKEntityTypeEvent;
+#endif
+
+#ifdef ISHPermissionRequestCalendarEnabled
+    if (self.permissionCategory == ISHPermissionCategoryEvents) {
+        return EKEntityTypeEvent;
+    }
+#endif
+
+    NSAssert(NO, @"Invalid permission category: %@", @(self.permissionCategory));
+    return 0;
 }
 
 - (EKEventStore *)eventStore {
@@ -63,12 +76,22 @@
 
 #if DEBUG
 - (NSArray<NSString *> *)staticUsageDescriptionKeys {
+#ifdef ISHPermissionRequestRemindersEnabled
     if (self.permissionCategory == ISHPermissionCategoryReminders) {
         return @[@"NSRemindersUsageDescription"];
-    } else {
+    }
+#endif
+
+#ifdef ISHPermissionRequestCalendarEnabled
+    if (self.permissionCategory == ISHPermissionCategoryEvents) {
         return @[@"NSCalendarsUsageDescription"];
     }
+#endif
+
+    return @[];
 }
 #endif
 
 @end
+
+#endif
