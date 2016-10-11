@@ -92,7 +92,7 @@ against the static library (`ISHPermissionKitLib.a`). You will also need to add
 the static library as a target dependency. Both settings can be found in your 
 app target's *Build Phases*.
 
-You must [provide a build configuration](#providing-a-build-configuration) manually.
+**You must [provide a build configuration](#providing-a-build-configuration) manually.**
 
 Use `#import <ISHPermissionKit/ISHPermissionKit.h>` to import all public headers.
 The static library version is recommended when you need to support iOS 7 or
@@ -107,7 +107,7 @@ tab of your app target's settings). On the *Build Phases* tab, verify that the
 framework has also been added to the *Target Dependencies* and *Link Binary with
 Libraries* phases, and that a new *Embed Frameworks* phase has been created.
 
-You must [provide a build configuration](#providing-a-build-configuration) manually.
+**You must [provide a build configuration](#providing-a-build-configuration) manually.**
 
 The framework can be used as a module, so you can use `@import ISHPermissionKit;`
 to import all public headers.  
@@ -124,9 +124,9 @@ When building the static or dynamic library, *ISHPermissionKit* will look for an
 that will be used when compiling the framework.
 
 We strongly recommend to start with a copy of the template config provided in this
-repository, `ISHPermissionKitAppConfiguration.xcconfig`. It includes a list of
-all supported flags, and you can easily specify which features you need by
-commenting or uncommenting the respective lines.
+repository, [`ISHPermissionKitAppConfiguration.xcconfig`](/ISHPermissionKitAppConfiguration.xcconfig).
+It includes a list of all supported flags, and you can easily specify which features
+you need by commenting or uncommenting the respective lines.
 
 You will have to use the same configuration file to build your app, else the
 category-specific symbols will not be available. In your project settings, you
@@ -180,7 +180,8 @@ them will be linked automatically unless you have disabled "Enable Modules"
 Unfortunately, some framework are not weakly linked automatically which
 will cause your app to crash at launch on older systems that don't support
 the respective framework. These frameworks must be explicitly linked in
-your app, and set to "Optional". Feel free to duplicate rdar://28008958.
+your app, and set to "Optional". Feel free to duplicate rdar://28008958
+(https://openradar.appspot.com/search?query=28008958).
 
 ![Weak-linking a framework in Xcode](assets/weak_linking.png)
 
@@ -292,8 +293,8 @@ co-processor).
 Before a new permission can be added, you must introduce a new build flag and
 ensure the library compiles with and without it. Please update this document
 accordingly, add the new build flag to the template configuration file
-(`ISHPermissionKitAppConfiguration.xcconfig`), and create a new CocoaPods
-subspec.
+([`ISHPermissionKitAppConfiguration.xcconfig`](/ISHPermissionKitAppConfiguration.xcconfig)),
+and create a new CocoaPods subspec.
 
 # Attribution
 
