@@ -155,7 +155,7 @@ your app, and set to "Optional". Feel free to duplicate rdar://28008958
 This is currently required for the *Speech* framework, and only if you
 enable the speech permission category.
 
-### CocoaPods
+### Cocoa Pods
 
 You can use CocoaPods to install *ISHPermissionKit* as a static or dynamic library.
 Each permission category requires a separate (sub)pod. The following sample Podfile
