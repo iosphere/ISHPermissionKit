@@ -118,10 +118,10 @@ least iOS 8 is required. If you use Swift, you must use dynamic frameworks.
 
 ### Providing a Build Configuration
 
-When building the static or dynamic library, *ISHPermissionKit* will look for an
-`.xcconfig` file in the same directory as *ISHPermissionKit*'s root directory 
-(not *within* the root directory). This file allows you to set preprocessor flags
-that will be used when compiling the framework.
+When building the static or dynamic library, *ISHPermissionKit* will look for a
+file named `ISHPermissionKitAppConfiguration.xcconfig` in the same directory as
+*ISHPermissionKit*'s root directory (not *within* the root directory). This file
+allows you to set preprocessor flags that will be used when compiling the framework.
 
 We strongly recommend to start with a copy of the template config provided in this
 repository, [`ISHPermissionKitAppConfiguration.xcconfig`](/ISHPermissionKitAppConfiguration.xcconfig).
@@ -132,7 +132,7 @@ You will have to use the same configuration file to build your app, else the
 category-specific symbols will not be available. In your project settings, you
 can select a configuration file for each target:
 
-![Weak-linking a framework in Xcode](assets/config_file.png)
+![Setting a configuration file](assets/config_file.png)
 
 If you already use a configuration file, you can pick one and include the other
 in it. Ensure to always use `$(inherit)` when setting preprocessor macros.
