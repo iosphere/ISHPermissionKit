@@ -137,6 +137,24 @@ can select a configuration file for each target:
 If you already use a configuration file, you can pick one and include the other
 in it. Ensure to always use `$(inherit)` when setting preprocessor macros.
 
+### Required Frameworks
+
+*ISHPermissionKit* uses system frameworks to accomplish its tasks. Most of
+them will be linked automatically unless you have disabled "Enable Modules"
+(`CLANG_ENABLE_MODULES`) and "Link Frameworks Automatically" 
+(`CLANG_MODULES_AUTOLINK`) in your app target's build settings.
+
+Unfortunately, some framework are not weakly linked automatically which
+will cause your app to crash at launch on older systems that don't support
+the respective framework. These frameworks must be explicitly linked in
+your app, and set to "Optional". Feel free to duplicate rdar://28008958
+(https://openradar.appspot.com/search?query=28008958).
+
+![Weak-linking a framework in Xcode](assets/weak_linking.png)
+
+This is currently required for the *Speech* framework, and only if you
+enable the speech permission category.
+
 ### CocoaPods
 
 You can use CocoaPods to install *ISHPermissionKit* as a static or dynamic library.
@@ -160,33 +178,16 @@ target 'MyApp' do
   pod 'ISHPermissionKit/Reminders'
   pod 'ISHPermissionKit/Siri'
   pod 'ISHPermissionKit/Speech'
-  pod 'ISHPermissionKit/Music'
+  pod 'ISHPermissionKit/MusicLibrary'
 end
 ```
 
 [Providing a build configuration](#providing-a-build-configuration) manually is not
-required when you use CocoaPods.
+required when you use CocoaPods, and you can also ignore the
+[Required Frameworks](#required-frameworks) section.
 
 See the [official website](https://cocoapods.org/#get_started) to get started with
 CocoaPods.
-
-### Required Frameworks
-
-*ISHPermissionKit* uses system frameworks to accomplish its tasks. Most of
-them will be linked automatically unless you have disabled "Enable Modules"
-(`CLANG_ENABLE_MODULES`) and "Link Frameworks Automatically" 
-(`CLANG_MODULES_AUTOLINK`) in your app target's build settings.
-
-Unfortunately, some framework are not weakly linked automatically which
-will cause your app to crash at launch on older systems that don't support
-the respective framework. These frameworks must be explicitly linked in
-your app, and set to "Optional". Feel free to duplicate rdar://28008958
-(https://openradar.appspot.com/search?query=28008958).
-
-![Weak-linking a framework in Xcode](assets/weak_linking.png)
-
-This is currently required for the *Speech* framework, and only if you
-enable the speech permission category.
 
 ## ISHPermissionsViewController
 
