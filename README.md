@@ -72,7 +72,10 @@ Please file an issue for missing permissions.
 
 ## Sample App
 
-A sample app will be provided in a separate repository. Coming (back) soon.
+In order to demonstrate all steps that are required to use *ISHPermissionKit*,
+the sample application has a [separate repository](https://github.com/iosphere/ISHPermissionKitSampleApp).
+
+The sample app uses the [dynamically-linked framework](#dynamically-linked-framework).
 
 ## Installation
 
