@@ -8,8 +8,10 @@
 
 #import "ISHPermissionRequest.h"
 #import "ISHPermissionRequest+Private.h"
-@import CoreLocation;
+
+#ifdef DEBUG
 @import UIKit;
+#endif
 
 @interface ISHPermissionRequest ()
 @property (nonatomic, readwrite) ISHPermissionCategory permissionCategory;

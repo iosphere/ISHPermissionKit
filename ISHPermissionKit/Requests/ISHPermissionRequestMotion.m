@@ -9,6 +9,8 @@
 #import "ISHPermissionRequestMotion.h"
 #import "ISHPermissionRequest+Private.h"
 
+#ifdef ISHPermissionRequestMotionEnabled
+
 @import CoreMotion;
 
 @interface ISHPermissionRequestMotion ()
@@ -61,3 +63,5 @@
 #endif
 
 @end
+
+#endif

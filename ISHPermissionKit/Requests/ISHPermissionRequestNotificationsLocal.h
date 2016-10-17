@@ -6,8 +6,11 @@
 //  Copyright (c) 2014 iosphere GmbH. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "ISHPermissionRequest.h"
+
+#ifdef ISHPermissionRequestNotificationsEnabled
+
+@class UIUserNotificationSettings;
 
 /**
  *  Permission request for sending local notifications.
@@ -24,3 +27,5 @@
 @property (nonatomic, nonnull) UIUserNotificationSettings *notificationSettings;
 
 @end
+
+#endif

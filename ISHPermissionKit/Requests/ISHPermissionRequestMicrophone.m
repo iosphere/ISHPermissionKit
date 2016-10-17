@@ -9,6 +9,8 @@
 #import "ISHPermissionRequestMicrophone.h"
 #import "ISHPermissionRequest+Private.h"
 
+#ifdef ISHPermissionRequestMicrophoneEnabled
+
 @import AVFoundation;
 
 @implementation ISHPermissionRequestMicrophone
@@ -75,3 +77,5 @@
 #endif
 
 @end
+
+#endif

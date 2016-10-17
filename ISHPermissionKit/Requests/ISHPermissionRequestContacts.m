@@ -9,6 +9,8 @@
 #import "ISHPermissionRequestContacts.h"
 #import "ISHPermissionRequest+Private.h"
 
+#ifdef ISHPermissionRequestContactsEnabled
+
 @import Contacts;
 
 @implementation ISHPermissionRequestContacts
@@ -68,3 +70,5 @@
 #endif
 
 @end
+
+#endif

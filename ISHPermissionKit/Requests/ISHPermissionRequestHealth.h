@@ -7,6 +7,9 @@
 //
 
 #import "ISHPermissionRequest.h"
+
+#ifdef ISHPermissionRequestHealthKitEnabled
+
 @class HKObjectType;
 @class HKSampleType;
 
@@ -26,3 +29,5 @@
 @property (nonatomic, nullable) NSSet<HKSampleType *> *objectTypesWrite;
 
 @end
+
+#endif

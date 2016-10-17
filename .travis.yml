@@ -5,14 +5,11 @@ install:
 
 script:
   - set -o pipefail
-# Build framework variants and clean all targets between builds
-  - xcodebuild -project ISHPermissionKit.xcodeproj -scheme ISHPermissionKit+HealthKit -destination 'platform=iOS Simulator,name=iPhone 6' -derivedDataPath build/ISHPermissionKitHealth clean build | xcpretty
+# Build framework target and clean all targets between builds
   - xcodebuild -project ISHPermissionKit.xcodeproj -scheme ISHPermissionKit -destination 'platform=iOS Simulator,name=iPhone 6' -derivedDataPath build/ISHPermissionKit clean build | xcpretty
 
-# Build static lib variants and clean all targets between builds
+# Build static lib target and clean all targets between builds
   - xcodebuild -project ISHPermissionKit.xcodeproj -scheme ISHPermissionKitLib -destination 'platform=iOS Simulator,name=iPhone 6'  -derivedDataPath build/ISHPermissionKitLib clean build | xcpretty
-  - xcodebuild -project ISHPermissionKit.xcodeproj -scheme 'ISHPermissionKitLib+HealthKit' -destination 'platform=iOS Simulator,name=iPhone 6' -derivedDataPath build/ISHPermissionKitLibHealth clean build | xcpretty
 
 # run tests
-  - xcodebuild -project ISHPermissionKit.xcodeproj -scheme 'ISHPermissionKitLib+HealthKit' -destination 'platform=iOS Simulator,name=iPhone 6' -derivedDataPath build/ISHPermissionKitLibHealth clean test | xcpretty
-  - xcodebuild -project ISHPermissionKit.xcodeproj -scheme 'ISHPermissionKit+HealthKit' -destination 'platform=iOS Simulator,name=iPhone 6' -derivedDataPath build/ISHPermissionKitHealth clean test | xcpretty
+  - xcodebuild -project ISHPermissionKit.xcodeproj -scheme 'ISHPermissionKit' -destination 'platform=iOS Simulator,name=iPhone 6' -derivedDataPath build/ISHPermissionKit clean test | xcpretty

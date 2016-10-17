@@ -10,6 +10,10 @@
 #import "ISHPermissionRequest+Private.h"
 #import "ISHPermissionRequestUserNotification.h"
 
+#ifdef ISHPermissionRequestNotificationsEnabled
+
+@import UIKit;
+
 @interface ISHPermissionRequestNotificationsLocal ()
 @property (copy) ISHPermissionRequestCompletionBlock completionBlock;
 @end
@@ -91,3 +95,5 @@
 }
 
 @end
+
+#endif

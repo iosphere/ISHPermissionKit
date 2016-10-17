@@ -8,6 +8,8 @@
 
 #import "ISHPermissionRequestNotificationsLocal.h"
 
+#ifdef ISHPermissionRequestNotificationsEnabled
+
 /**
  *  Permission request for remote notifications.
  *
@@ -15,3 +17,5 @@
  */
 @interface ISHPermissionRequestNotificationsRemote : ISHPermissionRequestNotificationsLocal
 @end
+
+#endif

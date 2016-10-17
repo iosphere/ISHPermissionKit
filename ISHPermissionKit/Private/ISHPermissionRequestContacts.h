@@ -6,7 +6,9 @@
 //  Copyright © 2016 iosphere GmbH. All rights reserved.
 //
 
-#import <ISHPermissionKit/ISHPermissionKit.h>
+#import "ISHPermissionRequest.h"
+
+#ifdef ISHPermissionRequestContactsEnabled
 
 /**
  *  Permission request for the user's contacts.
@@ -16,3 +18,5 @@
 @interface ISHPermissionRequestContacts : ISHPermissionRequest
 
 @end
+
+#endif

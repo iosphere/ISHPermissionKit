@@ -10,32 +10,19 @@
 #import "ISHPermissionRequest+Private.h"
 
 #ifdef ISHPermissionRequestHealthKitEnabled
-@import HealthKit;
 
+@import HealthKit;
 
 @interface ISHPermissionRequestHealth ()
 @property (nonatomic) HKHealthStore *store;
 @end
-#endif
 
 @implementation ISHPermissionRequestHealth
-
-- (instancetype)init {
-    self = [super init];
-    #ifndef ISHPermissionRequestHealthKitEnabled
-    NSAssert(false, @"HealthKit permission requests require the use of the ISHPermissionKit+HealthKit framework "
-                    @"or static library. This assertion was most likely triggered because your app links to the "
-                    @"wrong target. Please check your project settings. If you use CocoaPods, you must use the"
-                    @"ISHPermissionKit/Health pod in your Podfile.");
-    #endif
-    return self;
-}
 
 - (BOOL)allowsConfiguration {
     return YES;
 }
 
-#ifdef ISHPermissionRequestHealthKitEnabled
 - (HKHealthStore *)store {
     if (!_store) {
         _store = [HKHealthStore new];
@@ -43,27 +30,16 @@
     
     return _store;
 }
-#else 
-- (id)store {
-    return nil;
-}
-#endif
 
 + (BOOL)useFallBack {
-#ifndef ISHPermissionRequestHealthKitEnabled
-    return YES;
-#else
     return ![HKHealthStore isHealthDataAvailable];
-#endif
 }
 
 - (ISHPermissionState)permissionState {
     if ([ISHPermissionRequestHealth useFallBack]) {
         return ISHPermissionStateUnsupported;
     }
-#ifndef ISHPermissionRequestHealthKitEnabled
-    return ISHPermissionStateUnsupported; // should already be covered by above Fallback
-#else
+
     NSMutableSet *allTypes = [NSMutableSet set];
     NSSet *readableTypes = self.objectTypesRead;
 
@@ -106,8 +82,8 @@
     if (countDenied > countAuthorized) {
         return ISHPermissionStateDenied;
     }
+
     return ISHPermissionStateAuthorized;
-#endif  // #ifndef ISHPermissionRequestHealthKitEnabled
 }
 
 - (void)requestUserPermissionWithCompletionBlock:(ISHPermissionRequestCompletionBlock)completion {
@@ -115,7 +91,6 @@
         return;
     }
     
-#ifdef ISHPermissionRequestHealthKitEnabled
     [self.store requestAuthorizationToShareTypes:self.objectTypesWrite
                                        readTypes:self.objectTypesRead
                                       completion:^(BOOL success, NSError *error) {
@@ -130,9 +105,6 @@
                                               completion(self, [self permissionState], externalError);
                                           });
                                       }];
-#else
-    completion(self, ISHPermissionStateUnsupported, nil);
-#endif
 }
 
 #if DEBUG
@@ -152,3 +124,5 @@
 #endif
 
 @end
+
+#endif

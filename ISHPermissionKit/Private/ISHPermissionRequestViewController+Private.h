@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 iosphere GmbH. All rights reserved.
 //
 
+#import "ISHPermissionRequestViewController.h"
+
 @protocol ISHPermissionRequestViewControllerDelegate;
 @class ISHPermissionRequest;
 

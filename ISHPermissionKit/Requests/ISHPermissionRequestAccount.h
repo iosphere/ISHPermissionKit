@@ -8,6 +8,8 @@
 
 #import "ISHPermissionRequest.h"
 
+#ifdef ISHPermissionRequestSocialAccountsEnabled
+
 /**
  *  Permission request for an account (social media).
  * 
@@ -32,3 +34,5 @@
 @property (nonatomic, nullable) NSDictionary *options;
 
 @end
+
+#endif

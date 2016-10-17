@@ -6,7 +6,9 @@
 //  Copyright © 2016 iosphere GmbH. All rights reserved.
 //
 
-#import <ISHPermissionKit/ISHPermissionKit.h>
+#import "ISHPermissionRequest.h"
+
+#ifdef ISHPermissionRequestSpeechEnabled
 #ifdef NSFoundationVersionNumber_iOS_9_0
 
 /**
@@ -18,4 +20,6 @@
 @interface ISHPermissionRequestSpeechRecognition : ISHPermissionRequest
 
 @end
+
+#endif
 #endif

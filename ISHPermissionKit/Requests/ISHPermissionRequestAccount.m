@@ -9,6 +9,8 @@
 #import "ISHPermissionRequestAccount.h"
 #import "ISHPermissionRequest+Private.h"
 
+#ifdef ISHPermissionRequestSocialAccountsEnabled
+
 @import Accounts;
 
 @interface ISHPermissionRequestAccount ()
@@ -110,3 +112,5 @@
 }
 
 @end
+
+#endif
