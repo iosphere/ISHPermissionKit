@@ -16,14 +16,14 @@
 @implementation ISHPermissionRequestPhotoCamera
 
 - (ISHPermissionState)permissionState {
-    AVCaptureDevice *inputDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    AVCaptureDeviceInput *captureInput = [AVCaptureDeviceInput deviceInputWithDevice:inputDevice error:nil];
-    if (!captureInput) {
+    NSString *mediaTypeStringCamera = AVMediaTypeVideo;
+    AVCaptureDevice *inputDevice = [AVCaptureDevice defaultDeviceWithMediaType:mediaTypeStringCamera];
+    if (![inputDevice hasMediaType:mediaTypeStringCamera]) {
+        // this is mainly the simulator
         return ISHPermissionStateUnsupported;
     }
     
-    AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
-    switch (authStatus) {
+    switch ([AVCaptureDevice authorizationStatusForMediaType:mediaTypeStringCamera]) {
         case AVAuthorizationStatusAuthorized:
             return ISHPermissionStateAuthorized;
 
@@ -34,7 +34,6 @@
         case AVAuthorizationStatusNotDetermined:
             return [self internalPermissionState];
     }
-
 }
 
 - (void)requestUserPermissionWithCompletionBlock:(ISHPermissionRequestCompletionBlock)completion {
