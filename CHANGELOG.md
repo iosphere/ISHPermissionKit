@@ -6,6 +6,7 @@
 * New permission types: Siri, photo library, speech recognition,
   user notifications, music library
 * All required usage descriptions will be asserted in `DEBUG`
+* Carthage compatibility
 
 ## 1.2.0
 
