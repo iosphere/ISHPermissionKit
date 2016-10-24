@@ -168,6 +168,11 @@
 
     for (NSNumber *boxedCategory in categories) {
         ISHPermissionRequest *request = [ISHPermissionRequest requestForCategory:boxedCategory.unsignedIntegerValue];
+
+        if (!request) {
+            NSAssert(NO, @"Invalid category: Could not create request for %@. Make sure to enable all required feature flags when building ISHPermissionKit.", boxedCategory);
+            continue;
+        }
         
         if (dataSourceConfiguresRequests && request.allowsConfiguration) {
             [self.dataSource permissionsViewController:self didConfigureRequest:request];
