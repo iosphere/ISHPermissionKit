@@ -1,7 +1,8 @@
 # <img src="icon.png" align="center" width="40" height="40"> ISHPermissionKit
 
 [![Travis Build Status](https://travis-ci.org/iosphere/ISHPermissionKit.svg?branch=master)](http://travis-ci.org/iosphere/ISHPermissionKit)&nbsp;
-[![Version](http://cocoapod-badges.herokuapp.com/v/ISHPermissionKit/badge.png)](http://cocoadocs.org/docsets/ISHPermissionKit)
+[![Version](http://cocoapod-badges.herokuapp.com/v/ISHPermissionKit/badge.png)](http://cocoadocs.org/docsets/ISHPermissionKit)&nbsp;
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 *ISHPermissionKit* provides a polite and unified way of asking for permission on iOS. It
 also provides UI to explain the permission requirements before presenting
@@ -112,6 +113,9 @@ Libraries* phases, and that a new *Embed Frameworks* phase has been created.
 
 **You must [provide a build configuration](#providing-a-build-configuration) manually.**
 
+You can use [Carthage](https://github.com/Carthage/Carthage) to fetch and build
+the framework. You will still have to provide a build configuration manually.
+
 The framework can be used as a module, so you can use `@import ISHPermissionKit;`
 to import all public headers.  
 Further reading on Modules: [Clang Documentation](http://clang.llvm.org/docs/Modules.html)
@@ -123,8 +127,10 @@ least iOS 8 is required. If you use Swift, you must use dynamic frameworks.
 
 When building the static or dynamic library, *ISHPermissionKit* will look for a
 file named `ISHPermissionKitAppConfiguration.xcconfig` in the same directory as
-*ISHPermissionKit*'s root directory (not *within* the root directory). This file
-allows you to set preprocessor flags that will be used when compiling the framework.
+*ISHPermissionKit*'s root directory (not *within* the root directory), and two
+levels further up the directory hierarchy. Configuration files in either
+location allow you to set preprocessor flags that will be used when compiling
+the framework.
 
 We strongly recommend to start with a copy of the template config provided in this
 repository, [`ISHPermissionKitAppConfiguration.xcconfig`](/ISHPermissionKitAppConfiguration.xcconfig).
