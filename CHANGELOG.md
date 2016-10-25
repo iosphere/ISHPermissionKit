@@ -1,11 +1,14 @@
 # <img src="icon.png" align="center" width="40" height="40"> Changelog
 
-## 2.0 (Work in Progress)
+## 2.0
+
+This release requires additional setup to ensure your apps pass binary validation in iTunes Connect. Please study the [README](/README.md) file carefully.
 
 * Ready for iOS 10
 * New permission types: Siri, photo library, speech recognition,
   user notifications, music library
 * All required usage descriptions will be asserted in `DEBUG`
+* All required usage descriptions will be asserted in `DEBUG` at the time of requesting a permission
 * Carthage compatibility
 
 ## 1.2.0
