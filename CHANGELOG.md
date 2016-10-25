@@ -7,7 +7,6 @@ This release requires additional setup to ensure your apps pass binary validatio
 * Ready for iOS 10
 * New permission types: Siri, photo library, speech recognition,
   user notifications, music library
-* All required usage descriptions will be asserted in `DEBUG`
 * All required usage descriptions will be asserted in `DEBUG` at the time of requesting a permission
 * Carthage compatibility
 
