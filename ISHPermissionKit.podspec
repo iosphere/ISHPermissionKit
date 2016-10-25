@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = 'ISHPermissionKit'
-  s.version      = '1.2.0'
+  s.version      = '2.0.0'
   s.summary      = 'A polite and unified way of asking for permission on iOS.'
   s.description  = 'This framework provides a unified way of asking for user permissions on iOS. It also 
                     provides UI to explain the permission requirements before presenting the system
