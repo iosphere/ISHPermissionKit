@@ -17,7 +17,7 @@
 
 @property (nonatomic) NSUInteger currentIndex;
 @property (nonatomic) NSArray *permissionCategories;
-@property (nonatomic) NSArray *permissionRequests;
+@property (nonatomic, readwrite) NSArray<ISHPermissionRequest *> *permissionRequests;
 @property (nonatomic) ISHPermissionRequestViewController *currentViewController;
 
 @property (nonatomic, readwrite, weak) id <ISHPermissionsViewControllerDataSource> dataSource;
