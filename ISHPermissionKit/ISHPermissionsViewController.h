@@ -40,6 +40,17 @@ typedef void (^ISHPermissionsViewControllerErrorBlock)(ISHPermissionCategory, NS
 @interface ISHPermissionsViewController : UIViewController
 
 /**
+ *  Includes all permission requests that can be requested, so the number of permission
+ *  requests may be smaller than the number of categories provided during instantiation.
+ *
+ *  This property can be used to make the permissions controller figure out the
+ *  requestable permission requests and have them configured by the data source, but
+ *  not use the permissions controller for display, e.g., to trigger the system prompts
+ *  directly (through the permission request) without bypassing permission kit entirely.
+ */
+@property (nonatomic, readonly, nullable) NSArray<ISHPermissionRequest *> *permissionRequests;
+
+/**
  *  Creates a new instance of ISHPermissionsViewController to request permission for a single category
  *  or a sequence of categories.
  *
