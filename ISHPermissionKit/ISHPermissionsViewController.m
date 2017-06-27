@@ -271,7 +271,13 @@
                                     }
                                 }];
     } else {
-        [[self view] addSubview:toViewController.view];
+        if ([self.view isKindOfClass:[UIVisualEffectView class]]) {
+            UIVisualEffectView *effectView = (UIVisualEffectView *)self.view;
+            [effectView.contentView addSubview:toViewController.view];
+        } else {
+            [self.view addSubview:toViewController.view];
+        }
+
         [toViewController.view setFrame:self.view.bounds];
         [self completedTransitionFromViewController:nil toViewController:toViewController];
     }
