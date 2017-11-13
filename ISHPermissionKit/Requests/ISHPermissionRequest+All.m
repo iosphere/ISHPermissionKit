@@ -150,7 +150,9 @@
     [request setPermissionCategory:category];
     
     NSAssert(request, @"Request not implemented for category %@", @(category));
-    return request;
+
+    // fall back to a dummy request of ISHPermissionCategoryInvalid to satisfy nonnull promise
+    return request ?: [ISHPermissionRequest new];
 }
 
 @end
