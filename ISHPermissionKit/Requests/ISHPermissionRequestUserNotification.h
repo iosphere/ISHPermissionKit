@@ -11,7 +11,7 @@
 #ifdef ISHPermissionRequestNotificationsEnabled
 #ifdef NSFoundationVersionNumber_iOS_9_0
 
-@import UserNotifications;
+#import <UserNotifications/UserNotifications.h>
 
 /**
  *  Permission request to present local and/or remote
