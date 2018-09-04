@@ -87,11 +87,9 @@
         });
     }
 
-#ifdef NSFoundationVersionNumber_iOS_9_0
     // we also load a new instance of the related user notification so it can update
     // its internal state
     __unused id modernPermission = [[ISHPermissionRequestUserNotification alloc] init];
-#endif
 }
 
 @end

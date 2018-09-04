@@ -10,7 +10,6 @@
 #import "ISHPermissionRequest+Private.h"
 
 #ifdef ISHPermissionRequestNotificationsEnabled
-#ifdef NSFoundationVersionNumber_iOS_9_0
 
 @import UIKit;
 
@@ -105,5 +104,4 @@
 
 @end
 
-#endif
 #endif

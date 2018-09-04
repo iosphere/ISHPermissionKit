@@ -283,8 +283,6 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
     ISHPermissionCategoryReminders = 8250,
 #endif
 
-// These categories requires Xcode 8/iOS 10 SDK
-#ifdef NSFoundationVersionNumber_iOS_9_0
 #ifdef ISHPermissionRequestSiriEnabled
     /**
      *  Permission required for Siri to access your app's data.
@@ -337,7 +335,6 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  the UserNotification framework.
      */
     ISHPermissionCategoryUserNotification NS_ENUM_AVAILABLE_IOS(10_0) = 6500,
-#endif
 #endif
 
 #ifdef ISHPermissionRequestMusicLibraryEnabled
@@ -433,7 +430,6 @@ static inline NSString * _Nonnull ISHStringFromPermissionCategory(ISHPermissionC
             return @"ISHPermissionCategoryMusicLibrary";
 #endif
 
-#ifdef NSFoundationVersionNumber_iOS_9_0
 #ifdef ISHPermissionRequestSiriEnabled
         case ISHPermissionCategorySiri:
             return @"ISHPermissionCategorySiri";
@@ -447,7 +443,6 @@ static inline NSString * _Nonnull ISHStringFromPermissionCategory(ISHPermissionC
 #ifdef ISHPermissionRequestNotificationsEnabled
         case ISHPermissionCategoryUserNotification:
             return @"ISHPermissionCategoryUserNotification";
-#endif
 #endif
 
         case ISHPermissionCategoryInvalid:

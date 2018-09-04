@@ -114,7 +114,6 @@
             break;
 #endif
 
-#ifdef NSFoundationVersionNumber_iOS_9_0
 #ifdef ISHPermissionRequestSiriEnabled
         case ISHPermissionCategorySiri:
             request = [ISHPermissionRequestSiri new];
@@ -131,7 +130,6 @@
         case ISHPermissionCategoryUserNotification:
             request = [ISHPermissionRequestUserNotification new];
             break;
-#endif
 #endif
 
         case ISHPermissionCategoryInvalid:

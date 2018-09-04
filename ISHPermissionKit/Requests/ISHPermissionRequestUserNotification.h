@@ -9,7 +9,6 @@
 #import "ISHPermissionRequest.h"
 
 #ifdef ISHPermissionRequestNotificationsEnabled
-#ifdef NSFoundationVersionNumber_iOS_9_0
 
 #import <UserNotifications/UserNotifications.h>
 
@@ -43,5 +42,4 @@
 
 @end
 
-#endif
 #endif
