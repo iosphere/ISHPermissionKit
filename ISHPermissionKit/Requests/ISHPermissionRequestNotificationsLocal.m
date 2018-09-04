@@ -38,10 +38,6 @@
 }
 
 - (ISHPermissionState)permissionState {
-    if (![UIUserNotificationSettings class]) {
-        return ISHPermissionStateAuthorized;
-    }
-    
     UIUserNotificationSettings *noticationSettings = [[UIApplication sharedApplication] currentUserNotificationSettings];
     
     if (!noticationSettings || (noticationSettings.types == UIUserNotificationTypeNone)) {

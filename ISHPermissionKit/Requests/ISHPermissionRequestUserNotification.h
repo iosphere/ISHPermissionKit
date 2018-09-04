@@ -38,7 +38,7 @@
  *
  *  @sa -permissionsViewController:didConfigureRequest:
  */
-@property (nonatomic) UNAuthorizationOptions desiredOptions;
+@property (nonatomic) UNAuthorizationOptions desiredOptions __IOS_AVAILABLE(10.0);
 
 @end
 

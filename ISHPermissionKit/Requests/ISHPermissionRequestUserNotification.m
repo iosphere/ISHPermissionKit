@@ -40,11 +40,6 @@
 }
 
 - (ISHPermissionState)permissionState {
-    if (![UIUserNotificationSettings class]) {
-        // no need to request permission before iOS 8
-        return ISHPermissionStateAuthorized;
-    }
-
     if (![UNUserNotificationCenter class]) {
         // cannot request using the new API: should use
         // ISHPermissionCategoryNotificationRemote/...Local
@@ -64,6 +59,7 @@
         case UNAuthorizationStatusDenied:
             return ISHPermissionStateDenied;
 
+        case UNAuthorizationStatusProvisional:
         case UNAuthorizationStatusNotDetermined:
             return ISHPermissionStateUnknown;
     }
