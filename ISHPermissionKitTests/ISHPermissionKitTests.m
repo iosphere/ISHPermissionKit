@@ -23,7 +23,7 @@
                                @(ISHPermissionCategoryLocationAlways),
                                @(ISHPermissionCategoryLocationWhenInUse),
                                @(ISHPermissionCategoryMicrophone),
-                               @(ISHPermissionCategoryPhotoLibrary),
+                               @(ISHPermissionCategoryModernPhotoLibrary),
                                @(ISHPermissionCategoryPhotoCamera),
                                @(ISHPermissionCategoryNotificationLocal),
                                @(ISHPermissionCategoryNotificationRemote),
@@ -31,7 +31,6 @@
                                @(ISHPermissionCategorySocialTwitter),
                                @(ISHPermissionCategorySocialSinaWeibo),
                                @(ISHPermissionCategorySocialTencentWeibo),
-                               @(ISHPermissionCategoryAddressBook),
                                @(ISHPermissionCategoryEvents),
                                @(ISHPermissionCategoryReminders),
                                ];
