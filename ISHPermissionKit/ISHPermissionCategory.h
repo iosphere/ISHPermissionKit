@@ -73,9 +73,9 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  ISHPermissionsViewController with WhenInUse before Always.
      *
      *  The app must also provide a localized NSLocationAlwaysUsageDescription
-     *  in the Info PLIST. Please consult the app review guidelines for special
-     *  requirements for apps that access location data, specifically section
-     *  5.1 (Privacy).
+     *  and NSLocationAlwaysAndWhenInUseUsageDescription in the Info PLIST.
+     *  Please consult the app review guidelines for special requirements for
+     *  apps that access location data, specifically section 5.1 (Privacy).
      *
      *  To enable this category, you must set the preprocessor flag
      *  ISHPermissionRequestLocationEnabled. This will link CoreLocation.
