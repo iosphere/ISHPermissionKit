@@ -1,6 +1,11 @@
 # <img src="icon.png" align="center" width="40" height="40"> Changelog
 
-## 2.1
+## 2.1.1
+
+* Deprecate social permissions
+* Add debug hint when missing 'NSLocationAlwaysAndWhenInUseUsageDescription'
+
+## 2.1.0
 
 * Ready for Xcode 10 and iOS 12
 * Bump deployment target to iOS 9
