@@ -9,7 +9,6 @@
 #import "ISHPermissionRequest.h"
 
 #ifdef ISHPermissionRequestNotificationsEnabled
-#ifdef NSFoundationVersionNumber_iOS_9_0
 
 #import <UserNotifications/UserNotifications.h>
 
@@ -39,9 +38,8 @@
  *
  *  @sa -permissionsViewController:didConfigureRequest:
  */
-@property (nonatomic) UNAuthorizationOptions desiredOptions;
+@property (nonatomic) UNAuthorizationOptions desiredOptions __IOS_AVAILABLE(10.0);
 
 @end
 
-#endif
 #endif

@@ -10,7 +10,6 @@
 #import "ISHPermissionRequest+Private.h"
 
 #ifdef ISHPermissionRequestNotificationsEnabled
-#ifdef NSFoundationVersionNumber_iOS_9_0
 
 @import UIKit;
 
@@ -41,11 +40,6 @@
 }
 
 - (ISHPermissionState)permissionState {
-    if (![UIUserNotificationSettings class]) {
-        // no need to request permission before iOS 8
-        return ISHPermissionStateAuthorized;
-    }
-
     if (![UNUserNotificationCenter class]) {
         // cannot request using the new API: should use
         // ISHPermissionCategoryNotificationRemote/...Local
@@ -65,6 +59,16 @@
         case UNAuthorizationStatusDenied:
             return ISHPermissionStateDenied;
 
+        /**
+         *   You can ask for provisional permission (you must do this explicitly via desiredOptions,
+         *   which will allow you to send one quiet (no alert/sound, but in the notification center)
+         *   notification. Users can change their settings directly from notification center.
+         *
+         *   After requesting provisional permission, the auth state stays in UNAuthorizationStatusProvisional
+         *   until the user has made a decision. During that time, you may also request general permission,
+         *   which is why we treat it as UNAuthorizationStatusNotDetermined here.
+         */
+        case UNAuthorizationStatusProvisional:
         case UNAuthorizationStatusNotDetermined:
             return ISHPermissionStateUnknown;
     }
@@ -105,5 +109,4 @@
 
 @end
 
-#endif
 #endif

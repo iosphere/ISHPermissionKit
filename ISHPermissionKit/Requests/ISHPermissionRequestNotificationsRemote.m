@@ -7,22 +7,10 @@
 //
 
 #import "ISHPermissionRequestNotificationsRemote.h"
-#import "ISHPermissionRequest+Private.h"
 
 #ifdef ISHPermissionRequestNotificationsEnabled
 
-@import UIKit;
-
 @implementation ISHPermissionRequestNotificationsRemote
-
-- (ISHPermissionState)permissionState {
-    if (![[UIApplication sharedApplication] respondsToSelector:@selector(isRegisteredForRemoteNotifications)]) {
-        return ISHPermissionStateUnsupported;
-    }
-    
-    return [super permissionState];
-}
-
 @end
 
 #endif

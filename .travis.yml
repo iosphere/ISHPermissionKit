@@ -1,15 +1,15 @@
 language: objective-c
-osx_image: xcode8
+osx_image: xcode10
 install:
   - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
 
 script:
   - set -o pipefail
 # Build framework target and clean all targets between builds
-  - xcodebuild -project ISHPermissionKit.xcodeproj -scheme ISHPermissionKit -destination 'platform=iOS Simulator,name=iPhone 6' -derivedDataPath build/ISHPermissionKit clean build | xcpretty
+  - xcodebuild -project ISHPermissionKit.xcodeproj -scheme ISHPermissionKit -destination 'platform=iOS Simulator,name=iPhone 8' -derivedDataPath build/ISHPermissionKit clean build | xcpretty
 
 # Build static lib target and clean all targets between builds
-  - xcodebuild -project ISHPermissionKit.xcodeproj -scheme ISHPermissionKitLib -destination 'platform=iOS Simulator,name=iPhone 6'  -derivedDataPath build/ISHPermissionKitLib clean build | xcpretty
+  - xcodebuild -project ISHPermissionKit.xcodeproj -scheme ISHPermissionKitLib -destination 'platform=iOS Simulator,name=iPhone 8'  -derivedDataPath build/ISHPermissionKitLib clean build | xcpretty
 
 # run tests
-  - xcodebuild -project ISHPermissionKit.xcodeproj -scheme 'ISHPermissionKit' -destination 'platform=iOS Simulator,name=iPhone 6' -derivedDataPath build/ISHPermissionKit clean test | xcpretty
+  - xcodebuild -project ISHPermissionKit.xcodeproj -scheme 'ISHPermissionKit' -destination 'platform=iOS Simulator,name=iPhone 8' -derivedDataPath build/ISHPermissionKit clean test | xcpretty

@@ -42,9 +42,6 @@
 		DC5E5BAE195D67500092EAFD /* ISHPermissionRequestMicrophone.h in Headers */ = {isa = PBXBuildFile; fileRef = DC5E5BAC195D67500092EAFD /* ISHPermissionRequestMicrophone.h */; };
 		DC5E5BAF195D67500092EAFD /* ISHPermissionRequestMicrophone.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5E5BAD195D67500092EAFD /* ISHPermissionRequestMicrophone.m */; };
 		DC5E5BB0195D67500092EAFD /* ISHPermissionRequestMicrophone.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5E5BAD195D67500092EAFD /* ISHPermissionRequestMicrophone.m */; };
-		DC5E5BB3195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = DC5E5BB1195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.h */; };
-		DC5E5BB4195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5E5BB2195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.m */; };
-		DC5E5BB5195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5E5BB2195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.m */; };
 		DC5E5BB8195D78800092EAFD /* ISHPermissionRequestPhotoCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = DC5E5BB6195D78800092EAFD /* ISHPermissionRequestPhotoCamera.h */; };
 		DC5E5BB9195D78800092EAFD /* ISHPermissionRequestPhotoCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5E5BB7195D78800092EAFD /* ISHPermissionRequestPhotoCamera.m */; };
 		DC5E5BBA195D78800092EAFD /* ISHPermissionRequestPhotoCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5E5BB7195D78800092EAFD /* ISHPermissionRequestPhotoCamera.m */; };
@@ -68,11 +65,6 @@
 		DC6A8A8A19633180005AC5BD /* ISHPermissionRequestMotion.h in Headers */ = {isa = PBXBuildFile; fileRef = DCAEF7BF195C5B6B0074EB5B /* ISHPermissionRequestMotion.h */; };
 		DC6A8A8B19633180005AC5BD /* ISHPermissionRequestNotificationsLocal.h in Headers */ = {isa = PBXBuildFile; fileRef = DC5E5BC1195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC6A8A8C19633180005AC5BD /* ISHPermissionRequestPhotoCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = DC5E5BB6195D78800092EAFD /* ISHPermissionRequestPhotoCamera.h */; };
-		DC6A8A8D19633180005AC5BD /* ISHPermissionRequestPhotoLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = DC5E5BB1195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.h */; };
-		DC6A8ACD19641549005AC5BD /* ISHPermissionRequestAddressBook.h in Headers */ = {isa = PBXBuildFile; fileRef = DC6A8ACB19641549005AC5BD /* ISHPermissionRequestAddressBook.h */; };
-		DC6A8ACE19641549005AC5BD /* ISHPermissionRequestAddressBook.h in Headers */ = {isa = PBXBuildFile; fileRef = DC6A8ACB19641549005AC5BD /* ISHPermissionRequestAddressBook.h */; };
-		DC6A8ACF19641549005AC5BD /* ISHPermissionRequestAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6A8ACC19641549005AC5BD /* ISHPermissionRequestAddressBook.m */; };
-		DC6A8AD019641549005AC5BD /* ISHPermissionRequestAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6A8ACC19641549005AC5BD /* ISHPermissionRequestAddressBook.m */; };
 		DC6A8AD319642793005AC5BD /* ISHPermissionRequestEventStore.h in Headers */ = {isa = PBXBuildFile; fileRef = DC6A8AD119642793005AC5BD /* ISHPermissionRequestEventStore.h */; };
 		DC6A8AD419642793005AC5BD /* ISHPermissionRequestEventStore.h in Headers */ = {isa = PBXBuildFile; fileRef = DC6A8AD119642793005AC5BD /* ISHPermissionRequestEventStore.h */; };
 		DC6A8AD519642793005AC5BD /* ISHPermissionRequestEventStore.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6A8AD219642793005AC5BD /* ISHPermissionRequestEventStore.m */; };
@@ -157,15 +149,11 @@
 		DC1A80AF195B2C960069235F /* ISHPermissionRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestViewController.m; sourceTree = "<group>"; };
 		DC5E5BAC195D67500092EAFD /* ISHPermissionRequestMicrophone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISHPermissionRequestMicrophone.h; path = ../Private/ISHPermissionRequestMicrophone.h; sourceTree = "<group>"; };
 		DC5E5BAD195D67500092EAFD /* ISHPermissionRequestMicrophone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestMicrophone.m; sourceTree = "<group>"; };
-		DC5E5BB1195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISHPermissionRequestPhotoLibrary.h; path = ../Private/ISHPermissionRequestPhotoLibrary.h; sourceTree = "<group>"; };
-		DC5E5BB2195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestPhotoLibrary.m; sourceTree = "<group>"; };
 		DC5E5BB6195D78800092EAFD /* ISHPermissionRequestPhotoCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISHPermissionRequestPhotoCamera.h; path = ../Private/ISHPermissionRequestPhotoCamera.h; sourceTree = "<group>"; };
 		DC5E5BB7195D78800092EAFD /* ISHPermissionRequestPhotoCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestPhotoCamera.m; sourceTree = "<group>"; };
 		DC5E5BC1195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHPermissionRequestNotificationsLocal.h; sourceTree = "<group>"; };
 		DC5E5BC2195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestNotificationsLocal.m; sourceTree = "<group>"; };
 		DC5E5BC6195DC1F30092EAFD /* ISHPermissionRequest+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ISHPermissionRequest+Private.h"; path = "../Private/ISHPermissionRequest+Private.h"; sourceTree = "<group>"; };
-		DC6A8ACB19641549005AC5BD /* ISHPermissionRequestAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISHPermissionRequestAddressBook.h; path = ../Private/ISHPermissionRequestAddressBook.h; sourceTree = "<group>"; };
-		DC6A8ACC19641549005AC5BD /* ISHPermissionRequestAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestAddressBook.m; sourceTree = "<group>"; };
 		DC6A8AD119642793005AC5BD /* ISHPermissionRequestEventStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISHPermissionRequestEventStore.h; path = ../Private/ISHPermissionRequestEventStore.h; sourceTree = "<group>"; };
 		DC6A8AD219642793005AC5BD /* ISHPermissionRequestEventStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestEventStore.m; sourceTree = "<group>"; };
 		DC7790B619617CD7007CB2BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -253,8 +241,6 @@
 				DC5E5BC6195DC1F30092EAFD /* ISHPermissionRequest+Private.h */,
 				DCD56C761962AEDC00508F4A /* ISHPermissionRequestAccount.h */,
 				DCD56C771962AEDC00508F4A /* ISHPermissionRequestAccount.m */,
-				DC6A8ACB19641549005AC5BD /* ISHPermissionRequestAddressBook.h */,
-				DC6A8ACC19641549005AC5BD /* ISHPermissionRequestAddressBook.m */,
 				1B09324B1D7069D90095A74A /* ISHPermissionRequestContacts.h */,
 				1B0932481D7069C70095A74A /* ISHPermissionRequestContacts.m */,
 				DC6A8AD119642793005AC5BD /* ISHPermissionRequestEventStore.h */,
@@ -277,8 +263,6 @@
 				DC96E8CD1B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.m */,
 				DC5E5BB6195D78800092EAFD /* ISHPermissionRequestPhotoCamera.h */,
 				DC5E5BB7195D78800092EAFD /* ISHPermissionRequestPhotoCamera.m */,
-				DC5E5BB1195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.h */,
-				DC5E5BB2195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.m */,
 				1B4513041D6DC02D00D6E47C /* ISHPermissionRequestSiri.h */,
 				1B4512FB1D6DC01200D6E47C /* ISHPermissionRequestSiri.m */,
 				1B96D5FF1D6F12CF0026A4FC /* ISHPermissionRequestSpeechRecognition.h */,
@@ -366,7 +350,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC6A8ACE19641549005AC5BD /* ISHPermissionRequestAddressBook.h in Headers */,
 				DC6A8A7E19633180005AC5BD /* ISHPermissionKit.h in Headers */,
 				DC6A8A8419633180005AC5BD /* ISHPermissionRequest+All.h in Headers */,
 				1B09324D1D7069D90095A74A /* ISHPermissionRequestContacts.h in Headers */,
@@ -390,7 +373,6 @@
 				1B96D6011D6F12CF0026A4FC /* ISHPermissionRequestSpeechRecognition.h in Headers */,
 				DC6A8A8A19633180005AC5BD /* ISHPermissionRequestMotion.h in Headers */,
 				DC6A8A8C19633180005AC5BD /* ISHPermissionRequestPhotoCamera.h in Headers */,
-				DC6A8A8D19633180005AC5BD /* ISHPermissionRequestPhotoLibrary.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,13 +380,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC6A8ACD19641549005AC5BD /* ISHPermissionRequestAddressBook.h in Headers */,
 				DC799EC4195C19CD00A0CA36 /* ISHPermissionRequest+All.h in Headers */,
 				DCC1BFAB195B174200362559 /* ISHPermissionKit.h in Headers */,
 				DC1A80A3195B21DC0069235F /* ISHPermissionsViewController.h in Headers */,
 				DC1A80B0195B2C960069235F /* ISHPermissionRequestViewController.h in Headers */,
 				1B09324C1D7069D90095A74A /* ISHPermissionRequestContacts.h in Headers */,
-				DC5E5BB3195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.h in Headers */,
 				DC5E5BAE195D67500092EAFD /* ISHPermissionRequestMicrophone.h in Headers */,
 				DCD56C781962AEDC00508F4A /* ISHPermissionRequestAccount.h in Headers */,
 				1B69884B1D6F40F400C8EAB8 /* ISHPermissionRequestUserNotification.h in Headers */,
@@ -490,7 +470,7 @@
 		DCC1BF9C195B174200362559 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "iosphere GmbH";
 				TargetAttributes = {
 					DCAEF7C9195C60070074EB5B = {
@@ -547,14 +527,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC5E5BC5195DAD770092EAFD /* ISHPermissionRequestNotificationsLocal.m in Sources */,
-				DC6A8AD019641549005AC5BD /* ISHPermissionRequestAddressBook.m in Sources */,
 				1B4513011D6DC01200D6E47C /* ISHPermissionRequestSiri.m in Sources */,
 				DC5E5BBA195D78800092EAFD /* ISHPermissionRequestPhotoCamera.m in Sources */,
 				DCAEF7E5195C60250074EB5B /* ISHPermissionRequestLocation.m in Sources */,
 				1B63F8991D6DF5F200B14122 /* ISHPermissionRequestModernPhotoLibrary.m in Sources */,
 				DCD56C7F1962BB8600508F4A /* ISHPermissionRequestHealth.m in Sources */,
 				DCAEF7E1195C60250074EB5B /* ISHPermissionRequestViewController.m in Sources */,
-				DC5E5BB5195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.m in Sources */,
 				1BC93E4F1D7063D20033B6E8 /* ISHPermissionRequestMusicLibrary.m in Sources */,
 				DCAEF7E6195C60250074EB5B /* ISHPermissionRequestMotion.m in Sources */,
 				DC5E5BB0195D67500092EAFD /* ISHPermissionRequestMicrophone.m in Sources */,
@@ -575,14 +553,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC5E5BC4195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.m in Sources */,
-				DC6A8ACF19641549005AC5BD /* ISHPermissionRequestAddressBook.m in Sources */,
 				1B4513001D6DC01200D6E47C /* ISHPermissionRequestSiri.m in Sources */,
 				DC5E5BB9195D78800092EAFD /* ISHPermissionRequestPhotoCamera.m in Sources */,
 				DC799EC5195C19CD00A0CA36 /* ISHPermissionRequest+All.m in Sources */,
 				1B63F8981D6DF5F200B14122 /* ISHPermissionRequestModernPhotoLibrary.m in Sources */,
 				DCD56C7E1962BB8600508F4A /* ISHPermissionRequestHealth.m in Sources */,
 				DCAEF7C2195C5B6B0074EB5B /* ISHPermissionRequestMotion.m in Sources */,
-				DC5E5BB4195D6E890092EAFD /* ISHPermissionRequestPhotoLibrary.m in Sources */,
 				1BC93E4E1D7063D20033B6E8 /* ISHPermissionRequestMusicLibrary.m in Sources */,
 				DC799EC0195C186100A0CA36 /* ISHPermissionRequestLocation.m in Sources */,
 				DC5E5BAF195D67500092EAFD /* ISHPermissionRequestMicrophone.m in Sources */,
@@ -627,21 +603,29 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_NULLABLE_TO_NONNULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -659,11 +643,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ISH_BUNDLE_VERSION = 0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ISH_BUNDLE_VERSION_MAJOR = 2;
-				ISH_BUNDLE_VERSION_MINOR = 0;
-				ISH_BUNDLE_VERSION_SHORT = "${ISH_BUNDLE_VERSION_MAJOR}.${ISH_BUNDLE_VERSION_MINOR}.${ISH_BUNDLE_VERSION}";
+				ISH_BUNDLE_VERSION_MINOR = 1;
+				ISH_BUNDLE_VERSION_PATCH = 0;
+				ISH_BUNDLE_VERSION_SHORT = "${ISH_BUNDLE_VERSION_MAJOR}.${ISH_BUNDLE_VERSION_MINOR}.${ISH_BUNDLE_VERSION_PATCH}";
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -685,7 +669,6 @@
 				FRAMEWORK_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
 				INFOPLIST_FILE = ISHPermissionKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.iosphere.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -712,7 +695,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = ISHPermissionKitTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "-ObjC";
@@ -761,21 +743,29 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_NULLABLE_TO_NONNULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -793,11 +783,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ISH_BUNDLE_VERSION = 0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ISH_BUNDLE_VERSION_MAJOR = 2;
-				ISH_BUNDLE_VERSION_MINOR = 0;
-				ISH_BUNDLE_VERSION_SHORT = "${ISH_BUNDLE_VERSION_MAJOR}.${ISH_BUNDLE_VERSION_MINOR}.${ISH_BUNDLE_VERSION}";
+				ISH_BUNDLE_VERSION_MINOR = 1;
+				ISH_BUNDLE_VERSION_PATCH = 0;
+				ISH_BUNDLE_VERSION_SHORT = "${ISH_BUNDLE_VERSION_MAJOR}.${ISH_BUNDLE_VERSION_MINOR}.${ISH_BUNDLE_VERSION_PATCH}";
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -817,21 +807,29 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_NULLABLE_TO_NONNULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -842,11 +840,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ISH_BUNDLE_VERSION = 0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ISH_BUNDLE_VERSION_MAJOR = 2;
-				ISH_BUNDLE_VERSION_MINOR = 0;
-				ISH_BUNDLE_VERSION_SHORT = "${ISH_BUNDLE_VERSION_MAJOR}.${ISH_BUNDLE_VERSION_MINOR}.${ISH_BUNDLE_VERSION}";
+				ISH_BUNDLE_VERSION_MINOR = 1;
+				ISH_BUNDLE_VERSION_PATCH = 0;
+				ISH_BUNDLE_VERSION_SHORT = "${ISH_BUNDLE_VERSION_MAJOR}.${ISH_BUNDLE_VERSION_MINOR}.${ISH_BUNDLE_VERSION_PATCH}";
 				METAL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -868,7 +866,6 @@
 				FRAMEWORK_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
 				INFOPLIST_FILE = ISHPermissionKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.iosphere.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -888,7 +885,6 @@
 				FRAMEWORK_VERSION = "${ISH_BUNDLE_VERSION_SHORT}";
 				INFOPLIST_FILE = ISHPermissionKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.iosphere.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -900,7 +896,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = ISHPermissionKitTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "-ObjC";
@@ -913,7 +908,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = ISHPermissionKitTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-ObjC";

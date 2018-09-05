@@ -1,5 +1,12 @@
 # <img src="icon.png" align="center" width="40" height="40"> Changelog
 
+## 2.1
+
+* Ready for Xcode 10 and iOS 12
+* Bump deployment target to iOS 9
+* Remove deprecated permission categories (AssetsLibrary and AddressBook-based APIs)
+* Allow determination of possible requests without displaying any UI
+
 ## 2.0
 
 This release requires additional setup to ensure your apps pass binary validation in iTunes Connect. Please study the [README](/README.md) file carefully.
@@ -13,9 +20,9 @@ This release requires additional setup to ensure your apps pass binary validatio
 ## 1.2.0
 
 * Provide callback to handle true errors
-* Fix issues for social media account permissions if user had no user account:  
-  **this may require your implementations to handle the error to avoid asking the user 
-  again for permission** 
+* Fix issues for social media account permissions if user had no user account:
+  **this may require your implementations to handle the error to avoid asking the user
+  again for permission**
 * Add methods to query request-able and granted permissions given a set of categories
 * Add some rudimentary unit tests
 
@@ -57,7 +64,7 @@ This release requires additional setup to ensure your apps pass binary validatio
 ## 0.6.0
 
 * HealthKit is not used in default setting. If you need to use HealthKit please consult the readme and use the ISHPermissionKitLib+HealthKit variant.
-* This is an important update if you do not use HealthKit as you might otherwise get a rejection from Apple for not providing a privacy policy or have no reason to link to HealthKit. 
+* This is an important update if you do not use HealthKit as you might otherwise get a rejection from Apple for not providing a privacy policy or have no reason to link to HealthKit.
 
 ## 0.5.0
 

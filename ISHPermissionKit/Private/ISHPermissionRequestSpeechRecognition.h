@@ -9,7 +9,6 @@
 #import "ISHPermissionRequest.h"
 
 #ifdef ISHPermissionRequestSpeechEnabled
-#ifdef NSFoundationVersionNumber_iOS_9_0
 
 /**
  *  Permission request to acces the speech recognition
@@ -21,5 +20,4 @@
 
 @end
 
-#endif
 #endif

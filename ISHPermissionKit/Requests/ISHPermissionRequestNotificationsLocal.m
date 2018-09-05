@@ -38,10 +38,6 @@
 }
 
 - (ISHPermissionState)permissionState {
-    if (![UIUserNotificationSettings class]) {
-        return ISHPermissionStateAuthorized;
-    }
-    
     UIUserNotificationSettings *noticationSettings = [[UIApplication sharedApplication] currentUserNotificationSettings];
     
     if (!noticationSettings || (noticationSettings.types == UIUserNotificationTypeNone)) {
@@ -87,11 +83,9 @@
         });
     }
 
-#ifdef NSFoundationVersionNumber_iOS_9_0
     // we also load a new instance of the related user notification so it can update
     // its internal state
     __unused id modernPermission = [[ISHPermissionRequestUserNotification alloc] init];
-#endif
 }
 
 @end

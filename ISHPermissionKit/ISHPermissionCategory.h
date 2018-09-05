@@ -119,22 +119,6 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
     /**
      *  Permission required to access the user's photo library.
      *
-     *  Deprecated from iOS 9 as it uses ALAssetsLibrary
-     *  internally.
-     *
-     *  The app must also provide a localized NSPhotoLibraryUsageDescription
-     *  in the Info PLIST.
-     *
-     *  To enable this category, you must set the preprocessor flag
-     *  ISHPermissionRequestPhotoLibraryEnabled. This will link the 
-     *  AssetsLibrary and Photos frameworks.
-     *
-     *  @sa ISHPermissionCategoryModernPhotoLibrary
-     */
-    ISHPermissionCategoryPhotoLibrary NS_ENUM_DEPRECATED_IOS(7.0, 9.0, "Use ISHPermissionCategoryModernPhotoLibrary") = 5000,
-    /**
-     *  Permission required to access the user's photo library.
-     *
      *  Uses PHPhotoLibrary APIs.
      *
      *  The app must also provide a localized NSPhotoLibraryUsageDescription
@@ -142,7 +126,7 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *
      *  To enable this category, you must set the preprocessor flag
      *  ISHPermissionRequestPhotoLibraryEnabled. This will link the
-     *  AssetsLibrary and Photos frameworks.
+     *  Photos frameworks.
      */
     ISHPermissionCategoryModernPhotoLibrary NS_ENUM_AVAILABLE_IOS(8_0) = 5050,
 #endif
@@ -254,21 +238,6 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
 
 #ifdef ISHPermissionRequestContactsEnabled
     /**
-     *  Permission required to access the user's contacts.
-     *
-     *  The app must also provide a localized NSContactsUsageDescription
-     *  in the Info PLIST. Please consult the app review guidelines for
-     *  special requirements for apps that access contacts, specifically
-     *  section 5.1 (Privacy).
-     *
-     *  To enable this category, you must set the preprocessor flag
-     *  ISHPermissionRequestContactsEnabled. This will link the Contacts
-     *  and AddressBook frameworks.
-     *
-     *  @sa ISHPermissionCategoryContacts
-     */
-    ISHPermissionCategoryAddressBook NS_ENUM_DEPRECATED_IOS(7.0, 9.0, "Use ISHPermissionCategoryContacts") = 8100,
-    /**
      *  Permission required to access the user's contacts on modern
      *  systems, using the Contacts framework.
      *
@@ -279,7 +248,7 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *
      *  To enable this category, you must set the preprocessor flag
      *  ISHPermissionRequestContactsEnabled. This will link the Contacts
-     *  and AddressBook frameworks.
+     *  framework.
      */
     ISHPermissionCategoryContacts NS_ENUM_AVAILABLE_IOS(9_0) = 8500,
 #endif
@@ -314,8 +283,6 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
     ISHPermissionCategoryReminders = 8250,
 #endif
 
-// These categories requires Xcode 8/iOS 10 SDK
-#ifdef NSFoundationVersionNumber_iOS_9_0
 #ifdef ISHPermissionRequestSiriEnabled
     /**
      *  Permission required for Siri to access your app's data.
@@ -369,7 +336,6 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      */
     ISHPermissionCategoryUserNotification NS_ENUM_AVAILABLE_IOS(10_0) = 6500,
 #endif
-#endif
 
 #ifdef ISHPermissionRequestMusicLibraryEnabled
     /**
@@ -417,8 +383,6 @@ static inline NSString * _Nonnull ISHStringFromPermissionCategory(ISHPermissionC
 #endif
 
 #ifdef ISHPermissionRequestPhotoLibraryEnabled
-        case ISHPermissionCategoryPhotoLibrary:
-            return @"ISHPermissionCategoryPhotoLibrary";
         case ISHPermissionCategoryModernPhotoLibrary:
             return @"ISHPermissionCategoryModernPhotoLibrary";
 #endif
@@ -447,8 +411,6 @@ static inline NSString * _Nonnull ISHStringFromPermissionCategory(ISHPermissionC
 #endif
 
 #ifdef ISHPermissionRequestContactsEnabled
-        case ISHPermissionCategoryAddressBook:
-            return @"ISHPermissionCategoryAddressBook";
         case ISHPermissionCategoryContacts:
             return @"ISHPermissionCategoryContacts";
 #endif
@@ -468,7 +430,6 @@ static inline NSString * _Nonnull ISHStringFromPermissionCategory(ISHPermissionC
             return @"ISHPermissionCategoryMusicLibrary";
 #endif
 
-#ifdef NSFoundationVersionNumber_iOS_9_0
 #ifdef ISHPermissionRequestSiriEnabled
         case ISHPermissionCategorySiri:
             return @"ISHPermissionCategorySiri";
@@ -482,7 +443,6 @@ static inline NSString * _Nonnull ISHStringFromPermissionCategory(ISHPermissionC
 #ifdef ISHPermissionRequestNotificationsEnabled
         case ISHPermissionCategoryUserNotification:
             return @"ISHPermissionCategoryUserNotification";
-#endif
 #endif
 
         case ISHPermissionCategoryInvalid:

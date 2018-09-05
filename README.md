@@ -34,14 +34,14 @@ where the system APIs only provide implicit methods of doing so.
 * Siri
 * Speech Recognition
 
-The library compiles with the **iOS 9.3 SDK** and later and deploys back to
-**iOS 7**. Permission categories that were added later than the deployment 
+The library compiles with the **iOS 11 SDK** and later and deploys back to
+**iOS 9**. Permission categories that were added later than the deployment
 target will be skipped on unsupported versions.
 
 All permission categories relate to **sensitive user information**. If your app
 binary contains code to access this information, it has to comply with
 special review guidelines and other requirements to pass binary validation
-in iTunes Connect and app review. Therefore, you must specifically enable
+in App Store Connect and app review. Therefore, you must specifically enable
 the categories you need with build flags, everything else will not be included
 in the framework. Please read the [installation instructions](#installation)
 carefully.
@@ -51,9 +51,9 @@ app's `Info.plist`. If the `DEBUG` preprocessor macro is set, it will assert and
 explain which keys need to be added. Other requirements for each permission
 category are mentioned in the header documentation in `ISHPermissionCategory.h`.
 
-<img src="assets/demo.gif" align="center" width="320" height="568" alt="Sample App Demo"> 
+<img src="assets/demo.gif" align="center" width="320" height="568" alt="Sample App Demo">
 
-In contrast to other libraries, *ISHPermissionKit* allows you to present custom 
+In contrast to other libraries, *ISHPermissionKit* allows you to present custom
 view controllers, ask for several permissions in a sequence, provides a unified
 API through subclasses, and is **iOS 10 compatible**.
 
@@ -84,24 +84,23 @@ The sample app uses the [dynamically-linked framework](#dynamically-linked-frame
 
 Your variant of *ISHPermissionKit* will only include the permission categories
 you actually need. We use preprocessor macros to ensure any unused code is not
-compiled to save you from suprising App Store rejections, as some privacy 
-guidelines apply to all apps that *contain* code to access user data, regardless 
+compiled to save you from suprising App Store rejections, as some privacy
+guidelines apply to all apps that *contain* code to access user data, regardless
 of whether or not the code is ever called in your app. How to enable the
 categories you need depends on how you install *ISHPermissionKit* (see below).
 
 ### Static Library
 
-Add this Xcode project as a subproject of your app. Then link your app target 
+Add this Xcode project as a subproject of your app. Then link your app target
 against the static library (`ISHPermissionKitLib.a`). You will also need to add
-the static library as a target dependency. Both settings can be found in your 
+the static library as a target dependency. Both settings can be found in your
 app target's *Build Phases*.
 
 **You must [provide a build configuration](#providing-a-build-configuration) manually.**
 
 Use `#import <ISHPermissionKit/ISHPermissionKit.h>` to import all public headers.
-The static library version is recommended when you need to support iOS 7 or
-if you are concerned about app launch time, as a high number of dynamic libraries
-could increase the latter.
+The static library version is recommended if you are concerned about app launch
+times, as a high number of dynamic libraries [could increase the latter](https://developer.apple.com/videos/play/wwdc2016/406/).
 
 ### Dynamically-Linked Framework
 
@@ -117,11 +116,8 @@ You can use [Carthage](https://github.com/Carthage/Carthage) to fetch and build
 the framework. You will still have to provide a build configuration manually.
 
 The framework can be used as a module, so you can use `@import ISHPermissionKit;`
-to import all public headers.  
+to import all public headers.
 Further reading on Modules: [Clang Documentation](http://clang.llvm.org/docs/Modules.html)
-
-**Note:** To link against dynamic frameworks on iOS, a deployment target of at
-least iOS 8 is required. If you use Swift, you must use dynamic frameworks.
 
 ### Providing a Build Configuration
 
@@ -150,7 +146,7 @@ in it. Ensure to always use `$(inherit)` when setting preprocessor macros.
 
 *ISHPermissionKit* uses system frameworks to accomplish its tasks. Most of
 them will be linked automatically unless you have disabled "Enable Modules"
-(`CLANG_ENABLE_MODULES`) and "Link Frameworks Automatically" 
+(`CLANG_ENABLE_MODULES`) and "Link Frameworks Automatically"
 (`CLANG_MODULES_AUTOLINK`) in your app target's build settings.
 
 Unfortunately, some framework are not weakly linked automatically which
@@ -204,10 +200,10 @@ You can request permission for a single category or a sequence of categories.
 The following example presents a `ISHPermissionsViewController` for `Activity`
 and `LocationWhenInUse` permissions if needed.
 
-```objective-c  
-NSArray *permissions = @[ 
-    @(ISHPermissionCategoryLocationWhenInUse), 
-    @(ISHPermissionCategoryActivity) 
+```objective-c
+NSArray *permissions = @[
+    @(ISHPermissionCategoryLocationWhenInUse),
+    @(ISHPermissionCategoryActivity)
     ];
 ISHPermissionsViewController *vc = [ISHPermissionsViewController permissionsViewControllerWithCategories:permissions dataSource:self];
 
@@ -216,8 +212,8 @@ if (vc) {
     [presentingVC presentViewController:vc
                                animated:YES
                              completion:nil];
-} 
-```  
+}
+```
 
 The designated constructor returns `nil` if non of the categories allow a user
 prompt (either because the user already granted or denied the permission, does
@@ -232,7 +228,7 @@ do set a delegate, the delegate is responsible for dismissing the view
 controller.
 
 The `dataSource` is required and must provide one instance of a
-`ISHPermissionRequestViewController` for each requested 
+`ISHPermissionRequestViewController` for each requested
 `ISHPermissionCategory`.
 
 The `ISHPermissionRequestViewController` provides `IBAction`s to _prompt for the
@@ -241,7 +237,7 @@ any buttons or UI. Your subclass can create a view with text, images, and button
 etc., explaining in greater detail why your app needs a certain permission. The
 subclass should contain buttons that trigger at least one of the actions
 mentioned above (see the header for their signatures). A _cancel button_ should
-call `changePermissionStateToAskAgainFromSender:`. If your subclass overwrites 
+call `changePermissionStateToAskAgainFromSender:`. If your subclass overwrites
 any of these three actions, you must call `super`.
 
 ## ISHPermissionRequest
@@ -255,22 +251,22 @@ appropriate request for the given permission category.
 
 Here is how you check the permissions to access the microphone:
 
-```objective-c  
+```objective-c
 ISHPermissionRequest *r = [ISHPermissionRequest requestForCategory:ISHPermissionCategoryMicrophone];
 BOOL granted = ([r permissionState] == ISHPermissionStateAuthorized);
 ```
 
-The same example for local notifications (`granted` will always be true on iOS 7): 
+The same example for local notifications:
 
-```objective-c  
+```objective-c
 ISHPermissionRequest *r = [ISHPermissionRequest requestForCategory:ISHPermissionCategoryNotificationLocal];
 BOOL granted = ([r permissionState] == ISHPermissionStateAuthorized);
 ```
 
 # How to Contribute
 
-Contributions are welcome. Check out the roadmap and open issues. 
-Adding support for more permission types is probably 
+Contributions are welcome. Check out the roadmap and open issues.
+Adding support for more permission types is probably
 most rewarding, you can find a few hints on how to get started below.
 
 ## Adding Support for New Permissions
@@ -308,8 +304,8 @@ and create a new CocoaPods subspec.
 
 # Attribution
 
-*ISHPermissionKit* icon designed by 
-[Jason Grube (CC BY 3.0)](http://thenounproject.com/term/fingerprint/23303/) from the 
+*ISHPermissionKit* icon designed by
+[Jason Grube (CC BY 3.0)](http://thenounproject.com/term/fingerprint/23303/) from the
 [Noun Project](http://thenounproject.com)
 
 # More OpenSource Projects by iosphere
@@ -320,16 +316,13 @@ and create a new CocoaPods subspec.
 
 # Apps Using ISHPermissionKit
 
-<img src="assets/app_trails.png" align="center" width="36" height="36"> 
+<img src="assets/app_trails.png" align="center" width="36" height="36">
 <a href="http://trails.io/" title="Trails · Outdoor GPS Logbook">Trails · Outdoor GPS Logbook</a>
 
-<img src="assets/app_rudel.png" align="center" width="36" height="36"> 
-<a href="http://rudel.io/" title="Rudel · Anonymous Location Sharing">Rudel · Anonymous Location Sharing</a>
-
-<img src="assets/app_sumup.png" align="center" width="36" height="36"> 
+<img src="assets/app_sumup.png" align="center" width="36" height="36">
 <a href="https://itunes.apple.com/app/sumup/id514879214" title="SumUp – Accept EMV card payments">SumUp – Accept EMV card payments</a>
 
-<img src="assets/app_snow.png" align="center" width="36" height="36"> 
+<img src="assets/app_snow.png" align="center" width="36" height="36">
 <a href="https://itunes.apple.com/en/app/snow-report-myswitzerland/id341755817?mt=8" title="Swiss Snow Report - Current snow and weather information for the best Swiss winter sports destinations">Swiss Snow Report</a>
 
 If your app uses ISHPermissionKit, let us know and we will include it here.

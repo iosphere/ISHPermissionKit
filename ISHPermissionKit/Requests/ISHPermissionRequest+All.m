@@ -10,7 +10,6 @@
 #import "ISHPermissionRequestLocation.h"
 #import "ISHPermissionRequestMotion.h"
 #import "ISHPermissionRequestMicrophone.h"
-#import "ISHPermissionRequestPhotoLibrary.h"
 #import "ISHPermissionRequestModernPhotoLibrary.h"
 #import "ISHPermissionRequestPhotoCamera.h"
 #import "ISHPermissionRequestNotificationsLocal.h"
@@ -18,7 +17,6 @@
 #import "ISHPermissionRequestUserNotification.h"
 #import "ISHPermissionRequestAccount.h"
 #import "ISHPermissionRequestHealth.h"
-#import "ISHPermissionRequestAddressBook.h"
 #import "ISHPermissionRequestContacts.h"
 #import "ISHPermissionRequestEventStore.h"
 #import "ISHPermissionRequest+Private.h"
@@ -62,10 +60,6 @@
 #endif
 
 #ifdef ISHPermissionRequestPhotoLibraryEnabled
-        case ISHPermissionCategoryPhotoLibrary:
-            request = [ISHPermissionRequestPhotoLibrary new];
-            break;
-
         case ISHPermissionCategoryModernPhotoLibrary:
             request = [ISHPermissionRequestModernPhotoLibrary new];
             break;
@@ -97,9 +91,6 @@
 #endif
 
 #ifdef ISHPermissionRequestContactsEnabled
-        case ISHPermissionCategoryAddressBook:
-            request = [ISHPermissionRequestAddressBook new];
-            break;
         case ISHPermissionCategoryContacts:
             request = [ISHPermissionRequestContacts new];
             break;
@@ -123,7 +114,6 @@
             break;
 #endif
 
-#ifdef NSFoundationVersionNumber_iOS_9_0
 #ifdef ISHPermissionRequestSiriEnabled
         case ISHPermissionCategorySiri:
             request = [ISHPermissionRequestSiri new];
@@ -140,7 +130,6 @@
         case ISHPermissionCategoryUserNotification:
             request = [ISHPermissionRequestUserNotification new];
             break;
-#endif
 #endif
 
         case ISHPermissionCategoryInvalid:
