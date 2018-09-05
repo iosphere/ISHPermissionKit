@@ -59,6 +59,15 @@
         case UNAuthorizationStatusDenied:
             return ISHPermissionStateDenied;
 
+        /**
+         *   You can ask for provisional permission (you must do this explicitly via desiredOptions,
+         *   which will allow you to send one quiet (no alert/sound, but in the notification center)
+         *   notification. Users can change their settings directly from notification center.
+         *
+         *   After requesting provisional permission, the auth state stays in UNAuthorizationStatusProvisional
+         *   until the user has made a decision. During that time, you may also request general permission,
+         *   which is why we treat it as UNAuthorizationStatusNotDetermined here.
+         */
         case UNAuthorizationStatusProvisional:
         case UNAuthorizationStatusNotDetermined:
             return ISHPermissionStateUnknown;
