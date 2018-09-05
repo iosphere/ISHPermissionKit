@@ -16,15 +16,15 @@
 @implementation ISHPermissionRequestMusicLibrary
 
 - (ISHPermissionState)permissionState {
-    if (![MPMediaLibrary respondsToSelector:@selector(requestAuthorization:)]) {
+    if (@available(iOS 9.3, *)) {
+        return [self permissionStateForMediaLibraryState:[MPMediaLibrary authorizationStatus]];
+    } else {
         // prior to iOS 9.3, authorization is not required
         return ISHPermissionStateAuthorized;
     }
-
-    return [self permissionStateForMediaLibraryState:[MPMediaLibrary authorizationStatus]];
 }
 
-- (ISHPermissionState)permissionStateForMediaLibraryState:(MPMediaLibraryAuthorizationStatus)state {
+- (ISHPermissionState)permissionStateForMediaLibraryState:(MPMediaLibraryAuthorizationStatus)state API_AVAILABLE(ios(9.3)){
     switch (state) {
         case MPMediaLibraryAuthorizationStatusAuthorized:
             return ISHPermissionStateAuthorized;
@@ -46,19 +46,17 @@
         return;
     }
 
-    if (![MPMediaLibrary respondsToSelector:@selector(requestAuthorization:)]) {
+    if (@available(iOS 9.3, *)) {
+        [MPMediaLibrary requestAuthorization:^(MPMediaLibraryAuthorizationStatus status) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(self, [self permissionStateForMediaLibraryState:status], nil);
+            });
+        }];
+    } else {
         dispatch_async(dispatch_get_main_queue(), ^{
             completion(self, ISHPermissionStateUnsupported, nil);
         });
-
-        return;
     }
-
-    [MPMediaLibrary requestAuthorization:^(MPMediaLibraryAuthorizationStatus status) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            completion(self, [self permissionStateForMediaLibraryState:status], nil);
-        });
-    }];
 }
 
 #if DEBUG

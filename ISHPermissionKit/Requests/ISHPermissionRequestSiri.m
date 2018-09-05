@@ -16,14 +16,14 @@
 @implementation ISHPermissionRequestSiri
 
 - (ISHPermissionState)permissionState {
-    if (![INPreferences class]) {
+    if (@available(iOS 10.0, *)) {
+        return [self permissionStateForSiriState:[INPreferences siriAuthorizationStatus]];
+    } else {
         return ISHPermissionStateUnsupported;
     }
-
-    return [self permissionStateForSiriState:[INPreferences siriAuthorizationStatus]];
 }
 
-- (ISHPermissionState)permissionStateForSiriState:(INSiriAuthorizationStatus)siriState {
+- (ISHPermissionState)permissionStateForSiriState:(INSiriAuthorizationStatus)siriState API_AVAILABLE(ios(10.0)){
     switch (siriState) {
         case INSiriAuthorizationStatusAuthorized:
             return ISHPermissionStateAuthorized;
@@ -45,19 +45,17 @@
         return;
     }
 
-    if (![INPreferences class]) {
+    if (@available(iOS 10.0, *)) {
+        [INPreferences requestSiriAuthorization:^(INSiriAuthorizationStatus status) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(self, [self permissionStateForSiriState:status], nil);
+            });
+        }];
+    } else {
         dispatch_async(dispatch_get_main_queue(), ^{
             completion(self, ISHPermissionStateUnsupported, nil);
         });
-
-        return;
     }
-
-    [INPreferences requestSiriAuthorization:^(INSiriAuthorizationStatus status) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            completion(self, [self permissionStateForSiriState:status], nil);
-        });
-    }];
 }
 
 #if DEBUG

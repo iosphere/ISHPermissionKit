@@ -85,7 +85,9 @@
 
     // we also load a new instance of the related user notification so it can update
     // its internal state
-    __unused id modernPermission = [[ISHPermissionRequestUserNotification alloc] init];
+    if (@available(iOS 10.0, *)) {
+        __unused id modernPermission = [[ISHPermissionRequestUserNotification alloc] init];
+    }
 }
 
 @end
