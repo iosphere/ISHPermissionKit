@@ -128,7 +128,7 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  ISHPermissionRequestPhotoLibraryEnabled. This will link the
      *  Photos frameworks.
      */
-    ISHPermissionCategoryModernPhotoLibrary NS_ENUM_AVAILABLE_IOS(8_0) = 5050,
+    ISHPermissionCategoryModernPhotoLibrary = 5050,
 #endif
 
 #ifdef ISHPermissionRequestCameraEnabled
@@ -250,7 +250,7 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  ISHPermissionRequestContactsEnabled. This will link the Contacts
      *  framework.
      */
-    ISHPermissionCategoryContacts NS_ENUM_AVAILABLE_IOS(9_0) = 8500,
+    ISHPermissionCategoryContacts = 8500,
 #endif
 
 #ifdef ISHPermissionRequestCalendarEnabled
@@ -297,7 +297,7 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  ISHPermissionRequestSiriEnabled. This will link the Intents
      *  framework.
      */
-    ISHPermissionCategorySiri NS_ENUM_AVAILABLE_IOS(10_0) = 9000,
+    ISHPermissionCategorySiri = 9000,
 #endif
 
 #ifdef ISHPermissionRequestSpeechEnabled
@@ -312,7 +312,7 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  ISHPermissionRequestSpeechEnabled. This will link the Speech
      *  framework.
      */
-    ISHPermissionCategorySpeechRecognition NS_ENUM_AVAILABLE_IOS(10_0) = 10000,
+    ISHPermissionCategorySpeechRecognition = 10000,
 #endif
 
 #ifdef ISHPermissionRequestNotificationsEnabled
@@ -334,7 +334,7 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  ISHPermissionRequestNotificationsEnabled. This will link UIKit and
      *  the UserNotification framework.
      */
-    ISHPermissionCategoryUserNotification NS_ENUM_AVAILABLE_IOS(10_0) = 6500,
+    ISHPermissionCategoryUserNotification = 6500,
 #endif
 
 #ifdef ISHPermissionRequestMusicLibraryEnabled
@@ -349,7 +349,7 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  ISHPermissionRequestMusicLibraryEnabled. This will link the MediaPlayer
      *  framework.
      */
-    ISHPermissionCategoryMusicLibrary NS_ENUM_AVAILABLE_IOS(9.3) = 11000,
+    ISHPermissionCategoryMusicLibrary = 11000,
 #endif
 };
 

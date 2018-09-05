@@ -16,14 +16,14 @@
 @implementation ISHPermissionRequestSpeechRecognition
 
 - (ISHPermissionState)permissionState {
-    if (![SFSpeechRecognizer class]) {
+    if (@available(iOS 10.0, *)) {
+        return [self permissionStateForSpeechState:[SFSpeechRecognizer authorizationStatus]];
+    } else {
         return ISHPermissionStateUnsupported;
     }
-
-    return [self permissionStateForSpeechState:[SFSpeechRecognizer authorizationStatus]];
 }
 
-- (ISHPermissionState)permissionStateForSpeechState:(SFSpeechRecognizerAuthorizationStatus)state {
+- (ISHPermissionState)permissionStateForSpeechState:(SFSpeechRecognizerAuthorizationStatus)state API_AVAILABLE(ios(10.0)){
     switch ([SFSpeechRecognizer authorizationStatus]) {
         case SFSpeechRecognizerAuthorizationStatusAuthorized:
             return ISHPermissionStateAuthorized;
@@ -45,19 +45,17 @@
         return;
     }
 
-    if (![SFSpeechRecognizer class]) {
+    if (@available(iOS 10.0, *)) {
+        [SFSpeechRecognizer requestAuthorization:^(SFSpeechRecognizerAuthorizationStatus status) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(self, [self permissionStateForSpeechState:status], nil);
+            });
+        }];
+    } else {
         dispatch_async(dispatch_get_main_queue(), ^{
             completion(self, ISHPermissionStateUnsupported, nil);
         });
-
-        return;
     }
-
-    [SFSpeechRecognizer requestAuthorization:^(SFSpeechRecognizerAuthorizationStatus status) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            completion(self, [self permissionStateForSpeechState:status], nil);
-        });
-    }];
 }
 
 #if DEBUG
