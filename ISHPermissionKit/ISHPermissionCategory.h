@@ -209,7 +209,7 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *        The request will require an options dictionary including, e.g., 
      *        ACFacebookAppIdKey.
      */
-    ISHPermissionCategorySocialFacebook = 7100,
+    ISHPermissionCategorySocialFacebook NS_ENUM_DEPRECATED_IOS(6.0, 11.0, "Social framework has been removed") = 7100,
     /**
      *  Permission required to access the user's Twitter accounts.
      *
@@ -217,7 +217,7 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  ISHPermissionRequestSocialAccountsEnabled. This will link the
      *  Accounts framework.
      */
-    ISHPermissionCategorySocialTwitter = 7110,
+    ISHPermissionCategorySocialTwitter NS_ENUM_DEPRECATED_IOS(6.0, 11.0, "Social framework has been removed") = 7110,
     /**
      *  Permission required to access the user's SinaWeibo accounts.
      *
@@ -225,7 +225,7 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  ISHPermissionRequestSocialAccountsEnabled. This will link the
      *  Accounts framework.
      */
-    ISHPermissionCategorySocialSinaWeibo = 7120,
+    ISHPermissionCategorySocialSinaWeibo NS_ENUM_DEPRECATED_IOS(6.0, 11.0, "Social framework has been removed") = 7120,
     /**
      *  Permission required to access the user's TencentWeibo accounts.
      *
@@ -233,7 +233,7 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
      *  ISHPermissionRequestSocialAccountsEnabled. This will link the
      *  Accounts framework.
      */
-    ISHPermissionCategorySocialTencentWeibo = 7130,
+    ISHPermissionCategorySocialTencentWeibo NS_ENUM_DEPRECATED_IOS(6.0, 11.0, "Social framework has been removed") = 7130,
 #endif
 
 #ifdef ISHPermissionRequestContactsEnabled
