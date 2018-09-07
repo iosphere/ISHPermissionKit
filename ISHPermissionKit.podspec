@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
                     permission dialog to the user. This allows the developer to postpone the system dialog. The framework
                     provides no actual chrome, leaving the developer and designer in charge of creating the views.'
 
-  s.homepage     = 'https://github.com/iosphere/ISHPermissionKit.git'
+  s.homepage     = 'https://github.com/iosphere/ISHPermissionKit'
   s.screenshots  = 'https://raw.githubusercontent.com/iosphere/ISHPermissionKit/master/assets/demo.gif'
 
   s.license      = 'New BSD'
