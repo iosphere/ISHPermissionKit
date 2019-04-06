@@ -470,7 +470,7 @@
 		DCC1BF9C195B174200362559 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "iosphere GmbH";
 				TargetAttributes = {
 					DCAEF7C9195C60070074EB5B = {
@@ -487,10 +487,11 @@
 			};
 			buildConfigurationList = DCC1BF9F195B174200362559 /* Build configuration list for PBXProject "ISHPermissionKit" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = DCC1BF9B195B174200362559;
 			productRefGroup = DCC1BFA6195B174200362559 /* Products */;
@@ -598,6 +599,7 @@
 			baseConfigurationReference = 1BDB4D881DAD4DB00046E4E5 /* ISHPermissionKitFlagsCoverage.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -735,6 +737,7 @@
 			baseConfigurationReference = 1B7221721DA3DD7B00B9266F /* ISHPermissionKitFlags.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -800,6 +803,7 @@
 			baseConfigurationReference = 1B7221721DA3DD7B00B9266F /* ISHPermissionKitFlags.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
