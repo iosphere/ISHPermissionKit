@@ -1,5 +1,9 @@
 # <img src="icon.png" align="center" width="40" height="40"> Changelog
 
+## 2.1.2
+
+* Ensure compatibility with Xcode 10.2
+
 ## 2.1.1
 
 * Deprecate social permissions
