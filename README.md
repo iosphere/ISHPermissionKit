@@ -140,7 +140,7 @@ can select a configuration file for each target:
 ![Setting a configuration file](assets/config_file.png)
 
 If you already use a configuration file, you can pick one and include the other
-in it. Ensure to always use `$(inherit)` when setting preprocessor macros.
+in it. Ensure to always use `$(inherited)` when setting preprocessor macros.
 
 ### Required Frameworks
 
