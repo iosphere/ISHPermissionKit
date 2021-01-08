@@ -393,10 +393,16 @@ static inline NSString * _Nonnull ISHStringFromPermissionCategory(ISHPermissionC
 #endif
 
 #ifdef ISHPermissionRequestNotificationsEnabled
+
+// without silencing the deprecation, there will be a deprecation warning in any file which merely imports this header.
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
         case ISHPermissionCategoryNotificationLocal:
             return @"ISHPermissionCategoryNotificationLocal";
         case ISHPermissionCategoryNotificationRemote:
             return @"ISHPermissionCategoryNotificationRemote";
+#pragma GCC diagnostic pop
+
 #endif
 
 #ifdef ISHPermissionRequestSocialAccountsEnabled
