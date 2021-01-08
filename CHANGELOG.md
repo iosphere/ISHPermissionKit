@@ -1,5 +1,9 @@
 # <img src="icon.png" align="center" width="40" height="40"> Changelog
 
+## 2.1.3
+
+* Resolve issue where importing a file causes a deprecation warning
+
 ## 2.1.2
 
 * Ensure compatibility with Xcode 10.2
