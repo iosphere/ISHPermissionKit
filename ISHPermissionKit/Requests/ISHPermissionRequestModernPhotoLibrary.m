@@ -28,6 +28,11 @@
         case PHAuthorizationStatusAuthorized:
             return ISHPermissionStateAuthorized;
 
+        // iOS 14: the user granted access to a selected subset of their library.
+        // Access was granted; ISHPermissionState has no finer distinction.
+        case PHAuthorizationStatusLimited:
+            return ISHPermissionStateAuthorized;
+
         case PHAuthorizationStatusDenied:
         case PHAuthorizationStatusRestricted:
             return ISHPermissionStateDenied;

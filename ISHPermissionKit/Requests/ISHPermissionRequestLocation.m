@@ -36,7 +36,7 @@
 }
 
 - (ISHPermissionState)permissionState {
-    CLAuthorizationStatus systemState = [CLLocationManager authorizationStatus];
+    CLAuthorizationStatus systemState = self.locationManager.authorizationStatus;
 
     switch (systemState) {
 #ifndef __IPHONE_8_0
@@ -100,7 +100,13 @@
 
 #ifdef __IPHONE_8_0
 + (BOOL)grantedWhenInUse {
-    return ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse);
+    static CLLocationManager *statusManager;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        statusManager = [CLLocationManager new];
+    });
+
+    return (statusManager.authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse);
 }
 #endif
 
@@ -113,7 +119,15 @@
 #endif
 }
 
-- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+/**
+ *   -locationManager:didChangeAuthorizationStatus: was deprecated in iOS 14 in
+ *   favour of this callback, which reads the status off the manager.
+ */
+- (void)locationManagerDidChangeAuthorization:(CLLocationManager *)manager {
+    [self handleAuthorizationStatus:manager.authorizationStatus];
+}
+
+- (void)handleAuthorizationStatus:(CLAuthorizationStatus)status {
     BOOL notDetermined = (status == kCLAuthorizationStatusNotDetermined);
 #ifdef __IPHONE_8_0
     BOOL grantedWhenInUse = (status == kCLAuthorizationStatusAuthorizedWhenInUse);

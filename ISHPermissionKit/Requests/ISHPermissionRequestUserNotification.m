@@ -58,6 +58,11 @@
         case UNAuthorizationStatusAuthorized:
             return ISHPermissionStateAuthorized;
 
+        // iOS 14, App Clips only: notifications are authorized for as long as the
+        // clip is around.
+        case UNAuthorizationStatusEphemeral:
+            return ISHPermissionStateAuthorized;
+
         case UNAuthorizationStatusDenied:
             return ISHPermissionStateDenied;
 
