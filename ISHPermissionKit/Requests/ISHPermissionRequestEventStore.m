@@ -49,7 +49,14 @@
     EKAuthorizationStatus status = [EKEventStore authorizationStatusForEntityType:[self entityType]];
     
     switch (status) {
+        // EKAuthorizationStatusFullAccess, added in iOS 17, has the same value
+        // as the now-deprecated EKAuthorizationStatusAuthorized.
         case EKAuthorizationStatusAuthorized:
+            return ISHPermissionStateAuthorized;
+
+        // Also iOS 17: the user granted permission to add events but not to
+        // read them. ISHPermissionState has no finer distinction to report.
+        case EKAuthorizationStatusWriteOnly:
             return ISHPermissionStateAuthorized;
             
         case EKAuthorizationStatusRestricted:
@@ -59,6 +66,9 @@
         case EKAuthorizationStatusNotDetermined:
             return [self internalPermissionState];
     }
+
+    // A status added by a future SDK.
+    return ISHPermissionStateUnknown;
 }
 
 - (void)requestUserPermissionWithCompletionBlock:(ISHPermissionRequestCompletionBlock)completion {
