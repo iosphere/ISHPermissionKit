@@ -144,58 +144,6 @@ typedef NS_ENUM(NSUInteger, ISHPermissionCategory) {
     ISHPermissionCategoryPhotoCamera = 5100,
 #endif
 
-#ifdef ISHPermissionRequestNotificationsEnabled
-    /**
-     *  Permission required to schedule local notifications.
-     *
-     *  To enable this category, you must set the preprocessor flag
-     *  ISHPermissionRequestNotificationsEnabled. This will link UIKit and
-     *  the UserNotification framework.
-     *
-     *  @note Requests for this permission might require further 
-     *        configuration via the ISHPermissionsViewControllerDataSource.
-     *
-     *  @warning Your app delegate will need to implement the following lines:
-     *  @code
-     *  - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
-     *       ISHPermissionPostNotificationDidRegisterUserNotificationSettings(self);
-     *  }
-     *  @endcode
-     *
-     *  @sa ISHPermissionCategoryUserNotification
-     */
-    ISHPermissionCategoryNotificationLocal NS_ENUM_DEPRECATED_IOS(8.0, 10.0, "Use ISHPermissionCategoryUserNotification") = 6100,
-    
-    /**
-     *  Permission required to receive user-facing remote notifications.
-     *
-     *  To enable this category, you must set the preprocessor flag
-     *  ISHPermissionRequestNotificationsEnabled. This will link UIKit and
-     *  the UserNotification framework.
-     *
-     *  @note Requests for this permission might require further
-     *        configuration via the ISHPermissionsViewControllerDataSource to notificationSettings.
-     *        By default this request asks for [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:nil];
-     *
-     *  This only requests permission to present user-facing notifications. To register for remote
-     *  notifications (without permission, these are delivered silently) you will need to call 
-     *  the following method in your own code:
-     *  @code
-     *      [[UIApplication sharedApplication] registerForRemoteNotifications];
-     *  @endcode
-     *
-     *  @warning Your app delegate will need to implement the following lines:
-     *  @code
-     *  - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
-     *       ISHPermissionPostNotificationDidRegisterUserNotificationSettings(self);
-     *  }
-     *  @endcode
-     *
-     *  @sa ISHPermissionCategoryUserNotification
-     */
-    ISHPermissionCategoryNotificationRemote NS_ENUM_DEPRECATED_IOS(8.0, 10.0, "Use ISHPermissionCategoryUserNotification") = 6200,
-#endif
-
 #ifdef ISHPermissionRequestSocialAccountsEnabled
     /**
      *  Permission required to access the user's Facebook accounts.
@@ -390,19 +338,6 @@ static inline NSString * _Nonnull ISHStringFromPermissionCategory(ISHPermissionC
 #ifdef ISHPermissionRequestCameraEnabled
         case ISHPermissionCategoryPhotoCamera:
             return @"ISHPermissionCategoryPhotoCamera";
-#endif
-
-#ifdef ISHPermissionRequestNotificationsEnabled
-
-// without silencing the deprecation, there will be a deprecation warning in any file which merely imports this header.
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
-        case ISHPermissionCategoryNotificationLocal:
-            return @"ISHPermissionCategoryNotificationLocal";
-        case ISHPermissionCategoryNotificationRemote:
-            return @"ISHPermissionCategoryNotificationRemote";
-#pragma GCC diagnostic pop
-
 #endif
 
 #ifdef ISHPermissionRequestSocialAccountsEnabled

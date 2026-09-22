@@ -45,9 +45,6 @@
 		DC5E5BB8195D78800092EAFD /* ISHPermissionRequestPhotoCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = DC5E5BB6195D78800092EAFD /* ISHPermissionRequestPhotoCamera.h */; };
 		DC5E5BB9195D78800092EAFD /* ISHPermissionRequestPhotoCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5E5BB7195D78800092EAFD /* ISHPermissionRequestPhotoCamera.m */; };
 		DC5E5BBA195D78800092EAFD /* ISHPermissionRequestPhotoCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5E5BB7195D78800092EAFD /* ISHPermissionRequestPhotoCamera.m */; };
-		DC5E5BC3195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.h in Headers */ = {isa = PBXBuildFile; fileRef = DC5E5BC1195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DC5E5BC4195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5E5BC2195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.m */; };
-		DC5E5BC5195DAD770092EAFD /* ISHPermissionRequestNotificationsLocal.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5E5BC2195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.m */; };
 		DC5E5BC7195DC1F50092EAFD /* ISHPermissionRequest+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = DC5E5BC6195DC1F30092EAFD /* ISHPermissionRequest+Private.h */; };
 		DC6A8A7D19633180005AC5BD /* ISHPermissionCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = DC1A80A8195B22A10069235F /* ISHPermissionCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC6A8A7E19633180005AC5BD /* ISHPermissionKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC1BFAA195B174200362559 /* ISHPermissionKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -63,7 +60,6 @@
 		DC6A8A8819633180005AC5BD /* ISHPermissionRequestLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = DC799EBD195C186100A0CA36 /* ISHPermissionRequestLocation.h */; };
 		DC6A8A8919633180005AC5BD /* ISHPermissionRequestMicrophone.h in Headers */ = {isa = PBXBuildFile; fileRef = DC5E5BAC195D67500092EAFD /* ISHPermissionRequestMicrophone.h */; };
 		DC6A8A8A19633180005AC5BD /* ISHPermissionRequestMotion.h in Headers */ = {isa = PBXBuildFile; fileRef = DCAEF7BF195C5B6B0074EB5B /* ISHPermissionRequestMotion.h */; };
-		DC6A8A8B19633180005AC5BD /* ISHPermissionRequestNotificationsLocal.h in Headers */ = {isa = PBXBuildFile; fileRef = DC5E5BC1195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC6A8A8C19633180005AC5BD /* ISHPermissionRequestPhotoCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = DC5E5BB6195D78800092EAFD /* ISHPermissionRequestPhotoCamera.h */; };
 		DC6A8AD319642793005AC5BD /* ISHPermissionRequestEventStore.h in Headers */ = {isa = PBXBuildFile; fileRef = DC6A8AD119642793005AC5BD /* ISHPermissionRequestEventStore.h */; };
 		DC6A8AD419642793005AC5BD /* ISHPermissionRequestEventStore.h in Headers */ = {isa = PBXBuildFile; fileRef = DC6A8AD119642793005AC5BD /* ISHPermissionRequestEventStore.h */; };
@@ -75,10 +71,6 @@
 		DC799EC0195C186100A0CA36 /* ISHPermissionRequestLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = DC799EBE195C186100A0CA36 /* ISHPermissionRequestLocation.m */; };
 		DC799EC4195C19CD00A0CA36 /* ISHPermissionRequest+All.h in Headers */ = {isa = PBXBuildFile; fileRef = DC799EC2195C19CD00A0CA36 /* ISHPermissionRequest+All.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC799EC5195C19CD00A0CA36 /* ISHPermissionRequest+All.m in Sources */ = {isa = PBXBuildFile; fileRef = DC799EC3195C19CD00A0CA36 /* ISHPermissionRequest+All.m */; };
-		DC96E8CE1B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.h in Headers */ = {isa = PBXBuildFile; fileRef = DC96E8CC1B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DC96E8CF1B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.h in Headers */ = {isa = PBXBuildFile; fileRef = DC96E8CC1B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DC96E8D21B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = DC96E8CD1B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.m */; };
-		DC96E8D31B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = DC96E8CD1B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.m */; };
 		DCAEF7C1195C5B6B0074EB5B /* ISHPermissionRequestMotion.h in Headers */ = {isa = PBXBuildFile; fileRef = DCAEF7BF195C5B6B0074EB5B /* ISHPermissionRequestMotion.h */; };
 		DCAEF7C2195C5B6B0074EB5B /* ISHPermissionRequestMotion.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAEF7C0195C5B6B0074EB5B /* ISHPermissionRequestMotion.m */; };
 		DCAEF7E1195C60250074EB5B /* ISHPermissionRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1A80AF195B2C960069235F /* ISHPermissionRequestViewController.m */; };
@@ -151,8 +143,6 @@
 		DC5E5BAD195D67500092EAFD /* ISHPermissionRequestMicrophone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestMicrophone.m; sourceTree = "<group>"; };
 		DC5E5BB6195D78800092EAFD /* ISHPermissionRequestPhotoCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISHPermissionRequestPhotoCamera.h; path = ../Private/ISHPermissionRequestPhotoCamera.h; sourceTree = "<group>"; };
 		DC5E5BB7195D78800092EAFD /* ISHPermissionRequestPhotoCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestPhotoCamera.m; sourceTree = "<group>"; };
-		DC5E5BC1195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHPermissionRequestNotificationsLocal.h; sourceTree = "<group>"; };
-		DC5E5BC2195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestNotificationsLocal.m; sourceTree = "<group>"; };
 		DC5E5BC6195DC1F30092EAFD /* ISHPermissionRequest+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ISHPermissionRequest+Private.h"; path = "../Private/ISHPermissionRequest+Private.h"; sourceTree = "<group>"; };
 		DC6A8AD119642793005AC5BD /* ISHPermissionRequestEventStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISHPermissionRequestEventStore.h; path = ../Private/ISHPermissionRequestEventStore.h; sourceTree = "<group>"; };
 		DC6A8AD219642793005AC5BD /* ISHPermissionRequestEventStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestEventStore.m; sourceTree = "<group>"; };
@@ -163,8 +153,6 @@
 		DC799EBE195C186100A0CA36 /* ISHPermissionRequestLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestLocation.m; sourceTree = "<group>"; };
 		DC799EC2195C19CD00A0CA36 /* ISHPermissionRequest+All.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ISHPermissionRequest+All.h"; sourceTree = "<group>"; };
 		DC799EC3195C19CD00A0CA36 /* ISHPermissionRequest+All.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ISHPermissionRequest+All.m"; sourceTree = "<group>"; };
-		DC96E8CC1B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISHPermissionRequestNotificationsRemote.h; sourceTree = "<group>"; };
-		DC96E8CD1B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestNotificationsRemote.m; sourceTree = "<group>"; };
 		DCAEF7BF195C5B6B0074EB5B /* ISHPermissionRequestMotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISHPermissionRequestMotion.h; path = ../Private/ISHPermissionRequestMotion.h; sourceTree = "<group>"; };
 		DCAEF7C0195C5B6B0074EB5B /* ISHPermissionRequestMotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISHPermissionRequestMotion.m; sourceTree = "<group>"; };
 		DCAEF7CA195C60070074EB5B /* libISHPermissionKitLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libISHPermissionKitLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -257,10 +245,6 @@
 				DCAEF7C0195C5B6B0074EB5B /* ISHPermissionRequestMotion.m */,
 				1BC93E521D7063F10033B6E8 /* ISHPermissionRequestMusicLibrary.h */,
 				1BC93E491D7063D20033B6E8 /* ISHPermissionRequestMusicLibrary.m */,
-				DC5E5BC1195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.h */,
-				DC5E5BC2195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.m */,
-				DC96E8CC1B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.h */,
-				DC96E8CD1B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.m */,
 				DC5E5BB6195D78800092EAFD /* ISHPermissionRequestPhotoCamera.h */,
 				DC5E5BB7195D78800092EAFD /* ISHPermissionRequestPhotoCamera.m */,
 				1B4513041D6DC02D00D6E47C /* ISHPermissionRequestSiri.h */,
@@ -360,9 +344,7 @@
 				DC6A8A8619633180005AC5BD /* ISHPermissionRequestAccount.h in Headers */,
 				DC6A8A8719633180005AC5BD /* ISHPermissionRequestHealth.h in Headers */,
 				1B63F89E1D6DF60500B14122 /* ISHPermissionRequestModernPhotoLibrary.h in Headers */,
-				DC6A8A8B19633180005AC5BD /* ISHPermissionRequestNotificationsLocal.h in Headers */,
 				DC6A8AD419642793005AC5BD /* ISHPermissionRequestEventStore.h in Headers */,
-				DC96E8CF1B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.h in Headers */,
 				DC6A8A7F19633180005AC5BD /* ISHPermissionRequestViewController+Private.h in Headers */,
 				DC6A8A8119633180005AC5BD /* ISHPermissionRequestViewControllerDelegate.h in Headers */,
 				DC6A8A8519633180005AC5BD /* ISHPermissionRequest+Private.h in Headers */,
@@ -392,9 +374,7 @@
 				1B63F89D1D6DF60500B14122 /* ISHPermissionRequestModernPhotoLibrary.h in Headers */,
 				DCAEF7C1195C5B6B0074EB5B /* ISHPermissionRequestMotion.h in Headers */,
 				DC6A8AD319642793005AC5BD /* ISHPermissionRequestEventStore.h in Headers */,
-				DC96E8CE1B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.h in Headers */,
 				DC799EB4195C0CF300A0CA36 /* ISHPermissionRequestViewController+Private.h in Headers */,
-				DC5E5BC3195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.h in Headers */,
 				DC1A80AC195B23640069235F /* ISHPermissionRequest.h in Headers */,
 				DC5E5BC7195DC1F50092EAFD /* ISHPermissionRequest+Private.h in Headers */,
 				DC1A80A9195B22A10069235F /* ISHPermissionCategory.h in Headers */,
@@ -527,7 +507,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC5E5BC5195DAD770092EAFD /* ISHPermissionRequestNotificationsLocal.m in Sources */,
 				1B4513011D6DC01200D6E47C /* ISHPermissionRequestSiri.m in Sources */,
 				DC5E5BBA195D78800092EAFD /* ISHPermissionRequestPhotoCamera.m in Sources */,
 				DCAEF7E5195C60250074EB5B /* ISHPermissionRequestLocation.m in Sources */,
@@ -541,7 +520,6 @@
 				1B96D5FC1D6F12C00026A4FC /* ISHPermissionRequestSpeechRecognition.m in Sources */,
 				DCAEF7E2195C60250074EB5B /* ISHPermissionsViewController.m in Sources */,
 				DC6A8AD619642793005AC5BD /* ISHPermissionRequestEventStore.m in Sources */,
-				DC96E8D31B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.m in Sources */,
 				DCAEF7E3195C60250074EB5B /* ISHPermissionRequest+All.m in Sources */,
 				1B69884D1D6F57DD00C8EAB8 /* ISHPermissionRequestUserNotification.m in Sources */,
 				DCD56C7A1962AEDC00508F4A /* ISHPermissionRequestAccount.m in Sources */,
@@ -553,7 +531,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC5E5BC4195DAD750092EAFD /* ISHPermissionRequestNotificationsLocal.m in Sources */,
 				1B4513001D6DC01200D6E47C /* ISHPermissionRequestSiri.m in Sources */,
 				DC5E5BB9195D78800092EAFD /* ISHPermissionRequestPhotoCamera.m in Sources */,
 				DC799EC5195C19CD00A0CA36 /* ISHPermissionRequest+All.m in Sources */,
@@ -567,7 +544,6 @@
 				1B96D5FB1D6F12C00026A4FC /* ISHPermissionRequestSpeechRecognition.m in Sources */,
 				DC1A80A4195B21DC0069235F /* ISHPermissionsViewController.m in Sources */,
 				DC6A8AD519642793005AC5BD /* ISHPermissionRequestEventStore.m in Sources */,
-				DC96E8D21B95CAAD0019E958 /* ISHPermissionRequestNotificationsRemote.m in Sources */,
 				DC1A80B1195B2C960069235F /* ISHPermissionRequestViewController.m in Sources */,
 				1B69884C1D6F40F400C8EAB8 /* ISHPermissionRequestUserNotification.m in Sources */,
 				DCD56C791962AEDC00508F4A /* ISHPermissionRequestAccount.m in Sources */,
